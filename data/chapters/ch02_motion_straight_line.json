@@ -1,0 +1,120 @@
+{
+  "id": "ch02_motion_straight_line",
+  "code": "02",
+  "title": "Motion in a Straight Line (1D Kinematics)",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Frame of Reference, Calculus Kinematics, Equations of Motion, Gravity Free-Fall, Motion Graphs & 1D Relative Velocity",
+  "classLevel": "Class 11",
+  "unit": "Mechanics I",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: What Is Kinematics?</div><p><strong>Mechanics</strong> is the branch of Physics that studies how objects move. It is divided into two parts:</p><ul class='clean-list'><li><strong>1. Kinematics (The &ldquo;How&rdquo; of Motion):</strong> Describes <em>how</em> things move using position, velocity, acceleration, and time&mdash;without worrying about <em>what force caused</em> the motion.</li><li><strong>2. Dynamics (The &ldquo;Why&rdquo; of Motion):</strong> Connects motion to its cause (forces and Newton's Laws).</li></ul><div class='def-box'><strong>Is Anything Truly at Rest? (Frame of Reference):</strong><br/>Imagine sitting still inside a moving train. To a passenger next to you, you are <strong>at rest</strong>. To a person on the station platform, you are <strong>moving at 80 km/h</strong>! Rest and motion are never absolute; they depend entirely on the observer's chosen coordinate axes and clock.</div></div>",
+  "topics": [
+    {
+      "id": "k1_t1_frame_distance_displacement",
+      "title": "Position, Distance vs. Displacement & Average Speed vs. Average Velocity",
+      "prerequisites": [
+        {
+          "label": "Vectors vs. Scalars",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Distance (Path Length) vs. Displacement</div><table class='data-table'><thead><tr><th>Feature</th><th>Distance ($d$)</th><th>Displacement ($\\Delta x$)</th></tr></thead><tbody><tr><td><strong>Nature</strong></td><td>Scalar (Magnitude only).</td><td>Vector (Magnitude &amp; Direction).</td></tr><tr><td><strong>Sign</strong></td><td>Always positive ($>0$).</td><td>Can be positive, negative, or zero.</td></tr><tr><td><strong>Path</strong></td><td>Depends on actual path taken.</td><td>Depends ONLY on endpoints $(x_i, x_f)$.</td></tr></tbody></table><div class='formula-highlight'>$$\\textbf{Universal Inequality:} \\quad \\boxed{\\text{Distance } (d) \\ge |\\text{Displacement } (\\Delta x)|}$$</div></div><div class='concept-block'><div class='concept-title'>1.2 Average Speed vs. Average Velocity</div><div class='formula-highlight'>$$\\boxed{v_{\\text{avg}} = \\frac{\\text{Total Distance}}{\\text{Total Time}}} \\qquad \\bigg| \\qquad \\boxed{\\vec{v}_{\\text{avg}} = \\frac{\\Delta x}{\\Delta t}}$$</div><p><strong>Two Special Cases for Average Speed:</strong></p><ul class='clean-list'><li><strong>Equal Times ($t$):</strong> $v_{\\text{avg}} = \\frac{v_1 + v_2}{2}$</li><li><strong>Equal Distances ($d$):</strong> $v_{\\text{avg}} = \\frac{2v_1 v_2}{v_1 + v_2}$ (Harmonic Mean)</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Proof: Equal-Distance Average Speed</div><p>Total Time $= \\frac{d}{v_1} + \\frac{d}{v_2} = d\\left(\\frac{v_1 + v_2}{v_1 v_2}\\right)$. Total Distance $= 2d$.<br/>$$v_{\\text{avg}} = \\frac{2d}{d\\left(\\frac{v_1+v_2}{v_1 v_2}\\right)} = \\frac{2v_1 v_2}{v_1 + v_2}$$</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 180' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='180' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='95' fill='#00f0ff' font-size='13' font-weight='bold' text-anchor='middle'>Distance ≥ |Displacement|</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> When average velocity is zero on a round trip, average speed is NOT zero!</li></ul>"
+    },
+    {
+      "id": "k1_t2_instantaneous_calculus",
+      "title": "Instantaneous Velocity & Acceleration via Calculus, Turning Points & Reversal of Motion",
+      "prerequisites": [
+        {
+          "label": "Differentiation & Integration",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t4_limits_differentiation"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Calculus Definitions</div><div class='formula-highlight'>$$\\boxed{v(t) = \\frac{dx}{dt}} \\qquad \\bigg| \\qquad \\boxed{a(t) = \\frac{dv}{dt} = v\\frac{dv}{dx}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Calculus Relations</div><p>$\\Delta x = \\int v\\,dt$, $\\quad d = \\int |v|\\,dt$, $\\quad \\frac{v^2 - u^2}{2} = \\int a\\,dx$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 180' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='180' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='95' fill='#00e676' font-size='13' font-weight='bold' text-anchor='middle'>v = dx/dt  |  a = dv/dt = v dv/dx</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Zero velocity at maximum height does not mean zero acceleration! Acceleration is still $-g$.</li></ul>"
+    },
+    {
+      "id": "k1_t3_constant_acceleration_equations",
+      "title": "Uniformly Accelerated Motion: The 4 Kinematic Equations & Galileo's Law",
+      "prerequisites": [
+        {
+          "label": "Integration",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 The 4 Kinematic Equations ($a = \\text{const}$)</div><div class='formula-highlight'>$$v = u + at, \\quad s = ut + \\frac{1}{2}at^2, \\quad v^2 = u^2 + 2as, \\quad S_n = u + \\frac{a}{2}(2n-1)$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of v = u + at</div><p>$\\int_u^v dv = a \\int_0^t dt \\implies v - u = at$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 180' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='180' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='95' fill='#ffab00' font-size='13' font-weight='bold' text-anchor='middle'>Galileo Odd Numbers: S_n ∝ (2n − 1)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> $S_n$ gives net displacement during the $n^{\\text{th}}$ second, not total distance if motion reverses.</li></ul>"
+    },
+    {
+      "id": "k1_t4_motion_under_gravity",
+      "title": "Motion Under Gravity: Free Fall, Vertical Projection Symmetry & Tower Projections",
+      "prerequisites": [
+        {
+          "label": "Quadratic Roots",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t1_algebra_binomial"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Vertical Projectile Symmetry</div><div class='formula-highlight'>$$T = \\frac{2u}{g}, \\quad H_{\\max} = \\frac{u^2}{2g}, \\quad t_1 + t_2 = T, \\quad h = \\frac{1}{2}g t_1 t_2, \\quad t_0 = \\sqrt{t_1 t_2}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Tower Formula Proof</div><p>$-H = ut - \\frac{1}{2}gt^2 \\implies \\frac{1}{2}gt^2 - ut - H = 0 \\implies t_0 = \\sqrt{t_1 t_2}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 180' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='180' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='95' fill='#00f0ff' font-size='13' font-weight='bold' text-anchor='middle'>Free Fall: a = −g always</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Object dropped from a rising balloon inherits the balloon's upward velocity.</li></ul>"
+    },
+    {
+      "id": "k1_t5_motion_graphs_conversion",
+      "title": "Motion Graphs Analysis (x-t, v-t, a-t & v-x)",
+      "prerequisites": [
+        {
+          "label": "Graphs & Slope",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t3_graphs_coordinate"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>5.1 Slope &amp; Area Summary</div><div class='formula-highlight'>$$\\text{x-t slope} = v, \\quad \\text{v-t slope} = a, \\quad \\text{v-t area} = \\Delta x, \\quad \\text{a-t area} = \\Delta v$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>v-t Triangle Journey</div><p>$v_{\\max} = \\frac{\\alpha\\beta}{\\alpha+\\beta}T$, $\\quad S = \\frac{1}{2}Tv_{\\max}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 180' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='180' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='95' fill='#00e676' font-size='13' font-weight='bold' text-anchor='middle'>v-t Area = Displacement</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Area under $a$-$t$ graph gives $\\Delta v$, not final velocity $v_f$.</li></ul>"
+    },
+    {
+      "id": "k1_t6_variable_acceleration_relative_1d",
+      "title": "1D Relative Motion: Chasing, Overtaking & Elevator Frames",
+      "prerequisites": [
+        {
+          "label": "Quadratic Discriminant",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t1_algebra_binomial"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>6.1 Relative Velocity</div><div class='formula-highlight'>$$v_{AB} = v_A - v_B, \\quad a_{AB} = a_A - a_B, \\quad g_{\\text{eff}} = g \\pm a_0$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Collision Avoidance</div><p>$d \\ge \\frac{(u_1 - u_2)^2}{2a_{\\text{rel}}}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 180' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='180' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='95' fill='#ff0055' font-size='13' font-weight='bold' text-anchor='middle'>Elevator Frame: g_eff = g ± a₀</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Two falling bodies have relative acceleration $a_{AB} = 0$.</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>Chapter 02 completed successfully.</p></div>",
+  "summary": "<ul class='clean-list'><li>Kinematics equations and relative frames.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Formula</th></tr></thead><tbody><tr><td>Kinematics</td><td>$v = u + at$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch02_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A cyclist travels the first third of a straight road at $10\\text{ km/h}$, the second third at $20\\text{ km/h}$, and the final third at $60\\text{ km/h}$. Find the average speed.",
+      "options": [
+        "18 km/h",
+        "30 km/h",
+        "24 km/h",
+        "15 km/h"
+      ],
+      "answer": "18 km/h",
+      "explanation": "Harmonic mean for 3 equal distances gives $18\\text{ km/h}$."
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dx/dy — futuristic visual physics & jee learning laboratory</title>
+  <meta name="description" content="dx/dy is a cinematic, scroll-driven Class 11, Class 12, JEE Main and JEE Advanced physics learning laboratory featuring interactive simulations, zero-to-advanced calculus derivations, adaptive non-repeating tests, and a student productivity workspace." />
+  <meta name="keywords" content="dx/dy, physics learning platform, JEE Advanced Physics, JEE Main Physics, Class 11 Physics, Class 12 Physics, Basic Mathematics for Physics, Interactive Physics Simulations" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#03050a" />
+
+  <!-- Compact Inline SVG Favicon for dx/dy -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2303050a' stroke='%2300f0ff' stroke-width='3'/%3E%3Ctext x='8' y='30' fill='%23f0f4f8' font-family='monospace' font-weight='800' font-size='20'%3Edx%3C/text%3E%3Cline x1='46' y1='12' x2='18' y2='52' stroke='%2300f0ff' stroke-width='4.5' stroke-linecap='round'/%3E%3Ctext x='31' y='52' fill='%23f0f4f8' font-family='monospace' font-weight='800' font-size='20'%3Edy%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "dx/dy",
+    "description": "Cinematic Visual Physics Laboratory, Zero-to-JEE-Advanced Chapter Encyclopedia, Adaptive Testing Engine, and Student Productivity Workspace.",
+    "educationalLevel": ["Class 11", "Class 12", "JEE Main", "JEE Advanced"]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP 3 + ScrollTrigger for Choreographed Scroll-Driven Storytelling -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- MathJax 3 for LaTeX Derivations & Equations -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Top Luminous Scroll Progress Indicator & Scene Readout -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+  <div id="scroll-scene-indicator" class="scroll-scene-indicator" aria-hidden="true">
+    <span class="scene-dot"></span>
+    <span id="scroll-scene-label">SCENE 01 / OPENING</span>
+  </div>
+
+  <!-- Ambient Cyberpunk & Scientific Field Layers -->
+  <div id="wallpaper-layer" class="wp-grid" aria-hidden="true"></div>
+  <div class="ambient-aurora-layer" aria-hidden="true">
+    <div class="aurora-orb aurora-cyan"></div>
+    <div class="aurora-orb aurora-violet"></div>
+  </div>
+  <canvas id="cyber-particle-canvas" class="cyber-particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- 7-DAY ADVANCE INACTIVITY WARNING BANNER -->
+  <div id="inactivity-warning-banner" class="inactivity-banner hidden" role="alert">
+    <div class="inactivity-banner-text">
+      <span class="badge" style="background:var(--warning);color:#03050a;border:none;">⚠️ 7-DAY DELETION WARNING</span>
+      <span id="inactivity-warning-msg">Your profile has been inactive for 83+ days and is scheduled for automatic deletion in 7 days.</span>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="tool-btn btn-primary" onclick="PHIZIKS.keepAccountActive()">✔ Keep My Account Active</button>
+      <button class="tool-btn" onclick="PHIZIKS.exportProfileBackup()">⬇️ Export Backup</button>
+    </div>
+  </div>
+
+  <!-- FLOATING GLASSMORPHIC TOP NAVIGATION BAR -->
+  <header class="top-navbar" id="top-navbar" role="banner">
+    <!-- Animated Inline SVG dx/dy Brand Identity -->
+    <div class="brand-logo" onclick="PHIZIKS.switchView('home')" role="button" tabindex="0" aria-label="dx/dy Home" onkeydown="if(event.key==='Enter')PHIZIKS.switchView('home')">
+      <div id="brand-logo-svg-mount" class="dxdy-logo-mount">
+        <svg class="dxdy-logo" viewBox="0 0 132 40" role="img" aria-label="dx/dy">
+          <defs>
+            <linearGradient id="dxdy-cyan-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00f0ff" />
+              <stop offset="100%" stop-color="#7c4dff" />
+            </linearGradient>
+          </defs>
+          <text x="6" y="27" class="dxdy-word dxdy-dx">dx</text>
+          <path d="M 74 6 L 54 34" class="dxdy-slash-base" />
+          <path d="M 74 6 L 54 34" class="dxdy-slash-highlight" />
+          <text x="73" y="29" class="dxdy-word dxdy-dy">dy</text>
+        </svg>
+      </div>
+      <span class="brand-badge">physics • lab</span>
+    </div>
+
+    <!-- Universal Search & Command Bar (Ctrl+K / /) -->
+    <div class="global-search-wrap">
+      <input
+        type="text"
+        id="global-search-input"
+        class="global-search-input"
+        placeholder="Search chapters, formulas, simulations, commands... (Ctrl+K)"
+        aria-label="Search chapters, topics, formulas, and tools"
+        oninput="PHIZIKS.handleSearch(this.value)"
+      />
+      <div id="search-results-dropdown" class="search-results-dropdown" style="display:none;" role="listbox"></div>
+    </div>
+
+    <!-- Primary View Navigation -->
+    <nav class="nav-links" aria-label="Primary Navigation">
+      <button class="nav-btn active" data-view="home" onclick="PHIZIKS.switchView('home')">🏠 Home</button>
+      <button class="nav-btn" data-view="chapters" onclick="PHIZIKS.switchView('chapters')">📚 Chapters (0–28)</button>
+      <button class="nav-btn" data-view="visual" onclick="PHIZIKS.switchView('visual')">🔬 Visual Lab</button>
+      <button class="nav-btn" data-view="dpp" onclick="PHIZIKS.switchView('dpp')">🎯 Adaptive Tests</button>
+      <button class="nav-btn" data-view="regain" onclick="PHIZIKS.switchView('regain')">⏱️ Planner & Timer</button>
+      <button class="nav-btn" data-view="journal" onclick="PHIZIKS.switchView('journal')">🌱 Journal</button>
+    </nav>
+
+    <!-- Always-Available Utility Toggles -->
+    <div class="nav-links">
+      <button class="tool-btn" id="focus-mode-btn" onclick="PHIZIKS.toggleFocusMode()" title="Toggle Distraction-Free Focus Mode">🧘 Focus</button>
+      <button class="tool-btn" onclick="PHIZIKS.toggleWhiteboard()" title="Toggle Side-by-Side Whiteboard">✏️ Board</button>
+      <button class="tool-btn" onclick="PHIZIKS.togglePanel('calc-panel')" title="Toggle Scientific Calculator">🧮 Calc</button>
+      <button class="tool-btn" onclick="PHIZIKS.togglePanel('notes-panel')" title="Chapter Notes">📝 Notes</button>
+      <button class="tool-btn" onclick="PHIZIKS.togglePanel('gx-panel')" title="Logo Variations & Theme Customizer">🎨 UI & Logo</button>
+      <button class="tool-btn" id="profile-nav-btn" onclick="PHIZIKS.openProfileModal()" title="Switch Profile, Backup & Privacy">👤 <span id="nav-profile-name">Scholar</span></button>
+      <button class="tool-btn btn-exhibition" onclick="PHIZIKS.openExhibitionPPT()">🖥️ Guide</button>
+    </div>
+  </header>
+
+  <!-- Floating Exit Button for Distraction-Free Focus Mode -->
+  <button id="exit-focus-fab" class="exit-focus-fab hidden" onclick="PHIZIKS.toggleFocusMode()">
+    🧘 Exit Focus Mode (Esc)
+  </button>
+
+  <!-- MAIN WORKSPACE + SIDE-BY-SIDE WHITEBOARD SHELL -->
+  <div class="workspace-shell">
+    <main class="main-viewport" id="main-viewport">
+      <!-- VIEW 1: 6-SCENE CINEMATIC SCROLL-DRIVEN HOMEPAGE -->
+      <section id="view-home" class="view-section">
+        <div id="home-content"></div>
+      </section>
+
+      <!-- VIEW 2: CHAPTER EXPLORER & FULL TEXTBOOK READER -->
+      <section id="view-chapters" class="view-section hidden">
+        <div id="chapters-content"></div>
+      </section>
+
+      <!-- VIEW 3: VISUAL PHYSICS LAB (SLIDERS SANDBOX VS ANIMATION THEATER) -->
+      <section id="view-visual" class="view-section hidden">
+        <div id="visual-content"></div>
+      </section>
+
+      <!-- VIEW 4: ADAPTIVE TEST & NON-REPEATING DPP GENERATOR -->
+      <section id="view-dpp" class="view-section hidden">
+        <div id="dpp-content"></div>
+      </section>
+
+      <!-- VIEW 5: PLANNER, TIMER & REVISION SUITE -->
+      <section id="view-regain" class="view-section hidden">
+        <div id="regain-content"></div>
+      </section>
+
+      <!-- VIEW 6: STUDENT LIFE & WELL-BEING JOURNAL -->
+      <section id="view-journal" class="view-section hidden">
+        <div id="journal-content"></div>
+      </section>
+    </main>
+
+    <!-- ALWAYS-AVAILABLE SIDE-BY-SIDE HTML5 WHITEBOARD CANVAS -->
+    <aside id="whiteboard-dock" class="whiteboard-dock hidden" aria-label="Rough Work Whiteboard">
+      <div class="wb-toolbar">
+        <strong style="color:var(--accent);font-size:0.85rem;margin-right:auto;">✏️ Rough Work Whiteboard</strong>
+        <button class="tool-btn active-tool" id="wb-pen-btn" onclick="PHIZIKS.setWbTool('pen')">✒️ Pen</button>
+        <button class="tool-btn" id="wb-eraser-btn" onclick="PHIZIKS.setWbTool('eraser')">🧽 Eraser</button>
+        <input type="color" id="wb-color" value="#00f0ff" onchange="PHIZIKS.setWbColor(this.value)" title="Pen Color" style="width:28px;height:28px;border:none;background:none;cursor:pointer;" />
+        <select id="wb-size" onchange="PHIZIKS.setWbSize(this.value)" class="global-search-input" style="width:68px;padding:4px;" aria-label="Brush Size">
+          <option value="2">2px</option>
+          <option value="4" selected>4px</option>
+          <option value="8">8px</option>
+          <option value="16">16px</option>
+        </select>
+        <button class="tool-btn" onclick="PHIZIKS.toggleWbGrid()"># Grid</button>
+        <button class="tool-btn" onclick="PHIZIKS.clearWhiteboard()">🗑️ Clear</button>
+        <button class="tool-btn" onclick="PHIZIKS.downloadWhiteboard()">💾 Save</button>
+        <button class="tool-btn" onclick="PHIZIKS.toggleWhiteboard()" aria-label="Close Whiteboard">✖</button>
+      </div>
+      <div id="wb-canvas-wrap" class="wb-canvas-wrap wb-grid-bg">
+        <canvas id="whiteboard-canvas"></canvas>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FLOATING TOOL 1: SCIENTIFIC CALCULATOR WITH PHYSICS CONSTANTS -->
+  <div id="calc-panel" class="floating-panel hidden" role="dialog" aria-label="Scientific Calculator">
+    <div class="panel-header">
+      <span>🧮 Scientific & Physics Calculator</span>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <button class="tool-btn" id="calc-angle-btn" onclick="PHIZIKS.toggleCalcAngleMode()" style="padding:2px 8px;font-size:0.75rem;">DEG</button>
+        <button class="tool-btn" onclick="PHIZIKS.togglePanel('calc-panel')" style="padding:2px 8px;" aria-label="Close Calculator">✖</button>
+      </div>
+    </div>
+    <div class="calc-display">
+      <div id="calc-history" class="calc-history">Ans = 0</div>
+      <div id="calc-screen">0</div>
+    </div>
+    <div style="padding:6px 10px;background:var(--bg-tertiary);font-size:0.74rem;display:flex;gap:4px;flex-wrap:wrap;align-items:center;">
+      <span style="color:var(--text-secondary);">Constants:</span>
+      <button class="calc-key" style="padding:2px 6px;" onclick="PHIZIKS.calcInsert('9.8')" title="g = 9.8 m/s²">g</button>
+      <button class="calc-key" style="padding:2px 6px;" onclick="PHIZIKS.calcInsert('6.674e-11')" title="G = 6.674×10⁻¹¹">G</button>
+      <button class="calc-key" style="padding:2px 6px;" onclick="PHIZIKS.calcInsert('3e8')" title="c = 3×10⁸ m/s">c</button>
+      <button class="calc-key" style="padding:2px 6px;" onclick="PHIZIKS.calcInsert('6.626e-34')" title="Planck h">h</button>
+      <button class="calc-key" style="padding:2px 6px;" onclick="PHIZIKS.calcInsert('8.854e-12')" title="Epsilon_0">ε₀</button>
+      <button class="calc-key" style="padding:2px 6px;" onclick="PHIZIKS.calcInsert('1.602e-19')" title="Elementary charge e">e</button>
+    </div>
+    <div class="calc-grid">
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('sin')">sin</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('cos')">cos</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('tan')">tan</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('sqrt')">√x</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('cbrt')">∛x</button>
+
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('asin')">sin⁻¹</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('acos')">cos⁻¹</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('atan')">tan⁻¹</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('log10')">log₁₀</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('ln')">ln</button>
+
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('(')">(</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert(')')">)</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('**')">xʸ</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('Math.PI')">π</button>
+      <button class="calc-key" onclick="PHIZIKS.calcClear()">AC</button>
+
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('7')">7</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('8')">8</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('9')">9</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('/')">÷</button>
+      <button class="calc-key" onclick="PHIZIKS.calcBackspace()">⌫</button>
+
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('4')">4</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('5')">5</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('6')">6</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('*')">×</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('sq')">x²</button>
+
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('1')">1</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('2')">2</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('3')">3</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('-')">−</button>
+      <button class="calc-key" onclick="PHIZIKS.calcFunc('inv')">1/x</button>
+
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('0')">0</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('.')">.</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('e')">EXP</button>
+      <button class="calc-key" onclick="PHIZIKS.calcInsert('+')">+</button>
+      <button class="calc-key key-equal" onclick="PHIZIKS.calcEvaluate()">=</button>
+    </div>
+  </div>
+
+  <!-- FLOATING TOOL 2: CHAPTER NOTES ENGINE WITH AUTOSAVE -->
+  <div id="notes-panel" class="floating-panel hidden" style="width:440px;" role="dialog" aria-label="Chapter Notes">
+    <div class="panel-header">
+      <span>📝 dx/dy Chapter Notes (Autosave)</span>
+      <button class="tool-btn" onclick="PHIZIKS.togglePanel('notes-panel')" style="padding:2px 8px;" aria-label="Close Notes">✖</button>
+    </div>
+    <div style="padding:12px;">
+      <select id="notes-chapter-select" class="global-search-input" onchange="PHIZIKS.loadChapterNote(this.value)" style="margin-bottom:8px;" aria-label="Select Chapter for Notes"></select>
+      <div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap;">
+        <button class="tool-btn" onclick="document.execCommand('bold')"><b>B</b></button>
+        <button class="tool-btn" onclick="document.execCommand('italic')"><i>I</i></button>
+        <button class="tool-btn" onclick="document.execCommand('underline')"><u>U</u></button>
+        <button class="tool-btn" onclick="document.execCommand('insertUnorderedList')">• List</button>
+        <button class="tool-btn" onclick="PHIZIKS.insertNoteCallout()">💡 Callout</button>
+        <button class="tool-btn btn-primary" onclick="PHIZIKS.saveCurrentNote()">💾 Save Now</button>
+        <button class="tool-btn" onclick="PHIZIKS.exportCurrentNote()">⬇️ .MD</button>
+      </div>
+      <div
+        id="notes-editor"
+        contenteditable="true"
+        oninput="PHIZIKS.scheduleNoteAutosave()"
+        style="min-height:240px;max-height:340px;overflow-y:auto;padding:12px;background:var(--bg-primary);border:1px solid var(--border-color);border-radius:6px;outline:none;"
+      ></div>
+      <div id="notes-status" style="font-size:0.75rem;color:var(--text-secondary);margin-top:6px;">Autosave enabled • Synced with active profile.</div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOOL 3: dx/dy LOGO VARIATIONS PREVIEW & WORKSPACE CUSTOMIZER -->
+  <div id="gx-panel" class="floating-panel hidden" style="width:430px;" role="dialog" aria-label="Logo and Workspace Customizer">
+    <div class="panel-header">
+      <span>🎨 dx/dy Logo Variations & UI Customizer</span>
+      <button class="tool-btn" onclick="PHIZIKS.togglePanel('gx-panel')" style="padding:2px 8px;" aria-label="Close Customizer">✖</button>
+    </div>
+    <div style="padding:14px;display:flex;flex-direction:column;gap:14px;max-height:80vh;overflow-y:auto;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <label style="font-size:0.82rem;font-weight:700;color:var(--accent);">Choose Active dx/dy Logo Variation</label>
+          <button class="tool-btn" style="padding:2px 8px;font-size:0.72rem;" onclick="PHIZIKS.toggleLogoMonochrome()">◐ Monochrome Toggle</button>
+        </div>
+        <div class="logo-preview-grid">
+          <div class="logo-preview-card" id="logo-card-slash" onclick="PHIZIKS.setLogoVariant('slash')">
+            <svg class="dxdy-logo" viewBox="0 0 132 40">
+              <text x="6" y="27" class="dxdy-word dxdy-dx">dx</text>
+              <path d="M 74 6 L 54 34" class="dxdy-slash-base" />
+              <path d="M 74 6 L 54 34" class="dxdy-slash-highlight" />
+              <text x="73" y="29" class="dxdy-word dxdy-dy">dy</text>
+            </svg>
+            <span class="logo-preview-label">1. Differential Slash</span>
+          </div>
+
+          <div class="logo-preview-card" id="logo-card-curve" onclick="PHIZIKS.setLogoVariant('curve')">
+            <svg class="dxdy-logo" viewBox="0 0 140 40">
+              <text x="5" y="27" class="dxdy-word dxdy-dx">dx</text>
+              <path d="M 50 35 C 62 35, 64 5, 78 5" class="dxdy-slash-base" fill="none" />
+              <path d="M 50 35 C 62 35, 64 5, 78 5" class="dxdy-slash-highlight" fill="none" />
+              <circle cx="64" cy="20" r="2.6" fill="var(--accent)" />
+              <text x="77" y="29" class="dxdy-word dxdy-dy">dy</text>
+            </svg>
+            <span class="logo-preview-label">2. Inflection Curve</span>
+          </div>
+
+          <div class="logo-preview-card" id="logo-card-vector" onclick="PHIZIKS.setLogoVariant('vector')">
+            <svg class="dxdy-logo" viewBox="0 0 148 40">
+              <path d="M 9 10 L 4 10 L 4 30 L 9 30" stroke="var(--text-secondary)" stroke-width="1.8" fill="none" />
+              <text x="12" y="27" class="dxdy-word dxdy-dx">dx</text>
+              <path d="M 58 34 L 78 6 M 78 6 L 70 8 M 78 6 L 76 14" class="dxdy-slash-base" fill="none" />
+              <path d="M 58 34 L 78 6" class="dxdy-slash-highlight" fill="none" />
+              <text x="80" y="29" class="dxdy-word dxdy-dy">dy</text>
+              <path d="M 136 10 L 141 10 L 141 30 L 136 30" stroke="var(--text-secondary)" stroke-width="1.8" fill="none" />
+            </svg>
+            <span class="logo-preview-label">3. Vector Bracket</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label style="font-size:0.82rem;color:var(--text-secondary);">Theme Mode</label>
+        <div style="display:flex;gap:8px;margin-top:4px;">
+          <button class="tool-btn" onclick="PHIZIKS.setThemeMode('dark')">🌑 Cyber Glass Dark</button>
+          <button class="tool-btn" onclick="PHIZIKS.setThemeMode('light')">☀️ Daylight Paper</button>
+        </div>
+      </div>
+      <div>
+        <label style="font-size:0.82rem;color:var(--text-secondary);">Primary Neon Accent</label>
+        <div style="display:flex;gap:8px;margin-top:4px;align-items:center;flex-wrap:wrap;">
+          <input type="color" id="gx-accent-picker" value="#00f0ff" onchange="PHIZIKS.setAccentColor(this.value)" aria-label="Custom Accent Color" />
+          <button class="tool-btn" onclick="PHIZIKS.setAccentColor('#00f0ff')">Electric Cyan</button>
+          <button class="tool-btn" onclick="PHIZIKS.setAccentColor('#7c4dff')">Violet</button>
+          <button class="tool-btn" onclick="PHIZIKS.setAccentColor('#00e676')">Emerald</button>
+          <button class="tool-btn" onclick="PHIZIKS.setAccentColor('#ff0055')">Crimson</button>
+        </div>
+      </div>
+      <div>
+        <label style="font-size:0.82rem;color:var(--text-secondary);">Typography Engine</label>
+        <select class="global-search-input" onchange="PHIZIKS.setFontFamily(this.value)" style="margin-top:4px;" aria-label="Font Family">
+          <option value="'Inter', sans-serif">Inter (Modern Scientific Sans)</option>
+          <option value="'JetBrains Mono', monospace">JetBrains Mono (Mathematical Terminal)</option>
+          <option value="Georgia, serif">Academic Textbook Serif</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:0.82rem;color:var(--text-secondary);">Background Field Texture</label>
+        <div style="display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;">
+          <button class="tool-btn" onclick="PHIZIKS.setWallpaper('grid', '')">Coordinate Grid</button>
+          <button class="tool-btn" onclick="PHIZIKS.setWallpaper('cyber', '')">Deep Nebula</button>
+          <button class="tool-btn" onclick="PHIZIKS.setWallpaper('none', '')">Pure Minimal</button>
+        </div>
+        <input
+          type="text"
+          id="gx-wallpaper-url"
+          class="global-search-input"
+          placeholder="Or paste custom Image URL..."
+          style="margin-top:6px;"
+          onchange="PHIZIKS.setWallpaper('custom', this.value)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 1: NO-EMAIL / NO-PHONE PROFILE, BACKUP & INACTIVITY MANAGER -->
+  <div id="profile-modal" class="ppt-modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Student Profile and Data Manager">
+    <div class="ppt-stage" style="max-width:780px;">
+      <div class="panel-header" style="padding:14px 20px;">
+        <span>👤 dx/dy Profile, Data Backup & Inactivity Policy</span>
+        <button class="tool-btn" onclick="PHIZIKS.closeProfileModal()">✖ Close</button>
+      </div>
+      <div id="profile-modal-body" style="padding:22px;max-height:80vh;overflow-y:auto;"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: VISUAL PREREQUISITE DEPENDENCY MAP -->
+  <div id="prereq-map-modal" class="ppt-modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Prerequisite Dependency Map">
+    <div class="ppt-stage" style="max-width:960px;">
+      <div class="panel-header" style="padding:14px 20px;">
+        <span>🕸️ dx/dy Prerequisite Dependency Map (Ch 00 → Ch 28)</span>
+        <button class="tool-btn" onclick="document.getElementById('prereq-map-modal').classList.add('hidden')">✖ Close</button>
+      </div>
+      <div id="prereq-map-body" style="padding:22px;max-height:80vh;overflow-y:auto;"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: INTERACTIVE PLATFORM WALKTHROUGH PRESENTATION -->
+  <div id="exhibition-ppt-modal" class="ppt-modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="dx/dy Interactive Walkthrough">
+    <div class="ppt-stage">
+      <div class="panel-header" style="padding:14px 20px;">
+        <span id="ppt-slide-indicator">📊 dx/dy PLATFORM WALKTHROUGH — SLIDE 1 / 8</span>
+        <div style="display:flex;gap:8px;">
+          <button class="tool-btn" onclick="PHIZIKS.prevPPTSlide()">⬅ Previous</button>
+          <button class="tool-btn btn-primary" onclick="PHIZIKS.nextPPTSlide()">Next Slide ➡</button>
+          <button class="tool-btn" onclick="PHIZIKS.closeExhibitionPPT()">✖ Exit</button>
+        </div>
+      </div>
+      <div id="ppt-slide-container" class="ppt-slide-body"></div>
+    </div>
+  </div>
+
+  <!-- PERSISTENT AUDIO ENGINE MOUNT -->
+  <div id="persistent-audio-mount" style="display:none;" aria-hidden="true">
+    <audio id="custom-pomo-audio" loop preload="auto"></audio>
+  </div>
+
+  <!-- APPLICATION SCRIPTS -->
+  <script src="/js/app.js"></script>
+  <script src="/js/visual-physics.js"></script>
+  <script src="/js/suites.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+{
+  "id": "ch09_mechanical_fluids",
+  "code": "09",
+  "title": "Mechanical Properties of Fluids",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Hydrostatics, Pascal's Law, Buoyancy, Archimedes' Principle, Equation of Continuity, Bernoulli's Theorem, Torricelli's Law, Viscosity, Stokes' Law & Surface Tension",
+  "classLevel": "Class 11",
+  "unit": "Properties of Matter",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: What Makes a Fluid Different from a Solid?</div><p>Imagine pushing your hand against a block of solid wood. The wood resists your hand and keeps its shape because its atoms are locked into a rigid lattice. Now push your hand into water. The water parts around your hand and flows. Why?</p><p style='margin-top:10px;'>A <strong>Fluid</strong> is any substance that can flow&mdash;which includes both <strong>liquids</strong> and <strong>gases</strong>. Unlike solids, which resist sideways (shear) forces by deforming up to an elastic limit, fluids have molecules that slide freely past one another. A fluid at rest cannot sustain any tangential shear stress; the moment a sideways force acts on it, layers begin to slide.</p><div class='def-box'><strong>The 4 Pillars of Fluid Mechanics in This Chapter:</strong><ul class='clean-list'><li><strong>1. Hydrostatics (Fluids at Rest):</strong> Pressure variation with depth ($P = P_0 + \\rho gh$), barometer/manometer tubes, Pascal's hydraulic lift, and Archimedes' buoyancy ($F_b = V_{\\text{sub}}\\rho_L g$).</li><li><strong>2. Hydrodynamics (Ideal Fluids in Motion):</strong> Conservation of mass ($A_1 v_1 = A_2 v_2$) and conservation of energy (Bernoulli's equation, Torricelli's efflux speed, Venturi meter, and dynamic lift).</li><li><strong>3. Viscosity (Internal Fluid Friction):</strong> Velocity gradient, Poiseuille's tube flow, Stokes' drag on a sphere ($F_v = 6\\pi\\eta r v$), and Terminal Velocity ($v_T$).</li><li><strong>4. Surface Tension &amp; Capillarity:</strong> Molecular origin of surface energy ($S = F/L = U/\\Delta A$), angle of contact, excess pressure inside drops ($2S/R$) and soap bubbles ($4S/R$), and Jurin's capillary rise law.</li></ul></div></div>",
+  "topics": [
+    {
+      "id": "fluids_t1_hydrostatics_pascal_archimedes",
+      "title": "Hydrostatic Pressure, Pascal's Law, Accelerated Containers, Buoyancy & Archimedes' Principle",
+      "prerequisites": [
+        {
+          "label": "Newton's Laws & Free Body Diagrams",
+          "targetChapter": "ch04_laws_of_motion",
+          "targetTopic": "nlm_t1_newton_laws_fbd"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Fluid Pressure &amp; Density</div><div class='def-box'><strong>Definition of Pressure ($P$):</strong><br/>The normal (perpendicular) thrust force exerted by a fluid per unit surface area is called <strong>Pressure</strong>. At any point inside a static fluid, pressure acts equally in all directions, so Pressure is a <strong>Scalar</strong> quantity.</div><div class='formula-highlight'>$$\\boxed{P = \\frac{dF_{\\perp}}{dA}} \\qquad \\bigg| \\qquad \\text{Density } \\rho = \\frac{\\text{Mass } (m)}{\\text{Volume } (V)} \\qquad \\bigg| \\qquad \\text{Relative Density (Specific Gravity)} = \\frac{\\rho_{\\text{substance}}}{\\rho_{\\text{water at } 4^\\circ\\text{C}}}$$</div><p><strong>Standard Pressure Units:</strong> SI unit is $\\text{Pascal (Pa)} = \\text{N/m}^2$. Also $1\\text{ atm} = 1.013 \\times 10^5\\text{ Pa} = 76\\text{ cm of Hg} = 760\\text{ Torr}$, and $1\\text{ bar} = 10^5\\text{ Pa}$.</p></div><div class='concept-block'><div class='concept-title'>1.2 Variation of Pressure with Depth, Gauge Pressure &amp; Pascal's Law</div><div class='formula-highlight'>$$\\text{Absolute Pressure at Depth } h: \\quad \\boxed{P = P_0 + \\rho g h} \\qquad \\bigg| \\qquad \\text{Gauge Pressure:} \\quad \\boxed{P_g = P - P_0 = \\rho g h}$$</div><div class='def-box'><strong>Pascal's Law:</strong><br/>Any external pressure applied to an enclosed incompressible fluid is transmitted <strong>undiminished</strong> to every point of the fluid and the walls of the vessel. In a hydraulic lift with small piston area $A_1$ and large piston area $A_2$:</div><div class='formula-highlight'>$$\\boxed{\\frac{F_1}{A_1} = \\frac{F_2}{A_2} \\implies F_2 = \\left(\\frac{A_2}{A_1}\\right)F_1} \\qquad \\text{while Work Conserved:} \\quad F_1 y_1 = F_2 y_2$$</div><p><strong>Liquid in an Accelerating Container:</strong><br/>1. <strong>Vertical upward acceleration $a_0$:</strong> Effective gravity becomes $g_{\\text{eff}} = g + a_0 \\implies P = P_0 + \\rho(g + a_0)h$.<br/>2. <strong>Horizontal acceleration $a_x$:</strong> The free surface of the liquid tilts backward making an angle $\\theta$ with the horizontal such that:</p><div class='formula-highlight'>$$\\boxed{\\tan\\theta = \\frac{a_x}{g}} \\qquad \\text{and pressure difference along horizontal length } L \\text{ is } \\Delta P = \\rho a_x L$$</div></div><div class='concept-block'><div class='concept-title'>1.3 Buoyancy &amp; Archimedes' Principle</div><div class='def-box'><strong>Archimedes' Principle:</strong><br/>When a body of volume $V$ and density $\\rho_B$ is wholly or partially submerged in a liquid of density $\\rho_L$, the fluid exerts an upward <strong>Buoyant Force (Upthrust $F_b$)</strong> equal to the weight of the displaced liquid, acting upward through the <strong>Center of Buoyancy</strong> (centroid of the displaced volume).</div><div class='formula-highlight'>$$\\boxed{F_b = V_{\\text{sub}} \\rho_L g} \\qquad \\bigg| \\qquad \\text{Apparent Weight in Liquid:} \\quad W_{\\text{app}} = W_{\\text{air}}\\left(1 - \\frac{\\rho_L}{\\rho_B}\\right)$$</div><div class='formula-highlight'>$$\\textbf{Law of Floatation } (\\rho_B < \\rho_L): \\quad m_B g = F_b \\implies V_{\\text{total}} \\rho_B g = V_{\\text{sub}} \\rho_L g \\implies \\boxed{\\frac{V_{\\text{sub}}}{V_{\\text{total}}} = \\frac{\\rho_B}{\\rho_L}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation 1: Hydrostatic Pressure P = P₀ + ρgh</div><p>Consider an imaginary vertical cylinder of liquid of cross-sectional area $A$ extending from the top surface ($y = 0$, pressure $P_0$) to depth $h$ (pressure $P$). Since the liquid cylinder is in vertical equilibrium:</p>$$\\text{Upward Force from Bottom} = \\text{Downward Force at Top} + \\text{Weight of Liquid Cylinder}$$$$P A = P_0 A + (\\rho A h)g \\implies \\boxed{P = P_0 + \\rho g h}$$</div><div class='deriv-step'><div class='deriv-step-label'>Derivation 2: Free-Surface Tilt Angle tan(θ) = aₓ / g in Horizontally Accelerating Tank</div><p>Take a small fluid parcel of mass $m$ right on the tilted free surface from the non-inertial frame of the tank. It experiences downward gravity $mg$ and backward pseudo force $ma_x$. Since a static free surface must be perpendicular to the net effective force vector, the tangent of the tilt angle $\\theta$ with the horizontal is:</p>$$\\boxed{\\tan\\theta = \\frac{m a_x}{m g} = \\frac{a_x}{g}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 205' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='205' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,20)'><rect x='20' y='30' width='220' height='130' fill='rgba(0,240,255,0.1)' stroke='#00f0ff' stroke-width='2'/><line x1='20' y1='50' x2='240' y2='110' stroke='#00e676' stroke-width='3'/><text x='130' y='20' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>Tank Accelerating Right (a_x →)</text><text x='130' y='145' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Surface Tilt: tan θ = a_x / g</text></g><g transform='translate(350,20)'><rect x='20' y='50' width='260' height='110' fill='rgba(0,240,255,0.12)' stroke='#94a3b8' stroke-width='2'/><rect x='110' y='25' width='80' height='65' fill='#ff0055' stroke='#f0f4f8' stroke-width='1.5'/><text x='150' y='62' fill='#f0f4f8' font-size='11' font-weight='bold' text-anchor='middle'>Floating Block</text><text x='150' y='135' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>V_sub / V_total = ρ_body / ρ_liquid</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Hydrostatic Paradox):</strong> Three vessels of completely different shapes (cone, cylinder, flared funnel) having the same base area $A$ and filled with water to the same height $h$ experience the <strong>exact same force on their base</strong> ($F = P A = (P_0 + \\rho gh)A$), even though the weight of water inside them is different! The side walls supply the remaining vertical reaction force.</li><li><strong>Trap 2 (Ice Melting in a Glass of Water):</strong> When a block of pure ice floating in water melts completely, the water level in the glass <strong>remains strictly unchanged</strong>! If the ice contains a heavy coin or stone (which sinks to the bottom after melting), the water level <strong>falls</strong>!</li></ul>"
+    },
+    {
+      "id": "fluids_t2_continuity_bernoulli",
+      "title": "Hydrodynamics: Equation of Continuity, Bernoulli's Theorem, Torricelli's Efflux Law & Venturi Meter",
+      "prerequisites": [
+        {
+          "label": "Work-Energy Theorem & Conservation of Energy",
+          "targetChapter": "ch05_work_energy_power",
+          "targetTopic": "wep_t1_work_work_energy_theorem"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Streamline vs. Turbulent Flow &amp; Equation of Continuity</div><div class='def-box'><strong>Streamline (Laminar) Flow:</strong><br/>A flow in which every fluid particle passing a given point follows the exact same path and has the exact same velocity as the preceding particle. Two streamlines can never intersect!</div><div class='formula-highlight'>$$\\textbf{Equation of Continuity (Conservation of Mass):} \\quad \\boxed{A_1 \\rho_1 v_1 = A_2 \\rho_2 v_2} \\quad \\xrightarrow{\\text{Incompressible}} \\quad \\boxed{Q = A_1 v_1 = A_2 v_2 = \\text{Constant}}$$</div></div><div class='concept-block'><div class='concept-title'>2.2 Bernoulli's Theorem (Conservation of Mechanical Energy per Unit Volume)</div><div class='def-box'><strong>Statement:</strong><br/>For the steady, irrotational, streamline flow of an ideal (incompressible and non-viscous) fluid, the sum of pressure energy, kinetic energy, and gravitational potential energy per unit volume remains constant along a streamline.</div><div class='formula-highlight'>$$\\boxed{P + \\frac{1}{2}\\rho v^2 + \\rho g h = \\text{Constant}} \\qquad \\bigg| \\qquad \\text{Head Form:} \\quad \\frac{P}{\\rho g} + \\frac{v^2}{2g} + h = \\text{Constant}$$</div></div><div class='concept-block'><div class='concept-title'>2.3 Torricelli's Law of Efflux &amp; Horizontal Range of Escaping Jet</div><p>Consider a wide tank filled with liquid to total height $H$. A small hole of area $a \\ll A$ is made in the side wall at depth $h$ below the free surface (so height of the hole above the ground is $y = H - h$):</p><div class='formula-highlight'>$$\\text{1. Speed of Efflux:} \\quad \\boxed{v = \\sqrt{2gh}} \\qquad \\left(\\text{Exact for large hole: } v = \\sqrt{\\frac{2gh}{1 - (a/A)^2}}\\right)$$</div><div class='formula-highlight'>$$\\text{2. Time to Hit Ground:} \\quad t = \\sqrt{\\frac{2(H - h)}{g}} \\qquad \\bigg| \\qquad \\text{3. Horizontal Range:} \\quad \\boxed{R = v t = 2\\sqrt{h(H - h)}}$$</div><p><strong>Maximum Range Condition:</strong> $R$ is maximum when $h = H - h \\implies \\boxed{h = \\frac{H}{2}}$ (hole exactly at mid-height of the liquid column), giving $\\boxed{R_{\\max} = H}$!</p></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Bernoulli's Equation &amp; Venturi Meter Flow Speed</div><p><strong>1. Bernoulli's Equation:</strong> For a volume $\\Delta V = A_1 v_1 \\Delta t = A_2 v_2 \\Delta t$ of mass $\\Delta m = \\rho \\Delta V$ moving from section 1 to section 2, Work-Energy Theorem ($W_{\\text{pressure}} + W_{\\text{gravity}} = \\Delta K$) gives:</p>$$(P_1 - P_2)\\Delta V - \\rho \\Delta V g(h_2 - h_1) = \\frac{1}{2}\\rho \\Delta V (v_2^2 - v_1^2) \\implies \\boxed{P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho gh_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho gh_2}$$<p><strong>2. Venturi Meter (Horizontal Pipe with Constriction $A_2 < A_1$):</strong><br/>Since $h_1 = h_2$, $P_1 - P_2 = \\frac{1}{2}\\rho(v_2^2 - v_1^2) = \\rho g \\Delta h$. Substituting $v_2 = \\frac{A_1}{A_2}v_1$ gives:</p>$$\\boxed{v_1 = A_2 \\sqrt{\\frac{2(P_1 - P_2)}{\\rho(A_1^2 - A_2^2)}} = A_2 \\sqrt{\\frac{2gh_m}{A_1^2 - A_2^2}}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 215' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='215' rx='8' fill='#080b12' stroke='#1e293b'/><rect x='70' y='25' width='120' height='165' fill='rgba(0,240,255,0.14)' stroke='#00f0ff' stroke-width='2'/><line x1='40' y1='190' x2='620' y2='190' stroke='#94a3b8' stroke-width='2'/><path d='M 190 65 Q 310 65 390 190' fill='none' stroke='#ffab00' stroke-width='2.5' stroke-dasharray='5,4'/><path d='M 190 107 Q 370 107 490 190' fill='none' stroke='#00e676' stroke-width='3'/><path d='M 190 150 Q 310 150 390 190' fill='none' stroke='#ffab00' stroke-width='2.5' stroke-dasharray='5,4'/><text x='390' y='206' fill='#ffab00' font-size='11' font-weight='bold' text-anchor='middle'>Same Range for h and H − h</text><text x='515' y='175' fill='#00e676' font-size='12' font-weight='bold'>Max Range R_max = H (at h = H/2)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Rocket-Like Reaction Thrust of Escaping Liquid Jet):</strong> When water squirts out of a hole of area $a$ at speed $v = \\sqrt{2gh}$, mass leaves at rate $\\frac{dm}{dt} = \\rho a v$. This exerts a backward reaction thrust force on the tank of magnitude $\\boxed{F_{\\text{thrust}} = v\\frac{dm}{dt} = \\rho a v^2 = 2\\rho a g h}$ (notice the factor of $2$, NOT $\\rho a g h$!).</li><li><strong>Trap 2 (Maximum Range Depends Only on $H$, Not on $g$ or $\\rho$!):</strong> Since $R = 2\\sqrt{h(H-h)}$, both density $\\rho$ and gravity $g$ cancel out completely! On the Moon, the water squirts out slower, but it also takes longer to fall, so it lands at the exact same horizontal distance $R$!</li></ul>"
+    },
+    {
+      "id": "fluids_t3_viscosity_stokes",
+      "title": "Viscosity, Poiseuille's Formula, Reynolds Number, Stokes' Law & Terminal Velocity",
+      "prerequisites": [
+        {
+          "label": "Differentiation & Differential Equations",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Newton's Law of Viscosity &amp; Poiseuille's Capillary Flow</div><div class='def-box'><strong>Velocity Gradient ($\\frac{dv}{dz}$):</strong><br/>When a viscous fluid flows over a fixed horizontal plate, the bottom layer in contact with the plate is stationary ($v = 0$), and each higher layer moves faster. The rate of change of velocity with perpendicular distance $z$ is called the <strong>Velocity Gradient</strong>.</div><div class='formula-highlight'>$$\\text{Viscous Force:} \\quad \\boxed{F = -\\eta A \\frac{dv}{dz}} \\qquad \\bigg| \\qquad \\text{SI Unit of } \\eta: \\; 1\\text{ Pa}\\cdot\\text{s} = 1\\text{ decapoise} = 10\\text{ Poise}$$</div><p><strong>Poiseuille's Formula (Volume Flow Rate through a Cylindrical Pipe of Radius $r$ and Length $L$):</strong></p><div class='formula-highlight'>$$\\boxed{Q = \\frac{dV}{dt} = \\frac{\\pi P r^4}{8 \\eta L} = \\frac{\\Delta P}{R_{\\text{fluid}}}} \\qquad \\left(\\text{where Fluid Resistance } R_{\\text{fluid}} = \\frac{8\\eta L}{\\pi r^4}\\right)$$</div></div><div class='concept-block'><div class='concept-title'>3.2 Stokes' Law &amp; Terminal Velocity ($v_T$)</div><div class='formula-highlight'>$$\\text{Stokes' Viscous Drag on a Sphere of Radius } r: \\quad \\boxed{F_v = 6\\pi \\eta r v}$$</div><div class='formula-highlight'>$$\\text{Terminal Velocity of Sphere } (\\text{density } \\rho \\text{ in fluid of density } \\sigma): \\quad \\boxed{v_T = \\frac{2 r^2 (\\rho - \\sigma) g}{9 \\eta}}$$</div><p><strong>Coalescence of $N$ Identical Drops (High-Frequency JEE Formula!):</strong><br/>If $N$ identical small droplets (each of radius $r$ and terminal speed $v_T$) merge to form 1 big drop of radius $R$, volume conservation gives $\\frac{4}{3}\\pi R^3 = N\\left(\\frac{4}{3}\\pi r^3\\right) \\implies \\mathbf{R = N^{1/3}r}$. Since $v_T \\propto r^2$:</p><div class='formula-highlight'>$$\\boxed{v_{T,\\text{big}} = N^{2/3} v_{T,\\text{small}}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Terminal Velocity &amp; Exponential Approach v(t)</div><p><strong>1. Terminal Velocity ($a = 0$):</strong> Equating downward weight $W = \\frac{4}{3}\\pi r^3 \\rho g$ to upward buoyancy $F_b = \\frac{4}{3}\\pi r^3 \\sigma g$ plus Stokes drag $6\\pi\\eta r v_T$:</p>$$\\frac{4}{3}\\pi r^3 (\\rho - \\sigma)g = 6\\pi\\eta r v_T \\implies \\boxed{v_T = \\frac{2r^2(\\rho - \\sigma)g}{9\\eta}}$$<p><strong>2. Velocity as a Function of Time before Reaching Terminal Speed:</strong></p>$$m\\frac{dv}{dt} = mg_{\\text{eff}} - 6\\pi\\eta r v \\implies \\boxed{v(t) = v_T\\left(1 - e^{-t/\\tau}\\right)} \\quad \\left(\\text{where } \\tau = \\frac{m}{6\\pi\\eta r}\\right)$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 195' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='195' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='60' y1='165' x2='620' y2='165' stroke='#94a3b8' stroke-width='2'/><line x1='60' y1='25' x2='60' y2='175' stroke='#94a3b8' stroke-width='2'/><line x1='60' y1='45' x2='610' y2='45' stroke='#ffab00' stroke-width='2' stroke-dasharray='5,4'/><path d='M 60 165 Q 140 50 600 46' fill='none' stroke='#00f0ff' stroke-width='3'/><text x='420' y='36' fill='#ffab00' font-size='12' font-weight='bold'>Asymptote: Terminal Velocity v_T = 2r²(ρ − σ)g / (9η)</text><text x='220' y='110' fill='#00f0ff' font-size='12' font-weight='bold'>v(t) = v_T (1 − e⁻ᵗ/ᵀ)</text><text x='340' y='185' fill='#94a3b8' font-size='11' text-anchor='middle'>Time t →</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Air Bubble Rising in Water — Negative $\\rho - \\sigma$):</strong> If an air bubble ($\\rho_{\\text{air}} \\approx 0$) is inside water of density $\\sigma$, then $\\rho - \\sigma < 0$, which means its terminal velocity is <strong>upward</strong> with magnitude $v_T = \\frac{2r^2 \\sigma g}{9\\eta}$!</li><li><strong>Trap 2 (Poiseuille's $r^4$ Sensitivity):</strong> Because volume flow rate $Q \\propto r^4$, halving the radius of an artery or capillary pipe reduces the flow rate to $\\frac{1}{16}$ of its original value (or requires $16\\times$ more pressure difference)!</li></ul>"
+    },
+    {
+      "id": "fluids_t4_surface_tension",
+      "title": "Surface Tension, Surface Energy, Excess Pressure in Drops/Bubbles & Capillary Rise",
+      "prerequisites": [
+        {
+          "label": "Work & Potential Energy",
+          "targetChapter": "ch05_work_energy_power",
+          "targetTopic": "wep_t1_work_work_energy_theorem"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Surface Tension ($S$) &amp; Surface Energy ($U$)</div><div class='def-box'><strong>Definition:</strong><br/><strong>Surface Tension ($S$)</strong> is the tangential force per unit length acting on either side of an imaginary line drawn on the free liquid surface, tending to minimize the surface area. Equivalently, it equals the <strong>Surface Energy per unit area</strong>:</div><div class='formula-highlight'>$$\\boxed{S = \\frac{F}{L} = \\frac{\\text{Work Done } (W)}{\\text{Increase in Free Surface Area } (\\Delta A)}} \\qquad \\left(\\text{SI Unit: } \\text{N/m} = \\text{J/m}^2, \\; [M^1 L^0 T^{-2}]\\right)$$</div></div><div class='concept-block'><div class='concept-title'>4.2 Excess Pressure Inside Liquid Drops &amp; Soap Bubbles</div><table class='data-table'><thead><tr><th>System</th><th>Free Surfaces</th><th>Surface Area $\\Delta A$</th><th>Excess Pressure ($P_{\\text{in}} - P_{\\text{out}}$)</th></tr></thead><tbody><tr><td><strong>1. Liquid Drop in Air</strong></td><td><strong>1</strong> (Outer only)</td><td>$4\\pi R^2$</td><td>$$\\Delta P = \\frac{2S}{R}$$</td></tr><tr><td><strong>2. Air Bubble Inside Liquid</strong></td><td><strong>1</strong> (Inner only)</td><td>$4\\pi R^2$</td><td>$$\\Delta P = \\frac{2S}{R}$$</td></tr><tr><td><strong>3. Soap Bubble in Air</strong></td><td><strong>2</strong> (Inner &amp; Outer)</td><td>$2 \\times (4\\pi R^2) = 8\\pi R^2$</td><td>$$\\Delta P = \\frac{4S}{R}$$</td></tr></tbody></table><p style='margin-top:12px;'><strong>Two Soap Bubbles in Contact (Radii $R_1$ and $R_2$ with $R_1 < R_2$):</strong><br/>1. When connected by a tube, air flows from the <strong>smaller bubble ($R_1$, higher pressure $4S/R_1$) into the larger bubble ($R_2$, lower pressure $4S/R_2$)</strong>!<br/>2. When two bubbles touch and share a common interface film, the radius of curvature $R_c$ of the common interface is:</p><div class='formula-highlight'>$$\\frac{4S}{R_c} = \\frac{4S}{R_1} - \\frac{4S}{R_2} \\implies \\boxed{R_c = \\frac{R_1 R_2}{R_2 - R_1}}$$</div></div><div class='concept-block'><div class='concept-title'>4.3 Capillarity &amp; Jurin's Law (Tube of Insufficient Length)</div><div class='formula-highlight'>$$\\text{Capillary Rise / Depression:} \\quad \\boxed{h = \\frac{2S\\cos\\theta}{r\\rho g} = \\frac{2S}{R_{\\text{meniscus}}\\rho g}} \\qquad \\left(\\text{where } R_{\\text{meniscus}} = \\frac{r}{\\cos\\theta}\\right)$$</div><p><strong>Jurin's Law for a Tube of Insufficient Length ($L < h$):</strong><br/>Since $h \\cdot R_{\\text{meniscus}} = \\frac{2S}{\\rho g} = \\text{Constant}$, if a capillary tube is cut to a height $h' < h$, <strong>liquid NEVER overflows like a fountain</strong>! Instead, the liquid rises to the top rim $h'$ and the meniscus flattens out to a larger radius $R'$ such that $\\boxed{h' R' = h R_{\\text{meniscus}}} \\implies h' \\cos\\theta = h \\cos\\theta'$.</p></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Virtual Work Proof of Excess Pressure inside a Soap Bubble (ΔP = 4S/R)</div><p>Suppose excess pressure $\\Delta P = P_{\\text{in}} - P_{\\text{out}}$ expands a soap bubble of radius $R$ by a tiny radial distance $dR$:</p><p><strong>Step 1 (Work done by excess pressure):</strong> $dW = F\\,dR = (\\Delta P \\cdot 4\\pi R^2)dR$.</p><p><strong>Step 2 (Increase in surface energy of 2 free surfaces):</strong> Total area is $A = 2(4\\pi R^2) = 8\\pi R^2$, so $dA = 16\\pi R\\,dR$, and $dU = S\\,dA = S(16\\pi R\\,dR)$.</p><p><strong>Step 3 (Equate $dW = dU$):</strong></p>$$(\\Delta P \\cdot 4\\pi R^2)dR = 16\\pi S R\\,dR \\implies \\boxed{\\Delta P = \\frac{4S}{R}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 195' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='195' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(50,20)'><rect x='20' y='95' width='180' height='65' fill='rgba(0,240,255,0.15)' stroke='#00f0ff'/><line x1='90' y1='15' x2='90' y2='145' stroke='#f0f4f8' stroke-width='2'/><line x1='130' y1='15' x2='130' y2='145' stroke='#f0f4f8' stroke-width='2'/><path d='M 90 45 Q 110 60 130 45' fill='none' stroke='#00e676' stroke-width='3'/><text x='110' y='175' fill='#00e676' font-size='11' font-weight='bold' text-anchor='middle'>Water (θ &lt; 90°): Concave Rise</text></g><g transform='translate(380,20)'><rect x='20' y='75' width='180' height='85' fill='rgba(255,0,85,0.15)' stroke='#ff0055'/><line x1='90' y1='15' x2='90' y2='145' stroke='#f0f4f8' stroke-width='2'/><line x1='130' y1='15' x2='130' y2='145' stroke='#f0f4f8' stroke-width='2'/><path d='M 90 115 Q 110 100 130 115' fill='none' stroke='#ffab00' stroke-width='3'/><text x='110' y='175' fill='#ffab00' font-size='11' font-weight='bold' text-anchor='middle'>Mercury (θ &gt; 90°): Convex Fall</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Sliding Wire on a Soap Film Frame — Factor of $2L$):</strong> A thin wire of length $L$ sliding on a U-shaped frame dipped in soap solution has <strong>two liquid-air surfaces</strong> (front and back), so the surface tension force pulling the wire is $\\mathbf{F = 2SL}$, NOT $SL$!</li><li><strong>Trap 2 (Energy Released vs. Absorbed in Splitting/Merging Drops):</strong><br/>&bull; <strong>Splitting 1 big drop of radius $R$ into $N$ small droplets ($r = R/N^{1/3}$):</strong> Total surface area <em>increases</em>, so work must be done ON the drop (heat is absorbed, temperature drops): $W = 4\\pi R^2 S (N^{1/3} - 1)$.<br/>&bull; <strong>Merging $N$ small droplets into 1 big drop:</strong> Total surface area <em>decreases</em>, so energy is <em>released</em> as heat (temperature rises): $\\Delta E = 4\\pi R^2 S (N^{1/3} - 1)$.</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have completed <strong>Chapter 09: Mechanical Properties of Fluids</strong> with full conceptual and mathematical depth! Every single equation—from hydrostatics and Bernoulli's energy law to Stokes' drag and capillarity—is ready for JEE Main and Advanced numericals.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Hydrostatics:</strong> $P = P_0 + \\rho gh$; Free surface tilt $\\tan\\theta = a_x/g$; Buoyancy $F_b = V_{\\text{sub}}\\rho_L g$.</li><li><strong>Hydrodynamics:</strong> Continuity $A_1 v_1 = A_2 v_2$; Bernoulli $P + \\frac{1}{2}\\rho v^2 + \\rho gh = \\text{const}$; Torricelli $v = \\sqrt{2gh}$, $R = 2\\sqrt{h(H-h)}$.</li><li><strong>Viscosity:</strong> $F = -\\eta A\\frac{dv}{dz}$; Poiseuille $Q = \\frac{\\pi P r^4}{8\\eta L}$; Stokes $F_v = 6\\pi\\eta r v$; Terminal speed $v_T = \\frac{2r^2(\\rho-\\sigma)g}{9\\eta}$.</li><li><strong>Surface Tension:</strong> $S = F/L = W/\\Delta A$; Drop $\\Delta P = 2S/R$; Soap bubble $\\Delta P = 4S/R$; Capillary rise $h = \\frac{2S\\cos\\theta}{r\\rho g}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th><th>Key Shortcut / Condition</th></tr></thead><tbody><tr><td>Torricelli Efflux &amp; Range</td><td>$v = \\sqrt{2gh}, \\quad R = 2\\sqrt{h(H-h)}$</td><td>Max range $R_{\\max} = H$ when hole is at $h = H/2$.</td></tr><tr><td>Poiseuille Pipe Flow</td><td>$Q = \\dfrac{\\pi \\Delta P r^4}{8\\eta L} = \\dfrac{\\Delta P}{R_{\\text{fluid}}}$</td><td>Series pipes: $R_{\\text{eq}} = R_1 + R_2$; Parallel: $1/R_{\\text{eq}} = 1/R_1 + 1/R_2$.</td></tr><tr><td>Terminal Velocity &amp; Merging</td><td>$v_T = \\dfrac{2r^2(\\rho - \\sigma)g}{9\\eta}, \\quad v_{\\text{big}} = N^{2/3}v_{\\text{small}}$</td><td>When $N$ drops coalesce, $R = N^{1/3}r$.</td></tr><tr><td>Splitting / Merging Drop Energy</td><td>$\\Delta U = 4\\pi R^2 S (N^{1/3} - 1)$</td><td>Splitting absorbs energy; merging releases energy.</td></tr><tr><td>Double Soap Bubble Interface</td><td>$R_c = \\dfrac{R_1 R_2}{R_2 - R_1}$</td><td>Bulges toward larger bubble $R_2$.</td></tr><tr><td>Capillary Rise (Jurin's Law)</td><td>$h = \\dfrac{2S\\cos\\theta}{r\\rho g}, \\quad h R_{\\text{meniscus}} = \\text{const}$</td><td>In a short tube ($h' < h$), liquid never overflows.</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch09_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A wooden block floats in water with $\\frac{3}{5}$ of its volume submerged. When placed in an unknown oil, it floats with $\\frac{3}{4}$ of its volume submerged. What is the density of the oil? ($\\rho_{\\text{water}} = 1000\\text{ kg/m}^3$)",
+      "options": [
+        "800 kg/m³",
+        "600 kg/m³",
+        "750 kg/m³",
+        "900 kg/m³"
+      ],
+      "answer": "800 kg/m³",
+      "explanation": "By the Law of Floatation, $\\frac{V_{\\text{sub}}}{V} = \\frac{\\rho_B}{\\rho_L}$. In water: $\\rho_B = \\frac{3}{5}(1000) = 600\\text{ kg/m}^3$. In oil: $\\frac{3}{4} = \\frac{600}{\\rho_{\\text{oil}}} \\implies \\rho_{\\text{oil}} = \\frac{4}{3}(600) = 800\\text{ kg/m}^3$."
+    },
+    {
+      "id": "ch09_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "The radius of a soap bubble is doubled from $R$ to $2R$. By what factor does the excess pressure inside the soap bubble change?",
+      "options": [
+        "Halved (1/2)",
+        "Doubled (2x)",
+        "Quadrupled (4x)",
+        "Unchanged"
+      ],
+      "answer": "Halved (1/2)",
+      "explanation": "Excess pressure inside a soap bubble is $\\Delta P = \\frac{4S}{R} \\propto \\frac{1}{R}$. Doubling the radius halves the excess pressure."
+    },
+    {
+      "id": "ch09_q03",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A cylindrical tank of height $H = 6.25\\text{ m}$ is open at the top and filled completely with water. A small hole is punched in the side wall at a height of $1.25\\text{ m}$ from the bottom. With what speed does the water jet emerge? ($g = 10\\text{ m/s}^2$)",
+      "options": [
+        "10 m/s",
+        "5 m/s",
+        "15 m/s",
+        "12.5 m/s"
+      ],
+      "answer": "10 m/s",
+      "explanation": "Depth of the hole below the free water surface is $h = H - y = 6.25 - 1.25 = 5.0\\text{ m}$. By Torricelli's Law, $v = \\sqrt{2gh} = \\sqrt{2(10)(5.0)} = \\sqrt{100} = 10\\text{ m/s}$."
+    },
+    {
+      "id": "ch09_q04",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A small spherical drop of water of radius $r$ falls freely in air and reaches a terminal velocity $v$. If $27$ such identical drops coalesce to form a single large drop, what will be the terminal velocity of the large drop?",
+      "options": [
+        "9v",
+        "3v",
+        "27v",
+        "81v"
+      ],
+      "answer": "9v",
+      "explanation": "Using $v_{\\text{big}} = N^{2/3}v_{\\text{small}}$ with $N = 27$: $v_{\\text{big}} = (27)^{2/3}v = (3^3)^{2/3}v = 3^2 v = 9v$."
+    },
+    {
+      "id": "ch09_q05",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A mercury drop of radius $R = 1\\text{ cm}$ is sprayed into $10^6$ droplets of equal size. If the surface tension of mercury is $S = 0.46\\text{ N/m}$, the work done (energy expended) in splitting the drop is:",
+      "options": [
+        "$5.72 \\times 10^{-2}\\text{ J}$",
+        "$5.78 \\times 10^{-4}\\text{ J}$",
+        "$1.84 \\times 10^{-2}\\text{ J}$",
+        "$3.62 \\times 10^{-3}\\text{ J}$"
+      ],
+      "answer": "$5.72 \\times 10^{-2}\\text{ J}$",
+      "explanation": "$W = 4\\pi R^2 S (N^{1/3} - 1) = 4(3.1416)(10^{-2})^2(0.46)((10^6)^{1/3} - 1) = 12.566 \\times 10^{-4} \\times 0.46 \\times (100 - 1) \\approx 5.72 \\times 10^{-2}\\text{ J}$."
+    },
+    {
+      "id": "ch09_q06",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "Two soap bubbles of radii $R_1 = 3\\text{ cm}$ and $R_2 = 4\\text{ cm}$ coalesce in vacuum under isothermal conditions to form a single bigger bubble of radius $R$. What is the value of $R$?",
+      "options": [
+        "5 cm",
+        "7 cm",
+        "3.5 cm",
+        "2.4 cm"
+      ],
+      "answer": "5 cm",
+      "explanation": "In vacuum ($P_0 = 0$), pressure inside a soap bubble is $P = \\frac{4S}{R}$ and volume is $V = \\frac{4}{3}\\pi R^3$. By ideal gas mole conservation at constant temperature ($n_1 + n_2 = n \\implies P_1 V_1 + P_2 V_2 = PV$): $\\left(\\frac{4S}{R_1}\\right)R_1^3 + \\left(\\frac{4S}{R_2}\\right)R_2^3 = \\left(\\frac{4S}{R}\\right)R^3 \\implies R^2 = R_1^2 + R_2^2 = 3^2 + 4^2 = 25 \\implies R = 5\\text{ cm}$."
+    },
+    {
+      "id": "ch09_q07",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "Water rises to a height $h = 10\\text{ cm}$ in a vertical glass capillary tube of zero contact angle ($\\theta = 0^\\circ$). If the tube is now cut so that only a length $h' = 5\\text{ cm}$ projects above the free water surface, what angle $\\theta'$ will the water meniscus make with the wall at the top rim?",
+      "options": [
+        "$60^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "Water overflows continuously"
+      ],
+      "answer": "$60^\\circ$",
+      "explanation": "By Jurin's adjustment rule for a short capillary tube, $h'\\cos\\theta' = h\\cos\\theta \\implies 5\\cos\\theta' = 10\\cos(0^\\circ) \\dots$ Wait: the radius of curvature of the meniscus increases from $R = r$ to $R' = 2r$, where $r = R'\\cos\\theta'$. Thus $\\frac{h'}{h} = \\frac{\\cos\\theta'}{\\cos\\theta} \\implies \\cos\\theta' = \\frac{5}{10}(1) = \\frac{1}{2} \\implies \\theta' = 60^\\circ$."
+    },
+    {
+      "id": "ch09_q08",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A large open tank is filled with water to a height $H$. A small hole of cross-sectional area $a$ is punched at the base of the tank. If the static friction coefficient between the tank (total mass $M$) and the horizontal floor is $\\mu$, what is the minimum value of $\\mu$ so that the tank does not start sliding backward due to the escaping jet?",
+      "options": [
+        "$\\frac{2\\rho a H}{M}$",
+        "$\\frac{\\rho a H}{M}$",
+        "$\\frac{\\rho a H}{2M}$",
+        "$\\frac{4\\rho a H}{M}$"
+      ],
+      "answer": "$\\frac{2\\rho a H}{M}$",
+      "explanation": "Efflux speed at base is $v = \\sqrt{2gH}$. The backward reaction thrust force of the jet is $F_{\\text{thrust}} = \\rho a v^2 = 2\\rho a g H$. For no sliding, $F_{\\text{thrust}} \\le \\mu M g \\implies 2\\rho a g H \\le \\mu M g \\implies \\mu_{\\min} = \\frac{2\\rho a H}{M}$."
+    }
+  ]
+}

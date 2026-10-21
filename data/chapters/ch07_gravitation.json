@@ -1,0 +1,104 @@
+{
+  "id": "ch07_gravitation",
+  "code": "07",
+  "title": "Gravitation",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Newton's Law of Gravitation, Shell Theorem, Variation of g (Altitude, Depth, Earth Rotation), Gravitational Field & Potential, Escape Velocity, Satellites & Kepler's Laws",
+  "classLevel": "Class 11",
+  "unit": "Mechanics II",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: Why Do Apples Fall and Planets Orbit?</div><p>In our everyday lives, gravity is simply the downward force that keeps us anchored to the ground. But in the 17th century, Sir Isaac Newton made one of the greatest unifications in human history: he realized that the exact same force pulling an apple toward the Earth (<strong>Gravity</strong>) is what keeps the Moon in orbit around the Earth, and the Earth in orbit around the Sun!</p><div class='def-box'><strong>Universal Gravitation:</strong><br/>Every single particle of matter in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them.</div></div>",
+  "topics": [
+    {
+      "id": "grav_t1_newton_law_shell",
+      "title": "Newton's Law of Gravitation & The Shell Theorem (Gravitational Force of Hollow & Solid Spheres)",
+      "prerequisites": [
+        {
+          "label": "Vectors & Definite Integrals",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Newton's Law of Gravitation Vector Form</div><div class='formula-highlight'>$$\\vec{F}_{12} = -\\frac{G m_1 m_2}{r^2} \\hat{r}_{12}$$</div><p>Where $G = 6.674 \\times 10^{-11}\\text{ N}\\cdot\\text{m}^2/\\text{kg}^2$ is the Universal Gravitational Constant. The minus sign indicates that the gravitational force is strictly <strong>attractive</strong>.</p></div><div class='concept-block'><div class='concept-title'>1.2 Newton's Shell Theorem (Crucial for Earth &amp; Planet Problems)</div><table class='data-table'><thead><tr><th>Position of Test Mass ($m$)</th><th>Gravitational Force Inside / Outside a Uniform Hollow Shell</th><th>Gravitational Force Inside / Outside a Uniform Solid Sphere</th></tr></thead><tbody><tr><td><strong>Outside ($r > R$)</strong></td><td>Acts as if all mass $M$ is concentrated at the center: $F = \\frac{GMm}{r^2}$</td><td>Acts as if all mass $M$ is concentrated at the center: $F = \\frac{GMm}{r^2}$</td></tr><tr><td><strong>Inside ($r < R$)</strong></td><td><strong>Zero! ($F = 0$)</strong> A test mass inside a hollow shell feels no net gravitational force.</td><td>Proportional to distance from center: $F = \\frac{GMm}{R^3}r$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Why Gravity Inside a Solid Sphere Proportional to r</div><p>For $r < R$, only the enclosed mass $M_{\\text{enclosed}} = M\\left(\\frac{r}{R}\\right)^3$ exerts force. Thus $F = \\frac{G(M_{\\text{enclosed}})m}{r^2} = \\frac{GMm}{R^3}r$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><path d='M 50 160 L 300 40 L 630 160' fill='none' stroke='#00f0ff' stroke-width='3'/><text x='300' y='30' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>Peak at Surface r = R</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Shell Theorem Inside):</strong> Do not forget that inside a hollow shell, the gravitational force is strictly zero.</li></ul>"
+    },
+    {
+      "id": "grav_t2_variation_of_g",
+      "title": "Variation of Acceleration Due to Gravity g (Altitude, Depth, Earth's Rotation & Shape)",
+      "prerequisites": [
+        {
+          "label": "Binomial Approximation",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t1_algebra_binomial"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Variation with Altitude ($h$), Depth ($d$) &amp; Latitude ($\\lambda$)</div><div class='formula-highlight'>$$\\text{1. Altitude } (h): \\quad g' = \\frac{GM}{(R+h)^2} \\approx g\\left(1 - \\frac{2h}{R}\\right) \\quad (\\text{when } h \\ll R)$$</div><div class='formula-highlight'>$$\\text{2. Depth } (d): \\quad g' = g\\left(1 - \\frac{d}{R}\\right)$$</div><div class='formula-highlight'>$$\\text{3. Rotation of Earth at Latitude } \\lambda: \\quad g' = g - R\\omega^2\\cos^2\\lambda$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Depth Formula</div><p>$g' = \\frac{G M_{\\text{enclosed}}}{(R-d)^2} = \\frac{G M (R-d)^3 / R^3}{(R-d)^2} = \\frac{GM}{R^2}\\left(1 - \\frac{d}{R}\\right) = g\\left(1 - \\frac{d}{R}\\right)$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><path d='M 50 160 L 340 50 L 630 160' fill='none' stroke='#00e676' stroke-width='3'/><text x='340' y='40' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Maximum g at Surface (r = R)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Binomial limit):</strong> Never use $g(1 - 2h/R)$ when $h$ is comparable to $R$.</li></ul>"
+    },
+    {
+      "id": "grav_t3_potential_escape_velocity",
+      "title": "Gravitational Field, Potential Energy, Gravitational Potential & Escape Velocity",
+      "prerequisites": [
+        {
+          "label": "Definite Integrals",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Potential &amp; Escape Speed Formulae</div><div class='formula-highlight'>$$\\text{Potential Energy:} \\quad U = -\\frac{GMm}{r} \\qquad \\bigg| \\qquad \\text{Gravitational Potential:} \\quad V = -\\frac{GM}{r}$$</div><div class='formula-highlight'>$$\\text{Escape Velocity from Planet Surface:} \\quad \\boxed{v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2\\text{ km/s (Earth)}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Escape Velocity</div><p>Total mechanical energy $E = \\frac{1}{2}mv_e^2 - \\frac{GMm}{R} = 0 \\implies v_e = \\sqrt{2gR}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><path d='M 50 40 Q 340 180 630 40' fill='none' stroke='#ff0055' stroke-width='3'/><text x='340' y='30' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>Gravitational Potential Well U(r) = −GMm / r</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Escape velocity is independent of the mass of the projectile!</li></ul>"
+    },
+    {
+      "id": "grav_t4_satellites_kepler_laws",
+      "title": "Satellite Motion: Orbital Speed, Total Energy, Binding Energy & Kepler's Three Laws",
+      "prerequisites": [
+        {
+          "label": "Circular Dynamics",
+          "targetChapter": "ch04_laws_of_motion",
+          "targetTopic": "nlm_t4_circular_dynamics"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Orbital Speed, Period &amp; Energy of a Satellite</div><div class='formula-highlight'>$$\\text{Orbital Speed } (v_o): \\quad \\boxed{v_o = \\sqrt{\\frac{GM}{r}} = \\frac{v_e}{\\sqrt{2}}}$$</div><div class='formula-highlight'>$$\\text{Orbital Period } (T): \\quad \\boxed{T = 2\\pi \\sqrt{\\frac{r^3}{GM}}}$$</div><div class='formula-highlight'>$$\\text{Total Energy of Satellite:} \\quad E = K + U = \\frac{GMm}{2r} - \\frac{GMm}{r} = \\boxed{-\\frac{GMm}{2r}}$$</div></div><div class='concept-block'><div class='concept-title'>4.2 Kepler's Three Laws of Planetary Motion</div><table class='data-table'><thead><tr><th>Law</th><th>Statement</th><th>Formula</th></tr></thead><tbody><tr><td><strong>1. Law of Orbits</strong></td><td>All planets move in elliptical orbits with the Sun at one focus.</td><td>Ellipse geometry</td></tr><tr><td><strong>2. Law of Areas</strong></td><td>A planet-Sun line sweeps out equal areas in equal time intervals (Conservation of Angular Momentum!).</td><td>$\\frac{dA}{dt} = \\frac{L}{2m} = \\text{constant}$</td></tr><tr><td><strong>3. Law of Periods</strong></td><td>The square of the orbital period is proportional to the cube of the semi-major axis.</td><td>$T^2 \\propto r^3$</td></tr></tbody></table></div>",
+      "derivationHtml": "<p><strong>Derivation of Kepler's Third Law ($T^2 \\propto r^3$):</strong></p>$$\\frac{mv_o^2}{r} = \\frac{GMm}{r^2} \\implies v_o = \\sqrt{\\frac{GM}{r}}$$<p>Since $T = \\frac{2\\pi r}{v_o}$, squaring both sides yields $T^2 = \\frac{4\\pi^2}{GM}r^3 \\implies T^2 \\propto r^3$.</p>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><ellipse cx='340' cy='95' rx='180' ry='70' fill='none' stroke='#00f0ff' stroke-width='2.5'/><circle cx='240' cy='95' r='10' fill='#ffab00'/><text x='240' y='125' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>Sun (Focus)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Total energy of a bound satellite is always negative ($E < 0$).</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 07: Gravitation</strong>!</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Force:</strong> $F = \\frac{GMm}{r^2}$.</li><li><strong>Gravity Variation:</strong> $g' = g(1 - 2h/R)$ or $g(1 - d/R)$.</li><li><strong>Escape Speed:</strong> $v_e = \\sqrt{2gR}$.</li><li><strong>Kepler:</strong> $T^2 \\propto r^3$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Escape Velocity</td><td>$v_e = \\sqrt{2gR}$</td></tr><tr><td>Orbital Speed</td><td>$v_o = \\sqrt{\\frac{GM}{r}}$</td></tr><tr><td>Kepler's Third Law</td><td>$\\frac{T_1^2}{T_2^2} = \\frac{r_1^3}{r_2^3}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch07_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Find the escape velocity from a planet whose mass is twice that of Earth and radius is half that of Earth ($v_e$ for Earth $= 11.2\\text{ km/s}$).",
+      "options": [
+        "22.4 km/s",
+        "11.2 km/s",
+        "31.7 km/s",
+        "15.8 km/s"
+      ],
+      "answer": "22.4 km/s",
+      "explanation": "$v_e = \\sqrt{\\frac{2GM}{R}}$. If $M' = 2M$ and $R' = R/2$, then $v_e' = \\sqrt{\\frac{2G(2M)}{R/2}} = 2\\sqrt{\\frac{2GM}{R}} = 2(11.2) = 22.4\\text{ km/s}$."
+    },
+    {
+      "id": "ch07_q02",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "If the radius of the Earth were to shrink by $1\\%$ while its mass remained unchanged, the acceleration due to gravity $g$ on its surface would:",
+      "options": [
+        "Increase by 2%",
+        "Decrease by 2%",
+        "Increase by 1%",
+        "Remain unchanged"
+      ],
+      "answer": "Increase by 2%",
+      "explanation": "$g = \\frac{GM}{R^2} \\implies \\frac{\\Delta g}{g} = -2\\frac{\\Delta R}{R} = -2(-1\\%) = +2\\%$ (increases by $2\\%$)."
+    }
+  ]
+}

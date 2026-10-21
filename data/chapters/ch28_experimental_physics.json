@@ -1,0 +1,82 @@
+{
+  "id": "ch28_experimental_physics",
+  "code": "28",
+  "title": "Experimental Physics & Lab Instruments",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Vernier Callipers (Normal & Retrograde), Screw Gauge & Spherometer, Zero Error & Correction, Simple Pendulum Error Analysis, Searle's Apparatus, Resonance Tube, Meter Bridge & Half-Deflection Method",
+  "classLevel": "Class 11 & 12",
+  "unit": "Experimental Skills",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: Guaranteed Marks in JEE Main &amp; Advanced</div><p>Every single JEE Main and JEE Advanced paper includes $1$ to $3$ direct questions from <strong>Experimental Physics</strong>&mdash;especially Vernier Callipers, Screw Gauge, Pendulum fractional errors, and electrical/optical lab setups. Mastering the universal Least Count and Zero Error formulas makes these the fastest, most guaranteed marks on the exam!</p></div>",
+  "topics": [
+    {
+      "id": "exp_t1_vernier_callipers_screw_gauge",
+      "title": "Vernier Callipers (Standard & Retrograde) & Screw Gauge / Micrometer (Least Count, Pitch & Zero Error)",
+      "prerequisites": [
+        {
+          "label": "Error Propagation Rules",
+          "targetChapter": "ch01_units_measurements",
+          "targetTopic": "u1_t3_errors_significant_figures"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Vernier Callipers: Universal Least Count &amp; Zero Correction Formulas</div><div class='def-box'><strong>General Least Count ($\\text{LC}$) Definition (Never Memorize Only $0.1\\text{ mm}$!):</strong><br/>In JEE Advanced, custom Vernier scales are frequently invented where $N$ Vernier Scale Divisions ($\\text{VSD}$) coincide with $M$ Main Scale Divisions ($\\text{MSD}$): $$N\\text{ VSD} = M\\text{ MSD} \\implies 1\\text{ VSD} = \\frac{M}{N}\\text{ MSD}$$</div><div class='formula-highlight'>$$\\textbf{Least Count (Standard Vernier } M < N\\textbf{):} \\qquad \\boxed{\\text{LC} = 1\\text{ MSD} - 1\\text{ VSD} = \\left(1 - \\frac{M}{N}\\right)\\text{MSD}}$$</div><p><em>Standard Example:</em> $10\\text{ VSD} = 9\\text{ MSD}$ with $1\\text{ MSD} = 1\\text{ mm} \\implies \\text{LC} = \\left(1 - \\frac{9}{10}\\right)(1\\text{ mm}) = 0.1\\text{ mm} = 0.01\\text{ cm}$.</p><div class='formula-highlight'>$$\\textbf{Universal Reading Formula:} \\qquad \\boxed{\\text{True Reading} = \\text{MSR} + (\\text{VSR} \\times \\text{LC}) - (\\pm\\text{Zero Error})}$$</div><ul class='clean-list'><li><strong>Positive Zero Error ($+e$):</strong> When jaws are closed, Vernier zero lies to the <strong>RIGHT</strong> of Main Scale zero. If the $k^{\\text{th}}$ Vernier division coincides: $\\boxed{\\text{Zero Error} = +k \\times \\text{LC}}$ (<strong>Subtract</strong> from observed reading!).</li><li><strong>Negative Zero Error ($-e$):</strong> When jaws are closed, Vernier zero lies to the <strong>LEFT</strong> of Main Scale zero. If the $k^{\\text{th}}$ Vernier division (out of $N$) coincides: $\\boxed{\\text{Zero Error} = -(N - k) \\times \\text{LC}}$ (Subtracting a negative means you <strong>ADD $(N - k)\\times \\text{LC}$</strong>!).</li></ul></div><div class='concept-block'><div class='concept-title'>1.2 Screw Gauge (Micrometer) &amp; Spherometer</div><div class='formula-highlight'>$$\\text{1. Pitch } (P): \\quad \\boxed{P = \\frac{\\text{Linear Distance Moved on Main Scale}}{\\text{Number of Full Rotations Given}}} \\qquad \\bigg| \\qquad \\text{2. Least Count:} \\quad \\boxed{\\text{LC} = \\frac{\\text{Pitch } (P)}{\\text{Total Circular Scale Divisions } (N)}}$$</div><div class='formula-highlight'>$$\\text{True Reading:} \\qquad \\boxed{\\text{Reading} = \\text{PSR (Pitch Scale Reading)} + (\\text{CSR} \\times \\text{LC}) - (\\pm\\text{Zero Error})}$$</div><ul class='clean-list'><li><strong>Positive Zero Error ($+e$):</strong> Zero of Circular Scale lies <strong>BELOW</strong> the reference line (say $k$ divisions below): $\\text{Zero Error} = +k \\times \\text{LC}$.</li><li><strong>Negative Zero Error ($-e$):</strong> Zero of Circular Scale lies <strong>ABOVE</strong> the reference line (say division $k$ out of $N$ coincides): $\\text{Zero Error} = -(N - k) \\times \\text{LC}$.</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>How to Solve Non-Standard / Sub-Multiple Vernier Scales When M &gt; N (e.g., N VSD = (2N − 1) MSD)</div><p>What if $10\\text{ VSD} = 19\\text{ MSD}$ so that $1\\text{ VSD} = 1.9\\text{ MSD}$ ($1\\text{ VSD}$ is nearly $2\\text{ MSD}$)? Then you compare $1\\text{ VSD}$ against $2\\text{ MSD}$ instead of $1\\text{ MSD}$:</p>$$\\boxed{\\text{LC}_{\\text{effective}} = 2\\text{ MSD} - 1\\text{ VSD} = (2 - 1.9)\\text{ MSD} = 0.1\\text{ MSD}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='75' fill='#00f0ff' font-size='13' font-weight='bold' text-anchor='middle'>Vernier LC = 1 MSD − 1 VSD = (1 − M/N) MSD   |   Screw Gauge LC = Pitch / N_circular</text><text x='340' y='125' fill='#00e676' font-size='12' text-anchor='middle'>True Reading = Observed Reading − (Zero Error)   [Subtract (+e), Add |−e|]</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Negative Zero Error Coinciding Division $k$):</strong> If a Screw Gauge with $100$ circular divisions has a negative zero error of $-4$ divisions, the circular scale division coinciding with the reference line when closed is $\\mathbf{100 - 4 = 96}$ (NOT $4$)! Conversely, if it is given that the $96^{\\text{th}}$ division coincides and zero is above the reference line, the zero error is $\\mathbf{-(100 - 96) \\times \\text{LC} = -4 \\times \\text{LC}}$!</li></ul>"
+    },
+    {
+      "id": "exp_t2_mechanics_optics_electricity_labs",
+      "title": "Standard Lab Experiments: Simple Pendulum, Searle's Young's Modulus, Resonance Tube, Meter Bridge & Half-Deflection Galvanometer",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Master Error Propagation Formulas for Standard Physics Practicals</div><table class='data-table'><thead><tr><th>Experiment</th><th>Working Formula</th><th>Maximum Fractional / Percentage Error Formula</th></tr></thead><tbody><tr><td><strong>1. Simple Pendulum ($g$)</strong><br/>($n$ oscillations take total time $t$, so $T = t/n$)</td><td>$$g = 4\\pi^2\\frac{L}{T^2} = 4\\pi^2\\frac{L n^2}{t^2}$$</td><td>$$\\boxed{\\frac{\\Delta g}{g} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta T}{T} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta t}{t}}$$<br/>(Notice: $\\frac{\\Delta T}{T} = \\frac{\\Delta t / n}{t / n} = \\frac{\\Delta t}{t}$, so measuring $n=100$ oscillations makes $t$ $100\\times$ larger and reduces $\\frac{\\Delta t}{t}$ by $100\\times$!)</td></tr><tr><td><strong>2. Searle's Young's Modulus ($Y$)</strong></td><td>$$Y = \\frac{4 M g L}{\\pi d^2 \\ell}$$</td><td>$$\\boxed{\\frac{\\Delta Y}{Y} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta d}{d} + \\frac{\\Delta \\ell}{\\ell}}$$</td></tr><tr><td><strong>3. Specific Resistance ($\\rho$)</strong> via Meter Bridge ($R = S\\frac{\\ell}{100-\\ell}$)</td><td>$$R = S\\left(\\frac{\\ell}{100 - \\ell}\\right), \\quad \\rho = \\frac{\\pi d^2 R}{4 L}$$</td><td>$$\\boxed{\\frac{\\Delta R}{R} = \\frac{\\Delta \\ell}{\\ell} + \\frac{\\Delta \\ell}{100 - \\ell}} \\quad \\left(\\text{Min error at } \\ell = 50\\text{ cm!}\\right)$$</td></tr><tr><td><strong>4. Half-Deflection Method</strong> for Galvanometer Resistance ($G$)</td><td>High series $R$ gives deflection $\\theta$; parallel shunt $S$ reduces deflection to $\\theta/2$:</td><td>$$\\boxed{G = \\frac{R \\cdot S}{R - S} \\approx S \\quad (\\text{when } R \\gg S)}$$<br/>Figure of Merit: $k = \\frac{\\mathcal{E}}{(R + G)\\theta}\\text{ A/div}$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Proof that Meter Bridge Percentage Error Is Minimum at the Midpoint (ℓ = 50 cm)</div><p>Taking logarithms of $R = S\\left(\\frac{\\ell}{100 - \\ell}\\right)$ (with fixed standard box $S$): $\\ln R = \\ln S + \\ln\\ell - \\ln(100 - \\ell)$. Differentiating and taking magnitudes for maximum error:</p>$$\\frac{\\Delta R}{R} = \\frac{\\Delta\\ell}{\\ell} + \\frac{\\Delta\\ell}{100 - \\ell} = \\frac{100\\,\\Delta\\ell}{\\ell(100 - \\ell)}$$<p>Since the denominator $\\ell(100 - \\ell)$ is maximum at $\\boxed{\\ell = 50\\text{ cm}}$, the percentage error in measuring unknown resistance $R$ is minimum when the null point lies near the middle of the meter bridge wire!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='75' fill='#ffab00' font-size='13' font-weight='bold' text-anchor='middle'>Pendulum Error: Δg/g = ΔL/L + 2(Δt/t)   |   Meter Bridge Error: ΔR/R = 100 Δℓ / [ℓ(100 − ℓ)]</text><text x='340' y='125' fill='#00f0ff' font-size='12' text-anchor='middle'>Half-Deflection Galvanometer Resistance:  G = R S / (R − S) ≈ S (for R ≫ S)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Lens/Mirror Error Propagation from $\\frac{1}{f} = \\frac{1}{v} \\pm \\frac{1}{u}$):</strong> Never write $\\frac{\\Delta f}{f} = \\frac{\\Delta v}{v} + \\frac{\\Delta u}{u}$! Differentiating $f^{-1} = v^{-1} \\pm u^{-1}$ gives $-\\frac{df}{f^2} = -\\frac{dv}{v^2} \\mp \\frac{du}{u^2}$, so for maximum error you MUST use: $$\\boxed{\\frac{\\Delta f}{f^2} = \\frac{\\Delta v}{v^2} + \\frac{\\Delta u}{u^2} \\implies \\Delta f = f^2\\left(\\frac{\\Delta v}{v^2} + \\frac{\\Delta u}{u^2}\\right)}$$</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>Congratulations! You have completed all <strong>29 Chapters (Chapters 00 to 28)</strong> of the Zero-to-JEE-Advanced Visual Physics Textbook!</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Vernier Callipers:</strong> $\\text{LC} = 1\\text{ MSD} - 1\\text{ VSD}$; $\\text{Reading} = \\text{MSR} + (\\text{VSR}\\times\\text{LC}) - \\text{ZE}$.</li><li><strong>Screw Gauge:</strong> $\\text{LC} = \\frac{\\text{Pitch}}{N}$; $\\text{Reading} = \\text{PSR} + (\\text{CSR}\\times\\text{LC}) - \\text{ZE}$.</li><li><strong>Lab Errors:</strong> Pendulum $\\frac{\\Delta g}{g} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta t}{t}$; Half-deflection $G = \\frac{RS}{R-S}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Instrument / Experiment</th><th>Master Formula</th></tr></thead><tbody><tr><td>Vernier Callipers LC</td><td>$\\text{LC} = 1\\text{ MSD} - 1\\text{ VSD} = \\left(1 - \\dfrac{M}{N}\\right)\\text{MSD}$</td></tr><tr><td>Screw Gauge LC</td><td>$\\text{LC} = \\dfrac{\\text{Pitch}}{N_{\\text{circular}}}$</td></tr><tr><td>Pendulum Fractional Error</td><td>$\\dfrac{\\Delta g}{g} = \\dfrac{\\Delta L}{L} + 2\\dfrac{\\Delta t}{t}$</td></tr><tr><td>Half-Deflection Method</td><td>$G = \\dfrac{R S}{R - S}, \\qquad k = \\dfrac{\\mathcal{E}}{(R + G)\\theta}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch28_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "In a custom Vernier Callipers, $N$ divisions on the main scale (where $1\\text{ MSD} = 1\\text{ mm}$) coincide with $(N + 1)$ divisions on the Vernier scale. What is the Least Count (in $\\text{cm}$) of this Vernier Callipers?",
+      "options": [
+        "$\\frac{1}{10(N + 1)}\\text{ cm}$",
+        "$\\frac{1}{N + 1}\\text{ cm}$",
+        "$\\frac{1}{10N}\\text{ cm}$",
+        "$\\frac{N}{10(N + 1)}\\text{ cm}$"
+      ],
+      "answer": "$\\frac{1}{10(N + 1)}\\text{ cm}$",
+      "explanation": "$(N + 1)\\text{ VSD} = N\\text{ MSD} \\implies 1\\text{ VSD} = \\frac{N}{N+1}\\text{ MSD}$. Thus $\\text{LC} = 1\\text{ MSD} - 1\\text{ VSD} = \\left(1 - \\frac{N}{N+1}\\right)(0.1\\text{ cm}) = \\frac{1}{10(N+1)}\\text{ cm}$."
+    },
+    {
+      "id": "ch28_q02",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A screw gauge has a pitch of $0.5\\text{ mm}$ and $50$ divisions on its circular scale. Before starting the measurement, when the jaws are closed, it is found that there is a negative zero error of $-3$ divisions. While measuring the diameter of a thin wire, the main scale reading is $3.5\\text{ mm}$ and the $24^{\\text{th}}$ circular division coincides with the reference line. What is the true diameter of the wire?",
+      "options": [
+        "3.77 mm",
+        "3.71 mm",
+        "3.74 mm",
+        "3.80 mm"
+      ],
+      "answer": "3.77 mm",
+      "explanation": "$\\text{LC} = \\frac{0.5\\text{ mm}}{50} = 0.01\\text{ mm}$. Zero error $= -3 \\times 0.01 = -0.03\\text{ mm}$. Observed reading $= 3.5 + 24(0.01) = 3.74\\text{ mm}$. True reading $= 3.74 - (-0.03) = 3.77\\text{ mm}$."
+    },
+    {
+      "id": "ch28_q03",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "In a simple pendulum experiment to determine $g$, the length of the pendulum is measured as $L = (100.0 \\pm 0.1)\\text{ cm}$, and the time for $100$ oscillations is measured using a stopwatch of least count $0.2\\text{ s}$ as $t = 200.0\\text{ s}$. What is the percentage error in the determination of $g$?",
+      "options": [
+        "0.3%",
+        "0.2%",
+        "0.5%",
+        "0.1%"
+      ],
+      "answer": "0.3%",
+      "explanation": "$\\frac{\\Delta g}{g} \\times 100\\% = \\left(\\frac{\\Delta L}{L} + 2\\frac{\\Delta t}{t}\\right) \\times 100\\% = \\left(\\frac{0.1}{100.0} + 2\\left(\\frac{0.2}{200.0}\\right)\\right) \\times 100\\% = (0.1\\% + 0.2\\%) = 0.3\\%$."
+    }
+  ]
+}

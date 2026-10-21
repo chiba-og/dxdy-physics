@@ -1,0 +1,159 @@
+{
+  "id": "ch10_thermal_matter",
+  "code": "10",
+  "title": "Thermal Properties of Matter",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Thermometry, Thermal Expansion (Linear, Area, Volume, Pendulums & Thermal Stress), Calorimetry, Phase Changes, Heat Conduction, Radiation (Stefan-Boltzmann & Wien's Laws) & Newton's Law of Cooling",
+  "classLevel": "Class 11",
+  "unit": "Heat & Thermodynamics",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: What Is the Difference Between Temperature and Heat?</div><p>In everyday conversation, people use the words <em>heat</em> and <em>temperature</em> interchangeably. In Physics, they are two completely different concepts!</p><div class='def-box'><strong>Temperature vs. Heat:</strong><br/>&bull; <strong>Temperature ($T$):</strong> A measure of the <em>average translational kinetic energy</em> of the molecules inside a body. It decides the <strong>direction</strong> of spontaneous thermal energy flow (always from higher $T$ to lower $T$).<br/>&bull; <strong>Heat ($Q$):</strong> Thermal energy <strong>in transit</strong> that flows from one body to another solely due to a temperature difference between them. A body never &ldquo;contains&rdquo; heat&mdash;it contains <em>Internal Energy ($U$)</em>!</div></div>",
+  "topics": [
+    {
+      "id": "therm_t1_thermometry_expansion",
+      "title": "Thermometry Scales, Linear/Area/Volume Thermal Expansion, Pendulum Clocks & Thermal Stress",
+      "prerequisites": [
+        {
+          "label": "Binomial Approximation",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t1_algebra_binomial"
+        },
+        {
+          "label": "Young's & Bulk Moduli",
+          "targetChapter": "ch08_mechanical_solids",
+          "targetTopic": "solids_t2_moduli_poisson"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Thermometry &amp; Universal Scale Conversion</div><div class='def-box'><strong>How Any Linear Thermometer Scale Works:</strong><br/>Between the Ice Point (Lower Fixed Point, $\\text{LFP}$) and Steam Point (Upper Fixed Point, $\\text{UFP}$), the fractional rise of any temperature reading $X$ is identical across all scales:</div><div class='formula-highlight'>$$\\boxed{\\frac{X - \\text{LFP}}{\\text{UFP} - \\text{LFP}} = \\frac{T_C - 0}{100 - 0} = \\frac{T_F - 32}{212 - 32} = \\frac{T_K - 273.15}{373.15 - 273.15}}$$</div><div class='formula-highlight'>$$\\text{For Temperature Differences } (\\Delta T): \\quad \\boxed{\\Delta T_C = \\Delta T_K = \\frac{5}{9}\\Delta T_F}$$</div></div><div class='concept-block'><div class='concept-title'>1.2 Thermal Expansion of Solids ($\\alpha$, $\\beta$, $\\gamma$)</div><p><strong>Why do solids expand when heated?</strong> Because the potential energy curve $U(r)$ between neighbouring atoms is <strong>asymmetric</strong> (steeper for compression than for stretching). As thermal vibrations increase, the average interatomic separation shifts outward!</p><table class='data-table'><thead><tr><th>Expansion Type</th><th>Defining Formula</th><th>Relation Among Coefficients (Isotropic Solid)</th></tr></thead><tbody><tr><td><strong>1. Linear Expansion ($\\alpha$)</strong></td><td>$L = L_0(1 + \\alpha \\Delta T)$</td><td>Base coefficient $\\alpha$ (Unit: $\\text{K}^{-1}$ or $^\\circ\\text{C}^{-1}$)</td></tr><tr><td><strong>2. Superficial / Area ($\\beta$)</strong></td><td>$A = A_0(1 + \\beta \\Delta T)$</td><td>$\\beta = 2\\alpha$ (For anisotropic: $\\beta = \\alpha_x + \\alpha_y$)</td></tr><tr><td><strong>3. Volumetric / Cubical ($\\gamma$)</strong></td><td>$V = V_0(1 + \\gamma \\Delta T)$</td><td>$\\gamma = 3\\alpha$ (Hence $\\boxed{\\alpha : \\beta : \\gamma = 1 : 2 : 3}$)</td></tr></tbody></table><p style='margin-top:12px;'><strong>3 Classic JEE Applications of Thermal Expansion:</strong></p><ul class='clean-list'><li><strong>1. Metal Pendulum Clock Time Loss/Gain:</strong> Since $T = 2\\pi\\sqrt{L/g} \\propto L^{1/2}$, by Binomial Approximation:<div class='formula-highlight'>$$\\boxed{\\frac{\\Delta T}{T} = \\frac{1}{2}\\alpha \\Delta\\theta} \\qquad \\left(\\text{Time lost per day } (86400\\text{ s}) = \\frac{1}{2}\\alpha \\Delta\\theta \\times 86400\\text{ s}\\right)$$</div></li><li><strong>2. Thermal Stress in a Clamped Rod:</strong> If a rod of Young's modulus $Y$ is rigidly clamped between two walls so its length cannot expand ($\\epsilon = \\alpha\\Delta T$):<div class='formula-highlight'>$$\\boxed{\\text{Thermal Stress } \\sigma = Y \\alpha \\Delta T \\implies \\text{Compressive Force } F = Y A \\alpha \\Delta T}$$</div></li><li><strong>3. Variation of Density with Temperature:</strong> Since mass $m$ is constant and $V = V_0(1 + \\gamma\\Delta T)$:<div class='formula-highlight'>$$\\boxed{\\rho = \\frac{\\rho_0}{1 + \\gamma\\Delta T} \\approx \\rho_0(1 - \\gamma\\Delta T)}$$</div></li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Proof that β = 2α and γ = 3α Using Binomial Approximation</div><p>Consider a square plate of side $L_0$. When heated by $\\Delta T$, its new side is $L = L_0(1 + \\alpha\\Delta T)$. Its new area is:</p>$$A = L^2 = L_0^2(1 + \\alpha\\Delta T)^2 = A_0(1 + 2\\alpha\\Delta T + \\alpha^2(\\Delta T)^2)$$<p>Since $\\alpha \\sim 10^{-5}\\text{ K}^{-1}$, the quadratic term $\\alpha^2(\\Delta T)^2 \\sim 10^{-8}$ is negligible, leaving $A \\approx A_0(1 + 2\\alpha\\Delta T) \\implies \\boxed{\\beta = 2\\alpha}$. Similarly, cubing $L = L_0(1+\\alpha\\Delta T)$ gives $V \\approx V_0(1 + 3\\alpha\\Delta T) \\implies \\boxed{\\gamma = 3\\alpha}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(40,20)'><line x1='20' y1='140' x2='260' y2='140' stroke='#94a3b8' stroke-width='2'/><line x1='20' y1='15' x2='20' y2='150' stroke='#94a3b8' stroke-width='2'/><path d='M 20 55 Q 90 135 245 75' fill='none' stroke='#00f0ff' stroke-width='3'/><circle cx='92' cy='102' r='5' fill='#00e676'/><text x='92' y='125' fill='#00e676' font-size='11' font-weight='bold' text-anchor='middle'>Min Volume at 4°C</text><text x='135' y='28' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>Anomalous Volume of Water V(T)</text></g><g transform='translate(360,20)'><line x1='20' y1='140' x2='260' y2='140' stroke='#94a3b8' stroke-width='2'/><line x1='20' y1='15' x2='20' y2='150' stroke='#94a3b8' stroke-width='2'/><path d='M 20 115 Q 90 35 245 95' fill='none' stroke='#ff0055' stroke-width='3'/><circle cx='92' cy='68' r='5' fill='#ffab00'/><text x='92' y='54' fill='#ffab00' font-size='11' font-weight='bold' text-anchor='middle'>Max Density at 4°C (1 g/cm³)</text><text x='135' y='28' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>Density of Water ρ(T)</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Does a Cavity or Hole Inside a Metal Plate Shrink or Expand When Heated?):</strong> Students often think the metal expands inward and makes the hole smaller. <strong>WRONG!</strong> Thermal expansion is exactly like a <strong>photographic enlargement</strong> (zooming in on a picture). Every single linear dimension&mdash;including the diameter of holes, cavities, and the gap in a C-ring&mdash;<strong>expands outward</strong> by the exact same factor $(1 + \\alpha\\Delta T)$!</li><li><strong>Trap 2 (Anomalous Expansion of Water between $0^\\circ\\text{C}$ and $4^\\circ\\text{C}$):</strong> When water is heated from $0^\\circ\\text{C}$ to $4^\\circ\\text{C}$, it <strong>contracts</strong> instead of expanding, reaching its <strong>minimum volume and maximum density ($1000\\text{ kg/m}^3$) at $4^\\circ\\text{C}$</strong>! Above $4^\\circ\\text{C}$, it expands normally.</li></ul>"
+    },
+    {
+      "id": "therm_t2_calorimetry_phase_change",
+      "title": "Calorimetry: Specific Heat, Latent Heat of Fusion/Vaporization, Heating Curves & Ice-Water-Steam Mixing",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Sensible Heat ($Q = ms\\Delta T$) vs. Latent Heat ($Q = mL$)</div><div class='def-box'><strong>Principle of Calorimetry (Conservation of Thermal Energy):</strong><br/>When two or more bodies at different temperatures are mixed inside an insulated calorimeter with no heat loss to the surroundings: $$\\boxed{\\text{Total Heat Lost by Hot Bodies} = \\text{Total Heat Gained by Cold Bodies}}$$</div><table class='data-table'><thead><tr><th>Heat Type</th><th>Formula</th><th>Physical Effect &amp; Water Constants to Memorize</th></tr></thead><tbody><tr><td><strong>1. Specific Heat ($s$)</strong><br/>(Temperature Change, Same Phase)</td><td>$$Q = m s \\Delta T$$</td><td>Changes temperature without changing state.<br/>&bull; $s_{\\text{water}} = 1\\text{ cal g}^{-1}\\,^\\circ\\text{C}^{-1} = 4200\\text{ J kg}^{-1}\\text{ K}^{-1}$<br/>&bull; $s_{\\text{ice}} = s_{\\text{steam}} = 0.5\\text{ cal g}^{-1}\\,^\\circ\\text{C}^{-1} = 2100\\text{ J kg}^{-1}\\text{ K}^{-1}$</td></tr><tr><td><strong>2. Latent Heat ($L$)</strong><br/>(Phase Change at Constant $T$)</td><td>$$Q = m L$$</td><td>Breaks intermolecular bonds at <strong>constant temperature</strong>!<br/>&bull; Latent heat of fusion of ice: $L_f = 80\\text{ cal/g} = 3.36 \\times 10^5\\text{ J/kg}$<br/>&bull; Latent heat of vaporization of steam: $L_v = 540\\text{ cal/g} = 2.26 \\times 10^6\\text{ J/kg}$</td></tr></tbody></table><p style='margin-top:10px;'><strong>Water Equivalent ($W$) of a Calorimeter Vessel:</strong> The mass of water that would absorb the same amount of heat per degree rise as the vessel: $\\boxed{W = \\frac{m_{\\text{vessel}} s_{\\text{vessel}}}{s_{\\text{water}}}}$.</p></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Step-by-Step Algorithm for Ice–Water–Steam Mixing Problems (Never Guess the Final State!)</div><p>Suppose $m_{\\text{ice}}$ grams of ice at $0^\\circ\\text{C}$ is mixed with $m_{\\text{water}}$ grams of water at $T_w^\\circ\\text{C}$. How do you know if all the ice melts?</p><p><strong>Step 1:</strong> Calculate the maximum heat the hot water can release when cooled all the way to $0^\\circ\\text{C}$: $Q_{\\text{available}} = m_{\\text{water}} (1) (T_w - 0)\\text{ cal}$.</p><p><strong>Step 2:</strong> Calculate the heat required to melt all the ice at $0^\\circ\\text{C}$: $Q_{\\text{needed}} = m_{\\text{ice}} \\times 80\\text{ cal}$.</p><p><strong>Step 3 (Compare $Q_{\\text{available}}$ vs. $Q_{\\text{needed}}$):</strong><br/>&bull; <strong>If $Q_{\\text{available}} < Q_{\\text{needed}}$:</strong> Not all ice melts! The final equilibrium temperature is <strong>strictly $T_{\\text{final}} = 0^\\circ\\text{C}$</strong>, and the mass of ice that melts is $m_{\\text{melted}} = \\frac{Q_{\\text{available}}}{80}$.<br/>&bull; <strong>If $Q_{\\text{available}} > Q_{\\text{needed}}$:</strong> All ice melts into water at $0^\\circ\\text{C}$, and the leftover heat $(Q_{\\text{available}} - Q_{\\text{needed}})$ warms the total water $(m_{\\text{ice}} + m_{\\text{water}})$ to $T_{\\text{final}} = \\frac{Q_{\\text{available}} - Q_{\\text{needed}}}{m_{\\text{ice}} + m_{\\text{water}}}$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 205' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='205' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='55' y1='175' x2='640' y2='175' stroke='#94a3b8' stroke-width='2'/><line x1='55' y1='20' x2='55' y2='185' stroke='#94a3b8' stroke-width='2'/><polyline points='55,165 120,130 220,130 310,60 560,60 625,25' fill='none' stroke='#00f0ff' stroke-width='3'/><text x='170' y='120' fill='#00e676' font-size='11' font-weight='bold' text-anchor='middle'>Melting (0°C, L_f=80)</text><text x='435' y='50' fill='#ff0055' font-size='11' font-weight='bold' text-anchor='middle'>Boiling (100°C, L_v=540)</text><text x='275' y='105' fill='#ffab00' font-size='11' font-weight='bold'>Slope = 1 / (m s)</text><text x='345' y='195' fill='#94a3b8' font-size='11' text-anchor='middle'>Heat Supplied Q → (Flat Plateaus = Phase Changes at Constant T)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Slope of $T$ vs. $Q$ Heating Graph):</strong> Since $\\Delta Q = ms\\Delta T \\implies \\frac{\\Delta T}{\\Delta Q} = \\frac{1}{ms}$, the <strong>slope of a Temperature vs. Heat graph is inversely proportional to specific heat capacity $s$</strong>! Steeper slope means <em>smaller</em> specific heat; longer horizontal flat plateau means <em>larger</em> latent heat ($L_v = 540 > L_f = 80$).</li></ul>"
+    },
+    {
+      "id": "therm_t3_heat_conduction",
+      "title": "Heat Transfer I — Conduction: Fourier's Law, Thermal Resistance, Series/Parallel Rods & Growth of Ice on Ponds",
+      "prerequisites": [
+        {
+          "label": "Differential Equations & Integration",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Fourier's Law of Heat Conduction &amp; The Ohm's Law Electrical Analogy</div><div class='def-box'><strong>Steady State Conduction:</strong><br/>In steady state, the temperature of every cross-section of a lagged rod becomes constant in time, and the heat current $H = \\frac{dQ}{dt}$ flowing into any cross-section equals the heat current flowing out!</div><div class='formula-highlight'>$$\\text{Heat Current:} \\quad \\boxed{H = \\frac{dQ}{dt} = -K A \\frac{dT}{dx} = \\frac{K A (T_1 - T_2)}{L} = \\frac{\\Delta T}{R_{\\text{th}}}} \\qquad \\left(\\text{Thermal Resistance } \\boxed{R_{\\text{th}} = \\frac{L}{K A}}\\right)$$</div><table class='data-table'><thead><tr><th>Electrical Quantity (Ohm's Law)</th><th>Thermal Conduction Equivalent</th></tr></thead><tbody><tr><td>Electric Current $I = \\frac{dq}{dt}$</td><td>Heat Current $H = \\frac{dQ}{dt}$ (Watts, $\\text{J/s}$)</td></tr><tr><td>Potential Difference $V_1 - V_2$</td><td>Temperature Difference $T_1 - T_2$ ($\\text{K}$ or $^\\circ\\text{C}$)</td></tr><tr><td>Electrical Resistance $R = \\frac{L}{\\sigma A}$</td><td>Thermal Resistance $R_{\\text{th}} = \\frac{L}{K A}$ ($\\text{K/W}$)</td></tr><tr><td><strong>Series Rods:</strong> $R_{\\text{eq}} = R_1 + R_2$</td><td>$$K_{\\text{eq, series}} = \\frac{L_1 + L_2}{\\frac{L_1}{K_1} + \\frac{L_2}{K_2}} \\quad \\left(\\text{For } L_1 = L_2: \\; \\frac{2K_1 K_2}{K_1 + K_2}\\right)$$</td></tr><tr><td><strong>Parallel Rods:</strong> $\\frac{1}{R_{\\text{eq}}} = \\frac{1}{R_1} + \\frac{1}{R_2}$</td><td>$$K_{\\text{eq, parallel}} = \\frac{K_1 A_1 + K_2 A_2}{A_1 + A_2} \\quad \\left(\\text{For } A_1 = A_2: \\; \\frac{K_1 + K_2}{2}\\right)$$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Classic JEE Derivation: Rate of Growth of Ice Thickness on a Frozen Lake</div><p>Suppose air above a lake is at sub-zero temperature $-\\theta^\\circ\\text{C}$, while water below the ice is at $0^\\circ\\text{C}$. At time $t$, the ice layer has thickness $y$. For an additional thickness $dy$ to freeze in time $dt$, latent heat $dQ = (\\rho A\\,dy)L_f$ must conduct upward through thickness $y$:</p>$$\\frac{dQ}{dt} = (\\rho A L_f)\\frac{dy}{dt} = \\frac{K A (0 - (-\\theta))}{y}$$<p>Separating variables and integrating from $y = y_1$ to $y = y_2$:</p>$$\\int_{y_1}^{y_2} y\\,dy = \\frac{K\\theta}{\\rho L_f}\\int_0^t dt \\implies \\boxed{t = \\frac{\\rho L_f}{2K\\theta}\\left(y_2^2 - y_1^2\\right) \\implies y \\propto \\sqrt{t}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><rect x='80' y='65' width='240' height='50' fill='rgba(255,0,85,0.2)' stroke='#ff0055' stroke-width='2'/><rect x='320' y='65' width='240' height='50' fill='rgba(0,240,255,0.2)' stroke='#00f0ff' stroke-width='2'/><text x='200' y='95' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>Rod 1 (K₁, L₁) — R_th1 = L₁/(K₁A)</text><text x='440' y='95' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>Rod 2 (K₂, L₂) — R_th2 = L₂/(K₂A)</text><text x='80' y='50' fill='#ffab00' font-size='12' font-weight='bold'>Hot End T₁</text><text x='320' y='50' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Junction T_J</text><text x='540' y='50' fill='#00f0ff' font-size='12' font-weight='bold'>Cold End T₂</text><text x='340' y='155' fill='#f0f4f8' font-size='12' text-anchor='middle'>At Junction: H₁ = H₂  ⇒  (T₁ − T_J) / R_th1 = (T_J − T₂) / R_th2</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Ice Thickness Ratio):</strong> Since $t \\propto y^2$, if it takes $t_1 = 1\\text{ hour}$ to form the first $1\\text{ cm}$ of ice ($y=0$ to $1\\text{ cm}$), forming the <em>next</em> $1\\text{ cm}$ of ice ($y=1\\text{ cm}$ to $2\\text{ cm}$) takes $t_2 \\propto (2^2 - 1^2) = \\mathbf{3\\text{ hours}}$, NOT $1\\text{ hour}$!</li></ul>"
+    },
+    {
+      "id": "therm_t4_radiation_newton_cooling",
+      "title": "Heat Transfer II — Thermal Radiation: Kirchhoff's Law, Stefan-Boltzmann Law, Wien's Displacement Law & Newton's Law of Cooling",
+      "prerequisites": [
+        {
+          "label": "Binomial Approximation & Exponentials",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t1_algebra_binomial"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Blackbody Radiation, Stefan-Boltzmann Law &amp; Wien's Displacement Law</div><div class='def-box'><strong>Ideal Blackbody &amp; Kirchhoff's Law:</strong><br/>An ideal blackbody absorbs $100\\%$ of all incident radiation ($a = 1, e = 1$). <strong>Kirchhoff's Law</strong> states that good absorbers at a given wavelength are also good emitters at that wavelength ($E_\\lambda / a_\\lambda = E_{\\lambda,\\text{blackbody}}$).</div><div class='formula-highlight'>$$\\textbf{1. Stefan-Boltzmann Law (Radiated Power):} \\quad \\boxed{P = \\frac{dQ}{dt} = e \\sigma A T^4} \\qquad \\bigg| \\qquad \\text{Net Loss in Surroundings } T_0: \\; \\boxed{P_{\\text{net}} = e \\sigma A (T^4 - T_0^4)}$$</div><p>Where $\\sigma = 5.67 \\times 10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4}$ is Stefan's constant, $e \\in [0, 1]$ is emissivity, and $T$ is <strong>strictly in Kelvin (K)</strong>!</p><div class='formula-highlight'>$$\\textbf{2. Wien's Displacement Law (Peak Wavelength } \\lambda_m\\text{):} \\quad \\boxed{\\lambda_m T = b = \\text{Constant}} \\qquad \\left(b \\approx 2.898 \\times 10^{-3}\\text{ m}\\cdot\\text{K}\\right)$$</div></div><div class='concept-block'><div class='concept-title'>4.2 Newton's Law of Cooling (Exact &amp; Average Forms)</div><div class='def-box'><strong>Condition:</strong><br/>When the temperature difference between a hot body ($T$) and its surroundings ($T_0$) is small, the rate of cooling ($-\\frac{dT}{dt}$) is directly proportional to $(T - T_0)$:</div><div class='formula-highlight'>$$\\text{1. Differential Form:} \\quad \\boxed{-\\frac{dT}{dt} = k(T - T_0)} \\qquad \\left(\\text{where } k = \\frac{4 e \\sigma A T_0^3}{ms}\\right)$$</div><div class='formula-highlight'>$$\\text{2. Average Numerical Form (Most Used in JEE!):} \\quad \\boxed{\\frac{T_1 - T_2}{t} = k\\left(\\frac{T_1 + T_2}{2} - T_0\\right)}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>How Stefan's T⁴ Law Reduces to Newton's Linear Cooling Law for Small ΔT</div><p>Let body temperature be $T = T_0 + \\Delta T$ where $\\Delta T \\ll T_0$. By Stefan's Law, net rate of heat loss is $ms\\left(-\\frac{dT}{dt}\\right) = e\\sigma A (T^4 - T_0^4)$:</p>$$T^4 - T_0^4 = (T_0 + \\Delta T)^4 - T_0^4 = T_0^4\\left[\\left(1 + \\frac{\\Delta T}{T_0}\\right)^4 - 1\\right] \\approx T_0^4\\left[1 + 4\\frac{\\Delta T}{T_0} - 1\\right] = 4 T_0^3 \\Delta T = 4 T_0^3 (T - T_0)$$<p>Therefore, $\\boxed{-\\frac{dT}{dt} = \\left(\\frac{4e\\sigma A T_0^3}{ms}\\right)(T - T_0) = k(T - T_0)}$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 195' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='195' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,15)'><line x1='20' y1='155' x2='280' y2='155' stroke='#94a3b8' stroke-width='2'/><line x1='20' y1='15' x2='20' y2='165' stroke='#94a3b8' stroke-width='2'/><path d='M 20 155 Q 80 10 140 95 T 265 152' fill='none' stroke='#00f0ff' stroke-width='3'/><path d='M 20 155 Q 115 65 180 120 T 265 154' fill='none' stroke='#ff0055' stroke-width='2.5'/><text x='110' y='30' fill='#00f0ff' font-size='11' font-weight='bold'>Higher T₂ (Shorter λ_m)</text><text x='165' y='88' fill='#ff0055' font-size='11' font-weight='bold'>Lower T₁</text><text x='150' y='173' fill='#94a3b8' font-size='11' text-anchor='middle'>Wien's Curve: λ_m T = b,  Area ∝ T⁴</text></g><g transform='translate(355,15)'><line x1='20' y1='155' x2='280' y2='155' stroke='#94a3b8' stroke-width='2'/><line x1='20' y1='15' x2='20' y2='165' stroke='#94a3b8' stroke-width='2'/><line x1='20' y1='125' x2='275' y2='125' stroke='#ffab00' stroke-dasharray='4,4'/><path d='M 20 25 Q 95 118 270 123' fill='none' stroke='#00e676' stroke-width='3'/><text x='145' y='65' fill='#00e676' font-size='11' font-weight='bold'>T(t) = T₀ + (T_i − T₀)e⁻ᵏᵗ</text><text x='205' y='142' fill='#ffab00' font-size='11'>Surroundings T₀</text><text x='150' y='173' fill='#94a3b8' font-size='11' text-anchor='middle'>Newton's Exponential Cooling Curve</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Putting Celsius into Stefan's $T^4$ or Wien's $\\lambda_m T = b$):</strong> In radiation laws, $T$ MUST be in <strong>absolute Kelvin ($T_K = T_C + 273$)</strong>! For example, $27^\\circ\\text{C} = 300\\text{ K}$ and $127^\\circ\\text{C} = 400\\text{ K}$.</li><li><strong>Trap 2 (Rate of Heat Loss $dQ/dt$ vs. Rate of Cooling $-dT/dt$):</strong> If two solid spheres of the same material and same surface temperature $T$ have radii $r_1$ and $r_2$:<ul><li><strong>Rate of Heat Loss ($dQ/dt = e\\sigma A(T^4 - T_0^4)$)</strong> is proportional to surface area $A \\propto r^2$.</li><li><strong>Rate of Cooling ($-dT/dt = \\frac{dQ/dt}{ms}$)</strong> is proportional to $\\frac{A}{V} = \\frac{4\\pi r^2}{\\frac{4}{3}\\pi r^3} \\propto \\mathbf{\\frac{1}{r}}$! Thus the smaller sphere cools down faster in degrees per second!</li></ul></li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 10: Thermal Properties of Matter</strong>! You are now ready to study how thermal energy is converted into mechanical work in <strong>Chapter 11: Thermodynamics</strong>.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Expansion:</strong> $\\beta = 2\\alpha$, $\\gamma = 3\\alpha$; Pendulum $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta\\theta$; Thermal stress $\\sigma = Y\\alpha\\Delta T$.</li><li><strong>Calorimetry:</strong> $Q = ms\\Delta T$ (temperature change) and $Q = mL$ (phase change at constant $T$).</li><li><strong>Conduction:</strong> $H = \\frac{\\Delta T}{R_{\\text{th}}}$ where $R_{\\text{th}} = \\frac{L}{KA}$; Ice growth $t = \\frac{\\rho L_f}{2K\\theta}(y_2^2 - y_1^2)$.</li><li><strong>Radiation:</strong> Stefan $P = e\\sigma A(T^4 - T_0^4)$; Wien $\\lambda_m T = b$; Newton cooling $\\frac{T_1 - T_2}{t} = k\\left(\\frac{T_1+T_2}{2} - T_0\\right)$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th><th>Key Notes</th></tr></thead><tbody><tr><td>Thermal Stress</td><td>$\\sigma = Y\\alpha\\Delta T, \\quad F = YA\\alpha\\Delta T$</td><td>Independent of rod length $L$!</td></tr><tr><td>Series Thermal Conductivity</td><td>$K_{\\text{eq}} = \\dfrac{L_1 + L_2}{\\frac{L_1}{K_1} + \\frac{L_2}{K_2}}$</td><td>Harmonic mean $\\dfrac{2K_1 K_2}{K_1+K_2}$ if $L_1 = L_2$.</td></tr><tr><td>Parallel Thermal Conductivity</td><td>$K_{\\text{eq}} = \\dfrac{K_1 A_1 + K_2 A_2}{A_1 + A_2}$</td><td>Arithmetic mean $\\dfrac{K_1+K_2}{2}$ if $A_1 = A_2$.</td></tr><tr><td>Wien's &amp; Stefan's Laws</td><td>$\\lambda_m T = b, \\quad P = e\\sigma A T^4$</td><td>$T$ must ALWAYS be in Kelvin!</td></tr><tr><td>Newton's Cooling Average</td><td>$\\dfrac{T_1 - T_2}{t} = k\\left(\\dfrac{T_1 + T_2}{2} - T_0\\right)$</td><td>Fastest way to solve JEE cooling problems.</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch10_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "At what temperature do the Celsius and Fahrenheit scales read the exact same numerical value?",
+      "options": [
+        "$-40^\\circ$",
+        "$+40^\\circ$",
+        "$-32^\\circ$",
+        "$0^\\circ$"
+      ],
+      "answer": "$-40^\\circ$",
+      "explanation": "Set $T_C = T_F = x$ in $\\frac{T_C}{5} = \\frac{T_F - 32}{9} \\implies 9x = 5x - 160 \\implies 4x = -160 \\implies x = -40^\\circ$."
+    },
+    {
+      "id": "ch10_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "How much heat in calories is required to convert $10\\text{ g}$ of ice at $-10^\\circ\\text{C}$ completely into steam at $100^\\circ\\text{C}$? ($s_{\\text{ice}} = 0.5\\text{ cal/g}^\\circ\\text{C}$, $L_f = 80\\text{ cal/g}$, $s_{\\text{water}} = 1\\text{ cal/g}^\\circ\\text{C}$, $L_v = 540\\text{ cal/g}$)",
+      "options": [
+        "7250 cal",
+        "6200 cal",
+        "7200 cal",
+        "5400 cal"
+      ],
+      "answer": "7250 cal",
+      "explanation": "Add the 4 stages: (1) Ice $-10^\\circ\\text{C} \\to 0^\\circ\\text{C}$: $10(0.5)(10) = 50\\text{ cal}$. (2) Melt ice at $0^\\circ\\text{C}$: $10(80) = 800\\text{ cal}$. (3) Water $0^\\circ\\text{C} \\to 100^\\circ\\text{C}$: $10(1)(100) = 1000\\text{ cal}$. (4) Boil to steam at $100^\\circ\\text{C}$: $10(540) = 5400\\text{ cal}$. Total $= 50 + 800 + 1000 + 5400 = 7250\\text{ cal}$."
+    },
+    {
+      "id": "ch10_q03",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A body cools from $60^\\circ\\text{C}$ to $50^\\circ\\text{C}$ in $10\\text{ minutes}$ when the surrounding room temperature is $25^\\circ\\text{C}$. What will be its temperature at the end of the next $10\\text{ minutes}$?",
+      "options": [
+        "$42.85^\\circ\\text{C}$",
+        "$40.0^\\circ\\text{C}$",
+        "$45.0^\\circ\\text{C}$",
+        "$38.5^\\circ\\text{C}$"
+      ],
+      "answer": "$42.85^\\circ\\text{C}$",
+      "explanation": "First interval: $\\frac{60 - 50}{10} = k\\left(\\frac{60+50}{2} - 25\\right) \\implies 1 = 30k \\implies k = \\frac{1}{30}$. Second interval (from $50^\\circ\\text{C}$ to $T$): $\\frac{50 - T}{10} = \\frac{1}{30}\\left(\\frac{50 + T}{2} - 25\\right) = \\frac{T}{60} \\implies 6(50 - T) = T \\implies 300 = 7T \\implies T = \\frac{300}{7} \\approx 42.85^\\circ\\text{C}$."
+    },
+    {
+      "id": "ch10_q04",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "Two rods of identical dimensions having thermal conductivities $K_1 = 60\\text{ W/m}\\cdot\\text{K}$ and $K_2 = 40\\text{ W/m}\\cdot\\text{K}$ are joined end-to-end in series. What is the equivalent thermal conductivity $K_{\\text{eq}}$ of the composite rod?",
+      "options": [
+        "48 W/m·K",
+        "50 W/m·K",
+        "100 W/m·K",
+        "24 W/m·K"
+      ],
+      "answer": "48 W/m·K",
+      "explanation": "For two equal-length rods in series, $K_{\\text{eq}} = \\frac{2K_1 K_2}{K_1 + K_2} = \\frac{2(60)(40)}{60 + 40} = \\frac{4800}{100} = 48\\text{ W/m}\\cdot\\text{K}$."
+    },
+    {
+      "id": "ch10_q05",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "If the temperature of a blackbody is increased by $50\\%$ (from $T$ to $1.5T$), by what percentage does the rate of energy radiated by it increase?",
+      "options": [
+        "406.25%",
+        "50%",
+        "225%",
+        "506.25%"
+      ],
+      "answer": "406.25%",
+      "explanation": "By Stefan's Law, $P \\propto T^4$. When $T' = 1.5T = \\frac{3}{2}T$, the new power is $P' = \\left(\\frac{3}{2}\\right)^4 P = \\frac{81}{16}P = 5.0625 P$. Therefore, the percentage increase is $(5.0625 - 1) \\times 100\\% = 406.25\\%$."
+    },
+    {
+      "id": "ch10_q06",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "50 g of ice at $0^\\circ\\text{C}$ is mixed with 50 g of water at $60^\\circ\\text{C}$ in an insulated vessel. What is the final temperature of the mixture, and how much ice remains unmelted?",
+      "options": [
+        "Final T = 0°C, 12.5 g of ice remains unmelted",
+        "Final T = 30°C, 0 g ice remains",
+        "Final T = 0°C, 25 g of ice remains unmelted",
+        "Final T = 10°C, 0 g ice remains"
+      ],
+      "answer": "Final T = 0°C, 12.5 g of ice remains unmelted",
+      "explanation": "Heat available from cooling 50 g of water from $60^\\circ\\text{C}$ to $0^\\circ\\text{C}$ is $Q_{\\text{avail}} = 50(1)(60) = 3000\\text{ cal}$. Heat required to melt all 50 g of ice is $Q_{\\text{needed}} = 50(80) = 4000\\text{ cal}$. Since $Q_{\\text{avail}} < Q_{\\text{needed}}$, final temperature stays at $0^\\circ\\text{C}$! Mass of ice melted $= \\frac{3000}{80} = 37.5\\text{ g}$, so $50 - 37.5 = 12.5\\text{ g}$ of ice remains unmelted."
+    }
+  ]
+}

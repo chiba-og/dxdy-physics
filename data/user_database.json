@@ -1,0 +1,146 @@
+{
+  "version": 2,
+  "activeProfileId": "prof_default",
+  "profiles": {
+    "prof_default": {
+      "id": "prof_default",
+      "createdAt": "2026-10-19T21:36:46.451Z",
+      "lastActiveAt": "2026-10-20T07:50:11.017Z",
+      "profile": {
+        "studentName": "Scholar",
+        "currentClass": "Class 11",
+        "targetExam": "JEE Main & Advanced",
+        "jeeMainDate": "2028-01-24",
+        "jeeAdvDate": "2028-05-28",
+        "boardExamDate": "2027-03-01",
+        "dailyGoalHours": 6,
+        "schoolAlerts": [
+          {
+            "id": "al-1",
+            "title": "Physics Practical Lab Manual Submission",
+            "dueDate": "2026-11-05",
+            "category": "Practical"
+          },
+          {
+            "id": "al-2",
+            "title": "Rotational Motion Coaching Minor Test",
+            "dueDate": "2026-10-28",
+            "category": "Test"
+          }
+        ]
+      },
+      "theme": {
+        "mode": "dark",
+        "accent": "#00e676",
+        "secondaryAccent": "#ff0055",
+        "fontFamily": "'JetBrains Mono', monospace",
+        "wallpaperType": "cyber",
+        "wallpaperUrl": "",
+        "uiSounds": true,
+        "logoVariant": "slash"
+      },
+      "progress": {
+        "ch14_waves": {
+          "stars": 1,
+          "bookmarked": false,
+          "completed": false
+        }
+      },
+      "revisionQueue": {},
+      "lastVisited": {
+        "chapterId": "ch00_basic_maths",
+        "topicId": null,
+        "updatedAt": "2026-10-20T07:49:40.552Z"
+      },
+      "seenQuestions": [
+        "ch01_q08",
+        "ch01_q09",
+        "ch01_q10",
+        "ch01_q11",
+        "ch01_q12",
+        "ch01_q13",
+        "ch01_q14",
+        "ch01_q15"
+      ],
+      "notes": {},
+      "tasks": [
+        {
+          "id": "t-1",
+          "text": "Complete Basic Mathematics Calculus Derivations",
+          "completed": false,
+          "priority": "High"
+        },
+        {
+          "id": "t-2",
+          "text": "Solve 25 Kinematics 2D Projectile PYQs",
+          "completed": false,
+          "priority": "High"
+        }
+      ],
+      "distractionLogs": [
+        {
+          "date": "Mon",
+          "productive": 5.5,
+          "distracted": 1.5,
+          "school": 6
+        },
+        {
+          "date": "Tue",
+          "productive": 6,
+          "distracted": 1,
+          "school": 6
+        },
+        {
+          "date": "Wed",
+          "productive": 4.5,
+          "distracted": 2,
+          "school": 6
+        },
+        {
+          "date": "Thu",
+          "productive": 7,
+          "distracted": 0.8,
+          "school": 6
+        },
+        {
+          "date": "Fri",
+          "productive": 6.5,
+          "distracted": 1.2,
+          "school": 6
+        },
+        {
+          "date": "Sat",
+          "productive": 8.5,
+          "distracted": 1.5,
+          "school": 0
+        },
+        {
+          "date": "Sun",
+          "productive": 9,
+          "distracted": 1,
+          "school": 0
+        }
+      ],
+      "journalEntries": [],
+      "customActivities": [
+        "Drawing",
+        "Hip-Hop Dance",
+        "Guitar Practice",
+        "Martial Arts / Sports"
+      ],
+      "customMetrics": [
+        "Concept Clarity (1-10)",
+        "Mock Test Accuracy (%)"
+      ],
+      "testHistory": [
+        {
+          "date": "10/17/2026",
+          "score": -8,
+          "maxScore": 32,
+          "correct": 0,
+          "wrong": 8
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "id": "ch22_ray_optics",
+  "code": "22",
+  "title": "Ray (Geometric) Optics & Optical Instruments",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Reflection, Spherical Mirrors, Snell's Law, Total Internal Reflection (TIR), Refraction at Curved Surfaces, Lens Maker's Formula, Prism Deviation, Optical Instruments (Microscopes & Telescopes)",
+  "classLevel": "Class 12",
+  "unit": "Optics",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: When Can Light Be Treated as a Straight Line?</div><p>In Chapter 21, we saw that light is an electromagnetic wave with wavelengths ranging from $400\\text{ nm}$ to $700\\text{ nm}$. If light is a wave, why do we draw straight lines (rays) and use geometry in mirrors and lenses?</p><p style='margin-top:8px;'>The answer lies in the obstacle size: <strong>Whenever the size of mirrors, lenses, and apertures is very large compared to the wavelength of light ($\\lambda \\ll D$), wave diffraction effects become negligible</strong>, and light energy travels along rectilinear paths called <strong>light rays</strong>. This simplification is called <strong>Geometric or Ray Optics</strong>.</p><div class='def-box'><strong>The Sign Convention Rules (Cartesian Coordinate System):</strong><ol class='clean-list'><li>All distances are measured starting from the <strong>Pole (for mirrors)</strong> or <strong>Optical Center (for lenses)</strong> as the origin $(0,0)$.</li><li>The <strong>incident light ray ALWAYS travels from left to right</strong>. Distances measured along the direction of incident light are <strong>positive ($+$)</strong>; distances measured against the incident light are <strong>negative ($-$)</strong>.</li><li>Heights measured <strong>above</strong> the principal axis are positive ($+$); heights measured <strong>below</strong> are negative ($-$).</li></ol></div></div>",
+  "topics": [
+    {
+      "id": "opt_t1_reflection_mirrors",
+      "title": "Laws of Reflection, Spherical Mirrors, Mirror Formula, Magnification & Velocity of Image",
+      "prerequisites": [
+        {
+          "label": "Differentiation (for Velocity of Image)",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t4_limits_differentiation"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Spherical Mirror Formula &amp; Magnification</div><div class='formula-highlight'>$$\\text{Mirror Formula:} \\quad \\boxed{\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}} \\qquad \\left(\\text{Focal Length } f = \\frac{R}{2} \\text{ for both concave and convex mirrors}\\right)$$</div><div class='formula-highlight'>$$\\text{Transverse (Lateral) Magnification } (m): \\quad \\boxed{m = \\frac{h_i}{h_o} = -\\frac{v}{u} = \\frac{f}{f - u} = \\frac{f - v}{f}}$$</div><ul class='clean-list'><li><strong>Concave Mirror:</strong> $f < 0$, $R < 0$. Real images have $m < 0$ (inverted); virtual images have $m > 0$ (erect).</li><li><strong>Convex Mirror:</strong> $f > 0$, $R > 0$. Always forms diminished, virtual, erect images ($0 < m < 1$).</li></ul></div><div class='concept-block'><div class='concept-title'>1.2 Velocity of Image for Moving Objects</div><p><strong>1. Longitudinal (Axial) Velocity of Image (Object moving along principal axis):</strong><br/>Differentiating $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}$ with respect to time $t$ gives $\\frac{dv}{dt} = -\\left(\\frac{v}{u}\\right)^2 \\frac{du}{dt}$:</p><div class='formula-highlight'>$$\\boxed{v_{\\text{image/mirror}} = -m^2 \\times v_{\\text{object/mirror}}}$$</div><p><strong>2. Transverse Velocity (Object moving perpendicular to principal axis):</strong> $v_{iy} = -m \\cdot v_{oy}$.</p></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Mirror Formula 1/f = 1/v + 1/u</div><p>Consider a concave mirror with pole $P$, focus $F$, and center of curvature $C$. For a paraxial ray making small angles with the principal axis, geometry of similar triangles yields $\\frac{-u - (-f)}{-f} = \\frac{-f}{-v - (-f)} \\implies \\frac{u - f}{f} = \\frac{f}{v - f} \\implies (u-f)(v-f) = f^2 \\implies uv - uf - vf + f^2 = f^2$. Dividing by $uvf$ gives $\\boxed{\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}}$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(35,20)'><line x1='20' y1='85' x2='260' y2='85' stroke='#94a3b8' stroke-width='2'/><path d='M 140 20 Q 90 85 140 150' fill='none' stroke='#00f0ff' stroke-width='3'/><circle cx='115' cy='85' r='4' fill='#ffab00'/><circle cx='90' cy='85' r='4' fill='#ff0055'/><text x='112' y='108' fill='#ffab00' font-size='11' font-weight='bold'>F</text><text x='87' y='108' fill='#ff0055' font-size='11' font-weight='bold'>C</text><text x='140' y='175' fill='#f0f4f8' font-size='11' text-anchor='middle'>Concave Mirror (f &lt; 0, R &lt; 0)</text></g><g transform='translate(355,20)'><line x1='20' y1='85' x2='260' y2='85' stroke='#94a3b8' stroke-width='2'/><path d='M 140 20 Q 180 85 140 150' fill='none' stroke='#ff0055' stroke-width='3'/><circle cx='165' cy='85' r='4' fill='#ffab00'/><circle cx='190' cy='85' r='4' fill='#ff0055'/><text x='162' y='108' fill='#ffab00' font-size='11' font-weight='bold'>F</text><text x='187' y='108' fill='#ff0055' font-size='11' font-weight='bold'>C</text><text x='140' y='175' fill='#f0f4f8' font-size='11' text-anchor='middle'>Convex Mirror (f &gt; 0, R &gt; 0)</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Longitudinal Magnification $m_L$ for Finite Objects):</strong> While infinitesimal axial length has $m_L = -m^2$, for a finite object of length $L$ placed along the axis between $u_1$ and $u_2$, the exact image length is $\\Delta v = |v_2 - v_1|$ (do not blindly use $m^2 L$ unless the object is extremely small!).</li></ul>"
+    },
+    {
+      "id": "opt_t2_refraction_snell_tir",
+      "title": "Refraction at Plane Surfaces, Snell's Law, Apparent Depth, Total Internal Reflection (TIR) & Critical Angle",
+      "prerequisites": [
+        {
+          "label": "Trigonometry & Sine Rule",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t2_trigonometry_phasors"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Snell's Law of Refraction &amp; Apparent Depth</div><div class='formula-highlight'>$$\\text{Snell's Law:} \\quad \\boxed{\\mu_1 \\sin i = \\mu_2 \\sin r \\iff \\frac{\\sin i}{\\sin r} = \\frac{\\mu_2}{\\mu_1} = {}^{1}\\mu_2 = \\frac{v_1}{v_2} = \\frac{\\lambda_1}{\\lambda_2}}$$</div><div class='def-box'><strong>Apparent Depth ($h_{\\text{apparent}}$) in a Denser Medium (Refractive Index $\\mu$):</strong><br/>If an object at the bottom of a pond of depth $h$ is viewed vertically from above in air ($\\mu_{\\text{air}} = 1$):</div><div class='formula-highlight'>$$\\boxed{h_{\\text{apparent}} = \\frac{h_{\\text{real}}}{\\mu}} \\qquad \\bigg| \\qquad \\text{Apparent Shift:} \\quad \\Delta h = h_{\\text{real}} - h_{\\text{apparent}} = h_{\\text{real}}\\left(1 - \\frac{1}{\\mu}\\right)$$</div><p>If viewed through multiple stacked layers of liquids of thicknesses $h_1, h_2, \\dots$ and refractive indices $\\mu_1, \\mu_2, \\dots$: $\\boxed{h_{\\text{app}} = \\frac{h_1}{\\mu_1} + \\frac{h_2}{\\mu_2} + \\dots}$.</p></div><div class='concept-block'><div class='concept-title'>1.2 Total Internal Reflection (TIR) &amp; Critical Angle ($\\theta_c$)</div><div class='formula-highlight'>$$\\text{Critical Angle } (\\theta_c): \\quad \\boxed{\\sin\\theta_c = \\frac{\\mu_{\\text{rarer}}}{\\mu_{\\text{denser}}} = \\frac{1}{\\mu}}$$</div><ul class='clean-list'><li><strong>Condition for TIR:</strong> (1) Light must travel from a <strong>denser medium to a rarer medium</strong> ($\\mu_1 > \\mu_2$), and (2) Angle of incidence in the denser medium must exceed critical angle ($i > \\theta_c$).</li><li><strong>Optical Fibers:</strong> Core of refractive index $\\mu_1$ surrounded by cladding of lower refractive index $\\mu_2$ (${\\mu_1 > \\mu_2}$). Light undergoes repeated TIR with zero energy loss.</li><li><strong>Radius of Bright Circle (Illuminated Disk) Seen from Underwater:</strong> A diver or fish looking upward sees all outside world light compressed inside a circular cone of semi-vertical angle equal to $\\theta_c$:<div class='formula-highlight'>$$\\boxed{R = h \\tan\\theta_c = \\frac{h}{\\sqrt{\\mu^2 - 1}}}$$</div></li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Illuminated Bright Circular Radius R = h / √(μ² − 1) Underwater</div><p>For a point light source at depth $h$ underwater (refractive index $\\mu$), rays striking the surface at angle of incidence $i = \\theta_c$ refract at $r = 90^\\circ$ and skim along the water surface. From geometry, $\\tan\\theta_c = \\frac{R}{h}$. Since $\\sin\\theta_c = \\frac{1}{\\mu} \\implies \\tan\\theta_c = \\frac{1}{\\sqrt{\\mu^2 - 1}}$:</p>$$\\boxed{R = h \\tan\\theta_c = \\frac{h}{\\sqrt{\\mu^2 - 1}}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='40' y1='95' x2='640' y2='95' stroke='#00f0ff' stroke-width='2.5'/><text x='55' y='82' fill='#00f0ff' font-size='11' font-weight='bold'>Air (Rarer, μ₂)</text><text x='55' y='115' fill='#00e676' font-size='11' font-weight='bold'>Water (Denser, μ₁)</text><path d='M 340 160 L 340 95 L 430 40' fill='none' stroke='#ff0055' stroke-width='3'/><path d='M 340 95 L 520 95' fill='none' stroke='#ffab00' stroke-width='2.5' stroke-dasharray='5,4'/><text x='355' y='128' fill='#ff0055' font-size='11' font-weight='bold'>θ_c</text><text x='445' y='85' fill='#ffab00' font-size='11' font-weight='bold'>Skimming Ray (r = 90°)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Frequency Does NOT Change During Refraction):</strong> When light passes from air into glass, its speed ($v = c/\\mu$) and wavelength ($\\lambda = \\lambda_0/\\mu$) both <strong>decrease by a factor of $\\mu$</strong>, but its <strong>frequency $f$ (and color) remains 100% unchanged</strong> because frequency is determined strictly by the light source!</li></ul>"
+    },
+    {
+      "id": "opt_t3_refraction_curved_lens_maker",
+      "title": "Refraction at Curved Spherical Surfaces, Lens Maker's Formula, Thin Lens Combination & Silvered Lens",
+      "prerequisites": [
+        {
+          "label": "Mirror & Snell's Law",
+          "targetChapter": "ch22_ray_optics",
+          "targetTopic": "opt_t2_refraction_snell_tir"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Refraction at a Single Spherical Surface &amp; Lens Maker's Formula</div><div class='formula-highlight'>$$\\text{Single Spherical Surface:} \\quad \\boxed{\\frac{\\mu_2}{v} - \\frac{\\mu_1}{u} = \\frac{\\mu_2 - \\mu_1}{R}}$$</div><div class='def-box'><strong>Lens Maker's Formula:</strong><br/>For a thin lens of refractive index $\\mu_{\\text{lens}}$ placed in a medium of refractive index $\\mu_{\\text{medium}}$ (with radii of curvature $R_1$ and $R_2$):</div><div class='formula-highlight'>$$\\boxed{\\frac{1}{f} = \\left({}^{\\text{medium}}\\mu_{\\text{lens}} - 1\\right)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right) = \\left(\\frac{\\mu_{\\text{lens}}}{\\mu_{\\text{medium}}} - 1\\right)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)}$$</div><ul class='clean-list'><li><strong>Lens Immersed in a Liquid of Higher Refractive Index ($\\mu_L > \\mu_{\\text{lens}}$):</strong> The focal length changes sign! A convex converging lens in air <strong>becomes diverging in water</strong> (and vice versa)!</li><li><strong>Combination of Two Thin Lenses in Contact:</strong> $\\boxed{\\frac{1}{F_{\\text{eq}}} = \\frac{1}{f_1} + \\frac{1}{f_2} \\implies P_{\\text{eq}} = P_1 + P_2}$.</li></ul></div><div class='concept-block'><div class='concept-title'>3.2 Silvered Lens (Equivalent Mirror Power Formula)</div><p>When one surface of a lens of focal length $f_L$ is silvered, it acts as a single equivalent mirror of focal length $F_{\\text{eq}}$:</p><div class='formula-highlight'>$$\\frac{1}{F_{\\text{eq}}} = \\frac{2}{f_L} + \\frac{1}{f_M} \\qquad \\left(\\text{where } f_M \\text{ is the focal length of the equivalent mirror formed by the other silvered surface}\\right)$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Lens Maker's Formula</div><p>Apply single spherical surface refraction twice: first surface gives $\\frac{\\mu_2}{v_1} - \\frac{\\mu_1}{u} = \\frac{\\mu_2 - \\mu_1}{R_1}$. Second surface (with image $v_1$ acting as virtual object $u = v_1$ in medium $\\mu_2$ going into $\\mu_1$): $\\frac{\\mu_1}{v} - \\frac{\\mu_2}{v_1} = \\frac{\\mu_1 - \\mu_2}{R_2}$. Adding the two equations and setting $u = -\\infty, v = f$ yields the Lens Maker's Formula.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(35,20)'><line x1='20' y1='85' x2='260' y2='85' stroke='#94a3b8' stroke-width='2'/><path d='M 140 25 Q 110 85 140 145 Q 170 85 140 25 Z' fill='rgba(0,240,255,0.15)' stroke='#00f0ff' stroke-width='2.5'/><text x='140' y='175' fill='#00f0ff' font-size='11' font-weight='bold' text-anchor='middle'>Convex Lens (Converging, f &gt; 0 in air)</text></g><g transform='translate(355,20)'><line x1='20' y1='85' x2='260' y2='85' stroke='#94a3b8' stroke-width='2'/><path d='M 115 35 Q 135 85 115 135 L 165 135 Q 145 85 165 35 Z' fill='rgba(255,0,85,0.15)' stroke='#ff0055' stroke-width='2.5'/><text x='140' y='175' fill='#ff0055' font-size='11' font-weight='bold' text-anchor='middle'>Concave Lens (Diverging, f &lt; 0 in air)</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Cutting a Lens):</strong><br/>&bull; Cutting a convex lens horizontally (parallel to principal axis): Focal length <strong>remains unchanged ($f' = f$)</strong>, but intensity of image drops (less light gathered).<br/>&bull; Cutting a convex lens vertically (perpendicular to principal axis into two symmetric halves): Focal length <strong>doubles ($f' = 2f$)</strong> for each half because each half now has one flat surface ($R_2 = \\infty$).</li></ul>"
+    },
+    {
+      "id": "opt_t4_prism_optical_instruments",
+      "title": "Refraction Through a Prism, Angle of Deviation (δ), Minimum Deviation, Optical Instruments (Simple & Compound Microscopes, Astronomical Telescope)",
+      "prerequisites": [
+        {
+          "label": "Snell's Law & Geometry",
+          "targetChapter": "ch22_ray_optics",
+          "targetTopic": "opt_t2_refraction_snell_tir"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Refraction Through a Glass Prism</div><div class='formula-highlight'>$$\\text{1. Master Prism Equations:} \\quad \\boxed{r_1 + r_2 = A} \\qquad \\text{and} \\qquad \\boxed{i + e = A + \\delta}$$</div><p><strong>Minimum Deviation (${\\delta_{\\min}}$):</strong> Occurs symmetrically when $i = e$ and $r_1 = r_2 = A/2$. Substituting into Snell's Law at the second surface gives:</p><div class='formula-highlight'>$$\\boxed{\\mu = \\frac{\\sin\\left(\\frac{A + \\delta_{\\min}}{2}\\right)}{\\sin(A/2)}} \\qquad \\left(\\text{For a Thin Prism } (A \\le 10^\\circ): \\quad \\delta = A(\\mu - 1)\\right)$$</div></div><div class='concept-block'><div class='concept-title'>4.2 Optical Instruments: Microscopes &amp; Telescopes</div><table class='data-table'><thead><tr><th>Optical Instrument</th><th>Magnifying Power (MP) Formula</th><th>Normal Adjustment Condition ($v_e = \\infty$)</th></tr></thead><tbody><tr><td><strong>1. Simple Microscope</strong> (Magnifying Glass)</td><td>$$\\boxed{m = 1 + \\frac{D}{f}}$$</td><td>$$m_{\\text{normal}} = \\frac{D}{f} \\quad (D = 25\\text{ cm})$$</td></tr><tr><td><strong>2. Compound Microscope</strong> (Objective $f_o$, Eyepiece $f_e$)</td><td>$$m = -\\frac{v_o}{u_o}\\left(1 + \\frac{D}{f_e}\\right)$$</td><td>$$\\boxed{m_{\\text{normal}} \\approx -\\frac{L}{f_o}\\frac{D}{f_e}} \\quad (L \\approx v_o)$$</td></tr><tr><td><strong>3. Astronomical Telescope</strong> (Objective $f_o$, Eyepiece $f_e$)</td><td>$$m = -\\frac{f_o}{u_e}$$</td><td>$$\\boxed{m_{\\text{normal}} = -\\frac{f_o}{f_e}} \\qquad (\\text{Length } L = f_o + f_e)$$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Prism Refractive Index via Minimum Deviation</div><p>At minimum deviation $\\delta = \\delta_{\\min}$, $i = e$ and $r_1 = r_2 = A/2$. The deviation angle is $\\delta_{\\min} = i + e - A = 2i - A \\implies i = \\frac{A + \\delta_{\\min}}{2}$. Applying Snell's Law $\\mu = \\frac{\\sin i}{\\sin r_1}$ yields $\\mu = \\frac{\\sin\\left(\\frac{A+\\delta_{\\min}}{2}\\right)}{\\sin(A/2)}$$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><polygon points='340,30 200,160 480,160' fill='rgba(0,240,255,0.1)' stroke='#00f0ff' stroke-width='2.5'/><text x='340' y='55' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>Prism Angle A</text><text x='340' y='145' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>δ_min at i = e</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Condition for Emergence from a Prism):</strong> For light to successfully emerge out of the second face of a prism without undergoing total internal reflection, the prism angle $A$ must be strictly less than $2\\theta_c$ ($A < 2\\theta_c$). If $A > 2\\theta_c$, light is trapped inside!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 22: Ray Optics</strong>! Next, in Chapter 23, we explore wave interference and diffraction.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Mirrors &amp; Lenses:</strong> $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}$; Lens Maker $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$.</li><li><strong>Refraction &amp; TIR:</strong> $\\mu = \\frac{\\sin i}{\\sin r}$; $\\sin\\theta_c = \\frac{1}{\\mu}$; Underwater disk $R = \\frac{h}{\\sqrt{\\mu^2 - 1}}$.</li><li><strong>Prism:</strong> $\\mu = \\frac{\\sin((A+\\delta_{\\min})/2)}{\\sin(A/2)}$; Thin prism $\\delta = A(\\mu - 1)$.</li><li><strong>Instruments:</strong> Microscope $m \\approx -\\frac{L}{f_o}\\frac{D}{f_e}$; Telescope $m = -\\frac{f_o}{f_e}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th><th>Key Notes</th></tr></thead><tbody><tr><td>Lens Maker's Formula</td><td>$\\dfrac{1}{f} = \\left(\\dfrac{\\mu_{\\text{lens}}}{\\mu_{\\text{med}}} - 1\\right)\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)$</td><td>Convex in denser liquid becomes diverging.</td></tr><tr><td>Critical Angle &amp; Radius</td><td>$\\sin\\theta_c = \\dfrac{1}{\\mu}, \\qquad R = \\dfrac{h}{\\sqrt{\\mu^2 - 1}}$</td><td>TIR requires denser to rarer medium.</td></tr><tr><td>Prism Min Deviation</td><td>$\\mu = \\dfrac{\\sin\\left(\\dfrac{A + \\delta_{\\min}}{2}\\right)}{\\sin(A/2)}$</td><td>At min dev, $i = e$ and $r_1 = r_2 = A/2$.</td></tr><tr><td>Telescope Normal Adj.</td><td>$m = -\\dfrac{f_o}{f_e}, \\qquad L = f_o + f_e$</td><td>Objective focal length $f_o$ is very large.</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch22_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A concave mirror has a focal length of $f = -20\\text{ cm}$. An object is placed at a distance $u = -30\\text{ cm}$ in front of the mirror. Where is the image formed, and what is its magnification $m$?",
+      "options": [
+        "v = −60 cm, m = −2",
+        "v = −30 cm, m = −1",
+        "v = −12 cm, m = −0.4",
+        "v = +60 cm, m = +2"
+      ],
+      "answer": "v = −60 cm, m = −2",
+      "explanation": "Using $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u} \\implies \\frac{1}{-20} = \\frac{1}{v} + \\frac{1}{-30} \\implies \\frac{1}{v} = -\\frac{1}{20} + \\frac{1}{30} = \\frac{-3 + 2}{60} = -\\frac{1}{60} \\implies v = -60\\text{ cm}$. Magnification $m = -\\frac{v}{u} = -\\frac{-60}{-30} = -2$ (real and inverted)."
+    },
+    {
+      "id": "ch22_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "The refractive index of glass is $\\mu = 1.5$. What is the critical angle $\\theta_c$ for light traveling from glass into air? ($\\arcsin(2/3) \\approx 41.8^\\circ$)",
+      "options": [
+        "41.8°",
+        "30°",
+        "45°",
+        "60°"
+      ],
+      "answer": "41.8°",
+      "explanation": "$\\sin\\theta_c = \\frac{1}{\\mu} = \\frac{1}{1.5} = \\frac{2}{3} \\implies \\theta_c = \\arcsin(2/3) \\approx 41.8^\\circ$."
+    },
+    {
+      "id": "ch22_q03",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A equiconvex lens of refractive index $\\mu = 1.5$ has a focal length of $f = 20\\text{ cm}$ in air. What is the radius of curvature $R$ of each of its spherical surfaces?",
+      "options": [
+        "20 cm",
+        "10 cm",
+        "30 cm",
+        "40 cm"
+      ],
+      "answer": "20 cm",
+      "explanation": "For an equiconvex lens, $R_1 = +R$ and $R_2 = -R$. Using Lens Maker's Formula: $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R} - \\frac{1}{-R}\\right) = (1.5 - 1)\\left(\\frac{2}{R}\\right) = \\frac{1}{R} \\implies R = f = 20\\text{ cm}$."
+    },
+    {
+      "id": "ch22_q04",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A ray of light passes through an equilateral glass prism ($A = 60^\\circ$) such that the angle of incidence $i$ is equal to the angle of emergence $e$. If the angle of deviation is $\\delta = 30^\\circ$, what is the refractive index $\\mu$ of the prism material?",
+      "options": [
+        "$\\sqrt{2}$ (1.414)",
+        "1.5",
+        "$\\sqrt{3}$ (1.732)",
+        "1.33"
+      ],
+      "answer": "$\\sqrt{2}$ (1.414)",
+      "explanation": "Since $i = e$, the ray undergoes minimum deviation: $\\delta_{\\min} = 30^\\circ$. Using $\\mu = \\frac{\\sin((A+\\delta_{\\min})/2)}{\\sin(A/2)} = \\frac{\\sin((60^\\circ+30^\\circ)/2)}{\\sin(60^\\circ/2)} = \\frac{\\sin 45^\\circ}{\\sin 30^\\circ} = \\frac{1/\\sqrt{2}}{1/2} = \\sqrt{2}$."
+    },
+    {
+      "id": "ch22_q05",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "An astronomical telescope has an objective lens of focal length $f_o = 100\\text{ cm}$ and an eyepiece of focal length $f_e = 5\\text{ cm}$. When adjusted for normal adjustment, what is (i) the magnifying power $m$, and (ii) the length $L$ of the telescope tube?",
+      "options": [
+        "m = −20, L = 105 cm",
+        "m = −20, L = 95 cm",
+        "m = −5, L = 105 cm",
+        "m = −100, L = 105 cm"
+      ],
+      "answer": "m = −20, L = 105 cm",
+      "explanation": "In normal adjustment, $m = -\\frac{f_o}{f_e} = -\\frac{100}{5} = -20$, and length $L = f_o + f_e = 100 + 5 = 105\\text{ cm}$."
+    },
+    {
+      "id": "ch22_q06",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A point light source is placed at a depth $h = 3\\sqrt{5}\\text{ cm}$ below the surface of a large tank of water (refractive index $\\mu = 3/2$). A circular opaque disk of radius $R$ is placed floating on the water surface right above the source such that no light emerges out into the air from the water surface. What is the minimum radius $R$ of the disk?",
+      "options": [
+        "6 cm",
+        "9 cm",
+        "4.5 cm",
+        "12 cm"
+      ],
+      "answer": "6 cm",
+      "explanation": "The radius of the illuminated circle is $R = \\frac{h}{\\sqrt{\\mu^2 - 1}}$. To block all light, the floating disk must have a radius at least equal to $R$: $R_{\\min} = \\frac{3\\sqrt{5}}{\\sqrt{(3/2)^2 - 1}} = \\frac{3\\sqrt{5}}{\\sqrt{9/4 - 1}} = \\frac{3\\sqrt{5}}{\\sqrt{5}/2} = 3 \\times 2 = 6\\text{ cm}$."
+    }
+  ]
+}

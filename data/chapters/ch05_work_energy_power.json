@@ -1,0 +1,109 @@
+{
+  "id": "ch05_work_energy_power",
+  "code": "05",
+  "title": "Work, Energy, Power & Circular Loop",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Work by Variable Forces, Work-Energy Theorem, Conservative vs. Non-Conservative Forces, Potential Energy Curves, Springs & Vertical Circular Motion",
+  "classLevel": "Class 11",
+  "unit": "Mechanics II",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: What Is Energy?</div><p>In Chapter 04, we used Newton's Second Law ($\\sum \\vec{F} = m\\vec{a}$) to analyze forces directly. While powerful, solving vector differential equations for complex paths can become extremely tedious.</p><div class='def-box'><strong>The Energy Shortcut:</strong><br/>Energy is a <strong>scalar quantity</strong> (it has magnitude only, no direction!). By using the <strong>Work-Energy Theorem</strong> and <strong>Conservation of Mechanical Energy</strong>, we can bypass complex vector acceleration paths entirely and solve motion problems using simple arithmetic and algebra!</div></div>",
+  "topics": [
+    {
+      "id": "wep_t1_work_work_energy_theorem",
+      "title": "Work Done by Constant & Variable Forces, Scalar Dot Product & The Work-Energy Theorem",
+      "prerequisites": [
+        {
+          "label": "Dot Product of Vectors",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        },
+        {
+          "label": "Definite Integrals",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Definition of Work Done</div><div class='def-box'><strong>Definition:</strong><br/>Work is done by a force when it displaces an object. It is defined mathematically as the <strong>scalar (dot) product</strong> of the force vector $\\vec{F}$ and the displacement vector $\\vec{s}$.</div><div class='formula-highlight'>$$\\text{1. Constant Force:} \\quad \\boxed{W = \\vec{F}\\cdot\\vec{s} = Fs\\cos\\theta} \\qquad \\bigg| \\qquad \\text{2. Variable Force:} \\quad \\boxed{W = \\int_{x_i}^{x_f} \\vec{F}\\cdot d\\vec{r}}$$</div><ul class='clean-list'><li><strong>Positive Work ($0^\\circ \\le \\theta < 90^\\circ$):</strong> Force assists motion (e.g., gravity pulling a falling object, tension accelerating a load).</li><li><strong>Zero Work ($\\theta = 90^\\circ$):</strong> Force is perpendicular to displacement (e.g., centripetal force in uniform circular motion, normal force on a sliding block).</li><li><strong>Negative Work ($90^\\circ < \\theta \\le 180^\\circ$):</strong> Force opposes motion (e.g., friction slowing down a car, gravity acting on an upward-thrown ball).</li></ul></div><div class='concept-block'><div class='concept-title'>1.2 The Work-Energy Theorem (The Master Key of Mechanics)</div><div class='def-box'><strong>Statement:</strong><br/>The <strong>net work done</strong> by all forces acting on a particle is always equal to the <strong>change in its kinetic energy</strong> ($K = \\frac{1}{2}mv^2$), regardless of whether the forces are conservative or non-conservative, constant or variable!</div><div class='formula-highlight'>$$\\boxed{W_{\\text{net}} = \\Delta K = K_f - K_i = \\frac{1}{2}mv^2 - \\frac{1}{2}mu^2}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of the Work-Energy Theorem</div><p>Start with Newton's Second Law $F_{\\text{net}} = m\\frac{dv}{dt}$. Multiply both sides by displacement $dx$ ($v = dx/dt$):</p>$$F_{\\text{net}} \\, dx = m \\left(\\frac{dv}{dt}\\right)dx = m v \\, dv$$<p>Integrate both sides from initial position $x_i$ (velocity $u$) to final position $x_f$ (velocity $v$):</p>$$W_{\\text{net}} = \\int_{x_i}^{x_f} F_{\\text{net}}\\,dx = m \\int_{u}^{v} v\\,dv = \\left[\\frac{1}{2}mv^2\\right]_u^v = \\boxed{\\frac{1}{2}mv^2 - \\frac{1}{2}mu^2}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='50' y1='150' x2='630' y2='150' stroke='#94a3b8' stroke-width='2'/><line x1='50' y1='25' x2='50' y2='175' stroke='#94a3b8' stroke-width='2'/><path d='M 50 130 Q 250 20 600 110' fill='rgba(0,240,255,0.12)' stroke='#00f0ff' stroke-width='3'/><text x='250' y='80' fill='#00f0ff' font-size='13' font-weight='bold'>Area Under F-x Graph = Work W</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Net Work vs Work by a Single Force):</strong> $W_{\\text{net}} = \\Delta K$ applies strictly to <em>net work</em> (sum of work done by all forces). If a question asks for work done by friction alone, do not equate it to total $\\Delta K$ without including gravity and normal forces!</li></ul>"
+    },
+    {
+      "id": "wep_t2_conservative_potential_energy",
+      "title": "Conservative vs. Non-Conservative Forces, Potential Energy Curves & Equilibrium States",
+      "prerequisites": [
+        {
+          "label": "Partial Differentiation & Force from PE",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t5_maxima_minima_rates"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Conservative Forces &amp; The Master Relation $F = -\\frac{dU}{dx}$</div><table class='data-table'><thead><tr><th>Property</th><th>Conservative Forces (Gravity, Spring, Electrostatic)</th><th>Non-Conservative Forces (Friction, Air Drag, Viscosity)</th></tr></thead><tbody><tr><td><strong>Work Path Dependence</strong></td><td>Work done is <strong>independent of path</strong>; depends only on initial and final positions.</td><td>Work done <strong>depends on the actual path length</strong> taken.</td></tr><tr><td><strong>Closed Loop Work</strong></td><td>Work done in any complete closed round trip is <strong>exactly zero</strong> ($\\oint \\vec{F}\\cdot d\\vec{r} = 0$).</td><td>Work done in a closed loop is <strong>negative and non-zero</strong> (energy is dissipated as heat).</td></tr></tbody></table><div class='def-box'><strong>Force from Potential Energy:</strong><br/>For any conservative force in 1D, force is the negative derivative of potential energy $U(x)$:</div><div class='formula-highlight'>$$\\boxed{F(x) = -\\frac{dU(x)}{dx} \\implies \\Delta U = U_f - U_i = -\\int_{x_i}^{x_f} F(x)\\,dx}$$</div></div><div class='concept-block'><div class='concept-title'>2.2 Three States of Mechanical Equilibrium</div><table class='data-table'><thead><tr><th>Equilibrium State</th><th>Condition on Force</th><th>Condition on Potential Energy $U(x)$</th><th>Physical Stability Behavior</th></tr></thead><tbody><tr><td><strong>1. Stable Equilibrium</strong></td><td>$F = -\\frac{dU}{dx} = 0$</td><td><strong>Local Minimum</strong> ($\\frac{d^2U}{dx^2} > 0$)</td><td>If displaced slightly, the particle experiences a restoring force pushing it <em>back</em> to equilibrium (like a ball at the bottom of a bowl).</td></tr><tr><td><strong>2. Unstable Equilibrium</strong></td><td>$F = -\\frac{dU}{dx} = 0$</td><td><strong>Local Maximum</strong> ($\\frac{d^2U}{dx^2} < 0$)</td><td>If displaced slightly, force pushes it <em>farther away</em> from equilibrium (like a ball balanced on top of a dome).</td></tr><tr><td><strong>3. Neutral Equilibrium</strong></td><td>$F = -\\frac{dU}{dx} = 0$</td><td><strong>Constant / Flat</strong> ($\\frac{d^2U}{dx^2} = 0$)</td><td>If displaced, it stays at rest in its new position (like a ball on a flat horizontal table).</td></tr></tbody></table></div>",
+      "derivationHtml": "<p><strong>Derivation of Spring Potential Energy $U = \\frac{1}{2}kx^2$:</strong></p><p>Spring restoring force is $F_s = -kx$. By definition, $U(x) - U(0) = -\\int_0^x (-kx)\\,dx = k \\int_0^x x\\,dx = \\boxed{\\frac{1}{2}kx^2}$</p>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><path d='M 50 140 C 150 10, 250 10, 340 100 C 430 190, 530 190, 630 50' fill='none' stroke='#00f0ff' stroke-width='3'/><circle cx='200' cy='35' r='6' fill='#ff0055'/><text x='160' y='25' fill='#ff0055' font-size='11' font-weight='bold'>Unstable Max (d²U/dx² &lt; 0)</text><circle cx='480' cy='155' r='6' fill='#00e676'/><text x='435' y='178' fill='#00e676' font-size='11' font-weight='bold'>Stable Min (d²U/dx² &gt; 0)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Sign Confusion in $F = -dU/dx$):</strong> Students often forget the minus sign. If $U(x) = ax^2$, then $F = -2ax$ (acting inward toward the origin, restoring).</li></ul>"
+    },
+    {
+      "id": "wep_t3_conservation_mechanical_energy",
+      "title": "Conservation of Mechanical Energy & Collision Dynamics (Elastic, Inelastic & Restitution)",
+      "prerequisites": [
+        {
+          "label": "Work-Energy Theorem",
+          "targetChapter": "ch05_work_energy_power",
+          "targetTopic": "wep_t1_work_work_energy_theorem"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Conservation of Mechanical Energy ($E = K + U = \\text{Constant}$)</div><div class='def-box'><strong>Master Law:</strong><br/>If only conservative forces do work in a system (no friction or air drag), total mechanical energy $E$ remains strictly constant:</div><div class='formula-highlight'>$$\\boxed{K_i + U_i = K_f + U_f \\implies \\Delta K + \\Delta U = 0}$$</div></div><div class='concept-block'><div class='concept-title'>3.2 Coefficient of Restitution ($e$) in Collisions</div><table class='data-table'><thead><tr><th>Collision Type</th><th>Momentum Conservation</th><th>Kinetic Energy Conservation</th><th>Coefficient of Restitution ($e$)</th></tr></thead><tbody><tr><td><strong>1. Perfectly Elastic</strong></td><td>Yes</td><td><strong>Yes</strong></td><td>$e = 1$</td></tr><tr><td><strong>2. Perfectly Inelastic</strong></td><td>Yes</td><td>No (Max energy loss, bodies stick together)</td><td>$e = 0$</td></tr><tr><td><strong>3. Partially Elastic</strong></td><td>Yes</td><td>No (Partial energy loss)</td><td>$0 < e < 1$</td></tr></tbody></table><div class='formula-highlight'>$$\\text{Newton's Experimental Law of Restitution:} \\quad \\boxed{e = \\frac{\\text{Relative Speed of Separation}}{\\text{Relative Speed of Approach}} = \\frac{v_2 - v_1}{u_1 - u_2}}$$</div></div>",
+      "derivationHtml": "<p><strong>Derivation of Final Velocities in 1D Elastic Collision ($e = 1$):</strong></p>$$v_1 = \\left(\\frac{m_1 - m_2}{m_1 + m_2}\\right)u_1 + \\left(\\frac{2m_2}{m_1 + m_2}\\right)u_2, \\qquad v_2 = \\left(\\frac{2m_1}{m_1 + m_2}\\right)u_1 + \\left(\\frac{m_2 - m_1}{m_1 + m_2}\\right)u_2$$",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='200' cy='95' r='25' fill='#00f0ff'/><text x='200' y='100' fill='#05080f' font-size='12' font-weight='bold' text-anchor='middle'>m₁</text><line x1='235' y1='95' x2='290' y2='95' stroke='#00e676' stroke-width='3'/><circle cx='440' cy='95' r='25' fill='#ff0055'/><text x='440' y='100' fill='#f0f4f8' font-size='12' font-weight='bold' text-anchor='middle'>m₂</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Energy Conservation in Inelastic Collisions):</strong> Total mechanical energy is <em>never</em> conserved in inelastic collisions (some energy converts to heat/sound), but <strong>Linear Momentum is ALWAYS conserved</strong> in any collision!</li></ul>"
+    },
+    {
+      "id": "wep_t4_vertical_circular_motion",
+      "title": "Vertical Circular Motion: Critical String Tension, Rod Loops & Projectile-Like Circular Exits",
+      "prerequisites": [
+        {
+          "label": "Circular Dynamics & Tension",
+          "targetChapter": "ch04_laws_of_motion",
+          "targetTopic": "nlm_t4_circular_dynamics"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Vertical Loop Master Equations &amp; Critical Speeds</div><table class='data-table'><thead><tr><th>Position on Loop</th><th>Tension in String ($T$)</th><th>Minimum Critical Speed ($v_{\\min}$)</th></tr></thead><tbody><tr><td><strong>Top Point</strong></td><td>$T_{\\top} = \\frac{mv_{\\top}^2}{r} - mg$</td><td>$v_{\\top} = \\sqrt{rg}$ (String just becomes slack, $T=0$)</td></tr><tr><td><strong>Bottom Point</strong></td><td>$T_{\\text{bot}} = \\frac{mv_{\\text{bot}}^2}{r} + mg$</td><td>$v_{\\text{bot}} = \\sqrt{5rg}$ (Needed to ensure $v_{\\top} = \\sqrt{rg}$)</td></tr><tr><td><strong>Horizontal Level</strong></td><td>$T_{\\text{mid}} = \\frac{mv_{\\text{mid}}^2}{r}$</td><td>$v_{\\text{mid}} = \\sqrt{3rg}$</td></tr></tbody></table></div>",
+      "derivationHtml": "<p><strong>Derivation of Bottom Speed $v_{\\text{bot}} = \\sqrt{5rg}$ using Conservation of Energy:</strong></p>$$E_{\\text{bot}} = E_{\\top} \\implies \\frac{1}{2}m v_{\\text{bot}}^2 = \\frac{1}{2}m v_{\\top}^2 + mg(2r)$$<p>Substitute $v_{\\top} = \\sqrt{rg}$: $\\frac{1}{2}v_{\\text{bot}}^2 = \\frac{1}{2}rg + 2rg = \\frac{5}{2}rg \\implies \\boxed{v_{\\text{bot}} = \\sqrt{5rg}}$</p>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='95' r='60' fill='none' stroke='#00f0ff' stroke-width='2' stroke-dasharray='4,4'/><circle cx='340' cy='35' r='8' fill='#ff0055'/><text x='340' y='20' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>Top: v_top = √rg (T = 0)</text><circle cx='340' cy='155' r='8' fill='#00e676'/><text x='340' y='180' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Bottom: v_bot = √5rg</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (String vs. Rod at the Top):</strong> If the bob is attached to a rigid light rod instead of a flexible string, it can reach the top with $v = 0$ without collapsing!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 05: Work, Energy, Power & Circular Loop</strong>! You are now ready to study multi-particle systems and rotation in Chapter 06.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Work-Energy:</strong> $W_{\\text{net}} = \\Delta K$.</li><li><strong>Conservative Force:</strong> $F = -dU/dx$.</li><li><strong>Vertical Loop:</strong> $v_{\\top} = \\sqrt{rg}$, $v_{\\text{bot}} = \\sqrt{5rg}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Work-Energy Theorem</td><td>$W_{\\text{net}} = K_f - K_i$</td></tr><tr><td>Force from Potential Energy</td><td>$F = -\\frac{dU}{dx}$</td></tr><tr><td>Elastic Collision Final Speed</td><td>$v_1 = \\left(\\frac{m_1 - m_2}{m_1 + m_2}\\right)u_1 + \\left(\\frac{2m_2}{m_1 + m_2}\\right)u_2$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch05_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A force $\\vec{F} = (3x^2\\hat{i} + 2y\\hat{j})\\text{ N}$ acts on a particle. Find the work done in moving the particle from origin $(0,0)$ to $(2\\text{ m}, 3\\text{ m})$ along the path $y = \\frac{3}{4}x$.",
+      "options": [
+        "17 J",
+        "12 J",
+        "20 J",
+        "15 J"
+      ],
+      "answer": "17 J",
+      "explanation": "$W = \\int (3x^2\\,dx + 2y\\,dy) = \\left[x^3\\right]_0^2 + \\left[y^2\\right]_0^3 = 2^3 + 3^2 = 8 + 9 = 17\\text{ J}$."
+    },
+    {
+      "id": "ch05_q02",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A ball is dropped from a height $h = 10\\text{ m}$ on a hard floor. If the coefficient of restitution is $e = 0.6$, to what height does the ball bounce back after the collision?",
+      "options": [
+        "3.6 m",
+        "6.0 m",
+        "2.16 m",
+        "4.0 m"
+      ],
+      "answer": "3.6 m",
+      "explanation": "Height after $n$ bounces is $h_n = e^{2n}h_0$. For 1 bounce: $h_1 = (0.6)^2(10) = 0.36 \\times 10 = 3.6\\text{ m}$."
+    }
+  ]
+}

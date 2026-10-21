@@ -1,0 +1,100 @@
+{
+  "id": "ch15_electric_charges_fields",
+  "code": "15",
+  "title": "Electric Charges, Fields & Gauss's Law",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Charge Properties, Coulomb's Law, Superposition, Electric Field of Continuous Bodies (Rod, Arc, Ring, Disk), Electric Dipole Dynamics, Electric Flux & Gauss's Law Symmetry Applications",
+  "classLevel": "Class 12",
+  "unit": "Electrodynamics I",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: Welcome to Class 12 Electrodynamics!</div><p>In Class 11 (Gravitation), we saw that every particle has <strong>Mass ($m$)</strong>, attracting other masses with $F = \\frac{Gm_1 m_2}{r^2}$. Nature also possesses a second, vastly stronger intrinsic property called <strong>Electric Charge ($q$)</strong>. Between two protons, the electrostatic repulsion is $10^{36}$ times stronger than gravity!</p><div class='def-box'><strong>The 3 Branches of Electrodynamics:</strong><ul class='clean-list'><li><strong>1. Stationary Charge ($v = 0$):</strong> Produces ONLY an <strong>Electric Field ($\\vec{E}$)</strong>.</li><li><strong>2. Constant-Velocity Charge ($\\vec{v} = \\text{const}$):</strong> Produces BOTH an <strong>Electric Field ($\\vec{E}$) and a Magnetic Field ($\\vec{B}$)</strong>.</li><li><strong>3. Accelerating Charge ($\\vec{a} \\neq 0$):</strong> Produces $\\vec{E}$ and $\\vec{B}$ AND radiates <strong>Electromagnetic Waves</strong>!</li></ul></div></div>",
+  "topics": [
+    {
+      "id": "ecf_t1_coulomb_superposition",
+      "title": "Properties of Charge, Coulomb's Law, Dielectric Mediums & Equilibrium of Point Charges",
+      "prerequisites": [
+        {
+          "label": "Vectors & Resolution",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Fundamental Properties of Charge &amp; Coulomb's Law</div><ul class='clean-list'><li><strong>1. Quantization of Charge:</strong> $\\boxed{q = \\pm n e}$, where $e = 1.602 \\times 10^{-19}\\text{ C}$ ($1\\text{ C} \\approx 6.25 \\times 10^{18}$ electrons).</li><li><strong>2. Conservation of Charge:</strong> Total net charge in an isolated system is strictly conserved.</li><li><strong>3. Relativistic Invariance:</strong> Charge $q$ does not change with speed $v$ (unlike relativistic mass).</li></ul><div class='formula-highlight'>$$\\text{Coulomb's Law in Vacuum &amp; Medium }(K = \\varepsilon_r): \\qquad \\boxed{F = \\frac{1}{4\\pi\\varepsilon_0 K}\\frac{|q_1 q_2|}{r^2} = \\frac{k}{K}\\frac{|q_1 q_2|}{r^2}} \\qquad \\left(k = 9 \\times 10^9\\text{ N}\\cdot\\text{m}^2/\\text{C}^2\\right)$$</div><div class='formula-highlight'>$$\\text{Vector Form:} \\qquad \\boxed{\\vec{F}_{21} = \\frac{k q_1 q_2}{|\\vec{r}_2 - \\vec{r}_1|^3}(\\vec{r}_2 - \\vec{r}_1)}$$</div></div><div class='concept-block'><div class='concept-title'>1.2 Null Point &amp; Three-Charge Equilibrium</div><p>For two like charges $+q_1$ and $+q_2$ separated by distance $d$, the null point (where a third charge $Q$ feels zero net force) lies between them at distance $x$ from $q_1$:</p><div class='formula-highlight'>$$\\boxed{x = \\frac{\\sqrt{|q_1|}}{\\sqrt{|q_1|} + \\sqrt{|q_2|}}\\,d} \\qquad \\text{and for all 3 charges to be in free equilibrium:} \\quad \\boxed{Q = -\\frac{q_1 q_2}{(\\sqrt{q_1} + \\sqrt{q_2})^2}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Suspended Pith-Ball Pendulums in Equilibrium: tan θ = F_e / (mg)</div><p>When two charged balls of masses $m_1, m_2$ and charges $q_1, q_2$ hang from a common point by threads of length $L$, both experience the exact same horizontal Coulomb repulsion $F_e = \\frac{kq_1 q_2}{r^2}$. Balancing $T\\sin\\theta = F_e$ and $T\\cos\\theta = mg$ gives $\\boxed{\\tan\\theta_1 = \\frac{F_e}{m_1 g}}$ and $\\boxed{\\tan\\theta_2 = \\frac{F_e}{m_2 g}}$. Thus $\\theta_1 = \\theta_2$ if and only if $m_1 = m_2$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='100' y1='90' x2='580' y2='90' stroke='#94a3b8' stroke-width='2'/><circle cx='140' cy='90' r='14' fill='#00e676'/><text x='140' y='94' fill='#05080f' font-size='11' font-weight='bold' text-anchor='middle'>+q₁</text><circle cx='280' cy='90' r='10' fill='#ffab00'/><text x='280' y='65' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>Null Point x = d √q₁ / (√q₁ + √q₂)</text><circle cx='540' cy='90' r='18' fill='#00e676'/><text x='540' y='94' fill='#05080f' font-size='11' font-weight='bold' text-anchor='middle'>+q₂</text><text x='340' y='155' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>For Unlike Charges (+q₁, −q₂ with |q₁| &lt; |q₂|): Null Point Lies Outside Near Smaller Charge q₁</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Dividing a charge $Q_0$ into two parts $q$ and $(Q_0 - q)$ gives maximum Coulomb repulsion when split into two equal halves ($q = Q_0/2$).</li></ul>"
+    },
+    {
+      "id": "ecf_t2_electric_field_continuous",
+      "title": "Electric Field of Continuous Charge Distributions: Rod, Infinite Wire, Circular Arc, Ring & Disk",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Master Electric Field Dictionary</div><table class='data-table'><thead><tr><th>Charged Body</th><th>Point Location</th><th>Electric Field Formula</th></tr></thead><tbody><tr><td><strong>1. Finite Straight Wire</strong> (Density $\\lambda$)</td><td>Perpendicular distance $r$</td><td>$$E_{\\perp} = \\frac{k\\lambda}{r}(\\sin\\theta_1 + \\sin\\theta_2), \\quad E_{\\parallel} = \\frac{k\\lambda}{r}(\\cos\\theta_2 - \\cos\\theta_1)$$</td></tr><tr><td><strong>2. Infinite Straight Wire</strong> ($\\theta_1 = \\theta_2 = 90^\\circ$)</td><td>Distance $r$</td><td>$$\\boxed{E = \\frac{2k\\lambda}{r} = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}}$$</td></tr><tr><td><strong>3. Uniform Circular Arc</strong> (Angle $\\alpha$, radius $R$)</td><td>At center $O$</td><td>$$\\boxed{E = \\frac{2k\\lambda}{R}\\sin\\left(\\frac{\\alpha}{2}\\right)}$$</td></tr><tr><td><strong>4. Uniformly Charged Ring</strong> ($Q$, radius $R$)</td><td>On axis at distance $x$</td><td>$$\\boxed{E(x) = \\frac{k Q x}{(R^2 + x^2)^{3/2}}} \\qquad \\left(\\text{Max at } \\boxed{x = \\pm\\frac{R}{\\sqrt{2}}}\\right)$$</td></tr><tr><td><strong>5. Uniformly Charged Disk</strong> ($\\sigma$, radius $R$)</td><td>On axis at distance $x$</td><td>$$\\boxed{E(x) = \\frac{\\sigma}{2\\varepsilon_0}\\left(1 - \\frac{x}{\\sqrt{R^2 + x^2}}\\right)}$$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Calculus Derivation of Ring Axial Field &amp; Maximum at x = ±R/√2</div><p>Integrating axial components $dE\\cos\\theta = \\frac{k\\,dq}{R^2+x^2}\\frac{x}{\\sqrt{R^2+x^2}}$ around the ring gives $E(x) = \\frac{kQx}{(R^2+x^2)^{3/2}}$. Setting $\\frac{dE}{dx} = 0$ yields $(R^2+x^2) - 3x^2 = 0 \\implies x = \\pm\\frac{R}{\\sqrt{2}}$, where $E_{\\max} = \\frac{2kQ}{3\\sqrt{3}R^2}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='50' y1='92' x2='630' y2='92' stroke='#94a3b8' stroke-width='2'/><line x1='340' y1='15' x2='340' y2='170' stroke='#94a3b8' stroke-width='2'/><path d='M 60 95 Q 190 98 245 155 Q 295 165 340 92 Q 385 19 435 29 Q 490 86 620 89' fill='none' stroke='#00f0ff' stroke-width='3'/><text x='465' y='28' fill='#00e676' font-size='12' font-weight='bold'>E_max at x = +R / √2</text><text x='180' y='172' fill='#ff0055' font-size='12' font-weight='bold'>−E_max at x = −R / √2</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> For $x \\ll R$ near the center of a charged ring $+Q$, $E(x) \\approx \\frac{kQx}{R^3}$, so a test charge $-q$ (mass $m$) oscillates in SHM with time period $T = 2\\pi\\sqrt{\\frac{mR^3}{kQq}}$.</li></ul>"
+    },
+    {
+      "id": "ecf_t3_electric_dipole",
+      "title": "Electric Dipole: Axial, Equatorial & General Field, Torque & Potential Energy in External Field",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Electric Dipole Moment ($\\vec{p} = q(2\\vec{a})$, Directed from $-q$ to $+q$)</div><div class='formula-highlight'>$$\\text{1. Axial Field:} \\quad \\boxed{\\vec{E}_{\\text{axial}} = \\frac{2k\\vec{p}}{r^3}} \\qquad \\bigg| \\qquad \\text{2. Equatorial Field:} \\quad \\boxed{\\vec{E}_{\\text{eq}} = -\\frac{k\\vec{p}}{r^3}} \\qquad \\bigg| \\qquad \\text{3. General:} \\quad \\boxed{E = \\frac{kp}{r^3}\\sqrt{3\\cos^2\\theta + 1}}$$</div><div class='formula-highlight'>$$\\text{Torque in Uniform } \\vec{E}: \\quad \\boxed{\\vec{\\tau} = \\vec{p} \\times \\vec{E}} \\qquad \\bigg| \\qquad \\text{Potential Energy:} \\quad \\boxed{U(\\theta) = -\\vec{p}\\cdot\\vec{E} = -pE\\cos\\theta}$$</div><div class='formula-highlight'>$$\\text{Work Done in Rotating from } \\theta_1 \\text{ to } \\theta_2: \\quad \\boxed{W_{\\text{ext}} = pE(\\cos\\theta_1 - \\cos\\theta_2)} \\qquad \\bigg| \\qquad \\text{Angular SHM Period:} \\quad \\boxed{T = 2\\pi\\sqrt{\\frac{I}{pE}}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Axial vs. Equatorial Dipole Field</div><p>On the axial line at distance $r \\gg a$, $E_{\\text{axial}} = kq\\left[\\frac{1}{(r-a)^2} - \\frac{1}{(r+a)^2}\\right] = \\frac{kq(4ra)}{(r^2-a^2)^2} \\approx \\frac{2kp}{r^3}$. On the equatorial line, horizontal components add to $E_{\\text{eq}} = 2\\left(\\frac{kq}{r^2+a^2}\\right)\\frac{a}{\\sqrt{r^2+a^2}} \\approx \\frac{kp}{r^3}$ opposite to $\\vec{p}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='75' fill='#00e676' font-size='13' font-weight='bold' text-anchor='middle'>Dipole Fields: E_axial = 2kp / r³ (Parallel to p)   |   E_eq = −kp / r³ (Antiparallel to p)</text><text x='340' y='125' fill='#ffab00' font-size='12' text-anchor='middle'>Stable Equilibrium: θ = 0° (U = −pE)   |   Unstable Equilibrium: θ = 180° (U = +pE)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Work required to rotate a dipole from stable equilibrium ($\\theta = 0^\\circ$) to unstable equilibrium ($\\theta = 180^\\circ$) is $\\mathbf{+2pE}$, whereas rotating from $0^\\circ$ to $90^\\circ$ requires $+pE$.</li></ul>"
+    },
+    {
+      "id": "ecf_t4_flux_gauss_law",
+      "title": "Electric Flux, Gauss's Law, Cube Flux Shortcuts & Spherical/Cylindrical/Planar Fields",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Gauss's Law &amp; Symmetry Applications</div><div class='formula-highlight'>$$\\boxed{\\Phi_E = \\oint \\vec{E}\\cdot d\\vec{A} = \\frac{q_{\\text{enclosed}}}{\\varepsilon_0}}$$</div><table class='data-table'><thead><tr><th>Symmetric System</th><th>Field / Flux Formula</th></tr></thead><tbody><tr><td><strong>1. Cube Flux Shortcuts (Point Charge $q$)</strong></td><td>Center of cube: $\\frac{q}{6\\varepsilon_0}$ per face; Corner of cube: $\\frac{q}{8\\varepsilon_0}$ total ($\\frac{q}{24\\varepsilon_0}$ through each of the 3 far faces).</td></tr><tr><td><strong>2. Infinite Non-Conducting Sheet vs. Conductor</strong></td><td>Infinite sheet: $\\boxed{E = \\frac{\\sigma}{2\\varepsilon_0}}$; Just outside conductor surface: $\\boxed{E = \\frac{\\sigma}{\\varepsilon_0}}$.</td></tr><tr><td><strong>3. Hollow Shell / Conducting Sphere</strong> ($Q, R$)</td><td>Inside ($r < R$): $\\boxed{E_{\\text{in}} = 0}$; Outside ($r \\ge R$): $\\boxed{E_{\\text{out}} = \\frac{kQ}{r^2}}$.</td></tr><tr><td><strong>4. Solid Non-Conducting Sphere</strong> ($Q, R, \\rho$)</td><td>Inside ($r < R$): $\\boxed{\\vec{E}_{\\text{in}} = \\frac{kQ}{R^3}\\vec{r} = \\frac{\\rho}{3\\varepsilon_0}\\vec{r}}$; Outside: $E_{\\text{out}} = \\frac{kQ}{r^2}$.</td></tr><tr><td><strong>5. Spherical Cavity Inside Solid Sphere</strong> ($\\vec{d} = \\vec{O_1 O_2}$)</td><td>Uniform field everywhere inside cavity: $$\\boxed{\\vec{E}_{\\text{cavity}} = \\frac{\\rho}{3\\varepsilon_0}\\vec{d}}$$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Proof of Uniform Field Inside a Spherical Cavity</div><p>By superposition of a full sphere of density $+\\rho$ centered at $O_1$ and a cavity sphere of density $-\\rho$ centered at $O_2$, the field at any point $P$ inside the cavity is $\\vec{E}_{\\text{cavity}} = \\frac{\\rho}{3\\varepsilon_0}\\vec{r}_1 - \\frac{\\rho}{3\\varepsilon_0}\\vec{r}_2 = \\boxed{\\frac{\\rho}{3\\varepsilon_0}\\vec{d}}$ (uniform!).</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='75' fill='#00f0ff' font-size='13' font-weight='bold' text-anchor='middle'>Hollow Shell: E_in = 0   |   Solid Non-Conducting Sphere: E_in = kQr/R³ = ρr/(3ε₀)</text><text x='340' y='125' fill='#00e676' font-size='12' text-anchor='middle'>Spherical Cavity Field: E_cavity = ρ d / (3ε₀) (Strictly Uniform Everywhere Inside Cavity!)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap:</strong> Zero net flux ($\\Phi_E = 0$) through a closed surface means $q_{\\text{enclosed}} = 0$, NOT that $\\vec{E} = 0$ at points on the surface!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 15: Electric Charges, Fields &amp; Gauss's Law</strong>!</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Coulomb &amp; Continuous Fields:</strong> $F = \\frac{k|q_1 q_2|}{Kr^2}$; Wire $E = \\frac{2k\\lambda}{r}$; Ring $E = \\frac{kQx}{(R^2+x^2)^{3/2}}$; Disk $E = \\frac{\\sigma}{2\\varepsilon_0}\\left(1 - \\frac{x}{\\sqrt{R^2+x^2}}\\right)$.</li><li><strong>Dipole &amp; Gauss:</strong> $E_{\\text{axial}} = \\frac{2kp}{r^3}$, $E_{\\text{eq}} = \\frac{kp}{r^3}$; $\\Phi = \\frac{q_{\\text{in}}}{\\varepsilon_0}$; Cavity $E = \\frac{\\rho d}{3\\varepsilon_0}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Charged Ring on Axis</td><td>$E = \\dfrac{kQx}{(R^2+x^2)^{3/2}} \\quad (\\text{Max at } x = \\pm R/\\sqrt{2})$</td></tr><tr><td>Dipole Torque &amp; Energy</td><td>$\\vec{\\tau} = \\vec{p}\\times\\vec{E}, \\qquad U = -\\vec{p}\\cdot\\vec{E}$</td></tr><tr><td>Solid Sphere &amp; Cavity</td><td>$\\vec{E}_{\\text{in}} = \\dfrac{\\rho}{3\\varepsilon_0}\\vec{r}, \\qquad \\vec{E}_{\\text{cavity}} = \\dfrac{\\rho}{3\\varepsilon_0}\\vec{d}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch15_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Two charges $+q$ and $+9q$ are separated by $40\\text{ cm}$. At what distance from $+q$ does the net electric field vanish?",
+      "options": [
+        "10 cm",
+        "20 cm",
+        "30 cm",
+        "15 cm"
+      ],
+      "answer": "10 cm",
+      "explanation": "$x = \\frac{\\sqrt{1}}{\\sqrt{1} + \\sqrt{9}} \\times 40\\text{ cm} = 10\\text{ cm}$."
+    },
+    {
+      "id": "ch15_q02",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A charge $q$ is placed at one corner of a cube. What is the flux through any one of the three faces not touching the charge?",
+      "options": [
+        "$\\frac{q}{24\\varepsilon_0}$",
+        "$\\frac{q}{8\\varepsilon_0}$",
+        "$\\frac{q}{6\\varepsilon_0}$",
+        "$\\frac{q}{12\\varepsilon_0}$"
+      ],
+      "answer": "$\\frac{q}{24\\varepsilon_0}$",
+      "explanation": "Total flux through the cube is $\\frac{q}{8\\varepsilon_0}$, shared equally by the $3$ non-touching faces: $\\frac{q}{24\\varepsilon_0}$."
+    },
+    {
+      "id": "ch15_q03",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A spherical cavity is carved inside a uniformly charged non-conducting sphere of density $\\rho$ with center-to-center distance $d$. What is the electric field inside the cavity?",
+      "options": [
+        "$\\frac{\\rho d}{3\\varepsilon_0}$ (Uniform)",
+        "$0$",
+        "$\\frac{\\rho d}{\\varepsilon_0}$",
+        "Non-uniform"
+      ],
+      "answer": "$\\frac{\\rho d}{3\\varepsilon_0}$ (Uniform)",
+      "explanation": "By superposition, $\\vec{E}_{\\text{cavity}} = \\frac{\\rho}{3\\varepsilon_0}\\vec{d}$ is strictly uniform everywhere inside the cavity."
+    }
+  ]
+}

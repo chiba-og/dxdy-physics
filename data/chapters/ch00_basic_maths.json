@@ -1,0 +1,395 @@
+{
+  "id": "ch00_basic_maths",
+  "code": "00",
+  "title": "Basic Mathematics for Physics",
+  "subtitle": "Step-by-Step Visual & Conceptual Foundation: Algebra, Trigonometry, Coordinate Graphs, Calculus (Differentiation & Integration) & Vectors",
+  "classLevel": "Foundation (Class 11 & 12)",
+  "unit": "Mathematical Tools",
+  "introduction": "<div class='concept-box'><p><strong>Why Do We Study Basic Mathematics First?</strong></p><p>In Class 9 and 10, forces and speeds were mostly <em>constant numbers</em>, so simple arithmetic ($s = v \\times t$) was enough.</p><p>In Class 11, Class 12, and JEE Advanced, physical quantities change continuously every microsecond. To read and solve Physics effortlessly, you need <strong>6 mathematical tools</strong>:</p></div><ul class='clean-list'><li><strong>1. Algebra &amp; Binomial Approximation:</strong> To simplify complex power formulas when one distance is much smaller than another ($h \\ll R$).</li><li><strong>2. Trigonometry &amp; Phasors:</strong> To split tilted forces into components and combine oscillating waves in SHM, AC, and Optics.</li><li><strong>3. Coordinate Geometry &amp; Graphs:</strong> Because JEE questions hide velocity, acceleration, and work inside the <em>Slope</em> and <em>Area</em> of curves.</li><li><strong>4. Differentiation ($dy/dx$):</strong> A mathematical microscope that finds the exact rate of change at a single instant of time.</li><li><strong>5. Integration ($\\int y\\,dx$):</strong> A mathematical accumulator that adds up infinitely many tiny variable pieces (like work done by a spring).</li><li><strong>6. Vectors:</strong> The algebra of arrows, where direction matters just as much as magnitude.</li></ul>",
+  "topics": [
+    {
+      "id": "bm_t1_algebra_binomial",
+      "title": "Algebraic Tools: Quadratic Equations, Binomial Approximation, AP/GP & Logarithms",
+      "prerequisites": [],
+      "theoryHtml": "<div class='topic-section-title'>1.1 Quadratic Equations in Physics</div><div class='def-box'><div class='def-title'>Definition: Quadratic Equation</div><p>Any equation where the highest power of the unknown variable $x$ (such as time $t$ or position $x$) is $2$:</p></div><div class='formula-box'>$$ax^2 + bx + c = 0 \\qquad (a \\neq 0)$$<div class='formula-caption'>Standard Quadratic Form where $a, b, c$ are known physical constants</div></div><p>Its two solutions (called <strong>roots</strong> $x_1$ and $x_2$) are given by the Quadratic Formula:</p><div class='formula-box'>$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$<div class='formula-caption'>Here $D = b^2 - 4ac$ is called the <strong>Discriminant</strong></div></div><div class='concept-box'><p><strong>Physical Meaning of the Discriminant ($D = b^2 - 4ac$):</strong></p><ul class='clean-list'><li><strong>Case 1 ($D &gt; 0$):</strong> Two distinct real roots. <em>Example:</em> A ball thrown upward crosses a height $h$ twice—once going up ($t_1$) and once coming down ($t_2$).</li><li><strong>Case 2 ($D = 0$):</strong> One repeated real root ($x = -b/2a$). <em>Example:</em> The ball just touches its maximum height $H_{\\max}$ at a single instant.</li><li><strong>Case 3 ($D &lt; 0$):</strong> No real root. <em>Physical meaning:</em> The event is impossible (the ball never reaches that height!).</li></ul></div><table class='data-table'><thead><tr><th>Root Relation</th><th>Formula</th><th>Where You Use It in JEE Physics</th></tr></thead><tbody><tr><td><strong>Sum of Roots</strong></td><td>$$x_1 + x_2 = -\\frac{b}{a}$$</td><td>In vertical motion $\\frac{1}{2}gt^2 - ut + h = 0$, sum of times is $t_1 + t_2 = \\frac{2u}{g} = T_{\\text{flight}}$.</td></tr><tr><td><strong>Product of Roots</strong></td><td>$$x_1 x_2 = \\frac{c}{a}$$</td><td>In vertical motion, product of times is $t_1 t_2 = \\frac{2h}{g} \\implies h = \\frac{1}{2}g t_1 t_2$.</td></tr><tr><td><strong>Difference of Roots</strong></td><td>$$|x_1 - x_2| = \\frac{\\sqrt{b^2 - 4ac}}{|a|}$$</td><td>Finds the time duration $\\Delta t = |t_2 - t_1|$ spent by a projectile above height $h$.</td></tr></tbody></table><div class='topic-section-title'>1.2 The Binomial Theorem &amp; Physics Approximation</div><div class='concept-box'><p><strong>First-Time Reader Intuition:</strong></p><p>Suppose $x$ is a very tiny number compared to $1$, such as $x = 0.001$.</p><p>Then $x^2 = 0.000001$ (one in a million) and $x^3 = 0.000000001$ (one in a billion)!</p><p>Because higher powers of a tiny fraction become vanishingly small, we can drop $x^2, x^3, \\dots$ whenever $|x| \\ll 1$.</p></div><div class='formula-box'>$$(1 + x)^n = 1 + nx + \\frac{n(n-1)}{2!}x^2 + \\dots$$<div class='formula-caption'>Exact Newton Binomial Expansion (valid for any real exponent $n$)</div></div><div class='formula-box'>$$(1 + x)^n \\approx 1 + nx \\qquad \\text{and} \\qquad (1 - x)^n \\approx 1 - nx$$<div class='formula-caption'><strong>Physics Binomial Approximation</strong> &mdash; Valid STRICTLY when $|x| \\ll 1$ (typically $|x| \\le 0.05$)</div></div><div class='topic-section-title'>1.3 Geometric Progression (GP) &amp; Infinite Sum</div><div class='def-box'><div class='def-title'>Definition: Geometric Progression (GP)</div><p>A sequence where each term is obtained by multiplying the previous term by a constant ratio $r$: $a,\\; ar,\\; ar^2,\\; ar^3, \\dots$</p></div><div class='formula-box'>$$S_n = \\frac{a(1 - r^n)}{1 - r} \\qquad \\text{and for } |r| &lt; 1: \\qquad S_\\infty = \\frac{a}{1 - r}$$<div class='formula-caption'>$a =$ First Term, $r =$ Common Ratio ($S_\\infty$ is used in infinite bouncing balls &amp; infinite charge grids)</div></div><div class='topic-section-title'>1.4 Exponential ($e^x$) &amp; Natural Logarithm ($\\ln x$) Identities</div><ul class='clean-list'><li><strong>Product Rule:</strong> $\\ln(A \\cdot B) = \\ln A + \\ln B$</li><li><strong>Quotient Rule:</strong> $\\ln\\left(\\frac{A}{B}\\right) = \\ln A - \\ln B$</li><li><strong>Power Rule:</strong> $\\ln(A^k) = k \\ln A$</li><li><strong>Base Values &amp; Base-10 Conversion:</strong> $\\ln(e) = 1, \\quad \\ln(1) = 0, \\quad \\ln(x) = 2.303 \\log_{10}(x)$</li></ul><div class='example-box'><strong>Worked Concept Example:</strong><br/>Find the approximate value of $\\frac{1}{\\sqrt{1.02}}$ without a calculator.<br/><strong>Solution:</strong><br/>Write $\\frac{1}{\\sqrt{1.02}} = (1 + 0.02)^{-1/2}$.<br/>Here $x = 0.02 \\ll 1$ and $n = -\\frac{1}{2}$.<br/>Using $(1 + x)^n \\approx 1 + nx$:<br/>$$(1 + 0.02)^{-1/2} \\approx 1 + \\left(-\\frac{1}{2}\\right)(0.02) = 1 - 0.01 = 0.99$$</div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-badge'>Derivation 1 &bull; Step 1</div><p><strong>Completing the Square for $ax^2 + bx + c = 0$:</strong></p><p>Divide the entire equation by $a$ and move the constant term to the right side:</p><div class='formula-box'>$$x^2 + \\frac{b}{a}x = -\\frac{c}{a}$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Derivation 1 &bull; Step 2</div><p>Add $\\left(\\frac{b}{2a}\\right)^2$ to both sides so the left side becomes a perfect square:</p><div class='formula-box'>$$\\left(x + \\frac{b}{2a}\\right)^2 = \\frac{b^2}{4a^2} - \\frac{c}{a} = \\frac{b^2 - 4ac}{4a^2}$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Derivation 1 &bull; Step 3</div><p>Take the square root on both sides and isolate $x$:</p><div class='formula-box'>$$x + \\frac{b}{2a} = \\pm\\frac{\\sqrt{b^2 - 4ac}}{2a} \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Derivation 2 &bull; Gravity at Small Altitude</div><p><strong>How Binomial Approximation Derives $g' \\approx g\\left(1 - \\frac{2h}{R}\\right)$:</strong></p><p>Exact gravity at height $h$ above Earth of radius $R$ is:</p><div class='formula-box'>$$g' = \\frac{GM}{(R + h)^2}$$</div><p>Pull out $R^2$ from the denominator so the bracket starts with $1$:</p><div class='formula-box'>$$g' = \\frac{GM}{R^2\\left(1 + \\frac{h}{R}\\right)^2} = g\\left(1 + \\frac{h}{R}\\right)^{-2}$$</div><p>When $h \\ll R$, let $x = \\frac{h}{R} \\ll 1$ and $n = -2$. Apply $(1 + x)^n \\approx 1 + nx$:</p><div class='formula-box'>$$g' \\approx g\\left(1 - \\frac{2h}{R}\\right)$$</div></div>",
+      "graphSvg": "<svg viewBox='0 0 680 230' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='230' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='50' y1='190' x2='640' y2='190' stroke='#94a3b8' stroke-width='2'/><line x1='50' y1='25' x2='50' y2='205' stroke='#94a3b8' stroke-width='2'/><path d='M 50 190 Q 200 175 340 120 T 580 30' fill='none' stroke='#00f0ff' stroke-width='3'/><line x1='50' y1='190' x2='420' y2='95' stroke='#ff0055' stroke-width='2.5' stroke-dasharray='6,4'/><circle cx='110' cy='175' r='5' fill='#00e676'/><text x='65' y='45' fill='#00f0ff' font-size='13' font-weight='bold'>Exact Curve: y = (1 + x)^3</text><text x='65' y='68' fill='#ff0055' font-size='13' font-weight='bold'>Binomial Linear Approximation: y = 1 + 3x (Matches for small x &lt;&lt; 1)</text><text x='120' y='170' fill='#00e676' font-size='12'>Valid Zone (|x| &lt;&lt; 1): Error &lt; 1%</text><text x='430' y='140' fill='#ffab00' font-size='12'>Large x Zone: Approximation Diverges!</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Using Binomial Approximation When $x$ Is NOT Small):</strong><br/>Students often use $g' = g(1 - 2h/R)$ at $h = R/2$, which gives $g' = 0$ (impossible!).<br/><strong>How to Avoid:</strong> Since $h/R = 0.5$ is NOT $\\ll 1$, you MUST use the exact formula $g' = \\frac{g}{(1 + h/R)^2} = \\frac{4}{9}g$. Only use $(1+x)^n \\approx 1+nx$ when $|x| \\le 0.05$.</li><li><strong>Trap 2 (Forgetting to Factor Out the Larger Term First):</strong><br/>In $(a + b)^n$ with $b \\ll a$, always factor out $a^n$ first so the first term inside the bracket is $1$: $(a + b)^n = a^n(1 + b/a)^n \\approx a^n\\left(1 + n\\frac{b}{a}\\right)$.</li></ul>"
+    },
+    {
+      "id": "bm_t2_trigonometry_phasors",
+      "title": "Trigonometry for Physics: Radian Measure, ASTC Rule, Identities, Small-Angle Approximation & Phasors",
+      "prerequisites": [
+        {
+          "label": "Algebraic & Binomial Basics",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t1_algebra_binomial"
+        }
+      ],
+      "theoryHtml": "<div class='topic-section-title'>2.1 Radian Measure vs. Degree Measure</div><div class='def-box'><div class='def-title'>Definition: One Radian (1 rad)</div><p>The plane angle subtended at the center of a circle by an arc whose length $s$ is equal to the radius $R$ of the circle.</p></div><div class='formula-box'>$$\\theta \\text{ (in radians)} = \\frac{\\text{Arc Length }(s)}{\\text{Radius }(R)} \\implies s = R\\theta$$<div class='formula-caption'>Conversion: $\\pi\\text{ rad} = 180^\\circ \\implies 1\\text{ rad} = \\frac{180^\\circ}{\\pi} \\approx 57.3^\\circ$</div></div><div class='topic-section-title'>2.2 The 3&ndash;4&ndash;5 Physics Triangle ($37^\\circ$ &amp; $53^\\circ$) &amp; Standard Angles</div><p>A right triangle with sides $3, 4, 5$ has acute angles $37^\\circ$ (opposite side $3$) and $53^\\circ$ (opposite side $4$). Memorize this table for instant force resolution:</p><table class='data-table'><thead><tr><th>Ratio</th><th>$0^\\circ$</th><th>$30^\\circ (\\pi/6)$</th><th>$37^\\circ$</th><th>$45^\\circ (\\pi/4)$</th><th>$53^\\circ$</th><th>$60^\\circ (\\pi/3)$</th><th>$90^\\circ (\\pi/2)$</th><th>$120^\\circ$</th><th>$180^\\circ (\\pi)$</th></tr></thead><tbody><tr><td>$\\sin\\theta$</td><td>$0$</td><td>$\\frac{1}{2}$</td><td><strong>$\\frac{3}{5} = 0.6$</strong></td><td>$\\frac{1}{\\sqrt{2}}$</td><td><strong>$\\frac{4}{5} = 0.8$</strong></td><td>$\\frac{\\sqrt{3}}{2}$</td><td>$1$</td><td>$+\\frac{\\sqrt{3}}{2}$</td><td>$0$</td></tr><tr><td>$\\cos\\theta$</td><td>$1$</td><td>$\\frac{\\sqrt{3}}{2}$</td><td><strong>$\\frac{4}{5} = 0.8$</strong></td><td>$\\frac{1}{\\sqrt{2}}$</td><td><strong>$\\frac{3}{5} = 0.6$</strong></td><td>$\\frac{1}{2}$</td><td>$0$</td><td>$-\\frac{1}{2}$</td><td>$-1$</td></tr><tr><td>$\\tan\\theta$</td><td>$0$</td><td>$\\frac{1}{\\sqrt{3}}$</td><td><strong>$\\frac{3}{4} = 0.75$</strong></td><td>$1$</td><td><strong>$\\frac{4}{3} \\approx 1.33$</strong></td><td>$\\sqrt{3}$</td><td>$\\infty$</td><td>$-\\sqrt{3}$</td><td>$0$</td></tr></tbody></table><div class='topic-section-title'>2.3 ASTC Quadrant Rule &amp; Allied Angle Reduction</div><div class='concept-box'><p><strong>2-Step Rule for Any Large Angle like $(180^\\circ - \\theta)$ or $(90^\\circ + \\theta)$:</strong></p><ol class='clean-list'><li><strong>Check Sign by Quadrant (ASTC):</strong><br/>&bull; Quadrant I ($0^\\circ$ to $90^\\circ$): <strong>A</strong>ll positive.<br/>&bull; Quadrant II ($90^\\circ$ to $180^\\circ$): <strong>S</strong>ine ($\\sin, \\csc$) positive.<br/>&bull; Quadrant III ($180^\\circ$ to $270^\\circ$): <strong>T</strong>an ($\\tan, \\cot$) positive.<br/>&bull; Quadrant IV ($270^\\circ$ to $360^\\circ$): <strong>C</strong>os ($\\cos, \\sec$) positive.</li><li><strong>Check Function Change:</strong><br/>&bull; Multiples of $180^\\circ$ ($180^\\circ \\pm \\theta, 360^\\circ \\pm \\theta$): Function <strong>stays the same</strong>.<br/>&bull; Odd multiples of $90^\\circ$ ($90^\\circ \\pm \\theta, 270^\\circ \\pm \\theta$): Function <strong>switches to co-function</strong> ($\\sin \\leftrightarrow \\cos$, $\\tan \\leftrightarrow \\cot$).</li></ol></div><div class='topic-section-title'>2.4 Essential Compound, Double-Angle &amp; Degree-Reduction Identities</div><div class='formula-box'>$$\\sin(A \\pm B) = \\sin A\\cos B \\pm \\cos A\\sin B$$<br/>$$\\cos(A \\pm B) = \\cos A\\cos B \\mp \\sin A\\sin B$$<div class='formula-caption'>Compound Angle Addition &amp; Subtraction Formulas</div></div><div class='formula-box'>$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta \\qquad \\text{and} \\qquad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$$<div class='formula-caption'>Double-Angle Identities (Used in Projectile Range &amp; Optics)</div></div><div class='formula-box'>$$\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2} \\qquad \\text{and} \\qquad \\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$$<div class='formula-caption'>Power-Reduction Identities (Mandatory for integrating $\\sin^2\\theta$ and $\\cos^2\\theta$ in AC &amp; Waves)</div></div><div class='topic-section-title'>2.5 Small-Angle Approximation (For Pendulums, Lenses &amp; Interference)</div><div class='formula-box'>$$\\sin\\theta \\approx \\tan\\theta \\approx \\theta \\text{ (in radians)} \\qquad \\text{and} \\qquad \\cos\\theta \\approx 1 - \\frac{\\theta^2}{2} \\approx 1$$<div class='formula-caption'>Valid when $\\theta$ is very small ($\\theta \\le 5^\\circ \\approx 0.087\\text{ rad}$)</div></div><div class='example-box'><strong>Worked Concept Example:</strong><br/>A simple pendulum of length $L = 1\\text{ m}$ is displaced by a tiny angle $\\theta = 3^\\circ$. Find the horizontal displacement $x = L\\sin\\theta$.<br/><strong>Solution:</strong><br/>First convert $\\theta = 3^\\circ$ to radians: $\\theta = 3 \\times \\frac{\\pi}{180} = \\frac{\\pi}{60}\\text{ rad}$.<br/>Using $\\sin\\theta \\approx \\theta$: $x \\approx (1\\text{ m}) \\times \\frac{\\pi}{60} \\approx 0.0523\\text{ m} = 5.23\\text{ cm}$.</div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-badge'>Derivation &bull; Step 1</div><p><strong>Combining $y = a\\sin\\theta + b\\cos\\theta$ into a Single Sine Wave (Phasor Resultant):</strong></p><p>Multiply and divide the expression by $R = \\sqrt{a^2 + b^2}$:</p><div class='formula-box'>$$y = \\sqrt{a^2 + b^2}\\left(\\frac{a}{\\sqrt{a^2 + b^2}}\\sin\\theta + \\frac{b}{\\sqrt{a^2 + b^2}}\\cos\\theta\\right)$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Derivation &bull; Step 2</div><p>Define phase angle $\\alpha$ from a right triangle with base $a$, height $b$, and hypotenuse $\\sqrt{a^2 + b^2}$ so that $\\cos\\alpha = \\frac{a}{\\sqrt{a^2+b^2}}$ and $\\sin\\alpha = \\frac{b}{\\sqrt{a^2+b^2}}$ (meaning $\\tan\\alpha = \\frac{b}{a}$):</p><div class='formula-box'>$$y = \\sqrt{a^2 + b^2}(\\sin\\theta\\cos\\alpha + \\cos\\theta\\sin\\alpha) = \\sqrt{a^2 + b^2}\\sin(\\theta + \\alpha)$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Derivation &bull; Step 3</div><p>Since $\\sin(\\theta + \\alpha)$ oscillates between $-1$ and $+1$, the extreme values of $y$ are:</p><div class='formula-box'>$$y_{\\max} = +\\sqrt{a^2 + b^2} \\qquad \\text{and} \\qquad y_{\\min} = -\\sqrt{a^2 + b^2}$$</div></div>",
+      "graphSvg": "<svg viewBox='0 0 680 220' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='220' rx='8' fill='#080b12' stroke='#1e293b'/><polygon points='70,175 230,175 230,55' fill='rgba(0,240,255,0.12)' stroke='#00f0ff' stroke-width='2.5'/><text x='145' y='195' fill='#00f0ff' font-size='13' font-weight='bold'>Base = 4</text><text x='240' y='120' fill='#00f0ff' font-size='13' font-weight='bold'>Height = 3</text><text x='115' y='105' fill='#00e676' font-size='13' font-weight='bold'>Hypotenuse = 5</text><text x='102' y='168' fill='#ffab00' font-size='12' font-weight='bold'>37 deg</text><text x='195' y='92' fill='#ff0055' font-size='12' font-weight='bold'>53 deg</text><line x1='340' y1='115' x2='640' y2='115' stroke='#94a3b8' stroke-width='1.5'/><line x1='340' y1='25' x2='340' y2='200' stroke='#94a3b8' stroke-width='1.5'/><path d='M 340 115 Q 375 35 410 115 T 480 115 T 550 115 T 620 115' fill='none' stroke='#00f0ff' stroke-width='2.5'/><text x='355' y='35' fill='#f0f4f8' font-size='12'>Sine Wave: Period = 2 pi, Range = [-1, +1]</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Putting Degrees into $\\sin\\theta \\approx \\theta$):</strong><br/>Never write $\\sin(2^\\circ) \\approx 2$! You MUST convert degrees into radians first: $\\sin(2^\\circ) \\approx 2 \\times \\frac{\\pi}{180} = \\frac{\\pi}{90}$.</li><li><strong>Trap 2 (When $1 - \\cos\\theta$ Appears):</strong><br/>In pendulum height $h = L(1 - \\cos\\theta)$, setting $\\cos\\theta \\approx 1$ gives $h = 0$! Whenever $1 - \\cos\\theta$ is subtracted, use the second-order identity $1 - \\cos\\theta = 2\\sin^2(\\theta/2) \\approx \\frac{\\theta^2}{2}$, so $h \\approx \\frac{1}{2}L\\theta^2$.</li></ul>"
+    },
+    {
+      "id": "bm_t3_graphs_coordinate",
+      "title": "Coordinate Geometry & Reading Physics Graphs (Straight Line, Parabola, Hyperbola, Ellipse & Exponential)",
+      "prerequisites": [
+        {
+          "label": "Trigonometric Slope tan(theta)",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t2_trigonometry_phasors"
+        }
+      ],
+      "theoryHtml": "<div class='topic-section-title'>3.1 The 4-Step Protocol for Reading Any Physics Graph</div><div class='concept-box'><p>Whenever a JEE problem gives you a graph between vertical variable $y$ and horizontal variable $x$, check these <strong>4 things</strong> in order:</p><ol class='clean-list'><li><strong>Check the Exact Axes &amp; Units:</strong> Is it $v$ vs $t$, or $v$ vs $x$, or $v^2$ vs $x$?</li><li><strong>Check the Intercepts:</strong> Where the graph cuts the $y$-axis gives the value at $x = 0$. Where it cuts the $x$-axis gives the root where $y = 0$.</li><li><strong>Check the Tangent Slope ($m = \\tan\\theta = \\frac{dy}{dx}$):</strong> Represents the instantaneous rate of change of $y$ with respect to $x$.</li><li><strong>Check the Area Under the Curve ($\\text{Area} = \\int y\\,dx$):</strong> Represents the accumulated product of $y$ and $dx$.</li></ol></div><div class='topic-section-title'>3.2 Straight Line Equations ($y = mx + c$)</div><div class='formula-box'>$$m = \\tan\\theta = \\frac{y_2 - y_1}{x_2 - x_1} \\qquad \\text{and} \\qquad y = mx + c$$<div class='formula-caption'>$m =$ Slope of the line, $c =$ y-intercept (value of $y$ where $x = 0$)</div></div><div class='topic-section-title'>3.3 Master Atlas of the 6 Curves Used Across Physics</div><table class='data-table'><thead><tr><th>Curve Type</th><th>Standard Equation</th><th>How to Recognize Shape</th><th>Direct Physics Examples</th></tr></thead><tbody><tr><td><strong>1. Straight Line</strong></td><td>$y = mx + c$</td><td>Constant slope $m$.</td><td>$v = u + at$; Photoelectric $K_{\\max} = h\\nu - \\phi_0$.</td></tr><tr><td><strong>2. Parabola</strong></td><td>$y = ax^2 + bx + c$</td><td>Symmetric U-curve. Opens <strong>Upward (Cup)</strong> if $a &gt; 0$; opens <strong>Downward (Cap)</strong> if $a &lt; 0$.</td><td>Projectile path $y = x\\tan\\theta - \\frac{gx^2}{2u^2\\cos^2\\theta}$; Spring Energy $U = \\frac{1}{2}kx^2$.</td></tr><tr><td><strong>3. Rectangular Hyperbola</strong></td><td>$x \\cdot y = \\text{constant}$<br/>or $y \\propto \\frac{1}{x^n}$</td><td>Approaches both axes asymptotically without touching them. Larger $n$ gives a steeper drop.</td><td>Isothermal gas law $PV = \\text{const}$; Gravitation/Coulomb $F \\propto 1/r^2$.</td></tr><tr><td><strong>4. Circle &amp; Ellipse</strong></td><td>$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$</td><td>Closed oval loop with semi-axes $a$ and $b$ (Circle if $a = b = R$).</td><td>SHM velocity-position graph $\\frac{v^2}{(\\omega A)^2} + \\frac{x^2}{A^2} = 1$; Planetary orbits.</td></tr><tr><td><strong>5. Exponential Decay</strong></td><td>$y = y_0 e^{-\\lambda x}$</td><td>Starts at $y_0$ at $x=0$, drops to $0.37y_0$ at $x = 1/\\lambda$, approaches $0$ as $x \\to \\infty$.</td><td>Radioactive decay $N = N_0 e^{-\\lambda t}$; Capacitor discharging.</td></tr><tr><td><strong>6. Exponential Saturation</strong></td><td>$y = y_0(1 - e^{-x/\\tau})$</td><td>Starts at $0$, reaches $0.63y_0$ at $x = \\tau$, levels off at horizontal asymptote $y_0$.</td><td>Capacitor charging $q = CV(1 - e^{-t/RC})$; Raindrop terminal velocity.</td></tr></tbody></table>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-badge'>Derivation &bull; Linearization of Curves</div><p><strong>How to Turn a Curved Physics Formula into a Straight-Line Graph:</strong></p><p>Consider a particle accelerating from initial speed $u$ with constant acceleration $a$:</p><div class='formula-box'>$$v^2 = u^2 + 2ax$$</div><p>1. If you plot $v$ on the y-axis against $x$ on the x-axis, the graph is a <strong>parabola</strong> ($v = \\sqrt{u^2 + 2ax}$).</p><p>2. If you instead plot $Y = v^2$ on the y-axis against $X = x$ on the x-axis, the equation becomes:</p><div class='formula-box'>$$Y = (2a)X + u^2 \\qquad \\text{which matches } Y = mX + c$$</div><p>Therefore, the $v^2$ vs $x$ graph is a <strong>straight line</strong> whose y-intercept is $c = u^2$ and whose slope is $m = 2a \\implies a = \\frac{\\text{Slope}}{2}$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 230' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='230' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(20,15)'><line x1='20' y1='175' x2='195' y2='175' stroke='#94a3b8' stroke-width='1.5'/><line x1='20' y1='15' x2='20' y2='185' stroke='#94a3b8' stroke-width='1.5'/><path d='M 20 175 Q 100 170 180 25' fill='none' stroke='#00f0ff' stroke-width='2.5'/><path d='M 20 175 Q 100 35 180 175' fill='none' stroke='#ff0055' stroke-width='2.5'/><text x='30' y='30' fill='#00f0ff' font-size='11'>Parabola a &gt; 0 (Cup)</text><text x='30' y='48' fill='#ff0055' font-size='11'>Parabola a &lt; 0 (Cap)</text></g><g transform='translate(240,15)'><line x1='20' y1='175' x2='195' y2='175' stroke='#94a3b8' stroke-width='1.5'/><line x1='20' y1='15' x2='20' y2='185' stroke='#94a3b8' stroke-width='1.5'/><path d='M 32 25 Q 48 145 185 162' fill='none' stroke='#00e676' stroke-width='2.5'/><path d='M 32 45 Q 42 162 185 170' fill='none' stroke='#ffab00' stroke-width='2.5' stroke-dasharray='5,3'/><text x='48' y='40' fill='#00e676' font-size='11'>Hyperbola: y ~ 1/x</text><text x='48' y='58' fill='#ffab00' font-size='11'>Steeper: y ~ 1/x^2</text></g><g transform='translate(460,15)'><line x1='20' y1='175' x2='195' y2='175' stroke='#94a3b8' stroke-width='1.5'/><line x1='20' y1='15' x2='20' y2='185' stroke='#94a3b8' stroke-width='1.5'/><line x1='20' y1='40' x2='190' y2='40' stroke='#64748b' stroke-dasharray='4,4'/><path d='M 20 175 Q 55 45 185 42' fill='none' stroke='#a855f7' stroke-width='2.5'/><path d='M 20 40 Q 60 165 185 172' fill='none' stroke='#00f0ff' stroke-width='2.5'/><text x='35' y='32' fill='#a855f7' font-size='11'>y = y0(1 - e^-t/T)</text><text x='75' y='150' fill='#00f0ff' font-size='11'>y = y0 e^-t/T</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Confusing Chord Slope $y/x$ with Tangent Slope $dy/dx$):</strong><br/>On a curved $x$-$t$ graph, $\\frac{x}{t}$ is the slope of the secant line from the origin (average velocity), whereas $\\frac{dx}{dt}$ is the slope of the tangent line at that instant (instantaneous velocity).</li><li><strong>Trap 2 (Using Visual Angle $\\tan\\theta$ When Axis Scales Differ):</strong><br/>If the y-axis is marked in steps of $50\\text{ m/s}$ and the x-axis in steps of $2\\text{ s}$, never use a protractor angle $\\tan\\theta$! Always compute $\\frac{y_2 - y_1}{x_2 - x_1}$ directly from the axis numbers.</li><li><strong>Trap 3 (Reading Slope of $v$ vs $x$ Graph as Acceleration):</strong><br/>On a $v$-$x$ graph, slope is $\\frac{dv}{dx}$, NOT acceleration! True acceleration is $a = v\\frac{dv}{dx} = (\\text{y-coordinate}) \\times (\\text{slope})$.</li></ul>"
+    },
+    {
+      "id": "bm_t4_limits_differentiation",
+      "title": "Limits & Differential Calculus from First Principles (Secant-to-Tangent, Standard Derivatives, Chain, Product & Quotient Rules)",
+      "prerequisites": [
+        {
+          "label": "Coordinate Graphs & Tangent Slope",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t3_graphs_coordinate"
+        }
+      ],
+      "theoryHtml": "<div class='topic-section-title'>4.1 First-Time Reader Intuition: What Is a Derivative?</div><div class='concept-box'><p>Imagine driving $200\\text{ km}$ in $4\\text{ hours}$. Your <strong>Average Speed</strong> is $\\frac{\\Delta x}{\\Delta t} = \\frac{200}{4} = 50\\text{ km/h}$.</p><p>But your car's speedometer shows your speed <em>right now</em> at a single instant! How do we calculate speed over a time interval that shrinks to zero ($\\Delta t \\to 0$)?</p><p>We take a tiny time window $\\Delta t$ and find the limiting value of the ratio $\\frac{\\Delta x}{\\Delta t}$ as $\\Delta t$ approaches zero. Geometrically, the <strong>Secant Line</strong> across two points merges into the <strong>Tangent Line</strong> at a single point!</p></div><div class='def-box'><div class='def-title'>Definition: Derivative from First Principles</div><p>The instantaneous rate of change of $y = f(x)$ with respect to $x$ equals the limit of the secant slope $\\frac{\\Delta y}{\\Delta x}$ as $\\Delta x \\to 0$:</p></div><div class='formula-box'>$$\\frac{dy}{dx} = f'(x) = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x) - f(x)}{\\Delta x} = \\tan\\theta_{\\text{tangent}}$$<div class='formula-caption'>Read $\\frac{dy}{dx}$ as &ldquo;Derivative of $y$ with respect to $x$&rdquo; (NOT $d$ times $y$ divided by $d$ times $x$!)</div></div><div class='topic-section-title'>4.2 Master Table of Standard Derivatives</div><table class='data-table'><thead><tr><th>Function $y = f(x)$</th><th>Derivative $\\frac{dy}{dx}$</th><th>Quick Physics Example</th></tr></thead><tbody><tr><td>Constant $c$</td><td>$$0$$</td><td>If position $x = 5\\text{ m}$ (stationary), velocity $v = \\frac{dx}{dt} = 0$.</td></tr><tr><td>Power Rule $x^n$</td><td>$$n x^{n-1}$$</td><td>$\\frac{d}{dx}(x^3) = 3x^2$; $\\quad \\frac{d}{dx}\\left(\\frac{1}{x}\\right) = -\\frac{1}{x^2}$; $\\quad \\frac{d}{dx}(\\sqrt{x}) = \\frac{1}{2\\sqrt{x}}$.</td></tr><tr><td>$\\sin x$</td><td>$$+\\cos x$$</td><td>If $x = A\\sin(\\omega t)$, then $v = \\frac{dx}{dt} = +A\\omega\\cos(\\omega t)$.</td></tr><tr><td>$\\cos x$</td><td>$$-\\sin x$$</td><td>Notice the minus sign! $\\frac{d}{dx}(\\cos x) = -\\sin x$.</td></tr><tr><td>$\\tan x$</td><td>$$\\sec^2 x$$</td><td>$\\frac{d}{dx}(\\cot x) = -\\csc^2 x$; $\\quad \\frac{d}{dx}(\\sec x) = \\sec x\\tan x$.</td></tr><tr><td>Exponential $e^x$</td><td>$$e^x$$</td><td>For $y = e^{kx}$, derivative is $\\frac{dy}{dx} = k e^{kx}$.</td></tr><tr><td>Natural Log $\\ln x$</td><td>$$\\frac{1}{x}$$</td><td>For $\\log_a x$, derivative is $\\frac{1}{x\\ln a}$.</td></tr></tbody></table><div class='topic-section-title'>4.3 The 4 Operational Rules of Differentiation</div><div class='deriv-step'><div class='deriv-step-badge'>Rule 1 &bull; Sum &amp; Constant Multiple</div><div class='formula-box'>$$\\frac{d}{dx}\\left[c_1 u(x) \\pm c_2 v(x)\\right] = c_1 \\frac{du}{dx} \\pm c_2 \\frac{dv}{dx}$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Rule 2 &bull; Product Rule (UV Rule)</div><p>When two functions of $x$ are multiplied together:</p><div class='formula-box'>$$\\frac{d}{dx}(u \\cdot v) = u\\frac{dv}{dx} + v\\frac{du}{dx}$$<div class='formula-caption'>(First $\\times$ Derivative of Second) $+$ (Second $\\times$ Derivative of First)</div></div></div><div class='deriv-step'><div class='deriv-step-badge'>Rule 3 &bull; Quotient Rule (U/V Rule)</div><p>When one function of $x$ is divided by another:</p><div class='formula-box'>$$\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{v\\frac{du}{dx} - u\\frac{dv}{dx}}{v^2}$$<div class='formula-caption'>(Bottom $\\times$ Derivative of Top $-$ Top $\\times$ Derivative of Bottom) $\\div$ (Bottom)$^2$</div></div></div><div class='deriv-step'><div class='deriv-step-badge'>Rule 4 &bull; The Chain Rule (Outside-Inside Rule)</div><p>When a function is nested inside another function, $y = f(g(x))$, differentiate the <strong>outer function first</strong> (keeping the inside untouched), then multiply by the <strong>derivative of the inner function</strong>:</p><div class='formula-box'>$$\\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx} = f'(g(x)) \\cdot g'(x)$$</div></div><div class='example-box'><strong>Worked Concept Example:</strong><br/>Differentiate $y = \\sin(3t^2 + 5)$ with respect to $t$.<br/><strong>Solution:</strong><br/>1. Outer function is $\\sin(u)$, whose derivative is $\\cos(u) = \\cos(3t^2 + 5)$.<br/>2. Inner function is $u = 3t^2 + 5$, whose derivative with respect to $t$ is $\\frac{du}{dt} = 6t$.<br/>3. Multiply them together by the Chain Rule:<br/>$$\\frac{dy}{dt} = 6t \\cos(3t^2 + 5)$$</div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-badge'>Proof 1 &bull; Power Rule from First Principles</div><p>Let $f(x) = x^n$. Substitute into the limit definition:</p><div class='formula-box'>$$\\frac{dy}{dx} = \\lim_{\\Delta x \\to 0} \\frac{(x + \\Delta x)^n - x^n}{\\Delta x} = \\lim_{\\Delta x \\to 0} \\frac{x^n\\left(1 + \\frac{\\Delta x}{x}\\right)^n - x^n}{\\Delta x}$$</div><p>Since $\\Delta x \\to 0$, we have $\\frac{\\Delta x}{x} \\ll 1$. Apply the Binomial Approximation $\\left(1 + \\frac{\\Delta x}{x}\\right)^n \\approx 1 + n\\frac{\\Delta x}{x}$:</p><div class='formula-box'>$$\\frac{dy}{dx} = \\lim_{\\Delta x \\to 0} \\frac{x^n + n x^{n-1}\\Delta x - x^n}{\\Delta x} = n x^{n-1}$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Proof 2 &bull; The Kinematics Chain-Rule Identity</div><p><strong>How $a = \\frac{dv}{dt}$ Becomes $a = v\\frac{dv}{dx}$ When Velocity Depends on Position $x$:</strong></p><p>By the Chain Rule, multiply and divide $\\frac{dv}{dt}$ by $dx$:</p><div class='formula-box'>$$a = \\frac{dv}{dt} = \\frac{dv}{dx} \\cdot \\frac{dx}{dt}$$</div><p>Since $\\frac{dx}{dt} = v$, this immediately gives the famous JEE identity:</p><div class='formula-box'>$$a = v\\frac{dv}{dx}$$</div></div>",
+      "graphSvg": "<svg viewBox='0 0 680 230' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='230' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='60' y1='195' x2='630' y2='195' stroke='#94a3b8' stroke-width='2'/><line x1='60' y1='25' x2='60' y2='205' stroke='#94a3b8' stroke-width='2'/><path d='M 80 180 Q 250 165 480 35' fill='none' stroke='#00f0ff' stroke-width='3'/><line x1='150' y1='190' x2='490' y2='85' stroke='#ff0055' stroke-width='2.5'/><line x1='220' y1='160' x2='440' y2='55' stroke='#ffab00' stroke-width='2' stroke-dasharray='6,4'/><circle cx='220' cy='160' r='6' fill='#ff0055'/><circle cx='440' cy='55' r='6' fill='#ffab00'/><line x1='220' y1='160' x2='440' y2='160' stroke='#64748b' stroke-dasharray='3,3'/><line x1='440' y1='160' x2='440' y2='55' stroke='#64748b' stroke-dasharray='3,3'/><text x='320' y='178' fill='#f0f4f8' font-size='12'>Delta x</text><text x='450' y='115' fill='#f0f4f8' font-size='12'>Delta y</text><text x='85' y='45' fill='#ffab00' font-size='13' font-weight='bold'>Yellow Dashed: Secant Chord Slope = Delta y / Delta x (Average Rate)</text><text x='85' y='68' fill='#ff0055' font-size='13' font-weight='bold'>Pink Solid: Exact Tangent Slope = lim(Delta x-&gt;0) = dy/dx (Instantaneous Rate)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Plugging in Numbers BEFORE Differentiating):</strong><br/>To find velocity at $t = 2\\text{ s}$ for $x(t) = 5t^2$, NEVER substitute $t = 2$ first (because $x(2) = 20$ and $\\frac{d}{dt}(20) = 0$!). Always differentiate symbolically first ($v = 10t$) and substitute $t = 2\\text{ s}$ at the very end ($v = 20\\text{ m/s}$).</li><li><strong>Trap 2 (Forgetting $\\frac{dr}{dt}$ in Related Rates):</strong><br/>When differentiating sphere volume $V = \\frac{4}{3}\\pi r^3$ with respect to time $t$, don't stop at $4\\pi r^2$—multiply by $\\frac{dr}{dt}$ via the Chain Rule: $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$.</li></ul>"
+    },
+    {
+      "id": "bm_t5_maxima_minima_rates",
+      "title": "Applications of Derivatives: Physical Rate Dictionary & Maxima-Minima Optimization",
+      "prerequisites": [
+        {
+          "label": "Chain, Product & Quotient Rules",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t4_limits_differentiation"
+        }
+      ],
+      "theoryHtml": "<div class='topic-section-title'>5.1 Where Derivatives Appear Across Physics</div><table class='data-table'><thead><tr><th>Physical Quantity</th><th>First Derivative</th><th>Second Derivative</th></tr></thead><tbody><tr><td>Position $x(t)$</td><td>Velocity $v = \\frac{dx}{dt}$</td><td>Acceleration $a = \\frac{d^2x}{dt^2} = \\frac{dv}{dt} = v\\frac{dv}{dx}$</td></tr><tr><td>Angle $\\theta(t)$</td><td>Angular Velocity $\\omega = \\frac{d\\theta}{dt}$</td><td>Angular Acceleration $\\alpha = \\frac{d^2\\theta}{dt^2} = \\omega\\frac{d\\omega}{d\\theta}$</td></tr><tr><td>Charge $q(t)$</td><td>Electric Current $I = \\frac{dq}{dt}$</td><td>Rate of current change $\\frac{dI}{dt}$ (Inductor EMF $= -L\\frac{dI}{dt}$)</td></tr><tr><td>Potential Energy $U(x)$</td><td>Conservative Force $F = -\\frac{dU}{dx}$</td><td>Stability &amp; Spring Constant $k = +\\frac{d^2U}{dx^2}$</td></tr></tbody></table><div class='topic-section-title'>5.2 Maxima &amp; Minima (Finding Peak Values &amp; Equilibrium)</div><div class='concept-box'><p><strong>Visual Intuition (Hilltop vs. Valley Bottom):</strong></p><p>&bull; At the exact <strong>top of a hill (Local Maximum)</strong>, the tangent line is horizontal ($\\frac{dy}{dx} = 0$), and the curve bends downward (concave down, so slope is decreasing: $\\frac{d^2y}{dx^2} &lt; 0$).</p><p>&bull; At the exact <strong>bottom of a valley (Local Minimum)</strong>, the tangent line is also horizontal ($\\frac{dy}{dx} = 0$), and the curve bends upward (concave up, so slope is increasing: $\\frac{d^2y}{dx^2} &gt; 0$).</p></div><div class='formula-box'>$$\\text{For Maximum at } x = x_0: \\qquad \\frac{dy}{dx}\\Big|_{x_0} = 0 \\quad \\text{and} \\quad \\frac{d^2y}{dx^2}\\Big|_{x_0} &lt; 0$$</div><div class='formula-box'>$$\\text{For Minimum at } x = x_0: \\qquad \\frac{dy}{dx}\\Big|_{x_0} = 0 \\quad \\text{and} \\quad \\frac{d^2y}{dx^2}\\Big|_{x_0} &gt; 0$$</div><div class='example-box'><strong>Worked Concept Example:</strong><br/>The height of a stone is $y(t) = 40t - 5t^2$ meters. Find the maximum height using calculus.<br/><strong>Solution:</strong><br/>1. Set first derivative to zero: $\\frac{dy}{dt} = 40 - 10t = 0 \\implies t = 4\\text{ s}$.<br/>2. Check second derivative: $\\frac{d^2y}{dt^2} = -10 &lt; 0$ (confirms a maximum!).<br/>3. Substitute $t = 4\\text{ s}$ into $y(t)$: $y_{\\max} = 40(4) - 5(4)^2 = 160 - 80 = 80\\text{ m}$.</div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-badge'>Derivation &bull; Maximum Power Transfer Theorem</div><p><strong>Find the external load resistance $R$ that draws maximum power from a battery of EMF $E$ and internal resistance $r$:</strong></p><p>Current in the circuit is $I = \\frac{E}{R + r}$, so thermal power in resistor $R$ is:</p><div class='formula-box'>$$P(R) = I^2 R = \\frac{E^2 R}{(R + r)^2}$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Step 2 &bull; Differentiate with Respect to $R$</div><p>Apply the Quotient Rule to $\\frac{R}{(R+r)^2}$ and set $\\frac{dP}{dR} = 0$:</p><div class='formula-box'>$$\\frac{dP}{dR} = E^2 \\left[ \\frac{(R + r)^2(1) - R \\cdot 2(R + r)}{(R + r)^4} \\right] = E^2 \\left[ \\frac{r - R}{(R + r)^3} \\right] = 0$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Step 3 &bull; Solve for Optimal Load &amp; Max Power</div><div class='formula-box'>$$r - R = 0 \\implies R = r \\qquad \\text{and} \\qquad P_{\\max} = \\frac{E^2}{4r}$$</div></div>",
+      "graphSvg": "<svg viewBox='0 0 680 230' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='230' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='50' y1='195' x2='630' y2='195' stroke='#94a3b8' stroke-width='2'/><line x1='50' y1='20' x2='50' y2='205' stroke='#94a3b8' stroke-width='2'/><path d='M 70 175 C 140 10, 240 10, 320 110 C 400 210, 500 210, 590 45' fill='none' stroke='#00f0ff' stroke-width='3'/><line x1='130' y1='52' x2='255' y2='52' stroke='#00e676' stroke-width='2.5'/><circle cx='192' cy='52' r='6' fill='#00e676'/><line x1='385' y1='168' x2='510' y2='168' stroke='#ff0055' stroke-width='2.5'/><circle cx='448' cy='168' r='6' fill='#ff0055'/><circle cx='320' cy='110' r='5' fill='#ffab00'/><text x='110' y='38' fill='#00e676' font-size='12' font-weight='bold'>Local Maximum: dy/dx = 0, d2y/dx2 &lt; 0 (Unstable Eq. if U(x))</text><text x='335' y='190' fill='#ff0055' font-size='12' font-weight='bold'>Local Minimum: dy/dx = 0, d2y/dx2 &gt; 0 (Stable Eq. if U(x))</text><text x='332' y='108' fill='#ffab00' font-size='11'>Inflection: d2y/dx2 = 0</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Stable vs. Unstable Equilibrium on Potential Energy $U(x)$ Graphs):</strong><br/>Equilibrium ($F = -\\frac{dU}{dx} = 0$) occurs wherever the slope of $U(x)$ is zero. A <strong>Minimum of $U(x)$</strong> (valley bottom, $\\frac{d^2U}{dx^2} &gt; 0$) is <strong>Stable Equilibrium</strong>, whereas a <strong>Maximum of $U(x)$</strong> (hilltop, $\\frac{d^2U}{dx^2} &lt; 0$) is <strong>Unstable Equilibrium</strong>!</li></ul>"
+    },
+    {
+      "id": "bm_t6_integration_diffeq",
+      "title": "Integral Calculus: Indefinite & Definite Integrals, Signed Area Under Curves & Physics Differential Equations",
+      "prerequisites": [
+        {
+          "label": "Differentiation Rules",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t4_limits_differentiation"
+        }
+      ],
+      "theoryHtml": "<div class='topic-section-title'>6.1 First-Time Reader Intuition: What Is Integration?</div><div class='concept-box'><p>Differentiation slices a quantity into tiny pieces ($dy/dx$). <strong>Integration</strong> does the exact opposite: it glues infinitely many microscopic slices ($y\\,dx$) together to find the total accumulated amount!</p><p>Geometrically, the definite integral $\\int_a^b y(x)\\,dx$ equals the <strong>Signed Area under the curve $y(x)$</strong> between $x = a$ and $x = b$.</p></div><div class='formula-box'>$$\\int_a^b f(x)\\,dx = \\Big[ F(x) \\Big]_a^b = F(b) - F(a) \\qquad \\text{where } \\frac{d}{dx}[F(x)] = f(x)$$<div class='formula-caption'><strong>Fundamental Theorem of Calculus</strong>: Upper Limit Value minus Lower Limit Value</div></div><div class='topic-section-title'>6.2 Master Table of Standard Integrals</div><table class='data-table'><thead><tr><th>Integrand $f(x)$</th><th>Indefinite Integral $\\int f(x)\\,dx$</th><th>Key Rule / Physics Usage</th></tr></thead><tbody><tr><td>$\\int x^n\\,dx \\quad (n \\neq -1)$</td><td>$$\\frac{x^{n+1}}{n+1} + C$$</td><td>Increase power by $1$, divide by the new power.</td></tr><tr><td>$\\int \\frac{1}{x}\\,dx = \\int x^{-1}\\,dx$</td><td>$$\\ln|x| + C$$</td><td>Used in Isothermal Work $W = nRT\\ln(V_2/V_1)$.</td></tr><tr><td>$\\int \\sin(kx)\\,dx$</td><td>$$-\\frac{\\cos(kx)}{k} + C$$</td><td>Divide by inner coefficient $k$!</td></tr><tr><td>$\\int \\cos(kx)\\,dx$</td><td>$$+\\frac{\\sin(kx)}{k} + C$$</td><td>Used in Alternating Current &amp; SHM impulse.</td></tr><tr><td>$\\int e^{kx}\\,dx$</td><td>$$\\frac{e^{kx}}{k} + C$$</td><td>Used in RC circuits &amp; radioactive decay laws.</td></tr></tbody></table><div class='topic-section-title'>6.3 Continuous Average Value of Any Function $\\langle y \\rangle$</div><div class='formula-box'>$$\\langle y \\rangle_{[x_1, x_2]} = \\frac{\\int_{x_1}^{x_2} y(x)\\,dx}{x_2 - x_1} = \\frac{\\text{Area under } y(x)}{\\text{Base Width}}$$<div class='formula-caption'>Example: Average of $\\sin^2(\\omega t)$ or $\\cos^2(\\omega t)$ over a full cycle is $\\frac{1}{2}$</div></div><div class='example-box'><strong>Worked Concept Example:</strong><br/>A variable spring-like force $F(x) = (6x^2 + 4x)\\text{ N}$ pushes a block from $x = 0$ to $x = 2\\text{ m}$. Find the total work done.<br/><strong>Solution:</strong><br/>$$W = \\int_0^2 (6x^2 + 4x)\\,dx = \\Big[ 2x^3 + 2x^2 \\Big]_0^2 = \\left(2(8) + 2(4)\\right) - 0 = 24\\text{ J}$$</div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-badge'>Derivation &bull; Solving Physics Differential Equations by Separation of Variables</div><p><strong>Case 1: When Acceleration Is a Function of Position $a(x)$:</strong></p><p>Write $a = v\\frac{dv}{dx}$, separate $v\\,dv$ on the left and $a(x)\\,dx$ on the right, and integrate with matching limits:</p><div class='formula-box'>$$v\\frac{dv}{dx} = a(x) \\implies \\int_u^v v\\,dv = \\int_{x_0}^x a(x)\\,dx \\implies \\frac{v^2 - u^2}{2} = \\int_{x_0}^x a(x)\\,dx$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Case 2 &bull; When Retardation Is Proportional to Speed ($a = -kv$)</div><p>Write $a = \\frac{dv}{dt} = -kv$, bring $v$ under $dv$, and move $dt$ to the right:</p><div class='formula-box'>$$\\int_{v_0}^v \\frac{dv}{v} = -k \\int_0^t dt \\implies \\ln\\left(\\frac{v}{v_0}\\right) = -kt \\implies v(t) = v_0 e^{-kt}$$</div></div>",
+      "graphSvg": "<svg viewBox='0 0 680 230' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='230' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='50' y1='115' x2='630' y2='115' stroke='#94a3b8' stroke-width='2'/><line x1='50' y1='20' x2='50' y2='210' stroke='#94a3b8' stroke-width='2'/><path d='M 50 115 Q 190 15 330 115 Q 470 215 610 115' fill='rgba(0,240,255,0.18)' stroke='#00f0ff' stroke-width='3'/><rect x='170' y='44' width='18' height='71' fill='rgba(0,230,118,0.45)' stroke='#00e676'/><text x='115' y='85' fill='#00e676' font-size='13' font-weight='bold'>+ Area A1 (Above Axis)</text><text x='410' y='155' fill='#ff0055' font-size='13' font-weight='bold'>- Area A2 (Below Axis)</text><text x='70' y='32' fill='#f0f4f8' font-size='12'>Displacement = Integral(v dt) = A1 - A2 | Total Distance = Integral(|v| dt) = A1 + A2</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Displacement vs. Distance in Definite Integrals):</strong><br/>$\\int_{t_1}^{t_2} v(t)\\,dt$ subtracts area below the time axis ($A_1 - A_2$), giving <strong>Displacement</strong>. To find <strong>Distance</strong>, split the integral where $v(t) = 0$ and add absolute areas ($|A_1| + |A_2|$).</li><li><strong>Trap 2 (Never Forget $\\cos(0) = 1$ and $e^0 = 1$ at the Lower Limit!):</strong><br/>When evaluating $[-\\cos x]_0^\\pi$ or $[e^{-x}]_0^t$, the lower limit $x = 0$ evaluates to $1$, NOT $0$!</li></ul>"
+    },
+    {
+      "id": "bm_t7_vectors_complete",
+      "title": "Scalars & Vectors: Parallelogram Law, 3D Unit Vectors, Dot Product & Cross Product",
+      "prerequisites": [
+        {
+          "label": "Trigonometry & Allied Angles",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t2_trigonometry_phasors"
+        }
+      ],
+      "theoryHtml": "<div class='topic-section-title'>7.1 What Makes a Quantity a True Vector?</div><div class='def-box'><div class='def-title'>Definition: Vector Quantity</div><p>A physical quantity that has <strong>magnitude</strong>, <strong>direction</strong>, AND obeys the <strong>Parallelogram Law of Vector Addition</strong>.</p><p><em>Note:</em> Electric current $I$ has magnitude and direction, but adds by simple scalar arithmetic ($3\\text{ A} + 4\\text{ A} = 7\\text{ A}$), so current is a <strong>Scalar</strong>!</p></div><div class='topic-section-title'>7.2 Parallelogram Law of Vector Addition &amp; Subtraction</div><p>When two vectors $\\vec{A}$ and $\\vec{B}$ are placed <strong>Tail-to-Tail</strong> with angle $\\theta$ between them:</p><div class='formula-box'>$$R = |\\vec{A} + \\vec{B}| = \\sqrt{A^2 + B^2 + 2AB\\cos\\theta} \\qquad \\text{and} \\qquad \\tan\\alpha = \\frac{B\\sin\\theta}{A + B\\cos\\theta}$$<div class='formula-caption'>Magnitude of Resultant $\\vec{R}$ and its angle $\\alpha$ with $\\vec{A}$</div></div><div class='formula-box'>$$|\\vec{A} - \\vec{B}| = \\sqrt{A^2 + B^2 - 2AB\\cos\\theta}$$<div class='formula-caption'>Magnitude of Vector Subtraction ($\\vec{A} - \\vec{B}$)</div></div><div class='formula-box'>$$\\text{If } |\\vec{A}| = |\\vec{B}| = F: \\qquad |\\vec{A} + \\vec{B}| = 2F\\cos\\left(\\frac{\\theta}{2}\\right) \\quad \\text{and} \\quad |\\vec{A} - \\vec{B}| = 2F\\sin\\left(\\frac{\\theta}{2}\\right)$$<div class='formula-caption'>High-Speed Equal-Vector Shortcut (Used heavily in Electrostatics, Circular Motion &amp; Waves)</div></div><div class='topic-section-title'>7.3 3D Orthogonal Unit Vectors ($\\hat{i}, \\hat{j}, \\hat{k}$) &amp; Direction Cosines</div><div class='formula-box'>$$\\vec{A} = A_x\\hat{i} + A_y\\hat{j} + A_z\\hat{k} \\implies |\\vec{A}| = \\sqrt{A_x^2 + A_y^2 + A_z^2} \\qquad \\text{and} \\qquad \\hat{A} = \\frac{\\vec{A}}{|\\vec{A}|}$$<div class='formula-caption'>Direction Cosines $\\cos\\alpha = \\frac{A_x}{A},\\; \\cos\\beta = \\frac{A_y}{A},\\; \\cos\\gamma = \\frac{A_z}{A}$ satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$</div></div><div class='topic-section-title'>7.4 Scalar (Dot) Product vs. Vector (Cross) Product</div><table class='data-table'><thead><tr><th>Property</th><th>Scalar (Dot) Product $\\vec{A}\\cdot\\vec{B}$</th><th>Vector (Cross) Product $\\vec{A}\\times\\vec{B}$</th></tr></thead><tbody><tr><td><strong>Formula</strong></td><td>$$\\vec{A}\\cdot\\vec{B} = AB\\cos\\theta$$ (Scalar output)</td><td>$$\\vec{A}\\times\\vec{B} = (AB\\sin\\theta)\\,\\hat{n}$$ (Vector $\\perp$ to plane of $\\vec{A}, \\vec{B}$)</td></tr><tr><td><strong>In Components</strong></td><td>$$A_x B_x + A_y B_y + A_z B_z$$</td><td>$$\\hat{i}(A_y B_z - A_z B_y) - \\hat{j}(A_x B_z - A_z B_x) + \\hat{k}(A_x B_y - A_y B_x)$$</td></tr><tr><td><strong>Zero Condition</strong></td><td><strong>Perpendicular Test:</strong> $\\vec{A} \\perp \\vec{B} \\iff \\vec{A}\\cdot\\vec{B} = 0$</td><td><strong>Parallel Test:</strong> $\\vec{A} \\parallel \\vec{B} \\iff \\vec{A}\\times\\vec{B} = \\vec{0}$</td></tr><tr><td><strong>Geometry</strong></td><td>Projection of $\\vec{A}$ on $\\vec{B}$ is $A\\cos\\theta = \\vec{A}\\cdot\\hat{B}$.</td><td>$|\\vec{A}\\times\\vec{B}| =$ Area of Parallelogram with sides $\\vec{A}, \\vec{B}$.</td></tr><tr><td><strong>Physics Laws</strong></td><td>$W = \\vec{F}\\cdot\\vec{s}$, $\\quad P = \\vec{F}\\cdot\\vec{v}$, $\\quad \\Phi = \\vec{E}\\cdot\\vec{A}$</td><td>$\\vec{\\tau} = \\vec{r}\\times\\vec{F}$, $\\quad \\vec{L} = \\vec{r}\\times\\vec{p}$, $\\quad \\vec{F}_B = q(\\vec{v}\\times\\vec{B})$</td></tr></tbody></table>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-badge'>Derivation 1 &bull; Parallelogram Law Proof</div><p>Drop a perpendicular from the head of $\\vec{R} = \\vec{A} + \\vec{B}$ onto the line of $\\vec{A}$:</p><p>&bull; Total horizontal base $= A + B\\cos\\theta$</p><p>&bull; Vertical height $= B\\sin\\theta$</p><p>By Pythagoras' theorem:</p><div class='formula-box'>$$R^2 = (A + B\\cos\\theta)^2 + (B\\sin\\theta)^2 = A^2 + B^2(\\cos^2\\theta + \\sin^2\\theta) + 2AB\\cos\\theta = A^2 + B^2 + 2AB\\cos\\theta$$</div></div><div class='deriv-step'><div class='deriv-step-badge'>Derivation 2 &bull; Resolving Vector $\\vec{A}$ Parallel &amp; Perpendicular to $\\vec{B}$</div><p>Scalar length of $\\vec{A}$ along $\\vec{B}$ is $\\vec{A}\\cdot\\hat{B}$. Multiply by direction $\\hat{B}$ to get the parallel vector component:</p><div class='formula-box'>$$\\vec{A}_{\\parallel} = (\\vec{A}\\cdot\\hat{B})\\hat{B} = \\left(\\frac{\\vec{A}\\cdot\\vec{B}}{|\\vec{B}|^2}\\right)\\vec{B} \\qquad \\text{and} \\qquad \\vec{A}_{\\perp} = \\vec{A} - \\vec{A}_{\\parallel}$$</div></div>",
+      "graphSvg": "<svg viewBox='0 0 680 230' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='230' rx='8' fill='#080b12' stroke='#1e293b'/><polygon points='70,185 270,185 350,55 150,55' fill='rgba(0,240,255,0.09)' stroke='#475569' stroke-dasharray='5,4'/><line x1='70' y1='185' x2='270' y2='185' stroke='#00f0ff' stroke-width='3'/><line x1='70' y1='185' x2='150' y2='55' stroke='#00e676' stroke-width='3'/><line x1='70' y1='185' x2='350' y2='55' stroke='#ff0055' stroke-width='3.5'/><line x1='270' y1='185' x2='350' y2='185' stroke='#94a3b8' stroke-dasharray='3,3'/><line x1='350' y1='55' x2='350' y2='185' stroke='#ffab00' stroke-width='2'/><text x='160' y='205' fill='#00f0ff' font-size='13' font-weight='bold'>Vector A</text><text x='65' y='110' fill='#00e676' font-size='13' font-weight='bold'>Vector B</text><text x='190' y='105' fill='#ff0055' font-size='13' font-weight='bold'>R = A + B</text><text x='280' y='205' fill='#ffab00' font-size='12'>B cos(theta)</text><text x='358' y='125' fill='#ffab00' font-size='12'>B sin(theta)</text><text x='425' y='65' fill='#f0f4f8' font-size='12' font-weight='bold'>Cyclic Cross Product Circle:</text><circle cx='530' cy='140' r='52' fill='none' stroke='#00f0ff' stroke-width='2'/><text x='530' y='80' fill='#00e676' font-size='14' font-weight='bold' text-anchor='middle'>i</text><text x='590' y='175' fill='#ffab00' font-size='14' font-weight='bold'>j</text><text x='465' y='175' fill='#ff0055' font-size='14' font-weight='bold'>k</text><text x='530' y='145' fill='#94a3b8' font-size='11' text-anchor='middle'>i x j = k, j x k = i</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Tail-to-Tail Angle Rule):</strong><br/>Always slide two vectors so their <strong>tails touch</strong> before reading the angle $\\theta$. If they touch head-to-tail with interior angle $\\phi$, the true angle between the vectors is $\\theta = 180^\\circ - \\phi$!</li><li><strong>Trap 2 (Change in Velocity $|\\Delta\\vec{v}|$ vs. Change in Speed $\\Delta v$):</strong><br/>In uniform circular motion at speed $v$, speed change is $\\Delta v = 0$, but the magnitude of the velocity vector change after turning by angle $\\theta$ is $|\\Delta\\vec{v}| = 2v\\sin(\\theta/2)$.</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-box'><p><strong>Chapter Conclusion:</strong></p><p>You now have the complete mathematical engine of Physics. Whenever a quantity changes at an instant, take its <strong>Derivative ($dy/dx$)</strong>; whenever variable contributions accumulate over distance or time, take the <strong>Definite Integral ($\\int y\\,dx$)</strong>; and whenever direction is involved, resolve vectors along orthogonal axes ($\\hat{i}, \\hat{j}, \\hat{k}$).</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Binomial Approximation:</strong> $(1+x)^n \\approx 1 + nx$ valid strictly when $|x| \\ll 1$.</li><li><strong>Harmonic Extremes:</strong> $a\\sin\\theta + b\\cos\\theta$ has maximum $+\\sqrt{a^2+b^2}$ and minimum $-\\sqrt{a^2+b^2}$.</li><li><strong>Calculus Duality:</strong> Tangent Slope $= \\frac{dy}{dx}$; Signed Area Under Curve $= \\int_a^b y\\,dx$; Acceleration $a = \\frac{dv}{dt} = v\\frac{dv}{dx}$.</li><li><strong>Optimization:</strong> At maximum or minimum, $\\frac{dy}{dx} = 0$ (Maximum if $\\frac{d^2y}{dx^2} &lt; 0$; Minimum if $\\frac{d^2y}{dx^2} &gt; 0$).</li><li><strong>Vectors:</strong> $|\\vec{A} \\pm \\vec{B}| = \\sqrt{A^2 + B^2 \\pm 2AB\\cos\\theta}$; $\\vec{A}\\cdot\\vec{B} = 0 \\iff \\vec{A} \\perp \\vec{B}$; $\\vec{A}\\times\\vec{B} = \\vec{0} \\iff \\vec{A} \\parallel \\vec{B}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Topic</th><th>Master Equation</th><th>Physics Application</th></tr></thead><tbody><tr><td>Quadratic Roots</td><td>$$x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$$</td><td>Projectile flight times &amp; collision velocities</td></tr><tr><td>Binomial Approx.</td><td>$$(1+x)^n \\approx 1 + nx \\quad (|x| \\ll 1)$$</td><td>Gravity at small altitude $g' \\approx g(1-2h/R)$</td></tr><tr><td>Infinite GP</td><td>$$S_\\infty = \\frac{a}{1-r} \\quad (|r| &lt; 1)$$</td><td>Infinite bouncing ball &amp; infinite charge arrays</td></tr><tr><td>Power-Reduction</td><td>$$\\sin^2\\theta = \\frac{1-\\cos 2\\theta}{2}, \\quad \\cos^2\\theta = \\frac{1+\\cos 2\\theta}{2}$$</td><td>AC RMS current &amp; Wave Optics intensity</td></tr><tr><td>Chain Rule</td><td>$$\\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx}, \\quad a = v\\frac{dv}{dx}$$</td><td>Relating time rates &amp; position-dependent acceleration</td></tr><tr><td>Definite Integral</td><td>$$\\int_a^b f(x)\\,dx = F(b) - F(a)$$</td><td>Work by variable force $W = \\int F(x)\\,dx$</td></tr><tr><td>Vector Products</td><td>$$\\vec{A}\\cdot\\vec{B} = AB\\cos\\theta, \\quad |\\vec{A}\\times\\vec{B}| = AB\\sin\\theta$$</td><td>Work $W = \\vec{F}\\cdot\\vec{s}$ &amp; Torque $\\vec{\\tau} = \\vec{r}\\times\\vec{F}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch00_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Using the Binomial Approximation, find the value of $(1.004)^5 - (0.998)^{10}$ accurate to three decimal places.",
+      "options": [
+        "0.000",
+        "0.040",
+        "0.020",
+        "-0.020"
+      ],
+      "answer": "0.040",
+      "explanation": "<p><strong>Step 1:</strong> $(1.004)^5 = (1 + 0.004)^5 \\approx 1 + 5(0.004) = 1.020$.</p><p><strong>Step 2:</strong> $(0.998)^{10} = (1 - 0.002)^{10} \\approx 1 - 10(0.002) = 0.980$.</p><p><strong>Step 3:</strong> Subtracting gives $1.020 - 0.980 = 0.040$.</p>"
+    },
+    {
+      "id": "ch00_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A particle moves along the x-axis such that $x(t) = 2t^3 - 9t^2 + 12t + 6$ meters. At what instants of time $t$ is its velocity zero?",
+      "options": [
+        "t = 1 s and t = 2 s",
+        "t = 0 s and t = 3 s",
+        "t = 1.5 s only",
+        "t = 2 s and t = 3 s"
+      ],
+      "answer": "t = 1 s and t = 2 s",
+      "explanation": "<p><strong>Step 1:</strong> Differentiate position $x(t)$ with respect to $t$:</p><p>$$v(t) = \\frac{dx}{dt} = 6t^2 - 18t + 12 = 6(t - 1)(t - 2)$$</p><p><strong>Step 2:</strong> Setting $v(t) = 0$ gives $t = 1\\text{ s}$ and $t = 2\\text{ s}$.</p>"
+    },
+    {
+      "id": "ch00_q03",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "If a force $\\vec{F} = 3\\hat{i} + 4\\hat{j} - 5\\hat{k}\\text{ N}$ produces a displacement $\\vec{s} = 2\\hat{i} + 2\\hat{j} + c\\hat{k}\\text{ m}$ and performs zero work ($W = 0$), find $c$.",
+      "options": [
+        "2.8",
+        "1.4",
+        "-2.8",
+        "5.0"
+      ],
+      "answer": "2.8",
+      "explanation": "<p>Work $W = \\vec{F}\\cdot\\vec{s} = (3)(2) + (4)(2) + (-5)(c) = 14 - 5c = 0 \\implies c = 2.8$.</p>"
+    },
+    {
+      "id": "ch00_q04",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Evaluate the definite integral representing the impulse of an oscillating force: $J = \\int_{0}^{\\pi/2} 10\\sin(2t)\\,dt\\text{ N}\\cdot\\text{s}$.",
+      "options": [
+        "5 N s",
+        "10 N s",
+        "20 N s",
+        "0 N s"
+      ],
+      "answer": "10 N s",
+      "explanation": "<p>$$J = 10 \\left[ -\\frac{\\cos(2t)}{2} \\right]_0^{\\pi/2} = -5(\\cos\\pi - \\cos 0) = -5(-1 - 1) = +10\\text{ N}\\cdot\\text{s}$$</p>"
+    },
+    {
+      "id": "ch00_q05",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Find the unit vector in the direction of $\\vec{A} = 3\\hat{i} + 4\\hat{j} + 12\\hat{k}$.",
+      "options": [
+        "$\\frac{3\\hat{i} + 4\\hat{j} + 12\\hat{k}}{13}$",
+        "$\\frac{3\\hat{i} + 4\\hat{j} + 12\\hat{k}}{19}$",
+        "$\\frac{3\\hat{i} + 4\\hat{j} + 12\\hat{k}}{5}$",
+        "$\\frac{3\\hat{i} + 4\\hat{j} + 12\\hat{k}}{169}$"
+      ],
+      "answer": "$\\frac{3\\hat{i} + 4\\hat{j} + 12\\hat{k}}{13}$",
+      "explanation": "<p>Magnitude $|\\vec{A}| = \\sqrt{3^2 + 4^2 + 12^2} = \\sqrt{169} = 13$, so $\\hat{A} = \\frac{\\vec{A}}{13}$.</p>"
+    },
+    {
+      "id": "ch00_q06",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A particle moves in a circle of radius $2\\text{ m}$ at constant speed $v = 10\\text{ m/s}$. When it completes a quarter-circle ($\\theta = 90^\\circ$), what is the magnitude of the change in its velocity vector $|\\Delta\\vec{v}|$?",
+      "options": [
+        "0 m/s",
+        "10 m/s",
+        "$10\\sqrt{2}$ m/s",
+        "20 m/s"
+      ],
+      "answer": "$10\\sqrt{2}$ m/s",
+      "explanation": "<p>$$|\\Delta\\vec{v}| = 2v\\sin(\\theta/2) = 2(10)\\sin(45^\\circ) = 10\\sqrt{2}\\text{ m/s}$$</p>"
+    },
+    {
+      "id": "ch00_q07",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Find the value of $\\sin(127^\\circ) + \\cos(143^\\circ)$ using the 3-4-5 right triangle.",
+      "options": [
+        "0",
+        "8/5",
+        "6/5",
+        "1/5"
+      ],
+      "answer": "0",
+      "explanation": "<p>$\\sin(127^\\circ) = \\sin(180^\\circ - 53^\\circ) = +4/5$, and $\\cos(143^\\circ) = \\cos(180^\\circ - 37^\\circ) = -4/5$. Sum $= 0$.</p>"
+    },
+    {
+      "id": "ch00_q08",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "If $|\\vec{A} + \\vec{B}| = |\\vec{A} - \\vec{B}|$ for two non-zero vectors $\\vec{A}$ and $\\vec{B}$, then the angle $\\theta$ between $\\vec{A}$ and $\\vec{B}$ is:",
+      "options": [
+        "$0^\\circ$",
+        "$45^\\circ$",
+        "$90^\\circ$",
+        "$180^\\circ$"
+      ],
+      "answer": "$90^\\circ$",
+      "explanation": "<p>Squaring both sides gives $4AB\\cos\\theta = 0 \\implies \\cos\\theta = 0 \\implies \\theta = 90^\\circ$.</p>"
+    },
+    {
+      "id": "ch00_q09",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "Two forces of equal magnitude $F$ have a resultant whose magnitude is also equal to $F$. What is the angle between the two forces?",
+      "options": [
+        "$60^\\circ$",
+        "$90^\\circ$",
+        "$120^\\circ$",
+        "$150^\\circ$"
+      ],
+      "answer": "$120^\\circ$",
+      "explanation": "<p>$R = 2F\\cos(\\theta/2) = F \\implies \\cos(\\theta/2) = 1/2 \\implies \\theta = 120^\\circ$.</p>"
+    },
+    {
+      "id": "ch00_q10",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "The potential energy of a diatomic molecule is $U(r) = \\frac{A}{r^{12}} - \\frac{B}{r^6}$. Find the equilibrium separation $r_0$ where $F(r) = 0$.",
+      "options": [
+        "$(2A/B)^{1/6}$",
+        "$(A/B)^{1/6}$",
+        "$(B/2A)^{1/6}$",
+        "$(2A/B)^{1/12}$"
+      ],
+      "answer": "$(2A/B)^{1/6}$",
+      "explanation": "<p>$$F = -\\frac{dU}{dr} = \\frac{12A}{r^{13}} - \\frac{6B}{r^7} = 0 \\implies r_0 = \\left(\\frac{2A}{B}\\right)^{1/6}$$</p>"
+    },
+    {
+      "id": "ch00_q11",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A spherical balloon's radius increases at $0.5\\text{ cm/s}$. At $r = 10\\text{ cm}$, at what rate is its surface area $S = 4\\pi r^2$ increasing?",
+      "options": [
+        "$20\\pi\\text{ cm}^2/\\text{s}$",
+        "$40\\pi\\text{ cm}^2/\\text{s}$",
+        "$80\\pi\\text{ cm}^2/\\text{s}$",
+        "$10\\pi\\text{ cm}^2/\\text{s}$"
+      ],
+      "answer": "$40\\pi\\text{ cm}^2/\\text{s}$",
+      "explanation": "<p>$$\\frac{dS}{dt} = 8\\pi r \\frac{dr}{dt} = 8\\pi(10)(0.5) = 40\\pi\\text{ cm}^2/\\text{s}$$</p>"
+    },
+    {
+      "id": "ch00_q12",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "Find the vector projection of $\\vec{A} = 2\\hat{i} + 3\\hat{j}$ along $\\vec{B} = \\hat{i} + \\hat{j}$.",
+      "options": [
+        "$\\frac{5}{2}(\\hat{i} + \\hat{j})$",
+        "$\\frac{5}{\\sqrt{2}}(\\hat{i} + \\hat{j})$",
+        "$5(\\hat{i} + \\hat{j})$",
+        "$\\frac{1}{2}(\\hat{i} + \\hat{j})$"
+      ],
+      "answer": "$\\frac{5}{2}(\\hat{i} + \\hat{j})$",
+      "explanation": "<p>$$\\vec{A}_{\\parallel} = \\left(\\frac{\\vec{A}\\cdot\\vec{B}}{|\\vec{B}|^2}\\right)\\vec{B} = \\frac{2+3}{1^2+1^2}(\\hat{i}+\\hat{j}) = \\frac{5}{2}(\\hat{i}+\\hat{j})$$</p>"
+    },
+    {
+      "id": "ch00_q13",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "For $\\vec{F} = (2\\hat{i} + 3\\hat{j} - \\hat{k})\\text{ N}$ acting at $\\vec{r} = (\\hat{i} - \\hat{j} + 2\\hat{k})\\text{ m}$, find the torque $\\vec{\\tau} = \\vec{r}\\times\\vec{F}$.",
+      "options": [
+        "$(-5\\hat{i} + 5\\hat{j} + 5\\hat{k})\\text{ N m}$",
+        "$(5\\hat{i} - 5\\hat{j} - 5\\hat{k})\\text{ N m}$",
+        "$(-5\\hat{i} - 5\\hat{j} + 5\\hat{k})\\text{ N m}$",
+        "$(7\\hat{i} + 3\\hat{j} + 5\\hat{k})\\text{ N m}$"
+      ],
+      "answer": "$(-5\\hat{i} + 5\\hat{j} + 5\\hat{k})\\text{ N m}$",
+      "explanation": "<p>Expanding $\\vec{r}\\times\\vec{F}$ gives $\\hat{i}(1-6) - \\hat{j}(-1-4) + \\hat{k}(3 - (-2)) = -5\\hat{i} + 5\\hat{j} + 5\\hat{k}\\text{ N m}$.</p>"
+    },
+    {
+      "id": "ch00_q14",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "The relation between time $t$ and position $x$ is $t = \\alpha x^2 + \\beta x$. If $v$ is instantaneous velocity, the retardation ($-a$) is:",
+      "options": [
+        "$2\\alpha v^3$",
+        "$2\\beta v^3$",
+        "$2\\alpha\\beta v^2$",
+        "$2\\alpha^2 v^3$"
+      ],
+      "answer": "$2\\alpha v^3$",
+      "explanation": "<p>$$\\frac{dt}{dx} = \\frac{1}{v} = 2\\alpha x + \\beta \\implies -\\frac{1}{v^2}\\frac{dv}{dt} = 2\\alpha v \\implies a = -2\\alpha v^3$$</p>"
+    },
+    {
+      "id": "ch00_q15",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A particle's velocity varies with position $x$ as $v(x) = 3x^2 - 2x\\text{ m/s}$. Find its acceleration $a$ at $x = 2\\text{ m}$.",
+      "options": [
+        "80 m/s^2",
+        "10 m/s^2",
+        "40 m/s^2",
+        "64 m/s^2"
+      ],
+      "answer": "80 m/s^2",
+      "explanation": "<p>At $x = 2\\text{ m}$, $v = 3(4) - 4 = 8\\text{ m/s}$ and $\\frac{dv}{dx} = 6x - 2 = 10\\text{ s}^{-1}$. Thus $a = v\\frac{dv}{dx} = 8 \\times 10 = 80\\text{ m/s}^2$.</p>"
+    },
+    {
+      "id": "ch00_q16",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "An alternating current is $I(t) = I_0 \\sin(\\omega t)$. Find its Root-Mean-Square value $I_{\\text{rms}} = \\sqrt{\\langle I^2 \\rangle}$ over one full period $T = 2\\pi/\\omega$.",
+      "options": [
+        "$I_0 / \\sqrt{2}$",
+        "$I_0 / 2$",
+        "$2I_0 / \\pi$",
+        "$I_0$"
+      ],
+      "answer": "$I_0 / \\sqrt{2}$",
+      "explanation": "<p>Since $\\langle \\sin^2(\\omega t) \\rangle = \\frac{1}{2}$ over a full period, $\\langle I^2 \\rangle = \\frac{I_0^2}{2} \\implies I_{\\text{rms}} = \\frac{I_0}{\\sqrt{2}}$.</p>"
+    },
+    {
+      "id": "ch00_q17",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "Infinite charges, each of value $q$, are placed at $x = 1, 2, 4, 8, 16, \\dots$ meters. Find the net electric field at $x = 0$.",
+      "options": [
+        "$\\frac{4}{3}kq$",
+        "$2kq$",
+        "$\\frac{3}{2}kq$",
+        "$\\frac{8}{7}kq$"
+      ],
+      "answer": "$\\frac{4}{3}kq$",
+      "explanation": "<p>$$E = kq\\left(1 + \\frac{1}{4} + \\frac{1}{16} + \\dots\\right) = kq\\left(\\frac{1}{1 - 1/4}\\right) = \\frac{4}{3}kq$$</p>"
+    },
+    {
+      "id": "ch00_q18",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A boat enters water at $v_0 = 20\\text{ m/s}$ and experiences retardation $a = -0.5v\\text{ m/s}^2$. Find the total distance it travels before stopping.",
+      "options": [
+        "40 m",
+        "20 m",
+        "10 m",
+        "Infinite distance"
+      ],
+      "answer": "40 m",
+      "explanation": "<p>$$a = v\\frac{dv}{dx} = -0.5v \\implies \\frac{dv}{dx} = -0.5 \\implies \\int_{20}^0 dv = -0.5\\int_0^{x_{\\max}} dx \\implies x_{\\max} = 40\\text{ m}$$</p>"
+    },
+    {
+      "id": "ch00_q19",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A particle moves along $y = \\frac{x^3}{6}$ with $\\frac{dx}{dt} = 2\\text{ m/s}$. At what positive $x$ is its speed equal to $2\\sqrt{5}\\text{ m/s}$?",
+      "options": [
+        "$x = 2\\text{ m}$",
+        "$x = \\sqrt{2}\\text{ m}$",
+        "$x = 4\\text{ m}$",
+        "$x = 1\\text{ m}$"
+      ],
+      "answer": "$x = 2\\text{ m}$",
+      "explanation": "<p>$v_y = \\frac{dy}{dx}\\frac{dx}{dt} = \\left(\\frac{x^2}{2}\\right)(2) = x^2$. Speed $v = \\sqrt{2^2 + (x^2)^2} = \\sqrt{4 + x^4} = \\sqrt{20} \\implies x = 2\\text{ m}$.</p>"
+    },
+    {
+      "id": "ch00_q20",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "Find the area of the triangle formed by the vectors $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = -3\\hat{i} + 7\\hat{j}$.",
+      "options": [
+        "16.5 sq. units",
+        "33 sq. units",
+        "15 sq. units",
+        "9 sq. units"
+      ],
+      "answer": "16.5 sq. units",
+      "explanation": "<p>$\\vec{A}\\times\\vec{B} = [(3)(7) - (4)(-3)]\\hat{k} = 33\\hat{k}$. Area of triangle $= \\frac{1}{2}|\\vec{A}\\times\\vec{B}| = \\frac{33}{2} = 16.5\\text{ sq. units}$.</p>"
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "id": "ch01_units_measurements",
+  "code": "01",
+  "title": "Units, Dimensions and Measurements",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: SI Standards, Parallax, Dimensional Analysis, Significant Figures, Error Calculus, Vernier Callipers & Screw Gauge",
+  "classLevel": "Class 11",
+  "unit": "Mechanics I",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: What Is a Measurement?</div><p>Suppose someone tells you, <em>&ldquo;The length of this desk is 5.&rdquo;</em> Your brain immediately asks: <strong>5 what?</strong> 5 meters? 5 feet? 5 pencils?</p><p style='margin-top:8px;'>In Physics, a number by itself is meaningless unless we attach a globally agreed standard reference called a <strong>Unit</strong> ($u$).</p><div class='def-box'><strong>Fundamental Law of Measurement:</strong><br/>Every physical quantity $Q$ is the product of a pure <strong>Numerical Value ($n$)</strong> and a <strong>Standard Unit ($u$)</strong>. Changing the unit never changes the physical size of the object!</div><div class='formula-highlight'>$$\\boxed{Q = n \\times u = \\text{Constant} \\implies n_1 u_1 = n_2 u_2 \\implies n \\propto \\frac{1}{u}}$$</div><ul class='clean-list'><li><strong>Example:</strong> $1\\text{ metre} = 100\\text{ centimetres}$. Here, the metre is a larger unit ($u_1 > u_2$), so its numerical value is smaller ($1 < 100$).</li></ul></div>",
+  "topics": [
+    {
+      "id": "u1_t1_units_parallax",
+      "title": "Fundamental, Derived & Supplementary SI Units, Practical Units & Astronomical Parallax",
+      "prerequisites": [
+        {
+          "label": "Radian Measure & Small-Angle Approximation",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t2_trigonometry_phasors"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 The 7 Fundamental (Base) Quantities of Nature</div><div class='def-box'><strong>Fundamental vs. Derived Quantities:</strong><br/>&bull; <strong>Fundamental Quantities (7):</strong> Independent physical quantities that cannot be expressed in terms of any other physical quantities.<br/>&bull; <strong>Derived Quantities:</strong> All other quantities (speed, force, energy, voltage, magnetic field) built by multiplying or dividing the 7 base quantities.</div><table class='data-table'><thead><tr><th>No.</th><th>Base Physical Quantity</th><th>SI Unit Name</th><th>SI Symbol</th><th>Dimensional Symbol</th></tr></thead><tbody><tr><td>1</td><td>Length</td><td>metre</td><td>m</td><td>$[L]$</td></tr><tr><td>2</td><td>Mass</td><td>kilogram</td><td>kg</td><td>$[M]$</td></tr><tr><td>3</td><td>Time</td><td>second</td><td>s</td><td>$[T]$</td></tr><tr><td>4</td><td>Electric Current</td><td>ampere</td><td>A</td><td>$[A]$ or $[I]$</td></tr><tr><td>5</td><td>Thermodynamic Temperature</td><td>kelvin</td><td>K</td><td>$[K]$ or $[\\Theta]$</td></tr><tr><td>6</td><td>Amount of Substance</td><td>mole</td><td>mol</td><td>$[\\text{mol}]$</td></tr><tr><td>7</td><td>Luminous Intensity</td><td>candela</td><td>cd</td><td>$[\\text{cd}]$</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>1.2 The 2 Supplementary SI Units (Plane Angle &amp; Solid Angle)</div><p><strong>1. Plane Angle ($d\\theta$) &mdash; Unit: Radian ($\\text{rad}$):</strong><br/>Ratio of circular arc length $ds$ to radius $r$. A full circle subtends $2\\pi\\text{ rad} = 360^\\circ$.</p><div class='formula-highlight'>$$\\boxed{d\\theta = \\frac{ds}{r} \\text{ rad}} \\qquad \\left(1^\\circ = 60'\\text{ (arcmin)}, \\; 1' = 60''\\text{ (arcsec)}, \\; 1'' \\approx 4.85 \\times 10^{-6}\\text{ rad}\\right)$$</div><p><strong>2. Solid Angle ($d\\Omega$) &mdash; Unit: Steradian ($\\text{sr}$):</strong><br/>The 3D conical angle subtended at the center of a sphere of radius $r$ by a normal surface area patch $dA_{\\perp}$. Since the surface area of a complete sphere is $4\\pi r^2$, the total 3D solid angle around a point is $4\\pi\\text{ sr}$.</p><div class='formula-highlight'>$$\\boxed{d\\Omega = \\frac{dA_{\\perp}}{r^2} \\text{ sr}} \\qquad \\left(\\Omega_{\\text{complete sphere}} = \\frac{4\\pi r^2}{r^2} = 4\\pi\\text{ sr}\\right)$$</div></div><div class='concept-block'><div class='concept-title'>1.3 Macro (Astronomical) &amp; Micro (Atomic/Nuclear) Practical Units</div><table class='data-table'><thead><tr><th>Astronomical / Macro Unit</th><th>Value in SI (m)</th><th>Atomic / Nuclear Micro Unit</th><th>Value in SI</th></tr></thead><tbody><tr><td><strong>1 Astronomical Unit (1 AU)</strong><br/>(Average Earth–Sun distance)</td><td>$1.496 \\times 10^{11}\\text{ m}$</td><td><strong>1 Micron ($1\\,\\mu\\text{m}$)</strong></td><td>$10^{-6}\\text{ m}$</td></tr><tr><td><strong>1 Light Year (1 ly)</strong><br/>(Distance traveled by light in 1 year)</td><td>$9.46 \\times 10^{15}\\text{ m}$</td><td><strong>1 Angstrom ($1\\text{ \\AA}$)</strong><br/>(Atomic diameter scale)</td><td>$10^{-10}\\text{ m}$</td></tr><tr><td><strong>1 Parsec (1 pc)</strong><br/>(Distance where $1\\text{ AU}$ subtends $1''$)</td><td>$3.08 \\times 10^{16}\\text{ m}$<br/>($\\approx 3.26\\text{ ly}$)</td><td><strong>1 Fermi ($1\\text{ fm}$)</strong><br/>(Nuclear radius scale)</td><td>$10^{-15}\\text{ m}$</td></tr><tr><td><strong>1 Chandrasekhar Limit (CSL)</strong><br/>(Largest stable white dwarf mass)</td><td>$1.4 \\times \\text{Mass of Sun}$<br/>($\\approx 2.8 \\times 10^{30}\\text{ kg}$)</td><td><strong>1 Barn ($1\\text{ b}$)</strong><br/>(Nuclear reaction area)</td><td>$10^{-28}\\text{ m}^2$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation 1: Astronomical Parallax Method for Distance of Stars &amp; Planets</div><p><strong>Intuition:</strong> Hold a pen in front of your face and view it with your left eye, then your right eye. The pen shifts against the distant wall! The distance between your two observation points is the <strong>Basis ($b$)</strong>, and the angular shift is the <strong>Parallax Angle ($\\theta$)</strong>.</p><p><strong>Step 1:</strong> Observe a planet $S$ at distance $D$ simultaneously from two observatories $A$ and $B$ on Earth separated by baseline $b = AB$.</p><p><strong>Step 2:</strong> Because $D \\gg b$, the ratio $b/D \\ll 1$, so the baseline $b$ acts as a circular arc of radius $D$:</p>$$\\boxed{\\theta \\text{ (in radians)} = \\frac{\\text{Baseline }(b)}{\\text{Distance }(D)} \\implies D = \\frac{b}{\\theta}}$$<p><strong>Step 3 (Linear Diameter $d$ of a Planet):</strong> Once $D$ is known, if the planet's disk subtends an angular diameter $\\alpha$ (in radians) in a telescope:</p>$$\\boxed{d = D \\cdot \\alpha}$$</div><div class='deriv-step'><div class='deriv-step-label'>Derivation 2: 3D Solid Angle of a Cone with Semi-Vertical Angle α</div><p>Consider a cone of half-angle $\\alpha$ cut from a sphere of radius $R$. Slice the spherical cap into thin rings at angle $\\theta$ of radius $R\\sin\\theta$ and strip width $R\\,d\\theta$:</p>$$dA = (2\\pi R\\sin\\theta)(R\\,d\\theta) = 2\\pi R^2 \\sin\\theta\\,d\\theta$$<p>Divide by $R^2$ and integrate from $\\theta = 0$ to $\\theta = \\alpha$:</p>$$\\Omega = \\int_0^\\alpha \\frac{2\\pi R^2\\sin\\theta\\,d\\theta}{R^2} = 2\\pi[-\\cos\\theta]_0^\\alpha \\implies \\boxed{\\Omega = 2\\pi(1 - \\cos\\alpha)\\text{ sr}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 220' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='220' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='120' cy='185' r='8' fill='#00f0ff'/><circle cx='280' cy='185' r='8' fill='#00f0ff'/><circle cx='200' cy='30' r='10' fill='#ffab00'/><line x1='120' y1='185' x2='280' y2='185' stroke='#00e676' stroke-width='3'/><line x1='120' y1='185' x2='200' y2='30' stroke='#94a3b8' stroke-width='2' stroke-dasharray='5,4'/><line x1='280' y1='185' x2='200' y2='30' stroke='#94a3b8' stroke-width='2' stroke-dasharray='5,4'/><text x='160' y='205' fill='#00e676' font-size='13' font-weight='bold'>Baseline b = AB</text><text x='185' y='75' fill='#ff0055' font-size='13' font-weight='bold'>θ (rad)</text><text x='110' y='110' fill='#00f0ff' font-size='13' font-weight='bold'>D = b / θ</text><text x='220' y='35' fill='#ffab00' font-size='12' font-weight='bold'>Distant Planet S</text><g transform='translate(370,10)'><circle cx='140' cy='110' r='75' fill='rgba(0,240,255,0.06)' stroke='#475569' stroke-width='1.5'/><polygon points='140,110 195,60 195,160' fill='rgba(255,0,85,0.18)' stroke='#ff0055' stroke-width='2'/><ellipse cx='195' cy='110' rx='14' ry='50' fill='rgba(0,230,118,0.25)' stroke='#00e676' stroke-width='2'/><text x='30' y='25' fill='#f0f4f8' font-size='12' font-weight='bold'>3D Solid Angle: Ω = 2π(1 - cos α)</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Putting Arcminutes or Arcseconds Directly into $D = b/\\theta$):</strong> You must convert $\\theta$ into radians before dividing! Memorize these three conversion factors:<ul><li>$1^\\circ = \\frac{\\pi}{180}\\text{ rad} \\approx 1.745 \\times 10^{-2}\\text{ rad}$</li><li>$1' = \\left(\\frac{1}{60}\\right)^\\circ \\approx 2.91 \\times 10^{-4}\\text{ rad}$</li><li>$1'' = \\left(\\frac{1}{3600}\\right)^\\circ \\approx 4.85 \\times 10^{-6}\\text{ rad}$</li></ul></li><li><strong>Trap 2 (Dimensionless vs. Unitless):</strong> Plane angle ($\\text{rad}$) and Solid angle ($\\text{sr}$) have <strong>units</strong>, but they are <strong>dimensionless</strong> ($[M^0 L^0 T^0]$). Thus, a dimensionless quantity <em>can</em> have a unit, but a unitless quantity can <em>never</em> have dimensions!</li></ul>"
+    },
+    {
+      "id": "u1_t2_dimensional_analysis",
+      "title": "Dimensional Formulae, Principle of Homogeneity, 3 Core Applications & Custom Base Systems",
+      "prerequisites": [
+        {
+          "label": "Laws of Exponents & Linear Equations",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t1_algebra_binomial"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 What Are Dimensions &amp; The Principle of Homogeneity?</div><div class='def-box'><strong>Definition (Dimensional Formula):</strong><br/>An expression showing which powers of the fundamental quantities $[M, L, T, A, K, \\text{mol}, \\text{cd}]$ enter into a derived physical quantity.</div><div class='def-box'><strong>Principle of Homogeneity of Dimensions:</strong><br/>Two physical quantities can be <strong>added, subtracted, or equated</strong> if and only if they have the <strong>exact same dimensions</strong>.</div><div class='formula-highlight'>$$\\text{If } Y = A + B - C, \\quad \\text{then} \\quad \\boxed{[Y] = [A] = [B] = [C]}$$</div><p><strong>The Transcendental Function Rule (Very High Frequency in JEE!):</strong><br/>The arguments (inputs) and outputs of all <strong>trigonometric, exponential, and logarithmic</strong> functions are strictly <strong>dimensionless</strong> $[M^0 L^0 T^0]$:</p><div class='formula-highlight'>$$\\text{In } y = A e^{-\\alpha t} \\sin(\\omega t - kx): \\qquad [\\alpha t] = [\\omega t] = [kx] = [M^0 L^0 T^0] \\quad \\text{and} \\quad [y] = [A]$$</div></div><div class='concept-block'><div class='concept-title'>2.2 Master Dimensional Formula Dictionary (Class 11 &amp; 12 Complete)</div><table class='data-table'><thead><tr><th>Physical Quantity</th><th>Formula Used</th><th>Dimensional Formula</th><th>SI Unit</th></tr></thead><tbody><tr><td>Velocity, Speed</td><td>$v = dx/dt$</td><td>$[M^0 L^1 T^{-1}]$</td><td>$\\text{m s}^{-1}$</td></tr><tr><td>Acceleration, Gravity ($g$)</td><td>$a = dv/dt$</td><td>$[M^0 L^1 T^{-2}]$</td><td>$\\text{m s}^{-2}$</td></tr><tr><td>Force, Tension, Thrust, Weight</td><td>$F = ma$</td><td>$[M^1 L^1 T^{-2}]$</td><td>$\\text{N} = \\text{kg m s}^{-2}$</td></tr><tr><td>Work, Energy, Torque, Heat</td><td>$W = F \\cdot d$</td><td>$[M^1 L^2 T^{-2}]$</td><td>$\\text{J}$ (or $\\text{N m}$)</td></tr><tr><td>Linear Momentum, Impulse</td><td>$p = mv = F\\Delta t$</td><td>$[M^1 L^1 T^{-1}]$</td><td>$\\text{N s}$</td></tr><tr><td>Pressure, Stress, Young's/Bulk Modulus, Energy Density</td><td>$P = F/A = U/V$</td><td>$[M^1 L^{-1} T^{-2}]$</td><td>$\\text{Pa} = \\text{J m}^{-3}$</td></tr><tr><td>Surface Tension, Spring Constant, Surface Energy</td><td>$S = F/L = k$</td><td>$[M^1 L^0 T^{-2}]$</td><td>$\\text{N m}^{-1}$</td></tr><tr><td>Angular Momentum ($L$), Planck's Constant ($h$)</td><td>$L = mvr$, $E = h\\nu$</td><td>$[M^1 L^2 T^{-1}]$</td><td>$\\text{J s}$</td></tr><tr><td>Coefficient of Viscosity ($\\eta$)</td><td>$F = 6\\pi\\eta r v$</td><td>$[M^1 L^{-1} T^{-1}]$</td><td>$\\text{Pa}\\cdot\\text{s}$ (decapoise)</td></tr><tr><td>Universal Gravitational Constant ($G$)</td><td>$G = \\frac{Fr^2}{m_1 m_2}$</td><td>$[M^{-1} L^3 T^{-2}]$</td><td>$\\text{N m}^2\\text{ kg}^{-2}$</td></tr><tr><td>Boltzmann Constant ($k_B$), Entropy ($S$)</td><td>$E = k_B T$</td><td>$[M^1 L^2 T^{-2} K^{-1}]$</td><td>$\\text{J K}^{-1}$</td></tr><tr><td>Universal Gas Constant ($R$), Molar Heat Capacity</td><td>$PV = nRT$</td><td>$[M^1 L^2 T^{-2} K^{-1} \\text{mol}^{-1}]$</td><td>$\\text{J mol}^{-1}\\text{ K}^{-1}$</td></tr><tr><td>Thermal Conductivity ($K$)</td><td>$\\frac{dQ}{dt} = KA\\frac{dT}{dx}$</td><td>$[M^1 L^1 T^{-3} K^{-1}]$</td><td>$\\text{W m}^{-1}\\text{ K}^{-1}$</td></tr><tr><td>Stefan's Constant ($\\sigma$)</td><td>$I = \\sigma T^4$</td><td>$[M^1 L^0 T^{-3} K^{-4}]$</td><td>$\\text{W m}^{-2}\\text{ K}^{-4}$</td></tr><tr><td>Electric Charge ($q$)</td><td>$q = It$</td><td>$[M^0 L^0 T^1 A^1]$</td><td>$\\text{C} = \\text{A s}$</td></tr><tr><td>Electric Potential ($V$), EMF ($\\mathcal{E}$)</td><td>$V = W/q$</td><td>$[M^1 L^2 T^{-3} A^{-1}]$</td><td>$\\text{V}$</td></tr><tr><td>Resistance ($R$), Reactance ($X$), Impedance ($Z$)</td><td>$R = V/I = P/I^2$</td><td>$[M^1 L^2 T^{-3} A^{-2}]$</td><td>$\\Omega$</td></tr><tr><td>Capacitance ($C$)</td><td>$C = q^2 / (2U)$</td><td>$[M^{-1} L^{-2} T^4 A^2]$</td><td>$\\text{F}$</td></tr><tr><td>Permittivity of Free Space ($\\varepsilon_0$)</td><td>$\\varepsilon_0 = \\frac{q^2}{4\\pi F r^2}$</td><td>$[M^{-1} L^{-3} T^4 A^2]$</td><td>$\\text{F m}^{-1}$</td></tr><tr><td>Magnetic Field ($B$)</td><td>$F = I L B$</td><td>$[M^1 L^0 T^{-2} A^{-1}]$</td><td>$\\text{T}$</td></tr><tr><td>Magnetic Flux ($\\Phi_B$)</td><td>$\\Phi_B = B A$</td><td>$[M^1 L^2 T^{-2} A^{-1}]$</td><td>$\\text{Wb} = \\text{V s}$</td></tr><tr><td>Self / Mutual Inductance ($L, M$)</td><td>$U = \\frac{1}{2}LI^2$</td><td>$[M^1 L^2 T^{-2} A^{-2}]$</td><td>$\\text{H}$</td></tr><tr><td>Permeability of Free Space ($\\mu_0$)</td><td>$F/L = \\frac{\\mu_0 I^2}{2\\pi d}$</td><td>$[M^1 L^1 T^{-2} A^{-2}]$</td><td>$\\text{H m}^{-1}$</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>2.3 Limitations of Dimensional Analysis</div><ul class='clean-list'><li><strong>1. Cannot find dimensionless constants:</strong> It cannot tell whether the numeric factor in kinetic energy is $\\frac{1}{2}mv^2$, $3mv^2$, or $2\\pi mv^2$.</li><li><strong>2. Cannot derive formulas containing sums or differences:</strong> It can check $s = ut + \\frac{1}{2}at^2$, but cannot derive the two separate added terms at once.</li><li><strong>3. Fails when a quantity in Mechanics depends on more than 3 variables:</strong> Since $[M, L, T]$ provide only 3 linear equations, we cannot uniquely solve for 4 unknown powers $(a, b, c, d)$.</li><li><strong>4. Fails if chosen base quantities are not independent:</strong> For example, $[L, v, T]$ cannot form a valid base system because $v = L/T$ already links them!</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Application 1: Converting Units Between Two Systems (SI to CGS or Custom Units)</div><p>For any quantity with dimensions $[M^a L^b T^c]$, applying $n_1 u_1 = n_2 u_2$ gives:</p>$$\\boxed{n_2 = n_1 \\left[\\frac{M_1}{M_2}\\right]^a \\left[\\frac{L_1}{L_2}\\right]^b \\left[\\frac{T_1}{T_2}\\right]^c}$$<p><strong>Worked Proof (Convert SI Viscosity $1\\text{ Pa}\\cdot\\text{s}$ into CGS Poise):</strong><br/>Viscosity $\\eta$ has dimensions $[M^1 L^{-1} T^{-1}]$ ($a = 1, b = -1, c = -1$):</p>$$n_2 = 1 \\left(\\frac{1000\\text{ g}}{1\\text{ g}}\\right)^1 \\left(\\frac{100\\text{ cm}}{1\\text{ cm}}\\right)^{-1} \\left(\\frac{1\\text{ s}}{1\\text{ s}}\\right)^{-1} = 1000 \\times \\frac{1}{100} \\times 1 = 10 \\implies \\boxed{1\\text{ Pa}\\cdot\\text{s} = 10\\text{ Poise}}$$</div><div class='deriv-step'><div class='deriv-step-label'>Application 2: Expressing Mass in a Custom Base System [Force F, Velocity V, Time T]</div><p>Suppose Force $[F]$, Velocity $[V]$, and Time $[T]$ are chosen as fundamental quantities. Find the dimensional formula of Mass $[M]$:</p><p><strong>Step 1:</strong> Write $M = F^a V^b T^c$ and substitute standard $[M, L, T]$ dimensions:</p>$$[M^1 L^0 T^0] = [M^1 L^1 T^{-2}]^a [L^1 T^{-1}]^b [T^1]^c = [M^a L^{a+b} T^{-2a-b+c}]$$<p><strong>Step 2 (Compare exponents):</strong></p><p>&bull; Power of $M$: $a = 1$<br/>&bull; Power of $L$: $a + b = 0 \\implies b = -1$<br/>&bull; Power of $T$: $-2a - b + c = 0 \\implies -2(1) - (-1) + c = 0 \\implies c = +1$</p>$$\\boxed{[M] = [F^1 V^{-1} T^1]}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='32' fill='#00f0ff' font-size='14' font-weight='bold' text-anchor='middle'>HIGH-YIELD JEE SHORTCUT: COMBINATION DIMENSIONS TO MEMORIZE</text><rect x='25' y='50' width='200' height='55' rx='6' fill='#121622' stroke='#00e676'/><text x='125' y='72' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Time Constants [T¹]</text><text x='125' y='92' fill='#f0f4f8' font-size='12' text-anchor='middle'>RC = L / R = √(LC) = [M⁰L⁰T¹]</text><rect x='240' y='50' width='200' height='55' rx='6' fill='#121622' stroke='#ffab00'/><text x='340' y='72' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>Speed of Light [LT⁻¹]</text><text x='340' y='92' fill='#f0f4f8' font-size='12' text-anchor='middle'>1/√(μ₀ε₀) = E / B = ω / k = [LT⁻¹]</text><rect x='455' y='50' width='200' height='55' rx='6' fill='#121622' stroke='#ff0055'/><text x='555' y='72' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>Energy Density [ML⁻¹T⁻²]</text><text x='555' y='92' fill='#f0f4f8' font-size='12' text-anchor='middle'>½ε₀E² = B²/(2μ₀) = Pressure</text><rect x='25' y='120' width='630' height='50' rx='6' fill='rgba(0,240,255,0.08)' stroke='#00f0ff'/><text x='340' y='150' fill='#f0f4f8' font-size='12' text-anchor='middle'>Knowing these 3 combinations lets you solve 90% of Class 12 Electrodynamics dimension questions in 5 seconds!</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Dimensionally Correct $\\neq$ Physically Correct):</strong> An equation like $v = u + 10at$ is dimensionally valid, yet physically false. However, any dimensionally <em>incorrect</em> equation is 100% false!</li><li><strong>Trap 2 (Displacement in the $n^{\\text{th}}$ Second $S_n = u + \\frac{a}{2}(2n - 1)$):</strong> Students often think $S_n$ is dimensionally wrong because $u$ has $[LT^{-1}]$ while $S_n$ looks like $[L]$. In reality, $S_n$ is the displacement <em>per unit time ($1\\text{ second}$)</em>, and $(2n - 1)$ carries hidden dimension $[T^1]$, so every term has dimensions $[L^1 T^{-1}]$ (or $[L]$ over $1\\text{ s}$)!</li></ul>"
+    },
+    {
+      "id": "u1_t3_significant_figures",
+      "title": "Significant Figures, Rounding-Off Rules, Arithmetic Precision & Order of Magnitude",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 First-Time Reader Intuition: What Are Significant Figures?</div><div class='def-box'><strong>Definition (Significant Figures):</strong><br/>In any measured value, the <strong>reliable (certain) digits PLUS the first uncertain (estimated) digit</strong> are called Significant Figures (SF). They tell us the precision of the measuring instrument!</div><p><strong>The 7 Golden Rules for Counting Significant Figures:</strong></p><ol class='clean-list'><li><strong>All non-zero digits</strong> are significant ($482.6 \\to \\mathbf{4\\text{ SF}}$).</li><li><strong>Trapped zeros</strong> between non-zero digits are ALWAYS significant ($2005 \\to \\mathbf{4\\text{ SF}}$).</li><li><strong>Leading zeros</strong> to the left of the first non-zero digit are NEVER significant ($0.0042 \\to \\mathbf{2\\text{ SF}}$).</li><li><strong>Trailing zeros WITH a decimal point</strong> are ALWAYS significant ($4.500\\text{ m} \\to \\mathbf{4\\text{ SF}}$; $0.080\\text{ s} \\to \\mathbf{2\\text{ SF}}$).</li><li><strong>Trailing zeros WITHOUT a decimal point</strong> are NOT significant ($6500 \\to \\mathbf{2\\text{ SF}}$).</li><li><strong>Powers of 10 ($\\times 10^n$) and unit changes</strong> NEVER alter the number of significant figures ($1.20\\text{ m} = 120.\\text{ cm} = 1.20 \\times 10^3\\text{ mm} \\to$ all have $\\mathbf{3\\text{ SF}}$).</li><li><strong>Exact counting numbers or pure formula constants</strong> (like $2$ in $d = 2r$ or $6$ in cube surface area $6a^2$) have <strong>infinite ($\\infty$) significant figures</strong>.</li></ol></div><div class='concept-block'><div class='concept-title'>3.2 Rounding-Off Rules (The Even–Odd Rule for Digit 5)</div><div class='formula-highlight'>$$\\text{When the digit to be dropped is } \\mathbf{\\text{EXACTLY } 5} \\text{ (or } 5 \\text{ followed only by zeros):}$$</div><ul class='clean-list'><li><strong>If the preceding digit is EVEN:</strong> Leave it <strong>unchanged</strong> ($4.65 \\to \\mathbf{4.6}$).</li><li><strong>If the preceding digit is ODD:</strong> Increase it by <strong>$1$</strong> so it becomes even ($4.75 \\to \\mathbf{4.8}$).</li><li><em>Note:</em> If the $5$ is followed by ANY non-zero digit (e.g., $4.651$), ALWAYS round up ($4.651 \\to \\mathbf{4.7}$).</li></ul></div><div class='concept-block'><div class='concept-title'>3.3 Algebraic Operations with Significant Figures</div><table class='data-table'><thead><tr><th>Operation</th><th>Master Rule</th><th>Worked Example</th></tr></thead><tbody><tr><td><strong>Addition &amp; Subtraction ($+$ or $-$)</strong></td><td>Count <strong>Decimal Places (DP)</strong> only! Round the final answer to the <strong>least number of decimal places</strong> among the inputs.</td><td>$14.28\\text{ g}$ (2 DP) $+ 2.1\\text{ g}$ (1 DP) $= 16.38\\text{ g} \\to$ Round to <strong>1 DP</strong> $\\implies \\mathbf{16.4\\text{ g}}$.</td></tr><tr><td><strong>Multiplication &amp; Division ($\\times$ or $\\div$)</strong></td><td>Count <strong>Total Significant Figures (SF)</strong>! Round the final answer to the <strong>least total SF</strong> among the inputs.</td><td>$\\text{Density} = \\frac{4.237\\text{ g } (4\\text{ SF})}{2.51\\text{ cm}^3\\text{ } (3\\text{ SF})} = 1.68804\\dots \\to$ Round to <strong>3 SF</strong> $\\implies \\mathbf{1.69\\text{ g/cm}^3}$.</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>How to Find the Order of Magnitude of Any Quantity</div><p><strong>Step 1:</strong> Express the quantity in scientific notation $N = a \\times 10^b$ where $1 \\le a < 10$.</p><p><strong>Step 2 (Comparison with $\\sqrt{10} \\approx 3.16$ or $5$):</strong></p><p>&bull; If $a \\le 5$ (or $a \\le 3.16$), the Order of Magnitude is $\\mathbf{b}$.<br/>&bull; If $a > 5$ (or $a > 3.16$), approximate $a \\approx 10^1$, so the Order of Magnitude is $\\mathbf{b + 1}$.</p><p><em>Example:</em> Speed of light $c = 3.0 \\times 10^8\\text{ m/s} \\implies$ Since $3.0 \\le 3.16$, Order of Magnitude $= \\mathbf{8}$. Mass of electron $m_e = 9.1 \\times 10^{-31}\\text{ kg} = 0.91 \\times 10^{-30}\\text{ kg} \\implies$ Order of Magnitude $= \\mathbf{-30}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 180' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='180' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='35' fill='#00f0ff' font-size='14' font-weight='bold' text-anchor='middle'>ANATOMY OF SIGNIFICANT FIGURES:  0 . 0 0 4 0 7 0 × 10³</text><rect x='65' y='55' width='135' height='55' rx='6' fill='rgba(255,61,87,0.15)' stroke='#ff3d57'/><text x='132' y='82' fill='#ff3d57' font-size='16' font-weight='bold' text-anchor='middle'>0 . 0 0</text><text x='132' y='100' fill='#f0f4f8' font-size='10' text-anchor='middle'>Leading Zeros: NOT Sig</text><rect x='215' y='55' width='225' height='55' rx='6' fill='rgba(0,230,118,0.15)' stroke='#00e676'/><text x='327' y='82' fill='#00e676' font-size='16' font-weight='bold' text-anchor='middle'>4  0  7  0</text><text x='327' y='100' fill='#f0f4f8' font-size='10' text-anchor='middle'>Non-zero + Trapped 0 + Trailing 0: 4 Sig Figs!</text><rect x='455' y='55' width='160' height='55' rx='6' fill='rgba(255,171,0,0.15)' stroke='#ffab00'/><text x='535' y='82' fill='#ffab00' font-size='16' font-weight='bold' text-anchor='middle'>× 10³</text><text x='535' y='100' fill='#f0f4f8' font-size='10' text-anchor='middle'>Power of 10: NOT Sig</text><text x='340' y='148' fill='#94a3b8' font-size='12' text-anchor='middle'>Plus/Minus (+ / −) → Match Least DECIMAL PLACES | Multiply/Divide (× / ÷) → Match Least TOTAL SIG FIGS</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Confusing Decimal Places with Significant Figures in Addition):</strong> When adding $25.4\\text{ cm} + 0.082\\text{ cm} = 25.482\\text{ cm}$, do NOT look at total significant figures! Because $25.4$ has only <strong>1 decimal place</strong>, the sum must be rounded to 1 decimal place: $\\mathbf{25.5\\text{ cm}}$.</li><li><strong>Trap 2 (Subtraction Destroying Significant Figures):</strong> $18.45\\text{ cm} - 18.41\\text{ cm} = 0.04\\text{ cm}$. Both inputs had 4 significant figures (and 2 decimal places), so the result keeps 2 decimal places ($0.04\\text{ cm}$) and has only <strong>1 significant figure</strong>!</li></ul>"
+    },
+    {
+      "id": "u1_t4_error_propagation",
+      "title": "Theory of Errors & Calculus-Based Error Propagation (Power Law, Parallel Resistors & Lenses)",
+      "prerequisites": [
+        {
+          "label": "Differentiation & Logarithmic Rules",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t4_limits_differentiation"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Absolute, Mean Absolute, Relative &amp; Percentage Error</div><p>Suppose we measure a quantity $n$ times and obtain readings $a_1, a_2, \\dots, a_n$:</p><div class='formula-highlight'>$$\\text{1. True (Mean) Value: } a_m = \\frac{a_1 + a_2 + \\dots + a_n}{n}$$</div><div class='formula-highlight'>$$\\text{2. Mean Absolute Error: } \\Delta a_m = \\frac{|a_m - a_1| + |a_m - a_2| + \\dots + |a_m - a_n|}{n}$$</div><div class='formula-highlight'>$$\\text{3. Relative Error} = \\frac{\\Delta a_m}{a_m} \\qquad \\bigg| \\qquad \\text{4. Percentage Error} = \\left(\\frac{\\Delta a_m}{a_m}\\right) \\times 100\\%$$</div><div class='def-box'><strong>Single-Measurement Rule:</strong><br/>If no repeated readings are given, the maximum possible absolute error $\\Delta x$ is equal to the <strong>Least Count (LC)</strong> of the measuring instrument!</div></div><div class='concept-block'><div class='concept-title'>4.2 Laws of Maximum Error Propagation</div><p>Because individual measurement errors can reinforce one another in the worst case, <strong>maximum errors ALWAYS add</strong>:</p><div class='formula-highlight'>$$\\textbf{1. Addition or Subtraction } (Z = A \\pm B): \\qquad \\boxed{\\Delta Z = \\Delta A + \\Delta B}$$</div><div class='formula-highlight'>$$\\textbf{2. Multiplication or Division } \\left(Z = A \\cdot B \\text{ or } \\frac{A}{B}\\right): \\qquad \\boxed{\\frac{\\Delta Z}{Z} = \\frac{\\Delta A}{A} + \\frac{\\Delta B}{B}}$$</div><div class='formula-highlight'>$$\\textbf{3. General Power Formula } \\left(Z = \\frac{k A^p B^q}{C^r}\\right): \\qquad \\boxed{\\frac{\\Delta Z}{Z} = |p|\\frac{\\Delta A}{A} + |q|\\frac{\\Delta B}{B} + |r|\\frac{\\Delta C}{C}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation 1: Why Parallel Resistors Use ΔRp / Rp² = ΔR1 / R1² + ΔR2 / R2²</div><p><strong>Warning:</strong> Never apply the quotient rule to $R_p = \\frac{R_1 R_2}{R_1 + R_2}$ because $R_1$ and $R_2$ appear in both numerator and denominator (they are not independent!). Instead, differentiate the reciprocal equation:</p>$$R_p^{-1} = R_1^{-1} + R_2^{-1}$$<p>Differentiating using $\\frac{d}{dx}(x^{-1}) = -x^{-2}\\,dx$:</p>$$-\\frac{dR_p}{R_p^2} = -\\frac{dR_1}{R_1^2} - \\frac{dR_2}{R_2^2} \\implies \\boxed{\\frac{\\Delta R_p}{R_p^2} = \\frac{\\Delta R_1}{R_1^2} + \\frac{\\Delta R_2}{R_2^2} \\implies \\Delta R_p = R_p^2\\left(\\frac{\\Delta R_1}{R_1^2} + \\frac{\\Delta R_2}{R_2^2}\\right)}$$</div><div class='deriv-step'><div class='deriv-step-label'>Derivation 2: Simple Pendulum Gravity Error with N Oscillations</div><p>Since $T = 2\\pi\\sqrt{\\frac{L}{g}}$, squaring gives $g = \\frac{4\\pi^2 L}{T^2}$. If total time $t$ is measured for $N$ oscillations, then $T = \\frac{t}{N}$, so $\\frac{\\Delta T}{T} = \\frac{\\Delta t}{t}$:</p>$$\\boxed{\\frac{\\Delta g}{g} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta T}{T} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta t}{t}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 195' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='195' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,20)'><circle cx='80' cy='75' r='55' fill='none' stroke='#475569' stroke-width='2'/><circle cx='80' cy='75' r='30' fill='none' stroke='#475569' stroke-width='2'/><circle cx='80' cy='75' r='8' fill='#00e676'/><circle cx='78' cy='72' r='4' fill='#00f0ff'/><circle cx='83' cy='77' r='4' fill='#00f0ff'/><circle cx='76' cy='78' r='4' fill='#00f0ff'/><text x='80' y='152' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>High Accuracy &amp; High Precision</text></g><g transform='translate(250,20)'><circle cx='80' cy='75' r='55' fill='none' stroke='#475569' stroke-width='2'/><circle cx='80' cy='75' r='30' fill='none' stroke='#475569' stroke-width='2'/><circle cx='80' cy='75' r='8' fill='#00e676'/><circle cx='115' cy='45' r='4' fill='#ffab00'/><circle cx='118' cy='48' r='4' fill='#ffab00'/><circle cx='112' cy='49' r='4' fill='#ffab00'/><text x='80' y='152' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>High Precision, Low Accuracy (Zero Error!)</text></g><g transform='translate(470,20)'><circle cx='80' cy='75' r='55' fill='none' stroke='#475569' stroke-width='2'/><circle cx='80' cy='75' r='30' fill='none' stroke='#475569' stroke-width='2'/><circle cx='80' cy='75' r='8' fill='#00e676'/><circle cx='50' cy='50' r='4' fill='#ff0055'/><circle cx='110' cy='95' r='4' fill='#ff0055'/><circle cx='80' cy='115' r='4' fill='#ff0055'/><text x='80' y='152' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>Low Precision (High Random Scatter)</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Never Subtract Errors in $Z = A - B$!):</strong> If $A = (20 \\pm 0.2)\\text{ cm}$ and $B = (15 \\pm 0.1)\\text{ cm}$, then $Z = A - B = 5\\text{ cm}$, and $\\Delta Z = 0.2 + 0.1 = 0.3\\text{ cm}$ (NOT $0.2 - 0.1$). Thus $\\%\\text{ error in } Z = \\frac{0.3}{5} \\times 100\\% = 6\\%$.</li><li><strong>Trap 2 (Large Percentage Changes $> 10\\%$):</strong> Calculus error formulas like $\\frac{\\Delta K}{K} = 2\\frac{\\Delta p}{p}$ work ONLY for small errors ($\\le 5\\%$). If momentum $p$ increases by $100\\%$ ($p' = 2p$), kinetic energy $K \\propto p^2$ becomes $4K$, an increase of $\\mathbf{300\\%}$ (not $200\\%$)!</li></ul>"
+    },
+    {
+      "id": "u1_t5_vernier_screw_gauge",
+      "title": "Experimental Instruments: Vernier Callipers, Screw Gauge (Micrometer), Spherometer & Zero Errors",
+      "prerequisites": [
+        {
+          "label": "Significant Figures & Instrument Least Count",
+          "targetChapter": "ch01_units_measurements",
+          "targetTopic": "u1_t3_significant_figures"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>5.1 Vernier Callipers: Least Count &amp; Reading Formula</div><div class='def-box'><strong>How the Vernier Scale Works:</strong><br/>A Vernier scale has divisions ($1\\text{ VSD}$) slightly different in width from the Main Scale divisions ($1\\text{ MSD}$). The tiny difference between the two is the <strong>Least Count (Vernier Constant)</strong>!</div><div class='formula-highlight'>$$\\boxed{\\text{Least Count (LC)} = 1\\text{ MSD} - 1\\text{ VSD}}$$</div><p>If $n$ divisions of the Vernier Scale coincide with $m$ divisions of the Main Scale ($n\\text{ VSD} = m\\text{ MSD} \\implies 1\\text{ VSD} = \\frac{m}{n}\\text{ MSD}$):</p><div class='formula-highlight'>$$\\boxed{\\text{LC} = \\left(1 - \\frac{m}{n}\\right)\\text{MSD}} \\qquad \\left(\\text{Standard Case } m = n-1: \\; \\text{LC} = \\frac{1\\text{ MSD}}{n}\\right)$$</div><div class='formula-highlight'>$$\\textbf{Complete Vernier Reading:} \\quad \\boxed{\\text{True Reading} = \\text{MSR} + (\\text{VSR} \\times \\text{LC}) - (\\text{Zero Error})}$$</div><table class='data-table'><thead><tr><th>Zero Error Type (Jaws Closed Empty)</th><th>Visual Condition</th><th>Formula (If $k^{\\text{th}}$ VSD coincides out of $N$)</th><th>Correction Rule</th></tr></thead><tbody><tr><td><strong>Positive Zero Error ($+\\text{ZE}$)</strong></td><td>Vernier zero ($0_V$) is to the <strong>RIGHT</strong> of Main Scale zero ($0_M$).</td><td>$\\text{ZE} = +k \\times \\text{LC}$</td><td><strong>Subtract</strong> $|\\text{ZE}|$ from observed reading.</td></tr><tr><td><strong>Negative Zero Error ($-\\text{ZE}$)</strong></td><td>Vernier zero ($0_V$) is to the <strong>LEFT</strong> of Main Scale zero ($0_M$).</td><td>$\\boxed{\\text{ZE} = -(N - k) \\times \\text{LC}}$</td><td><strong>Add</strong> $|\\text{ZE}|$ to observed reading.</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>5.2 Screw Gauge (Micrometer) &amp; Spherometer</div><div class='def-box'><strong>Definition (Pitch $p$):</strong><br/>The axial linear distance moved by the screw spindle per <strong>one complete rotation ($360^\\circ$)</strong> of the circular cap.</div><div class='formula-highlight'>$$\\text{Pitch } (p) = \\frac{\\text{Distance Moved Along Linear Scale}}{\\text{Number of Full Rotations}} \\qquad \\bigg| \\qquad \\boxed{\\text{Least Count (LC)} = \\frac{\\text{Pitch }(p)}{\\text{Total Circular Divisions }(N)}}$$</div><div class='formula-highlight'>$$\\textbf{Complete Screw Gauge Reading:} \\quad \\boxed{\\text{True Reading} = \\text{PSR} + (\\text{CSR} \\times \\text{LC}) - (\\text{Zero Error})}$$</div><ul class='clean-list'><li><strong>Positive Zero Error ($+\\text{ZE}$):</strong> When studs touch, Circular Scale zero ($0_C$) stays <strong>BELOW</strong> the reference line. If $k^{\\text{th}}$ mark aligns: $\\text{ZE} = +k \\times \\text{LC}$.</li><li><strong>Negative Zero Error ($-\\text{ZE}$):</strong> When studs touch, Circular Scale zero ($0_C$) crosses <strong>ABOVE</strong> the reference line. If $k^{\\text{th}}$ mark aligns (out of $N$ divisions): $\\boxed{\\text{ZE} = -(N - k) \\times \\text{LC}}$.</li><li><strong>Backlash Error:</strong> Caused by wear and tear (loose play) in screw threads when rotation direction is suddenly reversed. <em>Cure:</em> Always rotate the screw in one single direction while taking a reading!</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation 1: First-Principles Method for Non-Standard &amp; Retrograde JEE Advanced Verniers</div><p>When a JEE Advanced problem gives a non-standard Vernier (e.g., $1\\text{ VSD} > 1\\text{ MSD}$, or a warped main scale), never guess with LC formulas! Use the <strong>Direct Subtraction Method</strong>:</p><p>Suppose the main scale mark before $0_V$ is at $x_M$, and the $k^{\\text{th}}$ Vernier mark aligns with a main scale mark at position $x_{\\text{align}}$:</p>$$\\boxed{\\text{Object Length } L = x_{\\text{align}} - k \\times (1\\text{ VSD})}$$<p>This geometric equation works for 100% of standard, non-standard, and retrograde Vernier Callipers!</p></div><div class='deriv-step'><div class='deriv-step-label'>Derivation 2: Spherometer Formula for Radius of Curvature R</div><p>If $a$ is the distance between the three outer legs of a spherometer and $h$ is the sagittal height by which the central screw is raised/lowered on a curved mirror/lens:</p>$$\\boxed{R = \\frac{a^2}{6h} + \\frac{h}{2} \\approx \\frac{a^2}{6h} \\quad (\\text{for } h \\ll a)}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 210' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='210' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='28' fill='#00f0ff' font-size='13' font-weight='bold' text-anchor='middle'>VERNIER CALLIPERS ZERO ERROR COMPARISON (WHEN JAWS ARE FULLY CLOSED)</text><g transform='translate(25,45)'><rect x='0' y='0' width='295' height='145' rx='6' fill='#121622' stroke='#00e676'/><text x='147' y='22' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>POSITIVE ZERO ERROR (+ZE)</text><line x1='20' y1='65' x2='275' y2='65' stroke='#94a3b8' stroke-width='2'/><line x1='60' y1='42' x2='60' y2='65' stroke='#00f0ff' stroke-width='2.5'/><text x='50' y='37' fill='#00f0ff' font-size='11'>0_M</text><line x1='78' y1='65' x2='78' y2='88' stroke='#ff0055' stroke-width='2.5'/><text x='68' y='102' fill='#ff0055' font-size='11'>0_V (Right of 0_M)</text><text x='147' y='128' fill='#00e676' font-size='11' font-weight='bold' text-anchor='middle'>ZE = + k × LC  (Subtract from Reading)</text></g><g transform='translate(355,45)'><rect x='0' y='0' width='295' height='145' rx='6' fill='#121622' stroke='#ffab00'/><text x='147' y='22' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>NEGATIVE ZERO ERROR (−ZE)</text><line x1='20' y1='65' x2='275' y2='65' stroke='#94a3b8' stroke-width='2'/><line x1='95' y1='42' x2='95' y2='65' stroke='#00f0ff' stroke-width='2.5'/><text x='85' y='37' fill='#00f0ff' font-size='11'>0_M</text><line x1='75' y1='65' x2='75' y2='88' stroke='#ff0055' stroke-width='2.5'/><text x='55' y='102' fill='#ff0055' font-size='11'>0_V (Left of 0_M)</text><text x='147' y='128' fill='#ffab00' font-size='11' font-weight='bold' text-anchor='middle'>ZE = − (N − k) × LC  (Add |(N−k)×LC|)</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Negative Zero Error Coinciding Division $k$):</strong> If a $10$-division Vernier Calliper ($\\text{LC} = 0.1\\text{ mm}$) has Negative Zero Error and the $7^{\\text{th}}$ Vernier division coincides when jaws are closed, the zero error is <strong>NOT</strong> $-0.7\\text{ mm}$! It is $\\text{ZE} = -(10 - 7) \\times 0.1\\text{ mm} = -0.3\\text{ mm}$!</li><li><strong>Trap 2 (Diameter vs. Radius in Wire Volume / Density Error):</strong> A Screw Gauge always measures the <strong>Diameter ($D$)</strong> of a wire, not its radius! Even though $D = 2r$, the relative error is identical: $\\frac{\\Delta D}{D} = \\frac{\\Delta r}{r}$.</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 01: Units, Dimensions and Measurements</strong>! You now have the complete toolkit to check any equation dimensionally, propagate experimental errors using calculus, and read any standard or non-standard Vernier Calliper and Screw Gauge.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Unit Conversion:</strong> $n_1 u_1 = n_2 u_2 \\implies n_2 = n_1 [M_1/M_2]^a [L_1/L_2]^b [T_1/T_2]^c$.</li><li><strong>Homogeneity &amp; Arguments:</strong> Added/subtracted terms have identical dimensions; inputs to $\\sin, \\cos, \\exp, \\ln$ are strictly $[M^0 L^0 T^0]$.</li><li><strong>Significant Figures:</strong> $+ / -$ keeps least <strong>Decimal Places</strong>; $\\times / \\div$ keeps least <strong>Total Sig Figs</strong>.</li><li><strong>Error Propagation:</strong> For $Z = A^p B^q / C^r$, $\\frac{\\Delta Z}{Z} = |p|\\frac{\\Delta A}{A} + |q|\\frac{\\Delta B}{B} + |r|\\frac{\\Delta C}{C}$.</li><li><strong>Instruments:</strong> Vernier $\\text{LC} = 1\\text{ MSD} - 1\\text{ VSD}$; Screw Gauge $\\text{LC} = \\frac{\\text{Pitch}}{N}$; $\\text{True Reading} = \\text{Observed} - \\text{ZE}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th><th>Key Notes</th></tr></thead><tbody><tr><td>Astronomical Parallax</td><td>$D = \\dfrac{b}{\\theta\\text{ (rad)}}, \\quad d = D\\alpha\\text{ (rad)}$</td><td>$1'' = 4.85 \\times 10^{-6}\\text{ rad}$; $1' = 2.91 \\times 10^{-4}\\text{ rad}$.</td></tr><tr><td>3D Cone Solid Angle</td><td>$\\Omega = 2\\pi(1 - \\cos\\alpha)\\text{ sr}$</td><td>Full sphere ($\\alpha = \\pi$): $\\Omega = 4\\pi\\text{ sr}$; Hemisphere ($\\alpha = \\pi/2$): $2\\pi\\text{ sr}$.</td></tr><tr><td>Power Error Law</td><td>$\\dfrac{\\Delta Z}{Z} = |p|\\dfrac{\\Delta A}{A} + |q|\\dfrac{\\Delta B}{B} + |r|\\dfrac{\\Delta C}{C}$</td><td>Valid for small errors ($\\le 5\\%$). Errors ALWAYS add!</td></tr><tr><td>Parallel Resistor / Lens Error</td><td>$\\dfrac{\\Delta R_p}{R_p^2} = \\dfrac{\\Delta R_1}{R_1^2} + \\dfrac{\\Delta R_2}{R_2^2}$</td><td>Same form for $\\dfrac{1}{f} = \\dfrac{1}{v} - \\dfrac{1}{u} \\implies \\dfrac{\\Delta f}{f^2} = \\dfrac{\\Delta v}{v^2} + \\dfrac{\\Delta u}{u^2}$.</td></tr><tr><td>Vernier Calliper</td><td>$\\text{LC} = \\left(1 - \\dfrac{m}{n}\\right)\\text{MSD}$</td><td>When $n\\text{ VSD} = m\\text{ MSD}$. Negative ZE $= -(N - k)\\times \\text{LC}$.</td></tr><tr><td>Screw Gauge</td><td>$\\text{LC} = \\dfrac{\\text{Pitch}}{N}$</td><td>$\\text{True Reading} = \\text{PSR} + (\\text{CSR}\\times\\text{LC}) - \\text{ZE}$.</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch01_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "How many significant figures are present in the measured quantities (i) $0.005080\\text{ m}$, (ii) $6.022 \\times 10^{23}$, and (iii) $4200\\text{ kg}$?",
+      "options": [
+        "4, 4, 2",
+        "6, 4, 4",
+        "3, 4, 2",
+        "4, 23, 2"
+      ],
+      "answer": "4, 4, 2",
+      "explanation": "(i) Leading zeros are not significant, while trapped and trailing zeros after a decimal point ARE significant ($5, 0, 8, 0 \\to \\mathbf{4}$). (ii) Powers of 10 are not significant ($6, 0, 2, 2 \\to \\mathbf{4}$). (iii) Trailing zeros without a decimal point are not significant ($4, 2 \\to \\mathbf{2}$)."
+    },
+    {
+      "id": "ch01_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Round off the following numbers to 3 significant figures using the standard Even–Odd rule: (a) $14.650$, (b) $14.750$, and (c) $14.651$.",
+      "options": [
+        "14.6, 14.8, 14.7",
+        "14.7, 14.8, 14.7",
+        "14.6, 14.7, 14.6",
+        "14.7, 14.7, 14.7"
+      ],
+      "answer": "14.6, 14.8, 14.7",
+      "explanation": "(a) In $14.650$, the dropped digit is $50$ and the preceding digit $6$ is <strong>even</strong>, so it stays $14.6$. (b) In $14.750$, the preceding digit $7$ is <strong>odd</strong>, so it rounds up to $14.8$. (c) In $14.651$, $5$ is followed by a non-zero digit $1$, so it must round up to $14.7$."
+    },
+    {
+      "id": "ch01_q03",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Three masses are measured as $m_1 = 12.4\\text{ g}$, $m_2 = 3.12\\text{ g}$, and $m_3 = 0.084\\text{ g}$. What is the total mass $M = m_1 + m_2 + m_3$ reported with proper significant figures?",
+      "options": [
+        "15.604 g",
+        "15.6 g",
+        "15.60 g",
+        "16 g"
+      ],
+      "answer": "15.6 g",
+      "explanation": "Exact sum $= 12.4 + 3.12 + 0.084 = 15.604\\text{ g}$. For addition, we round to the <strong>least number of decimal places</strong>. Since $12.4\\text{ g}$ has only <strong>1 decimal place</strong>, we round $15.604\\text{ g}$ to $15.6\\text{ g}$."
+    },
+    {
+      "id": "ch01_q04",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Which of the following pairs of physical quantities does NOT have the same dimensional formula?",
+      "options": [
+        "Work and Torque",
+        "Angular Momentum and Planck's Constant",
+        "Impulse and Linear Momentum",
+        "Surface Tension and Coefficient of Viscosity"
+      ],
+      "answer": "Surface Tension and Coefficient of Viscosity",
+      "explanation": "Surface Tension $[S] = [F/L] = [M^1 L^0 T^{-2}]$, whereas Coefficient of Viscosity $[\\eta] = [M^1 L^{-1} T^{-1}]$. All other pairs have identical dimensions!"
+    },
+    {
+      "id": "ch01_q05",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "The temperatures of two bodies measured by a thermometer are $T_1 = (20 \\pm 0.5)^\\circ\\text{C}$ and $T_2 = (50 \\pm 0.5)^\\circ\\text{C}$. What is the temperature difference $\\Delta T = T_2 - T_1$ and its percentage error?",
+      "options": [
+        "$(30 \\pm 1.0)^\\circ\\text{C}$ and $3.33\\%$",
+        "$(30 \\pm 0.0)^\\circ\\text{C}$ and $0\\%$",
+        "$(30 \\pm 0.5)^\\circ\\text{C}$ and $1.67\\%$",
+        "$(30 \\pm 1.0)^\\circ\\text{C}$ and $1.0\\%$"
+      ],
+      "answer": "$(30 \\pm 1.0)^\\circ\\text{C}$ and $3.33\\%$",
+      "explanation": "$\\Delta T = 50 - 20 = 30^\\circ\\text{C}$. Even in subtraction, absolute errors ADD: $0.5 + 0.5 = 1.0^\\circ\\text{C}$. Percentage error $= \\frac{1.0}{30} \\times 100\\% = 3.33\\%$."
+    },
+    {
+      "id": "ch01_q06",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Find the solid angle subtended at the center of a sphere by a conical beam of light whose semi-vertical angle is $\\alpha = 60^\\circ$.",
+      "options": [
+        "$\\pi\\text{ sr}$",
+        "$2\\pi\\text{ sr}$",
+        "$\\pi/2\\text{ sr}$",
+        "$3\\pi\\text{ sr}$"
+      ],
+      "answer": "$\\pi\\text{ sr}$",
+      "explanation": "Using $\\Omega = 2\\pi(1 - \\cos\\alpha)$ with $\\alpha = 60^\\circ$: $\\Omega = 2\\pi(1 - \\cos 60^\\circ) = 2\\pi(1 - 1/2) = \\pi\\text{ sr}$."
+    },
+    {
+      "id": "ch01_q07",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "In a standard Vernier Calliper, $1\\text{ MSD} = 1\\text{ mm}$ and $20$ Vernier scale divisions coincide with $19$ Main scale divisions. What is its Least Count (LC)?",
+      "options": [
+        "0.05 mm",
+        "0.1 mm",
+        "0.01 mm",
+        "0.02 mm"
+      ],
+      "answer": "0.05 mm",
+      "explanation": "$\\text{LC} = \\left(1 - \\frac{19}{20}\\right) \\times 1\\text{ mm} = \\frac{1}{20}\\text{ mm} = 0.05\\text{ mm}$ (or $0.005\\text{ cm}$)."
+    },
+    {
+      "id": "ch01_q08",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "The pressure $P$ at depth $z$ depends on distance $x$ and temperature $\\theta$ as $P = \\frac{\\alpha}{\\beta} \\exp\\left(-\\frac{\\alpha z}{k_B \\theta}\\right)$, where $k_B$ is Boltzmann's constant. What is the dimensional formula of $\\beta$?",
+      "options": [
+        "$[M^0 L^2 T^0]$",
+        "$[M^1 L^2 T^{-2}]$",
+        "$[M^0 L^{-2} T^0]$",
+        "$[M^1 L^0 T^{-2}]$"
+      ],
+      "answer": "$[M^0 L^2 T^0]$",
+      "explanation": "The exponential argument must be dimensionless: $\\left[\\frac{\\alpha z}{k_B \\theta}\\right] = [M^0 L^0 T^0]$. Since $[k_B \\theta] = \\text{Energy} = [M^1 L^2 T^{-2}]$, we get $[\\alpha] = \\frac{[M^1 L^2 T^{-2}]}{[L]} = [M^1 L^1 T^{-2}]$ (Force). Next, $[P] = \\left[\\frac{\\alpha}{\\beta}\\right] \\implies [\\beta] = \\frac{[\\alpha]}{[P]} = \\frac{[M^1 L^1 T^{-2}]}{[M^1 L^{-1} T^{-2}]} = [M^0 L^2 T^0]$ (Area!)."
+    },
+    {
+      "id": "ch01_q09",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A physical quantity $X$ is given by $X = \\frac{a^2 b^3}{c \\sqrt{d}}$. If the percentage errors of measurement in $a, b, c,$ and $d$ are $4\\%, 2\\%, 3\\%,$ and $4\\%$ respectively, then the maximum percentage error in $X$ is:",
+      "options": [
+        "19%",
+        "16%",
+        "21%",
+        "14%"
+      ],
+      "answer": "19%",
+      "explanation": "$\\frac{\\Delta X}{X} \\times 100\\% = 2(4\\%) + 3(2\\%) + 1(3\\%) + \\frac{1}{2}(4\\%) = 8\\% + 6\\% + 3\\% + 2\\% = 19\\%$."
+    },
+    {
+      "id": "ch01_q10",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "If the unit of Force is $100\\text{ N}$, the unit of Length is $10\\text{ m}$, and the unit of Time is $100\\text{ s}$ in a new system of units, what is the unit of Mass in this system?",
+      "options": [
+        "$10^5\\text{ kg}$",
+        "$10^4\\text{ kg}$",
+        "$10^3\\text{ kg}$",
+        "$10\\text{ kg}$"
+      ],
+      "answer": "$10^5\\text{ kg}$",
+      "explanation": "From $F = ma = m\\frac{L}{T^2}$, we have $[M] = [F^1 L^{-1} T^2]$. Substituting the new units: $1\\text{ unit of Mass} = \\frac{(100\\text{ N})(100\\text{ s})^2}{10\\text{ m}} = \\frac{100 \\times 10^4}{10}\\text{ kg} = 10^5\\text{ kg}$."
+    },
+    {
+      "id": "ch01_q11",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "In a simple pendulum experiment, the length of the string is measured as $L = 20.0\\text{ cm}$ using a meter scale of accuracy $1\\text{ mm}$, and the time for $100$ oscillations is measured as $t = 90\\text{ s}$ using a stopwatch of resolution $1\\text{ s}$. What is the percentage accuracy in the determination of $g$?",
+      "options": [
+        "2.72%",
+        "1.61%",
+        "3.22%",
+        "0.50%"
+      ],
+      "answer": "2.72%",
+      "explanation": "Since $g = \\frac{4\\pi^2 L}{T^2}$ and $T = \\frac{t}{N}$, $\\frac{\\Delta g}{g} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta t}{t} = \\frac{0.1\\text{ cm}}{20.0\\text{ cm}} + 2\\left(\\frac{1\\text{ s}}{90\\text{ s}}\\right) = 0.005 + 0.0222 = 0.0272 = 2.72\\%$."
+    },
+    {
+      "id": "ch01_q12",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "Two resistors $R_1 = (10 \\pm 0.5)\\,\\Omega$ and $R_2 = (10 \\pm 0.5)\\,\\Omega$ are connected in parallel. What is the equivalent resistance $R_p$ with its maximum error limits?",
+      "options": [
+        "$(5.0 \\pm 0.25)\\,\\Omega$",
+        "$(5.0 \\pm 0.50)\\,\\Omega$",
+        "$(5.0 \\pm 1.0)\\,\\Omega$",
+        "$(5.0 \\pm 0.125)\\,\\Omega$"
+      ],
+      "answer": "$(5.0 \\pm 0.25)\\,\\Omega$",
+      "explanation": "$R_p = \\frac{10 \\times 10}{10 + 10} = 5.0\\,\\Omega$. Using $\\Delta R_p = R_p^2\\left(\\frac{\\Delta R_1}{R_1^2} + \\frac{\\Delta R_2}{R_2^2}\\right) = (5)^2\\left(\\frac{0.5}{100} + \\frac{0.5}{100}\\right) = 25 \\times 0.01 = 0.25\\,\\Omega$."
+    },
+    {
+      "id": "ch01_q13",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "What are the dimensions of the quantity $\\frac{1}{\\sqrt{\\mu_0 \\varepsilon_0}}$ and $\\frac{B^2}{2\\mu_0}$, where $B$ is magnetic field, $\\mu_0$ is permeability, and $\\varepsilon_0$ is permittivity of free space?",
+      "options": [
+        "$[L^1 T^{-1}]$ and $[M^1 L^{-1} T^{-2}]$",
+        "$[L^2 T^{-2}]$ and $[M^1 L^2 T^{-2}]$",
+        "$[L^{-1} T^1]$ and $[M^1 L^{-1} T^{-2}]$",
+        "$[L^1 T^{-1}]$ and $[M^1 L^1 T^{-2}]$"
+      ],
+      "answer": "$[L^1 T^{-1}]$ and $[M^1 L^{-1} T^{-2}]$",
+      "explanation": "$\\frac{1}{\\sqrt{\\mu_0 \\varepsilon_0}} = c$ (speed of light in vacuum), so its dimensions are $[L^1 T^{-1}]$. Meanwhile, $\\frac{B^2}{2\\mu_0}$ is magnetic energy density (Energy / Volume = Pressure), which has dimensions $[M^1 L^{-1} T^{-2}]$."
+    },
+    {
+      "id": "ch01_q14",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A Screw Gauge has a pitch of $0.5\\text{ mm}$ and $50$ divisions on its circular scale. Before starting the measurement, it is found that when the two jaws are brought in contact, the $45^{\\text{th}}$ division of the circular scale coincides with the main scale line and the zero of the circular scale lies ABOVE (crosses past) the reference line. What is the Zero Error?",
+      "options": [
+        "$-0.05\\text{ mm}$",
+        "$+0.45\\text{ mm}$",
+        "$-0.45\\text{ mm}$",
+        "$+0.05\\text{ mm}$"
+      ],
+      "answer": "$-0.05\\text{ mm}$",
+      "explanation": "Least Count $\\text{LC} = \\frac{0.5\\text{ mm}}{50} = 0.01\\text{ mm}$. Since the zero of the circular scale has crossed ABOVE the reference line, the zero error is <strong>negative</strong>: $\\text{ZE} = -(N - k) \\times \\text{LC} = -(50 - 45) \\times 0.01\\text{ mm} = -0.05\\text{ mm}$."
+    },
+    {
+      "id": "ch01_q15",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "If speed of light ($c$), gravitational constant ($G$), and Planck's constant ($h$) are chosen as fundamental units, the dimensions of time ($T$) in this Planck system are:",
+      "options": [
+        "$[h^{1/2} G^{1/2} c^{-5/2}]$",
+        "$[h^{1/2} G^{1/2} c^{-3/2}]$",
+        "$[h^{1/2} G^{-1/2} c^{1/2}]$",
+        "$[h^{-1/2} G^{1/2} c^{-5/2}]$"
+      ],
+      "answer": "$[h^{1/2} G^{1/2} c^{-5/2}]$",
+      "explanation": "Let $[T] = [h]^a [G]^b [c]^d = [M^1 L^2 T^{-1}]^a [M^{-1} L^3 T^{-2}]^b [L^1 T^{-1}]^d = [M^{a-b} L^{2a+3b+d} T^{-a-2b-d}]$. Matching exponents: $a - b = 0 \\implies a = b$; $-a - 2b - d = 1 \\implies d = -3a - 1$; and $2a + 3b + d = 0 \\implies 5a + (-3a - 1) = 0 \\implies 2a = 1 \\implies a = 1/2, b = 1/2, d = -5/2$."
+    },
+    {
+      "id": "ch01_q16",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "The density of a solid metal sphere is determined by measuring its mass and its diameter. If the maximum errors in measuring the mass and the diameter are $2\\%$ and $1.5\\%$ respectively, the maximum error in the calculated density is:",
+      "options": [
+        "6.5%",
+        "3.5%",
+        "5.0%",
+        "8.0%"
+      ],
+      "answer": "6.5%",
+      "explanation": "Volume of a sphere in terms of diameter $D$ is $V = \\frac{1}{6}\\pi D^3$, so density $\\rho = \\frac{m}{V} = \\frac{6m}{\\pi D^3}$. Therefore, $\\frac{\\Delta \\rho}{\\rho} \\times 100\\% = \\frac{\\Delta m}{m}\\times 100\\% + 3\\left(\\frac{\\Delta D}{D}\\times 100\\%\\right) = 2\\% + 3(1.5\\%) = 6.5\\%$."
+    },
+    {
+      "id": "ch01_q17",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A customized Vernier Calliper has $1\\text{ MSD} = 0.1\\text{ cm}$. It is designed such that $10$ divisions of the Vernier scale equal $11$ divisions of the Main scale (a Retrograde Vernier where $1\\text{ VSD} = 0.11\\text{ cm}$). What is the Least Count (resolution step size) of this Vernier Calliper?",
+      "options": [
+        "0.01 cm",
+        "0.11 cm",
+        "0.09 cm",
+        "0.02 cm"
+      ],
+      "answer": "0.01 cm",
+      "explanation": "Here $1\\text{ MSD} = 0.10\\text{ cm}$ and $1\\text{ VSD} = \\frac{11}{10}\\text{ MSD} = 0.11\\text{ cm}$. The resolution step (Least Count) is the absolute difference between one Main Scale division and one Vernier Scale division: $\\text{LC} = |1\\text{ MSD} - 1\\text{ VSD}| = |0.10 - 0.11| = 0.01\\text{ cm}$."
+    },
+    {
+      "id": "ch01_q18",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "During Searle's method for determining Young's modulus $Y = \\frac{4MgL}{\\pi d^2 l}$, a student measures the wire diameter $d = 0.4\\text{ mm}$ using a Screw Gauge of least count $0.01\\text{ mm}$ and the extension $l = 0.8\\text{ mm}$ using a Micrometer of least count $0.02\\text{ mm}$ ($M, g, L$ are known accurately). Which measurement contributes more to the fractional error in $Y$, and what is the total percentage error in $Y$?",
+      "options": [
+        "Diameter d contributes twice as much as l; Total Error = 7.5%",
+        "Both d and l contribute equally; Total Error = 5.0%",
+        "Extension l contributes more than d; Total Error = 7.5%",
+        "Both d and l contribute equally; Total Error = 7.5%"
+      ],
+      "answer": "Diameter d contributes twice as much as l; Total Error = 7.5%",
+      "explanation": "Since $Y \\propto d^{-2} l^{-1}$, we have $\\frac{\\Delta Y}{Y} = 2\\frac{\\Delta d}{d} + \\frac{\\Delta l}{l}$. Contribution from $d$: $2 \\times \\frac{0.01}{0.4} = 2 \\times 0.025 = 0.05 = 5.0\\%$. Contribution from $l$: $\\frac{0.02}{0.8} = 0.025 = 2.5\\%$. Thus $d$ contributes twice as much as $l$, and total error $= 5.0\\% + 2.5\\% = 7.5\\%$."
+    },
+    {
+      "id": "ch01_q19",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "In an optics experiment to find the focal length $f$ of a concave mirror using $\\frac{1}{f} = \\frac{1}{u} + \\frac{1}{v}$, a student records object distance $u = (20.0 \\pm 0.2)\\text{ cm}$ and image distance $v = (20.0 \\pm 0.2)\\text{ cm}$. What is the percentage error in the calculated focal length $f$?",
+      "options": [
+        "1.0%",
+        "2.0%",
+        "0.5%",
+        "4.0%"
+      ],
+      "answer": "1.0%",
+      "explanation": "First find $f$: $\\frac{1}{f} = \\frac{1}{20} + \\frac{1}{20} = \\frac{2}{20} \\implies f = 10.0\\text{ cm}$. Using $\\frac{\\Delta f}{f^2} = \\frac{\\Delta u}{u^2} + \\frac{\\Delta v}{v^2} \\implies \\frac{\\Delta f}{f} = f\\left(\\frac{\\Delta u}{u^2} + \\frac{\\Delta v}{v^2}\\right) = 10\\left(\\frac{0.2}{400} + \\frac{0.2}{400}\\right) = 10 \\times \\frac{0.4}{400} = 0.01 = 1.0\\%$."
+    },
+    {
+      "id": "ch01_q20",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "There are two Vernier Callipers A and B, both having $1\\text{ cm}$ divided into $10$ equal parts on the Main Scale ($1\\text{ MSD} = 1\\text{ mm}$). In Calliper A, $10\\text{ VSD} = 9\\text{ MSD}$. In Calliper B, $10\\text{ VSD} = 11\\text{ MSD}$. While measuring a cylinder, Calliper A has its Vernier zero just past $2.8\\text{ cm}$ and the $6^{\\text{th}}$ VSD coincides with a main scale mark. In Calliper B, the Vernier zero is also just past $2.8\\text{ cm}$ and the $6^{\\text{th}}$ VSD coincides with the NEXT main scale mark to the right of $2.8 + 0.6 = 3.4\\text{ cm}$ (i.e., at $3.5\\text{ cm}$). What are the readings of A and B?",
+      "options": [
+        "A = 2.86 cm, B = 2.84 cm",
+        "A = 2.86 cm, B = 2.86 cm",
+        "A = 2.84 cm, B = 2.86 cm",
+        "A = 2.86 cm, B = 2.94 cm"
+      ],
+      "answer": "A = 2.86 cm, B = 2.84 cm",
+      "explanation": "For standard Calliper A ($\\text{LC} = 0.01\\text{ cm}$): $L_A = 2.8 + 6(0.01) = 2.86\\text{ cm}$. For non-standard Calliper B ($1\\text{ VSD} = 0.11\\text{ cm}$), use the First-Principles Direct Subtraction Formula: the $6^{\\text{th}}$ VSD aligns with the main scale mark at $x_{\\text{align}} = 3.50\\text{ cm}$. Therefore, the position of the Vernier zero ($L_B$) is $L_B = x_{\\text{align}} - 6 \\times (1\\text{ VSD}) = 3.50\\text{ cm} - 6(0.11\\text{ cm}) = 3.50 - 0.66 = 2.84\\text{ cm}$!"
+    }
+  ]
+}

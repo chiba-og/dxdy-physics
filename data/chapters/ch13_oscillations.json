@@ -1,0 +1,184 @@
+{
+  "id": "ch13_oscillations",
+  "code": "13",
+  "title": "Oscillations (Simple Harmonic Motion)",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: SHM Differential Equation, Phasor Circle Diagram, Kinetic & Potential Energy in SHM, Spring Combinations, Simple/Compound/Torsional Pendulums, U-Tube & Earth-Tunnel SHM, Damped & Forced Resonance",
+  "classLevel": "Class 11",
+  "unit": "Oscillations & Waves",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: Periodic vs. Oscillatory vs. Simple Harmonic Motion</div><p>Look around you: the Earth orbits the Sun every $365.25$ days, your heart beats roughly once every second, a guitar string vibrates back and forth, and a pendulum swings from side to side. All of these repeat themselves in time, yet they are not all the same type of motion!</p><div class='def-box'><strong>The 3-Level Hierarchy of Repeating Motion:</strong><ul class='clean-list'><li><strong>1. Periodic Motion:</strong> Any motion that repeats itself at regular intervals of time $T$ (e.g., Earth orbiting the Sun, hands of a clock). It does NOT have to move back and forth!</li><li><strong>2. Oscillatory (Vibratory) Motion:</strong> A periodic motion in which a body moves <strong>back and forth (to and fro)</strong> repeatedly about a fixed stable equilibrium point (Mean Position), where $F_{\\text{net}} = 0$ and potential energy $U(x)$ is a local minimum ($F = -k x^n$ where $n = 1, 3, 5, \\dots$).</li><li><strong>3. Simple Harmonic Motion (SHM):</strong> The simplest and most fundamental special case of oscillatory motion in which the restoring force (and acceleration) is <strong>directly proportional to the first power ($n = 1$) of displacement</strong> from the mean position and always directed toward the mean position: $$\\boxed{F = -k x \\iff a = -\\omega^2 x}$$</li></ul><em>Every SHM is oscillatory, and every oscillatory motion is periodic—but not every periodic motion is SHM!</em></div></div>",
+  "topics": [
+    {
+      "id": "shm_t1_kinematics_phasors",
+      "title": "Kinematics of SHM: Differential Equation, Displacement, Velocity, Acceleration & The Phasor Circle Method",
+      "prerequisites": [
+        {
+          "label": "Trigonometry & Phasors",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t2_trigonometry_phasors"
+        },
+        {
+          "label": "Second-Order Differential Equations",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 The Master Equations of Linear SHM</div><div class='formula-highlight'>$$\\textbf{Standard Differential Equation of SHM:} \\qquad \\boxed{\\frac{d^2x}{dt^2} + \\omega^2 x = 0} \\qquad \\left(\\text{where } \\omega = \\sqrt{\\frac{k}{m}} = \\frac{2\\pi}{T} = 2\\pi f\\right)$$</div><table class='data-table'><thead><tr><th>Quantity</th><th>As a Function of Time ($t$)</th><th>As a Function of Position ($x$)</th><th>At Mean ($x = 0$)</th><th>At Extreme ($x = \\pm A$)</th></tr></thead><tbody><tr><td><strong>Displacement ($x$)</strong></td><td>$x(t) = A\\sin(\\omega t + \\phi)$</td><td>$x$</td><td>$0$</td><td>$\\pm A$ (Max)</td></tr><tr><td><strong>Velocity ($v = \\frac{dx}{dt}$)</strong></td><td>$v(t) = A\\omega\\cos(\\omega t + \\phi)$<br/>$= A\\omega\\sin\\left(\\omega t + \\phi + \\frac{\\pi}{2}\\right)$</td><td>$$\\boxed{v(x) = \\pm\\omega\\sqrt{A^2 - x^2}}$$</td><td>$\\pm A\\omega$ (Max)</td><td>$0$ (Min)</td></tr><tr><td><strong>Acceleration ($a = \\frac{dv}{dt}$)</strong></td><td>$a(t) = -A\\omega^2\\sin(\\omega t + \\phi)$<br/>$= A\\omega^2\\sin(\\omega t + \\phi + \\pi)$</td><td>$$\\boxed{a(x) = -\\omega^2 x}$$</td><td>$0$ (Min)</td><td>$\\mp A\\omega^2$ (Max)</td></tr></tbody></table><p style='margin-top:10px;'><strong>Phase Lead Relations:</strong> Velocity $v(t)$ leads displacement $x(t)$ by phase angle $\\mathbf{\\frac{\\pi}{2}}$ ($90^\\circ$), and acceleration $a(t)$ leads velocity by $\\frac{\\pi}{2}$ and is completely out of phase with displacement by $\\mathbf{\\pi}$ ($180^\\circ$).</p></div><div class='concept-block'><div class='concept-title'>1.2 Uniform Circular Motion Projection (The Phasor Circle Shortcut)</div><div class='def-box'><strong>How to Solve Any &ldquo;Time Taken from $x_1$ to $x_2$&rdquo; Question in 10 Seconds:</strong><br/>SHM is the exact shadow (projection) on a diameter of a particle moving in a circle of radius $A$ at constant angular speed $\\omega$! Since $\\omega$ is constant on the reference circle, the time taken to move between two positions $x_1$ and $x_2$ is simply the angular travel $\\Delta\\theta$ divided by $\\omega$: $$\\boxed{\\Delta t = \\frac{\\Delta\\theta}{\\omega} = \\left(\\frac{\\Delta\\theta}{2\\pi}\\right)T}$$</div><ul class='clean-list'><li><strong>From Mean ($x = 0$) to Half-Amplitude ($x = A/2$):</strong> $\\sin\\theta = \\frac{1}{2} \\implies \\Delta\\theta = \\frac{\\pi}{6}$ ($30^\\circ$) $\\implies \\boxed{t_1 = \\frac{\\pi/6}{2\\pi}T = \\frac{T}{12}}$.</li><li><strong>From Half-Amplitude ($x = A/2$) to Extreme ($x = A$):</strong> $\\Delta\\theta = \\frac{\\pi}{2} - \\frac{\\pi}{6} = \\frac{\\pi}{3}$ ($60^\\circ$) $\\implies \\boxed{t_2 = \\frac{T}{6} = 2t_1}$! (Takes twice as long because the particle slows down near the extreme!)</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of v(x) = ±ω√(A² − x²) &amp; The v-x Ellipse Equation</div><p>Using $a = v\\frac{dv}{dx} = -\\omega^2 x$, separate variables and integrate from the extreme position $(x = A, v = 0)$ to $(x, v)$:</p>$$\\int_0^v v\\,dv = -\\omega^2 \\int_A^x x\\,dx \\implies \\frac{v^2}{2} = \\frac{\\omega^2(A^2 - x^2)}{2} \\implies \\boxed{v = \\pm\\omega\\sqrt{A^2 - x^2}}$$<p>Rearranging $v^2 = \\omega^2(A^2 - x^2)$ gives the equation of the <strong>Velocity-Displacement ($v$-$x$) Phase-Space Curve</strong>:</p>$$\\boxed{\\frac{x^2}{A^2} + \\frac{v^2}{(A\\omega)^2} = 1} \\qquad (\\text{An ELLIPSE with semi-axes } A \\text{ and } A\\omega\\text{!})$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 205' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='205' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,15)'><circle cx='120' cy='85' r='65' fill='rgba(0,240,255,0.06)' stroke='#00f0ff' stroke-width='2'/><line x1='45' y1='85' x2='195' y2='85' stroke='#94a3b8' stroke-width='2'/><line x1='120' y1='15' x2='120' y2='155' stroke='#94a3b8' stroke-width='2'/><line x1='120' y1='85' x2='152.5' y2='28.7' stroke='#00e676' stroke-width='2.5'/><line x1='152.5' y1='28.7' x2='152.5' y2='85' stroke='#ffab00' stroke-dasharray='4,4'/><circle cx='152.5' cy='28.7' r='5' fill='#00e676'/><text x='135' y='102' fill='#ffab00' font-size='11' font-weight='bold'>A/2</text><text x='185' y='102' fill='#00f0ff' font-size='11' font-weight='bold'>+A</text><text x='135' y='175' fill='#f0f4f8' font-size='11' text-anchor='middle'>Phasor Circle: 0 → A/2 takes T/12 (30°); A/2 → A takes T/6 (60°)</text></g><g transform='translate(360,15)'><line x1='20' y1='85' x2='280' y2='85' stroke='#94a3b8' stroke-width='2'/><line x1='150' y1='15' x2='150' y2='155' stroke='#94a3b8' stroke-width='2'/><ellipse cx='150' cy='85' rx='105' ry='55' fill='rgba(255,0,85,0.12)' stroke='#ff0055' stroke-width='2.5'/><text x='158' y='26' fill='#ff0055' font-size='11' font-weight='bold'>+Aω</text><text x='260' y='100' fill='#00f0ff' font-size='11' font-weight='bold'>+A</text><text x='150' y='175' fill='#f0f4f8' font-size='11' text-anchor='middle'>v vs x Graph is an Ellipse: x²/A² + v²/(Aω)² = 1</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Shifted Equilibrium Position $F = F_0 - kx$):</strong> If a particle experiences force $F = 12 - 3x$, do NOT say it is not SHM because of the constant $12$! Defining shifted coordinate $X = x - 4$ gives $F = -3(x - 4) = -3X$, which is pure SHM with $\\omega = \\sqrt{3/m}$ about the <strong>new mean position $x_{\\text{mean}} = 4$</strong>!</li></ul>"
+    },
+    {
+      "id": "shm_t2_energy_superposition",
+      "title": "Kinetic, Potential & Total Energy in SHM, Energy Frequency (2f) & Superposition of SHMs",
+      "prerequisites": [
+        {
+          "label": "Conservative Forces & Potential Energy",
+          "targetChapter": "ch05_work_energy_power",
+          "targetTopic": "wep_t2_conservative_potential_energy"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Kinetic Energy ($K$), Potential Energy ($U$) &amp; Total Energy ($E$) in SHM</div><p>Let potential energy at the mean position ($x = 0$) be $U_0$ (usually taken as $U_0 = 0$). Since $k = m\\omega^2$:</p><div class='formula-highlight'>$$\\begin{aligned} \\text{1. Potential Energy:} & \\quad \\boxed{U(x) = U_0 + \\frac{1}{2}k x^2 = U_0 + \\frac{1}{2}m\\omega^2 A^2 \\sin^2(\\omega t + \\phi)} \\\\[6pt] \\text{2. Kinetic Energy:} & \\quad \\boxed{K(x) = \\frac{1}{2}mv^2 = \\frac{1}{2}k(A^2 - x^2) = \\frac{1}{2}m\\omega^2 A^2 \\cos^2(\\omega t + \\phi)} \\\\[6pt] \\text{3. Total Mechanical Energy:} & \\quad \\boxed{E = K + U = U_0 + \\frac{1}{2}k A^2 = U_0 + \\frac{1}{2}m\\omega^2 A^2 = U_0 + 2\\pi^2 m f^2 A^2} \\end{aligned}$$</div><ul class='clean-list'><li><strong>Where Does $K = U$ (assuming $U_0 = 0$)?</strong> Set $\\frac{1}{2}k(A^2 - x^2) = \\frac{1}{2}kx^2 \\implies 2x^2 = A^2 \\implies \\boxed{x = \\pm\\frac{A}{\\sqrt{2}}}$ (and at $t = \\frac{T}{8}$ from mean position!).</li><li><strong>Frequency of $K$ and $U$ is $2f$ (Double the SHM Frequency!):</strong><br/>Using $\\cos^2(\\omega t) = \\frac{1 + \\cos(2\\omega t)}{2}$, both Kinetic Energy $K(t)$ and Potential Energy $U(t)$ oscillate with angular frequency $\\mathbf{2\\omega}$ (frequency $\\mathbf{2f}$, time period $\\mathbf{T/2}$), whereas Total Energy $E$ has frequency $0$ (constant)!</li><li><strong>Time-Average vs. Space-Average Over One Complete Cycle (assuming $U_0 = 0$):</strong><div class='formula-highlight'>$$\\text{Time Average (with respect to } t\\text{):} \\quad \\boxed{\\langle K \\rangle_t = \\langle U \\rangle_t = \\frac{1}{4}kA^2 = \\frac{E}{2}}$$</div><div class='formula-highlight'>$$\\text{Space Average (with respect to } x\\text{):} \\quad \\boxed{\\langle U \\rangle_x = \\frac{1}{A}\\int_0^A \\frac{1}{2}kx^2\\,dx = \\frac{1}{6}kA^2 = \\frac{E}{3}, \\qquad \\langle K \\rangle_x = \\frac{1}{3}kA^2 = \\frac{2E}{3}}$$</div></li></ul></div><div class='concept-block'><div class='concept-title'>2.2 Superposition of Two Collinear SHMs of Same Frequency</div><p>If a particle is simultaneously subjected to $x_1 = A_1\\sin(\\omega t)$ and $x_2 = A_2\\sin(\\omega t + \\delta)$, the resultant motion $x = x_1 + x_2 = A_{\\text{res}}\\sin(\\omega t + \\alpha)$ is also SHM of the same frequency $\\omega$, found by treating $A_1$ and $A_2$ as vectors separated by angle $\\delta$:</p><div class='formula-highlight'>$$\\boxed{A_{\\text{res}} = \\sqrt{A_1^2 + A_2^2 + 2 A_1 A_2 \\cos\\delta}} \\qquad \\text{and} \\qquad \\boxed{\\tan\\alpha = \\frac{A_2\\sin\\delta}{A_1 + A_2\\cos\\delta}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>How to Find Time Period of Any Conservative System Using the Energy Method (dE/dt = 0)</div><p>Whenever a system involves springs, pulleys, and rolling cylinders where force/torque equations look messy, use the <strong>Energy Conservation Derivative Trick</strong>:</p><p><strong>Step 1:</strong> Write the total mechanical energy $E = K + U$ in terms of speed $v = \\frac{dx}{dt}$ and displacement $x$:<br/>$$E = \\frac{1}{2}m_{\\text{eff}} v^2 + \\frac{1}{2}k_{\\text{eff}} x^2 = \\text{Constant}$$</p><p><strong>Step 2:</strong> Differentiate with respect to time $t$ ($\\frac{dE}{dt} = 0$) and cancel $v = \\frac{dx}{dt}$:</p>$$m_{\\text{eff}} v\\frac{dv}{dt} + k_{\\text{eff}} x\\frac{dx}{dt} = 0 \\implies \\frac{d^2x}{dt^2} + \\left(\\frac{k_{\\text{eff}}}{m_{\\text{eff}}}\\right)x = 0 \\implies \\boxed{T = 2\\pi\\sqrt{\\frac{m_{\\text{eff}}}{k_{\\text{eff}}}}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 195' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='195' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='80' y1='160' x2='600' y2='160' stroke='#94a3b8' stroke-width='2'/><line x1='340' y1='15' x2='340' y2='175' stroke='#94a3b8' stroke-width='2'/><line x1='140' y1='40' x2='540' y2='40' stroke='#ffab00' stroke-width='2.5' stroke-dasharray='6,4'/><path d='M 140 40 Q 340 280 540 40' fill='none' stroke='#ff0055' stroke-width='3'/><path d='M 140 160 Q 340 -80 540 160' fill='none' stroke='#00e676' stroke-width='3'/><text x='345' y='32' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>Total Energy E = K + U = ½ k A² (Constant)</text><text x='475' y='72' fill='#ff0055' font-size='12' font-weight='bold'>U(x) = ½ k x²</text><text x='475' y='135' fill='#00e676' font-size='12' font-weight='bold'>K(x) = ½ k (A² − x²)</text><text x='140' y='178' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>−A</text><text x='540' y='178' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>+A</text><text x='240' y='178' fill='#94a3b8' font-size='11' text-anchor='middle'>−A/√2 (K=U)</text><text x='440' y='178' fill='#94a3b8' font-size='11' text-anchor='middle'>+A/√2 (K=U)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Superposition of Two Perpendicular SHMs $x = A\\sin(\\omega t)$ and $y = B\\sin(\\omega t + \\delta)$):</strong><br/>&bull; If $\\delta = 0$ or $\\pi$: Straight line ($y = \\pm \\frac{B}{A}x$).<br/>&bull; If $\\delta = \\frac{\\pi}{2}$ and $A \\neq B$: Symmetric Ellipse ($\\frac{x^2}{A^2} + \\frac{y^2}{B^2} = 1$).<br/>&bull; If $\\delta = \\frac{\\pi}{2}$ and $A = B$: Circle of radius $A$ ($x^2 + y^2 = A^2$)!</li></ul>"
+    },
+    {
+      "id": "shm_t3_springs_combinations",
+      "title": "Spring-Block Systems: Series/Parallel Springs, Cutting a Spring, Two-Body Reduced Mass & Pulley-Spring SHM",
+      "prerequisites": [
+        {
+          "label": "String & Pulley Constraints",
+          "targetChapter": "ch04_laws_of_motion",
+          "targetTopic": "nlm_t2_constraints_pseudo"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Spring Combinations &amp; Cutting a Spring ($k \\cdot L = \\text{Constant}$)</div><div class='def-box'><strong>Why Constant Forces (Like Gravity $mg$ or Electric Field $qE$) NEVER Change the Time Period of a Spring-Block System:</strong><br/>Hanging a block vertically on a spring stretches the equilibrium position downward by $x_0 = mg/k$, but the restoring force for an additional displacement $x$ from this new equilibrium is STILL $F_{\\text{net}} = mg - k(x_0 + x) = -kx$! Thus $\\boxed{T = 2\\pi\\sqrt{\\frac{m}{k}}}$ is completely independent of $g$, incline angle $\\theta$, or elevator acceleration!</div><table class='data-table'><thead><tr><th>Spring Configuration</th><th>Equivalent Spring Constant ($k_{\\text{eq}}$)</th><th>Resulting Time Period ($T$)</th></tr></thead><tbody><tr><td><strong>1. Parallel Combination</strong><br/>(Both springs experience same extension $x$)</td><td>$$\\boxed{k_{\\text{eq}} = k_1 + k_2}$$</td><td>$$T = 2\\pi\\sqrt{\\frac{m}{k_1 + k_2}}$$</td></tr><tr><td><strong>2. Series Combination</strong><br/>(Both springs carry same tension $F$)</td><td>$$\\boxed{\\frac{1}{k_{\\text{eq}}} = \\frac{1}{k_1} + \\frac{1}{k_2} \\implies k_{\\text{eq}} = \\frac{k_1 k_2}{k_1 + k_2}}$$</td><td>$$T = 2\\pi\\sqrt{\\frac{m(k_1 + k_2)}{k_1 k_2}} = \\sqrt{T_1^2 + T_2^2}$$</td></tr><tr><td><strong>3. Cutting a Spring of Stiffness $k$ and Length $L$</strong></td><td>Since $k = \\frac{YA}{L} \\implies \\boxed{k L = \\text{Constant}}$!<br/>If cut into lengths $L_1$ and $L_2$:</td><td>$$k_1 = k\\left(\\frac{L}{L_1}\\right), \\quad k_2 = k\\left(\\frac{L}{L_2}\\right)$$<br/>(A shorter piece of spring is ALWAYS stiffer!)</td></tr><tr><td><strong>4. Two Masses $m_1$ and $m_2$ Connected by Spring $k$ on Smooth Floor</strong></td><td>Oscillates about COM with <strong>Reduced Mass $\\mu$</strong>:<br/>$$\\boxed{\\mu = \\frac{m_1 m_2}{m_1 + m_2}}$$</td><td>$$\\boxed{T = 2\\pi\\sqrt{\\frac{\\mu}{k}} = 2\\pi\\sqrt{\\frac{m_1 m_2}{(m_1 + m_2)k}}}$$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Constraint Shortcut for Pulley-Spring Systems: k_eff = k (x_spring / x_block)²</div><p>Suppose a block of mass $m$ is attached to a movable pulley while a spring of constant $k$ is attached to the string or pulley axle. How do you find $k_{\\text{eff}}$ instantly?</p><p><strong>Step 1:</strong> Displace the mass $m$ by $x_m$, and use string constraint ($\\sum T \\cdot x = 0$) to find the extension $x_s$ of the spring.</p><p><strong>Step 2:</strong> By virtual work / energy conservation ($\\frac{1}{2}k_{\\text{eff}} x_m^2 = \\frac{1}{2}k x_s^2$):</p>$$\\boxed{k_{\\text{eff}} = k \\left(\\frac{x_s}{x_m}\\right)^2}$$<p><em>Example 1:</em> If pulling the block by $x$ stretches the spring by $2x$ ($x_s = 2x_m$), then $k_{\\text{eff}} = 4k$ and $T = 2\\pi\\sqrt{\\frac{m}{4k}}$.<br/><em>Example 2:</em> If pulling the block by $x$ stretches the spring by $x/2$ ($x_s = x_m / 2$), then $k_{\\text{eff}} = \\frac{k}{4}$ and $T = 2\\pi\\sqrt{\\frac{4m}{k}}$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(25,20)'><rect x='0' y='0' width='300' height='145' rx='6' fill='#121622' stroke='#00e676'/><text x='150' y='25' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>PARALLEL SPRINGS (Even if on Opposite Sides!)</text><line x1='30' y1='45' x2='30' y2='105' stroke='#94a3b8' stroke-width='3'/><line x1='270' y1='45' x2='270' y2='105' stroke='#94a3b8' stroke-width='3'/><line x1='30' y1='75' x2='120' y2='75' stroke='#00f0ff' stroke-width='2.5' stroke-dasharray='5,3'/><rect x='120' y='55' width='60' height='40' fill='#ff0055'/><text x='150' y='80' fill='#f0f4f8' font-size='12' font-weight='bold' text-anchor='middle'>m</text><line x1='180' y1='75' x2='270' y2='75' stroke='#00f0ff' stroke-width='2.5' stroke-dasharray='5,3'/><text x='75' y='65' fill='#00f0ff' font-size='11' font-weight='bold'>k₁</text><text x='225' y='65' fill='#00f0ff' font-size='11' font-weight='bold'>k₂</text><text x='150' y='128' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Both deform by x  ⇒  k_eq = k₁ + k₂</text></g><g transform='translate(355,20)'><rect x='0' y='0' width='300' height='145' rx='6' fill='#121622' stroke='#ffab00'/><text x='150' y='25' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>TWO-BODY REDUCED MASS SYSTEM</text><circle cx='65' cy='75' r='22' fill='#00f0ff'/><text x='65' y='80' fill='#05080f' font-size='12' font-weight='bold' text-anchor='middle'>m₁</text><line x1='87' y1='75' x2='213' y2='75' stroke='#00e676' stroke-width='3' stroke-dasharray='6,4'/><circle cx='235' cy='75' r='26' fill='#ff0055'/><text x='235' y='80' fill='#f0f4f8' font-size='12' font-weight='bold' text-anchor='middle'>m₂</text><text x='150' y='65' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Spring k</text><text x='150' y='128' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>T = 2π √[ m₁m₂ / ((m₁+m₂)k) ]</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Block Sandwiched Between Two Springs Connected to Two Walls):</strong> Looking at the left diagram above, students think the two springs $k_1$ and $k_2$ on opposite sides of block $m$ are in series. <strong>NO!</strong> When the block moves right by $x$, spring $k_1$ stretches by $x$ (pulling left with $k_1 x$) and spring $k_2$ compresses by $x$ (pushing left with $k_2 x$). Since their restoring forces ADD ($F = -(k_1 + k_2)x$), they are in <strong>PARALLEL ($k_{\\text{eq}} = k_1 + k_2$)</strong>!</li></ul>"
+    },
+    {
+      "id": "shm_t4_pendulums_damped_forced",
+      "title": "Simple, Compound & Torsional Pendulums, U-Tube & Earth-Tunnel SHM, Damped & Forced Oscillations",
+      "prerequisites": [
+        {
+          "label": "Moment of Inertia & Torque",
+          "targetChapter": "ch06_rotational_motion",
+          "targetTopic": "rot_t2_moment_of_inertia_theorems"
+        },
+        {
+          "label": "Gravity Inside a Solid Sphere",
+          "targetChapter": "ch07_gravitation",
+          "targetTopic": "grav_t1_newton_law_shell"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Simple Pendulum &amp; Effective Gravity ($g_{\\text{eff}}$) in All Frames</div><div class='formula-highlight'>$$\\text{Small-Angle Simple Pendulum } (\\theta \\le 10^\\circ): \\qquad \\boxed{T = 2\\pi\\sqrt{\\frac{L}{g_{\\text{eff}}}}}$$</div><p><strong>What Is $g_{\\text{eff}}$ in Different Situations?</strong> (General rule: $g_{\\text{eff}} = \\frac{\\text{Tension } T_0 \\text{ at equilibrium}}{m}$)</p><ul class='clean-list'><li><strong>1. Elevator accelerating upward at $a_0$:</strong> $g_{\\text{eff}} = g + a_0$; accelerating downward at $a_0$: $g_{\\text{eff}} = g - a_0$; in free fall / orbiting satellite: $g_{\\text{eff}} = 0 \\implies \\mathbf{T = \\infty}$ (does not oscillate!).</li><li><strong>2. Car accelerating horizontally at $a_0$:</strong> $\\boxed{g_{\\text{eff}} = \\sqrt{g^2 + a_0^2}}$ (mean position tilts backward by $\\tan\\theta = a_0/g$).</li><li><strong>3. Cart sliding frictionlessly down an incline $\\alpha$ ($a_0 = g\\sin\\alpha$):</strong> $\\boxed{g_{\\text{eff}} = g\\cos\\alpha}$.</li><li><strong>4. Bob of density $\\rho$ submerged in non-viscous liquid of density $\\sigma$:</strong> $\\boxed{g_{\\text{eff}} = g\\left(1 - \\frac{\\sigma}{\\rho}\\right)}$.</li><li><strong>5. Pendulum of Very Large Length ($L$ comparable to Earth's Radius $R = 6400\\text{ km}$):</strong><div class='formula-highlight'>$$\\boxed{T = 2\\pi\\sqrt{\\frac{1}{g\\left(\\frac{1}{L} + \\frac{1}{R}\\right)}}} \\qquad \\left(\\text{For } L \\to \\infty: \\; T_{\\max} = 2\\pi\\sqrt{\\frac{R}{g}} \\approx 84.6\\text{ minutes!}\\right)$$</div></li></ul></div><div class='concept-block'><div class='concept-title'>4.2 Compound (Physical) Pendulum &amp; Classic Mechanical SHM Systems</div><div class='def-box'><strong>Compound / Physical Pendulum:</strong><br/>Any rigid body of mass $m$ suspended from a horizontal pivot at distance $d$ from its Center of Mass ($I = I_{\\text{cm}} + md^2 = m(k^2 + d^2)$):</div><div class='formula-highlight'>$$\\boxed{T = 2\\pi\\sqrt{\\frac{I_{\\text{pivot}}}{m g d}} = 2\\pi\\sqrt{\\frac{\\frac{k^2}{d} + d}{g}} = 2\\pi\\sqrt{\\frac{L_{\\text{eq}}}{g}}} \\qquad \\left(\\text{Equivalent Length } L_{\\text{eq}} = d + \\frac{k^2}{d}\\right)$$</div><table class='data-table'><thead><tr><th>Physical System</th><th>Restoring Force / Torque</th><th>Time Period Formula ($T$)</th></tr></thead><tbody><tr><td><strong>1. Liquid Column of Total Length $L$ in a Vertical U-Tube</strong></td><td>Weight of unbalanced height $2y$: $F = -(2A\\rho g)y$</td><td>$$\\boxed{T = 2\\pi\\sqrt{\\frac{L}{2g}}}$$</td></tr><tr><td><strong>2. Tunnel Dug Through the Earth</strong> (Along Diameter OR Any Chord!)</td><td>Inside Earth, $F_r = -\\frac{GMm}{R^3}r$, so $F_x = -\\left(\\frac{mg}{R}\\right)x$</td><td>$$\\boxed{T = 2\\pi\\sqrt{\\frac{R}{g}} \\approx 84.6\\text{ min}}$$</td></tr><tr><td><strong>3. Floating Cylinder / Block</strong> (Submerged depth $h$ at equilibrium)</td><td>Extra buoyant force $F = -A\\rho_L g y$ while $m = A h \\rho_L$</td><td>$$\\boxed{T = 2\\pi\\sqrt{\\frac{h}{g}}}$$</td></tr><tr><td><strong>4. Torsional Pendulum</strong> (Twisting wire with torsional constant $C$)</td><td>Restoring torque $\\tau = -C\\theta = I\\alpha$</td><td>$$\\boxed{T = 2\\pi\\sqrt{\\frac{I}{C}}}$$</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>4.3 Damped Oscillations &amp; Forced Resonance</div><p>When a resistive damping force $F_d = -bv$ acts alongside $-kx$, the equation of motion is $m\\frac{d^2x}{dt^2} + b\\frac{dv}{dt} + kx = 0$. For weak damping, amplitude decays exponentially:</p><div class='formula-highlight'>$$\\boxed{x(t) = A_0 e^{-\\frac{bt}{2m}}\\cos(\\omega' t + \\phi)} \\implies \\textbf{Amplitude:} \\; A(t) = A_0 e^{-\\frac{bt}{2m}}, \\quad \\textbf{Energy:} \\; E(t) = E_0 e^{-\\frac{bt}{m}}$$</div><p>where $\\omega' = \\sqrt{\\frac{k}{m} - \\left(\\frac{b}{2m}\\right)^2}$. Under a periodic driving force $F(t) = F_0\\cos(\\omega_d t)$, amplitude peaks sharply when driving frequency matches natural frequency ($\\omega_d \\approx \\omega_0 = \\sqrt{k/m}$), a phenomenon called <strong>Resonance</strong>.</p></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Proof of SHM inside Any Straight Tunnel (Chord) Dug Through the Earth</div><p>Suppose a straight frictionless tunnel is dug along a chord of the Earth at perpendicular distance $d$ from Earth's center. When a particle of mass $m$ is at distance $x$ from the midpoint of the tunnel (so its radial distance from Earth's center is $r = \\sqrt{x^2 + d^2}$), the gravitational pull toward Earth's center is $F_{\\text{grav}} = \\frac{GMm}{R^3}r = \\frac{mg}{R}r$.</p><p>The component of this force parallel to the tunnel pointing back toward the midpoint is:</p>$$F_x = -F_{\\text{grav}}\\cos\\theta = -\\left(\\frac{mg}{R}r\\right)\\left(\\frac{x}{r}\\right) = -\\left(\\frac{mg}{R}\\right)x \\implies a_x = -\\left(\\frac{g}{R}\\right)x$$<p>Notice that both $r$ and $d$ cancel out completely! Therefore, $\\omega = \\sqrt{\\frac{g}{R}}$ and $\\boxed{T = 2\\pi\\sqrt{\\frac{R}{g}} \\approx 84.6\\text{ min}}$ for EVERY straight tunnel through the Earth!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 195' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='195' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,15)'><line x1='20' y1='85' x2='280' y2='85' stroke='#94a3b8' stroke-width='2'/><line x1='20' y1='15' x2='20' y2='155' stroke='#94a3b8' stroke-width='2'/><path d='M 20 20 Q 110 72 275 82' fill='none' stroke='#ffab00' stroke-width='2' stroke-dasharray='4,4'/><path d='M 20 150 Q 110 98 275 88' fill='none' stroke='#ffab00' stroke-width='2' stroke-dasharray='4,4'/><path d='M 20 20 Q 35 140 50 130 Q 65 40 80 45 Q 95 120 110 115 Q 125 60 140 62 Q 155 105 170 102 Q 185 75 200 76 Q 215 92 240 85' fill='none' stroke='#00f0ff' stroke-width='2.5'/><text x='150' y='28' fill='#ffab00' font-size='11' font-weight='bold'>Envelope A(t) = A₀ e⁻ᵇᵗ/⁽²ᵐ⁾</text><text x='150' y='172' fill='#94a3b8' font-size='11' text-anchor='middle'>Damped SHM: Energy E(t) = E₀ e⁻ᵇᵗ/ᵐ</text></g><g transform='translate(355,15)'><line x1='20' y1='155' x2='280' y2='155' stroke='#94a3b8' stroke-width='2'/><line x1='20' y1='15' x2='20' y2='165' stroke='#94a3b8' stroke-width='2'/><path d='M 20 130 Q 125 125 145 20 Q 165 125 270 152' fill='none' stroke='#00e676' stroke-width='3'/><path d='M 20 130 Q 115 125 145 85 Q 175 125 270 153' fill='none' stroke='#ff0055' stroke-width='2.5'/><line x1='145' y1='20' x2='145' y2='155' stroke='#ffab00' stroke-dasharray='4,4'/><text x='152' y='32' fill='#00e676' font-size='11' font-weight='bold'>Small Damping b (Sharp Peak)</text><text x='165' y='95' fill='#ff0055' font-size='11' font-weight='bold'>Large Damping b</text><text x='150' y='172' fill='#94a3b8' font-size='11' text-anchor='middle'>Resonance Curve at ω_d = ω₀ = √(k/m)</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap 1 (Damped SHM Amplitude vs. Energy Half-Life):</strong> Since $A(t) = A_0 e^{-bt/(2m)}$ while $E(t) \\propto A^2 = E_0 e^{-bt/m}$, <strong>Mechanical Energy decays TWICE as fast in the exponent as Amplitude!</strong> If amplitude becomes $\\frac{1}{2}A_0$ in $10\\text{ s}$, energy becomes $\\frac{1}{4}E_0$ in $10\\text{ s}$ (and $\\frac{1}{2}E_0$ in just $5\\text{ s}$)!</li><li><strong>Trap 2 (Simple Pendulum Length $L$ Is Measured to the Center of Mass of the Bob!):</strong> If a hollow spherical bob filled with water slowly leaks water from a tiny hole at the bottom, the Center of Mass of the bob first shifts <em>downward</em> ($L$ increases $\\implies T$ increases), and once all water drains out, the COM returns to the center of the sphere ($L$ decreases back to original $\\implies T$ returns to original value)!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 13: Oscillations (Simple Harmonic Motion)</strong>! Every oscillatory tool—from phasor circles and reduced mass to physical pendulums and damped resonance—is now ready for Wave Mechanics in Chapter 14.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>SHM Kinematics:</strong> $a = -\\omega^2 x$, $v = \\pm\\omega\\sqrt{A^2 - x^2}$, $x(t) = A\\sin(\\omega t + \\phi)$.</li><li><strong>Energy in SHM:</strong> $E = \\frac{1}{2}kA^2$; $K = U$ at $x = \\pm A/\\sqrt{2}$; $K$ and $U$ oscillate at frequency $2f$.</li><li><strong>Spring Systems:</strong> Parallel $k_{\\text{eq}} = k_1 + k_2$; Series $\\frac{1}{k_{\\text{eq}}} = \\frac{1}{k_1} + \\frac{1}{k_2}$; Cutting $kL = \\text{const}$; Two-body $\\mu = \\frac{m_1 m_2}{m_1 + m_2}$.</li><li><strong>Pendulums:</strong> Simple $T = 2\\pi\\sqrt{L/g_{\\text{eff}}}$; Compound $T = 2\\pi\\sqrt{I/(mgd)}$.</li><li><strong>Damped SHM:</strong> $A(t) = A_0 e^{-bt/(2m)}$ and $E(t) = E_0 e^{-bt/m}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>System / Concept</th><th>Master Formula</th><th>Key Shortcut</th></tr></thead><tbody><tr><td>Velocity &amp; Accel. in SHM</td><td>$v = \\pm\\omega\\sqrt{A^2 - x^2}, \\quad a = -\\omega^2 x$</td><td>$v_{\\max} = A\\omega$ at mean; $a_{\\max} = A\\omega^2$ at extreme.</td></tr><tr><td>Phasor Time Intervals</td><td>$0 \\to A/2: \\; \\dfrac{T}{12}, \\qquad A/2 \\to A: \\; \\dfrac{T}{6}$</td><td>$0 \\to A/\\sqrt{2}$ takes $\\dfrac{T}{8}$ (where $K = U$).</td></tr><tr><td>Spring Cutting ($m : n$)</td><td>$k_1 = \\left(\\dfrac{m+n}{m}\\right)k, \\quad k_2 = \\left(\\dfrac{m+n}{n}\\right)k$</td><td>Derived from $k L = \\text{Constant}$.</td></tr><tr><td>Physical Pendulum</td><td>$T = 2\\pi\\sqrt{\\dfrac{I_{\\text{pivot}}}{mgd}}$</td><td>For uniform rod of length $L$ pivoted at end: $T = 2\\pi\\sqrt{\\dfrac{2L}{3g}}$.</td></tr><tr><td>Damped Amplitude &amp; Energy</td><td>$A(t) = A_0 e^{-bt/(2m)}, \\quad E(t) = E_0 e^{-bt/m}$</td><td>If $A \\to A_0/e$ in $\\tau$, then $E \\to E_0/e^2$ in $\\tau$.</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch13_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A particle executes Simple Harmonic Motion with an amplitude $A = 10\\text{ cm}$ and time period $T = 6\\text{ s}$. What is the minimum time required for the particle to move from its mean position ($x = 0$) to a point $x = 5\\text{ cm}$ ($A/2$)?",
+      "options": [
+        "0.5 s",
+        "1.0 s",
+        "0.75 s",
+        "1.5 s"
+      ],
+      "answer": "0.5 s",
+      "explanation": "From $x = 0$ to $x = A/2$, the phase angle traveled on the reference circle is $\\Delta\\theta = \\arcsin(1/2) = \\frac{\\pi}{6}$. Thus $t = \\frac{T}{12} = \\frac{6\\text{ s}}{12} = 0.5\\text{ s}$."
+    },
+    {
+      "id": "ch13_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "At what displacement $x$ from the mean position is the kinetic energy of a simple harmonic oscillator exactly equal to three times its potential energy ($K = 3U$, assuming $U(0) = 0$)?",
+      "options": [
+        "$\\pm \\frac{A}{2}$",
+        "$\\pm \\frac{A}{\\sqrt{2}}$",
+        "$\\pm \\frac{\\sqrt{3}A}{2}$",
+        "$\\pm \\frac{A}{4}$"
+      ],
+      "answer": "$\\pm \\frac{A}{2}$",
+      "explanation": "Since $K + U = E = \\frac{1}{2}kA^2$ and $K = 3U$, we have $4U = E \\implies 4\\left(\\frac{1}{2}kx^2\\right) = \\frac{1}{2}kA^2 \\implies x^2 = \\frac{A^2}{4} \\implies x = \\pm\\frac{A}{2}$."
+    },
+    {
+      "id": "ch13_q03",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A uniform spring of force constant $k$ is cut into two pieces whose lengths are in the ratio $1 : 2$. If the longer piece is now attached to a block of mass $m$, what is the new force constant $k_2$ of this longer piece?",
+      "options": [
+        "$\\frac{3}{2}k$",
+        "$3k$",
+        "$\\frac{2}{3}k$",
+        "$2k$"
+      ],
+      "answer": "$\\frac{3}{2}k$",
+      "explanation": "The longer piece has length $L_2 = \\frac{2}{1+2}L = \\frac{2}{3}L$. Since $k L = k_2 L_2 = \\text{constant}$, we get $k_2 = k\\left(\\frac{L}{L_2}\\right) = \\frac{3}{2}k$."
+    },
+    {
+      "id": "ch13_q04",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A simple pendulum has a time period $T_1$ when on the Earth's surface, and $T_2$ when taken to a height $h = R$ above the Earth's surface (where $R$ is the radius of the Earth). The value of the ratio $\\frac{T_2}{T_1}$ is:",
+      "options": [
+        "2",
+        "4",
+        "$\\sqrt{2}$",
+        "1"
+      ],
+      "answer": "2",
+      "explanation": "At height $h = R$, distance from Earth's center is $r = 2R$, so $g' = \\frac{g}{(1 + R/R)^2} = \\frac{g}{4}$. Since $T \\propto \\frac{1}{\\sqrt{g}}$, we get $\\frac{T_2}{T_1} = \\sqrt{\\frac{g}{g'}} = \\sqrt{4} = 2$."
+    },
+    {
+      "id": "ch13_q05",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A thin uniform rod of length $L = 1.5\\text{ m}$ is pivoted at one of its ends so that it can oscillate freely in a vertical plane as a physical pendulum. What is its time period of small oscillations? ($g = 10\\text{ m/s}^2$)",
+      "options": [
+        "$\\frac{\\pi}{\\sqrt{2.5}}\\text{ s} = 2\\pi\\sqrt{0.1}\\text{ s}$",
+        "$2\\pi\\text{ s}$",
+        "$\\pi\\text{ s}$",
+        "$2\\pi\\sqrt{0.15}\\text{ s}$"
+      ],
+      "answer": "$\\frac{\\pi}{\\sqrt{2.5}}\\text{ s} = 2\\pi\\sqrt{0.1}\\text{ s}$",
+      "explanation": "For a rod pivoted at one end, $I_{\\text{pivot}} = \\frac{1}{3}mL^2$ and distance of COM from pivot is $d = \\frac{L}{2}$. Thus $T = 2\\pi\\sqrt{\\frac{I}{mgd}} = 2\\pi\\sqrt{\\frac{\\frac{1}{3}mL^2}{mg(L/2)}} = 2\\pi\\sqrt{\\frac{2L}{3g}} = 2\\pi\\sqrt{\\frac{2(1.5)}{3(10)}} = 2\\pi\\sqrt{\\frac{3}{30}} = 2\\pi\\sqrt{0.1}\\text{ s}$."
+    },
+    {
+      "id": "ch13_q06",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "In a damped oscillator, the mass of the block is $m = 200\\text{ g}$, spring constant $k = 90\\text{ N/m}$, and damping constant $b = 40\\text{ g/s}$. How much time does it take for its mechanical energy to drop to $\\frac{1}{e}$ of its initial value?",
+      "options": [
+        "5 s",
+        "10 s",
+        "2.5 s",
+        "20 s"
+      ],
+      "answer": "5 s",
+      "explanation": "Mechanical energy decays as $E(t) = E_0 e^{-bt/m}$. For $E(t) = \\frac{E_0}{e} = E_0 e^{-1}$, we set $\\frac{bt}{m} = 1 \\implies t = \\frac{m}{b} = \\frac{200\\text{ g}}{40\\text{ g/s}} = 5\\text{ s}$."
+    },
+    {
+      "id": "ch13_q07",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "Two blocks of masses $m_1 = 3\\text{ kg}$ and $m_2 = 6\\text{ kg}$ rest on a smooth horizontal table and are connected by a light spring of stiffness $k = 200\\text{ N/m}$. If the blocks are pulled apart slightly and released, what is the angular frequency $\\omega$ of their oscillation?",
+      "options": [
+        "10 rad/s",
+        "20 rad/s",
+        "5 rad/s",
+        "15 rad/s"
+      ],
+      "answer": "10 rad/s",
+      "explanation": "Reduced mass of the two-block system is $\\mu = \\frac{m_1 m_2}{m_1 + m_2} = \\frac{3 \\times 6}{3 + 6} = \\frac{18}{9} = 2\\text{ kg}$. Therefore, $\\omega = \\sqrt{\\frac{k}{\\mu}} = \\sqrt{\\frac{200}{2}} = \\sqrt{100} = 10\\text{ rad/s}$."
+    }
+  ]
+}

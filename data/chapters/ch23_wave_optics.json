@@ -1,0 +1,110 @@
+{
+  "id": "ch23_wave_optics",
+  "code": "23",
+  "title": "Wave Optics",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Huygens' Principle, Young's Double Slit Experiment (YDSE), Fringe Width, Intensity Distribution, Thin Film Interference, Diffraction & Polarization by Malus's Law",
+  "classLevel": "Class 12",
+  "unit": "Optics",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: Why Do Light Waves Interfere and Bend Around Corners?</div><p>While Ray Optics explains shadows, mirrors, and lenses, it completely fails to answer two monumental questions: (1) Why do two beams of light intersect and produce alternating bright and dark bands (<strong>Interference</strong>)? and (2) Why does light bend slightly around the edges of an obstacle into geometric shadow regions (<strong>Diffraction</strong>)?</p><p style='margin-top:8px;'>In the early 19th century, Thomas Young's Double Slit Experiment (YDSE) proved conclusively that <strong>light travels as waves</strong>. When two coherent light waves overlap, their crests and troughs add up: where crest meets crest, they reinforce each other into blinding brightness (<strong>Constructive Interference</strong>); where crest meets trough, they cancel each other out into absolute darkness (<strong>Destructive Interference</strong>)!</p><div class='def-box'><strong>Huygens' Principle (The Wavefront Construction):</strong><br/>Every point on a given wavefront acts as a source of secondary spherical wavelets called <em>secondary ripples</em>, which spread out in the forward direction at the speed of light. The new wavefront at any subsequent time is the tangential envelope enclosing all these secondary wavelets.</div></div>",
+  "topics": [
+    {
+      "id": "wo_t1_ydse_interference",
+      "title": "Young's Double Slit Experiment (YDSE), Fringe Width (β), Optical Path Difference, Intensity Distribution & Shift in Fringe Pattern",
+      "prerequisites": [
+        {
+          "label": "Superposition & Wave Equations",
+          "targetChapter": "ch14_waves_sound",
+          "targetTopic": "waves_t3_standing_waves_strings_pipes"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Optical Path Difference ($\\Delta x$) &amp; YDSE Fringe Conditions</div><div class='def-box'><strong>Optical Path Length ($x_{\\text{opt}}$):</strong><br/>The distance light travels in vacuum in the same time it takes to travel geometric distance $d$ through a medium of refractive index $\\mu$: $x_{\\text{opt}} = \\mu d$.</div><div class='formula-highlight'>$$\\text{Path Difference at Screen Point } y: \\quad \\boxed{\\Delta x = d \\sin\\theta \\approx d \\left(\\frac{y}{D}\\right)} \\qquad (\\text{assuming } y \\ll D)$$</div><table class='data-table'><thead><tr><th>Interference Type</th><th>Condition on Path Difference ($\\Delta x$)</th><th>Condition on Phase Difference ($\\phi$)</th></tr></thead><tbody><tr><td><strong>1. Constructive Interference (Bright Fringe)</strong></td><td>$$\\boxed{\\Delta x = n\\lambda} \\quad (n = 0, 1, 2, \\dots)$$</td><td>$$\\phi = 2n\\pi$$</td></tr><tr><td><strong>2. Destructive Interference (Dark Fringe)</strong></td><td>$$\\boxed{\\Delta x = (2n - 1)\\frac{\\lambda}{2}} \\quad (n = 1, 2, 3, \\dots)$$</td><td>$$\\phi = (2n - 1)\\pi$$</td></tr></tbody></table><div class='formula-highlight'>$$\\textbf{Fringe Width } (\\beta): \\quad \\boxed{\\beta = \\frac{\\lambda D}{d}} \\qquad \\left(\\text{Angular Fringe Width } \\theta_{\\beta} = \\frac{\\beta}{D} = \\frac{\\lambda}{d}\\right)$$</div></div><div class='concept-block'><div class='concept-title'>1.2 Intensity Distribution in YDSE &amp; Thin Film Shift Formula</div><div class='formula-highlight'>$$\\text{Resultant Intensity at Phase Difference } \\phi: \\quad \\boxed{I = I_1 + I_2 + 2\\sqrt{I_1 I_2}\\cos\\phi = 4 I_0 \\cos^2\\left(\\frac{\\phi}{2}\\right)}$$</div><p><strong>Shift in Fringe Pattern Caused by Introducing a Transparent Slab (thickness $t$, index $\\mu$) in front of one slit:</strong><br/>The transparent slab adds an extra optical path $t(\\mu - 1)$, causing the entire fringe pattern to shift upward on the screen by distance $\\Delta y$:</p><div class='formula-highlight'>$$\\boxed{\\Delta y = \\frac{D}{d}(\\mu - 1)t = \\beta \\frac{(\\mu - 1)t}{\\lambda}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Path Difference Δx = y d / D in YDSE</div><p>Let two coherent slits $S_1$ and $S_2$ be separated by distance $d$, at distance $D$ from the screen. For a point $P$ at height $y$ on the screen, the path difference is $\\Delta x = S_2P - S_1P$. Using the geometric binomial approximation for $y \\ll D$:</p>$$S_2P^2 - S_1P^2 = \\left[D^2 + \\left(y + \\frac{d}{2}\\right)^2\\right] - \\left[D^2 + \\left(y - \\frac{d}{2}\\right)^2\\right] = 2y d$$$$\\Delta x = S_2P - S_1P = \\frac{S_2P^2 - S_1P^2}{S_2P + S_1P} \\approx \\frac{2y d}{2D} = \\boxed{\\frac{y d}{D}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 195' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='195' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,15)'><line x1='25' y1='150' x2='280' y2='150' stroke='#94a3b8' stroke-width='2'/><line x1='25' y1='15' x2='25' y2='160' stroke='#94a3b8' stroke-width='2'/><path d='M 25 150 Q 75 10 125 150 T 225 150 T 275 150' fill='none' stroke='#00f0ff' stroke-width='3'/><line x1='75' y1='10' x2='75' y2='150' stroke='#ff0055' stroke-dasharray='4,4'/><circle cx='75' cy='10' r='5' fill='#ff0055'/><text x='150' y='25' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>Intensity I = 4 I₀ cos²(ϕ/2)</text><text x='75' y='172' fill='#ff0055' font-size='11' font-weight='bold' text-anchor='middle'>Max I = 4 I₀</text></g><g transform='translate(355,15)'><line x1='25' y1='150' x2='280' y2='150' stroke='#94a3b8' stroke-width='2'/><line x1='25' y1='15' x2='25' y2='160' stroke='#94a3b8' stroke-width='2'/><line x1='25' y1='150' x2='275' y2='30' stroke='#ffab00' stroke-width='3'/><text x='150' y='65' fill='#ffab00' font-size='11' font-weight='bold' text-anchor='middle'>Fringe Width β = λD / d</text><text x='150' y='172' fill='#94a3b8' font-size='11' text-anchor='middle'>Linear spacing β is constant across screen</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Immersion of YDSE Setup in Water of Refractive Index $\\mu = 4/3$):</strong> When the entire YDSE apparatus is submerged in water, both wavelength and fringe width are reduced by a factor of $\\mu$: $\\lambda' = \\lambda / \\mu$ and $\\beta' = \\beta / \\mu$! (Frequency and time period remain completely unchanged).</li></ul>"
+    },
+    {
+      "id": "wo_t2_thin_film_diffraction_polarization",
+      "title": "Thin Film Interference (Soap Bubbles / Oil Films), Single-Slit Diffraction & Polarization by Malus's Law",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Thin Film Interference (Reflected Light) &amp; The $\\pi$ Phase Change Rule</div><div class='def-box'><strong>The Reflection Phase Shift Rule:</strong><br/>When light reflects from the surface of a <strong>denser medium</strong> (higher refractive index $\\mu_2 > \\mu_1$), the reflected wave suffers an automatic <strong>phase reversal of $\\pi$ ($180^\\circ$, equivalent to path shift $\\lambda/2$)</strong>. Reflection from a rarer medium introduces $0$ phase shift.</div><table class='data-table'><thead><tr><th>Interference Type (Reflected Light, Film Thickness $t$, Index $\\mu$)</th><th>Condition (Assuming Air on Both Sides, $\\mu_{\\text{film}} > 1$)</th></tr></thead><tbody><tr><td><strong>1. Constructive Interference (Bright Reflection)</strong></td><td>$$\\boxed{2\\mu t \\cos r = (2n - 1)\\frac{\\lambda}{2}} \\quad (n = 1, 2, 3, \\dots)$$</td></tr><tr><td><strong>2. Destructive Interference (Dark Reflection / Thin Soap Film Looks Black)</strong></td><td>$$\\boxed{2\\mu t \\cos r = n\\lambda} \\quad (n = 0, 1, 2, \\dots)$$</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>2.2 Single-Slit Diffraction &amp; Polarization by Malus's Law</div><p><strong>1. Single-Slit Diffraction (Slit width $a$):</strong><br/>Unlike YDSE where all bright fringes have equal width and intensity, single-slit diffraction has a massive central bright maximum flanked by secondary dark minima where path difference is an integer multiple of $\\lambda$:</p><div class='formula-highlight'>$$\\text{Minima (Dark Fringes):} \\quad \\boxed{a \\sin\\theta = n\\lambda} \\quad (n = 1, 2, 3, \\dots)$$</div><p><strong>2. Polarization of Light &amp; Malus's Law:</strong><br/>Unpolarized light vibrating in all transverse directions passes through a polarizer. When the transmitted polarized light of intensity $I_0$ passes through an analyzer whose transmission axis makes angle $\\theta$ with the polarizer:</p><div class='formula-highlight'>$$\\text{Malus's Law:} \\quad \\boxed{I = I_0 \\cos^2\\theta}$$</div><p><strong>Brewster's Law (Polarization by Reflection):</strong> When unpolarized light strikes a transparent glass/water surface at the special <strong>Brewster's angle ($\\theta_p$)</strong>, the reflected ray and refracted ray are mutually perpendicular ($90^\\circ$):</p><div class='formula-highlight'>$$\\boxed{\\tan\\theta_p = \\mu} \\qquad \\left(\\text{At } i = \\theta_p, \\; \\text{reflected light is } 100\\% \\text{ plane-polarized!}\\right)$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Brewster's Law tan(θ_p) = μ</div><p>At Brewster's angle $i = \\theta_p$, reflected ray and refracted ray form $90^\\circ$ angle, so $r = 90^\\circ - \\theta_p$. Applying Snell's Law: $\\mu = \\frac{\\sin\\theta_p}{\\sin r} = \\frac{\\sin\\theta_p}{\\sin(90^\\circ - \\theta_p)} = \\frac{\\sin\\theta_p}{\\cos\\theta_p} = \\boxed{\\tan\\theta_p = \\mu}$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(35,20)'><line x1='20' y1='105' x2='260' y2='105' stroke='#00f0ff' stroke-width='3'/><text x='140' y='130' fill='#00f0ff' font-size='11' font-weight='bold' text-anchor='middle'>Glass / Water Surface (μ)</text><path d='M 75 35 L 140 105 L 210 35' fill='none' stroke='#ff0055' stroke-width='2.5'/><path d='M 140 105 L 185 155' fill='none' stroke='#00e676' stroke-width='2.5'/><text x='140' y='75' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>90°</text><text x='140' y='175' fill='#f0f4f8' font-size='11' text-anchor='middle'>Brewster's Law: tan θ_p = μ</text></g><g transform='translate(355,20)'><rect x='0' y='0' width='300' height='150' rx='6' fill='#121622' stroke='#00e676'/><text x='150' y='22' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>MALUS'S LAW: I = I₀ cos² θ</text><path d='M 35 125 Q 110 30 185 125 T 265 125' fill='none' stroke='#00f0ff' stroke-width='3'/><text x='150' y='142' fill='#ffab00' font-size='11' font-weight='bold' text-anchor='middle'>Max at θ = 0°; Zero at θ = 90°</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Thin Film Interference Constructive vs. Destructive Condition):</strong> Remember that a $\\pi$ phase shift is added for reflection from a denser medium. Thus for thin films, the standard conditions are <em>reversed</em> compared to YDSE: condition $2\\mu t = n\\lambda$ gives <strong>destructive (dark) reflection</strong>, whereas $2\\mu t = (2n-1)\\frac{\\lambda}{2}$ gives <strong>constructive (bright) reflection</strong>!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 23: Wave Optics</strong>! You have now completed the entire Optics unit and are ready to enter Modern Physics starting with Chapter 24.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>YDSE:</strong> Path diff $\\Delta x = \\frac{yd}{D}$; Bright $n\\lambda$; Dark $(2n-1)\\lambda/2$; Fringe width $\\beta = \\frac{\\lambda D}{d}$; Shift $\\Delta y = \\frac{D}{d}(\\mu-1)t$.</li><li><strong>Thin Films:</strong> Constructive $2\\mu t = (2n-1)\\lambda/2$; Destructive $2\\mu t = n\\lambda$.</li><li><strong>Diffraction:</strong> Minima $a\\sin\\theta = n\\lambda$.</li><li><strong>Polarization:</strong> Malus $I = I_0\\cos^2\\theta$; Brewster $\\tan\\theta_p = \\mu$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th><th>Key Notes</th></tr></thead><tbody><tr><td>YDSE Fringe Width</td><td>$\\beta = \\dfrac{\\lambda D}{d}$</td><td>Angular width $\\theta_{\\beta} = \\dfrac{\\lambda}{d}$.</td></tr><tr><td>Fringe Shift by Slab</td><td>$\\Delta y = \\dfrac{D}{d}(\\mu - 1)t$</td><td>Shifts entire fringe pattern toward the slab.</td></tr><tr><td>Thin Film Reflection</td><td>$2\\mu t = n\\lambda \\text{ (dark)}, \\quad 2\\mu t = (2n-1)\\dfrac{\\lambda}{2} \\text{ (bright)}$</td><td>Includes $\\pi$ phase shift at denser boundary.</td></tr><tr><td>Single-Slit Minima</td><td>$a\\sin\\theta = n\\lambda$</td><td>Central maximum width is $2\\lambda D / a$.</td></tr><tr><td>Brewster's Law &amp; Malus</td><td>$\\tan\\theta_p = \\mu, \\qquad I = I_0\\cos^2\\theta$</td><td>Reflected ray and refracted ray are at $90^\\circ$.</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch23_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "In a Young's double slit experiment, the separation between slits is $d = 0.5\\text{ mm}$ and the screen is at $D = 1.0\\text{ m}$. If light of wavelength $\\lambda = 500\\text{ nm}$ is used, what is the fringe width $\\beta$?",
+      "options": [
+        "1.0 mm",
+        "0.5 mm",
+        "2.0 mm",
+        "0.25 mm"
+      ],
+      "answer": "1.0 mm",
+      "explanation": "$\\beta = \\frac{\\lambda D}{d} = \\frac{(500 \\times 10^{-9}\\text{ m})(1.0\\text{ m})}{0.5 \\times 10^{-3}\\text{ m}} = 10^{-3}\\text{ m} = 1.0\\text{ mm}$."
+    },
+    {
+      "id": "ch23_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Unpolarized light of intensity $I_0$ is incident on a stack of three polarizing sheets whose polarization axes are successively rotated by $30^\\circ$ relative to each other (so angle between $1^{\\text{st}}$ and $2^{\\text{nd}}$ is $30^\\circ$, and between $2^{\\text{nd}}$ and $3^{\\text{rd}}$ is $30^\\circ$). What is the intensity of the transmitted light exiting the third sheet?",
+      "options": [
+        "$\\frac{9}{32}I_0$",
+        "$\\frac{3}{8}I_0$",
+        "$\\frac{3}{16}I_0$",
+        "$\\frac{27}{64}I_0$"
+      ],
+      "answer": "$\\frac{9}{32}I_0$",
+      "explanation": "After $1^{\\text{st}}$ sheet (unpolarized to polarized), $I_1 = \\frac{1}{2}I_0$. After $2^{\\text{nd}}$ sheet (Malus's law with $30^\\circ$): $I_2 = I_1 \\cos^2(30^\\circ) = \\frac{1}{2}I_0 \\left(\\frac{\\sqrt{3}}{2}\\right)^2 = \\frac{3}{8}I_0$. After $3^{\\text{rd}}$ sheet (angle between $2^{\\text{nd}}$ and $3^{\\text{rd}}$ is $30^\\circ$): $I_3 = I_2 \\cos^2(30^\\circ) = \\frac{3}{8}I_0 \\left(\\frac{3}{4}\\right) = \\frac{9}{32}I_0$."
+    },
+    {
+      "id": "ch23_q03",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "Light of wavelength $\\lambda = 6000\\text{ \\AA}$ is incident normally on a single slit of width $a = 0.2\\text{ mm}$. What is the angular width of the central maximum on a screen placed far away?",
+      "options": [
+        "$6 \\times 10^{-3}\\text{ rad}$",
+        "$3 \\times 10^{-3}\\text{ rad}$",
+        "$1.5 \\times 10^{-3}\\text{ rad}$",
+        "$1.2 \\times 10^{-2}\\text{ rad}$"
+      ],
+      "answer": "$6 \\times 10^{-3}\\text{ rad}$",
+      "explanation": "Angular width of central maximum is $2\\theta = \\frac{2\\lambda}{a} = \\frac{2(6000 \\times 10^{-10}\\text{ m})}{0.2 \\times 10^{-3}\\text{ m}} = \\frac{12 \\times 10^{-7}}{2 \\times 10^{-4}} = 6 \\times 10^{-3}\\text{ rad}$."
+    },
+    {
+      "id": "ch23_q04",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "At what angle of incidence $\\theta_p$ should an unpolarized light beam strike a glass plate of refractive index $\\mu = \\sqrt{3}$ so that the reflected light is completely plane-polarized?",
+      "options": [
+        "$60^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$90^\\circ$"
+      ],
+      "answer": "$60^\\circ$",
+      "explanation": "By Brewster's Law, $\\tan\\theta_p = \\mu = \\sqrt{3} \\implies \\theta_p = 60^\\circ$."
+    },
+    {
+      "id": "ch23_q05",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ / Advanced",
+      "prompt": "In a YDSE setup, light of wavelength $\\lambda = 500\\text{ nm}$ is used. A mica sheet of refractive index $\\mu = 1.5$ and thickness $t = 6\\,\\mu\\text{m}$ is placed in front of the upper slit. By how many fringe widths ($\\beta$) does the central bright fringe shift upward?",
+      "options": [
+        "6 fringes",
+        "12 fringes",
+        "3 fringes",
+        "1.5 fringes"
+      ],
+      "answer": "6 fringes",
+      "explanation": "Fringe shift is $\\Delta y = \\frac{D}{d}(\\mu - 1)t$. Since fringe width is $\\beta = \\frac{\\lambda D}{d}$, the shift in units of fringe width is $\\frac{\\Delta y}{\\beta} = \\frac{(\\mu - 1)t}{\\lambda} = \\frac{(1.5 - 1)(6 \\times 10^{-6}\\text{ m})}{500 \\times 10^{-9}\\text{ m}} = \\frac{0.5 \\times 6 \\times 10^{-6}}{5 \\times 10^{-7}} = \\frac{3 \\times 10^{-6}}{5 \\times 10^{-7}} = 6\\text{ fringes}$."
+    }
+  ]
+}

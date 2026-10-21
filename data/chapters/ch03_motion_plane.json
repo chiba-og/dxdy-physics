@@ -1,0 +1,123 @@
+{
+  "id": "ch03_motion_plane",
+  "code": "03",
+  "title": "Motion in a Plane (2D & 3D Kinematics)",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Vector Resolution, Projectile Motion (Ground, Inclined Plane, Tower), 2D Relative Motion (River-Boat, Rain-Man) & Circular Kinematics",
+  "classLevel": "Class 11",
+  "unit": "Mechanics I",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: Moving in Two Dimensions</div><p>In Chapter 02, we restricted a particle's motion to a single straight line ($x$-axis). But in the real world, objects move across floors, curve through the sky, or orbit in space&mdash;requiring two ($x, y$) or three ($x, y, z$) coordinates simultaneously.</p><div class='def-box'><strong>The Independence of Perpendicular Motions (Galileo's Principle):</strong><br/>When a projectile moves in a vertical plane, its <strong>horizontal motion</strong> and <strong>vertical motion</strong> are completely independent of each other! Horizontal velocity remains constant (if air drag is ignored), while vertical motion behaves exactly like free fall under constant gravity $g$.</div></div>",
+  "topics": [
+    {
+      "id": "m2_t1_projectile_ground_ground",
+      "title": "Ground-to-Ground Projectile Motion: Time of Flight, Range, Max Height & Trajectory Equation",
+      "prerequisites": [
+        {
+          "label": "Vector Resolution & Trigonometry",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        },
+        {
+          "label": "1D Kinematics Under Gravity",
+          "targetChapter": "ch02_motion_straight_line",
+          "targetTopic": "k1_t4_motion_under_gravity"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Resolution of Initial Velocity &amp; The 4 Master Projectile Formulas</div><div class='def-box'><strong>Setup:</strong><br/>A particle is projected from the origin $(0,0)$ with initial speed $u$ at an angle $\\theta$ above the horizontal. Choose origin at launch point, rightward as $+x$, upward as $+y$.</div><div class='formula-highlight'>$$\\text{Initial Velocity Components:} \\qquad u_x = u\\cos\\theta \\quad (a_x = 0), \\qquad u_y = u\\sin\\theta \\quad (a_y = -g)$$</div><div class='formula-highlight'>$$\\begin{aligned} \\text{1. Time of Flight } (T): & \\quad \\boxed{T = \\frac{2u\\sin\\theta}{g}} \\\\[6pt] \\text{2. Maximum Height } (H): & \\quad \\boxed{H = \\frac{u^2\\sin^2\\theta}{2g}} \\\\[6pt] \\text{3. Horizontal Range } (R): & \\quad \\boxed{R = \\frac{u^2\\sin(2\\theta)}{g}} \\\\[6pt] \\text{4. Equation of Trajectory:} & \\quad \\boxed{y = x\\tan\\theta - \\frac{gx^2}{2u^2\\cos^2\\theta} = x\\tan\\theta\\left(1 - \\frac{x}{R}\\right)} \\end{aligned}$$</div></div><div class='concept-block'><div class='concept-title'>1.2 Complementary Angles &amp; Max Range Properties</div><ul class='clean-list'><li><strong>1. Complementary Angles ($+\\theta$ and $90^\\circ - \\theta$):</strong><br/>Projecting at angle $\\theta$ and at angle $90^\\circ - \\theta$ with the <em>same speed $u$</em> yields the <strong>exact same horizontal range $R$</strong>! The maximum heights for these two angles ($H_1$ and $H_2$) satisfy the geometric mean rule: <div class='formula-highlight'>$$\\boxed{R = 4\\sqrt{H_1 H_2}}$$</div></li><li><strong>2. Maximum Possible Range ($R_{\\max}$):</strong><br/>Since $\\sin(2\\theta)$ reaches its maximum value of $1$ at $2\\theta = 90^\\circ \\implies \\theta = 45^\\circ$:<div class='formula-highlight'>$$\\boxed{R_{\\max} = \\frac{u^2}{g} = 2H_{\\max} \\quad (\\text{at } \\theta = 45^\\circ)}$$</div></li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Projectile Formulas</div><p><strong>1. Time of Flight ($T$):</strong> Set vertical displacement $y = 0$ in $y = u_y t - \\frac{1}{2}gt^2$:</p>$$0 = (u\\sin\\theta)T - \\frac{1}{2}gT^2 \\implies T = \\frac{2u\\sin\\theta}{g}$$<p><strong>2. Horizontal Range ($R$):</strong> Multiply horizontal speed $u_x = u\\cos\\theta$ by total flight time $T$:</p>$$R = (u\\cos\\theta)\\left(\\frac{2u\\sin\\theta}{g}\\right) = \\frac{u^2(2\\sin\\theta\\cos\\theta)}{g} = \\frac{u^2\\sin(2\\theta)}{g}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 220' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='220' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='50' y1='180' x2='640' y2='180' stroke='#94a3b8' stroke-width='2'/><line x1='50' y1='25' x2='50' y2='195' stroke='#94a3b8' stroke-width='2'/><path d='M 50 180 Q 345 -10 640 180' fill='none' stroke='#00f0ff' stroke-width='3'/><line x1='345' y1='180' x2='345' y2='52' stroke='#ffab00' stroke-dasharray='5,4'/><circle cx='345' cy='52' r='6' fill='#ff0055'/><text x='355' y='60' fill='#ff0055' font-size='12' font-weight='bold'>Peak (H_max, vx = u cosθ, vy = 0)</text><text x='310' y='202' fill='#00e676' font-size='12' font-weight='bold'>Range R = u² sin(2θ) / g</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Minimum Speed at Highest Point):</strong> At maximum height $H_{\\max}$, vertical velocity is $v_y = 0$. However, horizontal velocity $v_x = u\\cos\\theta$ remains unchanged and non-zero (unless projected straight up at $90^\\circ$). Therefore, speed at the peak is <strong>not zero</strong>&mdash;it is $u\\cos\\theta$!</li></ul>"
+    },
+    {
+      "id": "m2_t2_inclined_plane_projectile",
+      "title": "Projectile on an Inclined Plane (Up-the-Plane and Down-the-Plane Formulas)",
+      "prerequisites": [
+        {
+          "label": "Ground Projectiles & Vector Resolution",
+          "targetChapter": "ch03_motion_plane",
+          "targetTopic": "m2_t1_projectile_ground_ground"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Setup &amp; Accelerated Axes Parallel/Perpendicular to Incline</div><div class='def-box'><strong>Smart Coordinate Rotation:</strong><br/>Instead of tilting your head to use horizontal/vertical axes, tilt your coordinate system so the $x'$-axis runs <strong>parallel up the incline</strong> and the $y'$-axis runs <strong>perpendicular upward from the incline</strong>!<br/>In this tilted frame, acceleration due to gravity $g$ resolves into two components:<ul><li>Parallel down the incline: $a_x = -g\\sin\\alpha$</li><li>Perpendicular into the incline: $a_y = -g\\cos\\alpha$</li></ul></div><div class='formula-highlight'>$$\\textbf{Time of Flight on Incline (Up the Plane at angle } \\alpha \\text{, launch angle } \\theta \\text{ to incline):} \\quad \\boxed{T = \\frac{2u\\sin\\theta}{g\\cos\\alpha}}$$</div><div class='formula-highlight'>$$\\textbf{Maximum Range Up the Incline:} \\qquad \\boxed{R_{\\max} = \\frac{u^2}{g(1 + \\sin\\alpha)} \\quad \\left(\\text{at launch angle } \\theta = 45^\\circ - \\frac{\\alpha}{2}\\right)}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Time of Flight on Incline</div><p>Set perpendicular displacement $y' = 0$ using $y' = u_y' t - \\frac{1}{2}a_y t^2$ where $u_y' = u\\sin\\theta$ and $a_y = g\\cos\\alpha$:</p>$$0 = (u\\sin\\theta)T - \\frac{1}{2}(g\\cos\\alpha)T^2 \\implies \\boxed{T = \\frac{2u\\sin\\theta}{g\\cos\\alpha}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 200' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='200' rx='8' fill='#080b12' stroke='#1e293b'/><polygon points='60,170 580,170 580,60' fill='rgba(0,240,255,0.08)' stroke='#00f0ff' stroke-width='2.5'/><path d='M 60 170 Q 320 20 580 60' fill='none' stroke='#ff0055' stroke-width='3'/><text x='180' y='130' fill='#00e676' font-size='12' font-weight='bold'>Incline Angle α</text><text x='290' y='55' fill='#ff0055' font-size='12' font-weight='bold'>Trajectory on Incline</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Launch Angle Definition):</strong> In incline problems, angle $\\theta$ is almost always measured <strong>relative to the incline surface</strong>, NOT relative to the horizontal ground!</li></ul>"
+    },
+    {
+      "id": "m2_t3_relative_2d_river_boat_rain",
+      "title": "2D Relative Motion: River-Crossing Boat Problems & Rain-Man Vector Relations",
+      "prerequisites": [
+        {
+          "label": "1D Relative Motion & Vectors",
+          "targetChapter": "ch02_motion_straight_line",
+          "targetTopic": "k1_t6_variable_acceleration_relative_1d"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 River-Crossing Boat Master Formulas (Width $d$, River Speed $v_r$, Boat Speed in Still Water $v_b$)</div><table class='data-table'><thead><tr><th>Objective / Condition</th><th>Formula</th><th>Key Physics Insight</th></tr></thead><tbody><tr><td><strong>1. Minimum Time to Cross River ($t_{\\min}$)</strong></td><td>$t_{\\min} = \\frac{d}{v_b}$ (at $\\theta = 90^\\circ$ across)</td><td>To cross fastest, point the boat directly straight across ($90^\\circ$ to bank). Drift is unavoidable!</td></tr><tr><td><strong>2. Minimum Drift ($x_{\\min} = 0$, Straight Across)</strong></td><td>$\\sin\\theta = \\frac{v_r}{v_b}$ (upstream at angle $\\theta$)</td><td>Possible <strong>ONLY if $v_b > v_r$</strong>. If $v_b \\le v_r$, zero drift is impossible!</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>3.2 Rain-Man Vector Relations</div><div class='formula-highlight'>$$\\vec{v}_{rm} = \\vec{v}_r - \\vec{v}_m \\implies \\vec{v}_r = \\vec{v}_{rm} + \\vec{v}_m$$</div><p>To keep dry, the man must hold his umbrella pointing parallel to the direction of apparent rain velocity $\\vec{v}_{rm}$ as seen from his moving frame.</p></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Minimum Drift Condition</div><p>Let boat head upstream at angle $\\theta$ with the straight-across line. Effective velocity along river flow is $v_x = v_r - v_b\\sin\\theta$. Setting drift to zero ($v_x = 0$):</p>$$\\sin\\theta = \\frac{v_r}{v_b} \\quad (\\text{requires } v_b > v_r)$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><rect x='40' y='30' width='600' height='40' fill='rgba(0,240,255,0.15)'/><rect x='40' y='120' width='600' height='40' fill='rgba(0,240,255,0.15)'/><text x='340' y='55' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>RIVER FLOW SPEED v_r &rarr;&rarr;</text><line x1='120' y1='120' x2='220' y2='70' stroke='#00e676' stroke-width='3'/><text x='180' y='100' fill='#00e676' font-size='11'>v_b (Boat)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Zero Drift with $v_b \\le v_r$):</strong> If river speed $v_r = 5\\text{ m/s}$ and swimmer speed $v_b = 3\\text{ m/s}$, setting $\\sin\\theta = 5/3 > 1$ is mathematically impossible. Zero drift cannot be achieved!</li></ul>"
+    },
+    {
+      "id": "m2_t4_circular_kinematics_dynamics",
+      "title": "Circular Kinematics & Dynamics: Angular Variables, Centripetal Acceleration, Tangential Accel. & Banking of Roads",
+      "prerequisites": [
+        {
+          "label": "Vectors & Derivatives",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t4_limits_differentiation"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Angular Variables &amp; Radial/Tangential Acceleration</div><div class='formula-highlight'>$$\\theta = \\frac{s}{r}, \\qquad \\omega = \\frac{d\\theta}{dt}, \\qquad \\alpha = \\frac{d\\omega}{dt}, \\qquad v = r\\omega$$</div><div class='formula-highlight'>$$\\text{1. Centripetal (Radial) Acceleration:} \\quad \\boxed{a_c = \\frac{v^2}{r} = r\\omega^2} \\quad (\\text{always points toward center})$$</div><div class='formula-highlight'>$$\\text{2. Tangential Acceleration:} \\quad \\boxed{a_t = \\frac{dv}{dt} = r\\alpha} \\qquad \\bigg| \\qquad \\text{Net Accel: } a = \\sqrt{a_c^2 + a_t^2}$$</div></div><div class='concept-block'><div class='concept-title'>4.2 Banking of Roads &amp; Maximum Safe Turning Speed</div><div class='formula-highlight'>$$\\boxed{\\tan\\theta = \\frac{v^2}{rg} \\quad (\\text{frictionless banked road})} \\qquad \\bigg| \\qquad \\boxed{v_{\\max} = \\sqrt{rg\\left(\\frac{\\mu_s + \\tan\\theta}{1 - \\mu_s\\tan\\theta}\\right)}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Centripetal Acceleration $a_c = v^2/r$</div><p>Vector velocity rotates by angle $\\theta$ while magnitude $v$ stays constant. Magnitude of change in velocity is $|\\Delta\\v| = 2v\\sin(\\theta/2) \\approx v\\theta$. Dividing by $\\Delta t$ and taking limit gives $a_c = v\\frac{d\\theta}{dt} = v\\omega = \\frac{v^2}{r}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='95' r='60' fill='none' stroke='#00f0ff' stroke-width='2.5' stroke-dasharray='6,4'/><circle cx='400' cy='95' r='8' fill='#ff0055'/><line x1='340' y1='95' x2='400' y2='95' stroke='#ffab00' stroke-width='2.5'/><text x='370' y='85' fill='#ffab00' font-size='12' font-weight='bold'>r</text><text x='340' y='175' fill='#94a3b8' font-size='12' text-anchor='middle'>Uniform Circular Motion: a_c points inward, v is tangential</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Centrifugal Force):</strong> Centrifugal force ($mv^2/r$) is a <em>pseudo force</em> experienced only in a non-inertial rotating frame. In an inertial ground frame, only real inward centripetal forces exist!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 03: Motion in a Plane</strong>! You are now ready to combine forces and Newton's laws in Chapter 04.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Projectiles:</strong> $T = \\frac{2u\\sin\\theta}{g}$, $H = \\frac{u^2\\sin^2\\theta}{2g}$, $R = \\frac{u^2\\sin(2\\theta)}{g}$.</li><li><strong>Relative 2D:</strong> $\\vec{v}_{AB} = \\vec{v}_A - \\vec{v}_B$.</li><li><strong>Circular Motion:</strong> $a_c = v^2/r$, $\\tan\\theta = \\frac{v^2}{rg}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Max Range</td><td>$R_{\\max} = \\frac{u^2}{g}$ (at $\\theta = 45^\\circ$)</td></tr><tr><td>Complementary Ranges</td><td>$R = 4\\sqrt{H_1 H_2}$</td></tr><tr><td>Banked Road Speed</td><td>$v = \\sqrt{rg\\tan\\theta}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch03_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A projectile is fired with speed $50\\text{ m/s}$ at an angle $37^\\circ$ with the horizontal ($g = 10\\text{ m/s}^2$). Find its time of flight and horizontal range.",
+      "options": [
+        "T = 6 s, R = 240 m",
+        "T = 4 s, R = 180 m",
+        "T = 8 s, R = 320 m",
+        "T = 5 s, R = 200 m"
+      ],
+      "answer": "T = 6 s, R = 240 m",
+      "explanation": "$u_y = 50\\sin(37^\\circ) = 30\\text{ m/s} \\implies T = \\frac{2(30)}{10} = 6\\text{ s}$. Range $R = (50\\cos 37^\\circ)(6) = (40)(6) = 240\\text{ m}$."
+    },
+    {
+      "id": "ch03_q02",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "The maximum range of a projectile on horizontal ground is $400\\text{ m}$. What is the maximum height reached by it?",
+      "options": [
+        "100 m",
+        "200 m",
+        "50 m",
+        "400 m"
+      ],
+      "answer": "100 m",
+      "explanation": "$R_{\\max} = \\frac{u^2}{g} = 400\\text{ m}$. Maximum height at $\\theta = 45^\\circ$ is $H_{\\max} = \\frac{u^2\\sin^2(45^\\circ)}{2g} = \\frac{400}{4} = 100\\text{ m}$."
+    },
+    {
+      "id": "ch03_q03",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A swimmer wants to cross a river $500\\text{ m}$ wide flowing at $3\\text{ m/s}$. If his swimming speed in still water is $5\\text{ m/s}$, what is the minimum time he takes to cross?",
+      "options": [
+        "100 s",
+        "125 s",
+        "80 s",
+        "200 s"
+      ],
+      "answer": "100 s",
+      "explanation": "$t_{\\min} = \\frac{d}{v_b} = \\frac{500}{5} = 100\\text{ s}$."
+    }
+  ]
+}

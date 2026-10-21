@@ -1,0 +1,104 @@
+{
+  "id": "ch06_rotational_motion",
+  "code": "06",
+  "title": "System of Particles & Rotational Motion",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Center of Mass, Impulse-Momentum Collisions, Moment of Inertia Theorems, Torque, Angular Momentum Conservation, Rolling Motion & Pure Rotation Dynamics",
+  "classLevel": "Class 11",
+  "unit": "Mechanics II",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: From Point Masses to Rigid Bodies</div><p>Up to Chapter 05, we mostly treated objects as <strong>point masses</strong>&mdash;ignoring their size and shape. But in the real world, objects like wheels, doors, planets, and spinning tops have extended dimensions and can both <em>translate</em> (move from place to place) and <em>rotate</em> simultaneously.</p><div class='def-box'><strong>What Is a Rigid Body?</strong><br/>A <strong>Rigid Body</strong> is an idealized extended object in which the distance between any two constituent particles remains absolutely fixed and unyielding, no matter what forces are applied to it!</div></div>",
+  "topics": [
+    {
+      "id": "rot_t1_center_of_mass",
+      "title": "Center of Mass (COM), Motion of COM, System of Particles & Collisions",
+      "prerequisites": [
+        {
+          "label": "Vector Addition & Resolution",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Center of Mass (COM) Position Formula</div><div class='def-box'><strong>Definition:</strong><br/>The Center of Mass is the unique single point where the entire mass of an extended system of particles can be imagined to be concentrated for studying its translational motion under external forces.</div><div class='formula-highlight'>$$\\text{Discrete Particles (1D):} \\quad \\boxed{X_{\\text{cm}} = \\frac{m_1 x_1 + m_2 x_2 + \\dots + m_n x_n}{m_1 + m_2 + \\dots + m_n} = \\frac{\\sum m_i x_i}{\\sum m_i}}$$</div><div class='formula-highlight'>$$\\text{Continuous Bodies (Integration):} \\quad \\boxed{X_{\\text{cm}} = \\frac{\\int x\\,dm}{M}, \\qquad Y_{\\text{cm}} = \\frac{\\int y\\,dm}{M}, \\qquad Z_{\\text{cm}} = \\frac{\\int z\\,dm}{M}}$$</div></div><div class='concept-block'><div class='concept-title'>1.2 Motion of Center of Mass &amp; Internal Forces</div><div class='formula-highlight'>$$\\vec{F}_{\\text{ext, net}} = M \\vec{a}_{\\text{cm}} \\qquad \\left(\\text{where } M = \\sum m_i \\text{ is total mass}\\right)$$</div><p><strong>Crucial Insight:</strong> Internal forces between particles (like internal collisions, explosions, or spring forces) cancel out in pairs by Newton's Third Law. Therefore, <strong>internal forces can never change the acceleration or trajectory of the Center of Mass!</strong></p></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Standard Result: Center of Mass of a Uniform Semicircular Ring and Disk</div><p><strong>1. Semicircular Ring of Radius $R$:</strong><br/>$$Y_{\\text{cm}} = \\frac{2R}{\\pi} \\approx 0.637 R$$</p><p><strong>2. Semicircular Solid Disk of Radius $R$:</strong><br/>$$Y_{\\text{cm}} = \\frac{4R}{3\\pi} \\approx 0.424 R$$</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='120' y1='110' x2='560' y2='110' stroke='#94a3b8' stroke-width='2'/><circle cx='200' cy='110' r='18' fill='#00f0ff'/><text x='200' y='115' fill='#05080f' font-size='11' font-weight='bold' text-anchor='middle'>m₁</text><circle cx='460' cy='110' r='28' fill='#ff0055'/><text x='460' y='115' fill='#f0f4f8' font-size='11' font-weight='bold' text-anchor='middle'>m₂</text><circle cx='360' cy='110' r='8' fill='#ffab00'/><text x='360' y='85' fill='#ffab00' font-size='12' font-weight='bold' text-anchor='middle'>COM (Closer to heavier mass)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (COM Shift when a person walks on a boat):</strong> If a person of mass $m$ walks a distance $L$ relative to a boat of mass $M$ floating in still water, the boat shifts backward by distance $\\Delta x = \\frac{m}{m+M}L$ relative to the ground.</li></ul>"
+    },
+    {
+      "id": "rot_t2_moment_of_inertia_theorems",
+      "title": "Moment of Inertia (MI), Radius of Gyration, Parallel & Perpendicular Axis Theorems",
+      "prerequisites": [
+        {
+          "label": "Integration & Summation",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Definition of Moment of Inertia ($I$) &amp; Radius of Gyration ($k$)</div><div class='def-box'><strong>Definition:</strong><br/>Moment of Inertia ($I$) is the rotational analog of mass. It measures how difficult it is to change an object's rotational speed about a given axis.</div><div class='formula-highlight'>$$I = \\sum m_i r_i^2 = \\int r^2\\,dm \\qquad \\bigg| \\qquad \\text{Radius of Gyration: } \\boxed{k = \\sqrt{\\frac{I}{M}}}$$</div></div><div class='concept-block'><div class='concept-title'>2.2 The Two Great Theorems of Moment of Inertia</div><table class='data-table'><thead><tr><th>Theorem</th><th>Statement &amp; Formula</th><th>Valid For</th></tr></thead><tbody><tr><td><strong>1. Perpendicular Axis Theorem</strong></td><td>$I_z = I_x + I_y$ (where $x, y, z$ are mutually perpendicular axes meeting at origin).</td><td><strong>Strictly 2D (Planar) Objects</strong> (lamina, ring, disk, flat plate).</td></tr><tr><td><strong>2. Parallel Axis Theorem</strong></td><td>$I_{\\text{axis}} = I_{\\text{cm}} + M d^2$ ($d =$ distance between parallel axes).</td><td><strong>Any 2D or 3D Rigid Body</strong> of total mass $M$.</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>2.3 Standard Moment of Inertia Formulae Dictionary</div><table class='data-table'><thead><tr><th>Body</th><th>Axis</th><th>Moment of Inertia ($I$)</th></tr></thead><tbody><tr><td>Thin Ring / Hollow Cylinder</td><td>Through center $\\perp$ to plane</td><td>$M R^2$</td></tr><tr><td>Thin Ring / Hollow Cylinder</td><td>Diameter / Lengthwise</td><td>$\\frac{1}{2} M R^2$</td></tr><tr><td>Solid Disk / Solid Cylinder</td><td>Through center $\\perp$ to plane</td><td>$\\frac{1}{2} M R^2$</td></tr><tr><td>Solid Disk / Solid Cylinder</td><td>Diameter</td><td>$\\frac{1}{4} M R^2 + \\frac{1}{12} M L^2$</td></tr><tr><td>Solid Sphere</td><td>Diameter</td><td>$\\frac{2}{5} M R^2$</td></tr><tr><td>Hollow Sphere (Spherical Shell)</td><td>Diameter</td><td>$\\frac{2}{3} M R^2$</td></tr><tr><td>Thin Rod of length $L$</td><td>Through center $\\perp$ to rod</td><td>$\\frac{1}{12} M L^2$</td></tr><tr><td>Thin Rod of length $L$</td><td>Through end $\\perp$ to rod</td><td>$\\frac{1}{3} M L^2$</td></tr></tbody></table></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Proof of Parallel Axis Theorem</div><p>$I_{\\text{axis}} = \\sum m_i (x_i + d)^2 = \\sum m_i x_i^2 + d^2 \\sum m_i + 2d \\sum m_i x_i$. Since $\\sum m_i x_i = 0$ at the COM, $\\boxed{I_{\\text{axis}} = I_{\\text{cm}} + M d^2}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='95' r='55' fill='none' stroke='#00f0ff' stroke-width='2.5'/><line x1='340' y1='40' x2='340' y2='150' stroke='#ff0055' stroke-width='3'/><text x='355' y='55' fill='#ff0055' font-size='12' font-weight='bold'>I_cm</text><line x1='480' y1='40' x2='480' y2='150' stroke='#00e676' stroke-width='3'/><text x='495' y='55' fill='#00e676' font-size='12' font-weight='bold'>I_axis (d away)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Perpendicular Axis Theorem on 3D Objects):</strong> Never apply the Perpendicular Axis Theorem to a solid sphere or solid cylinder&mdash;they are 3D objects, not 2D laminae!</li></ul>"
+    },
+    {
+      "id": "rot_t3_torque_angular_momentum",
+      "title": "Torque, Angular Momentum & Conservation of Angular Momentum",
+      "prerequisites": [
+        {
+          "label": "Cross Product of Vectors",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Torque ($\\vec{\\tau}$) &amp; Angular Momentum ($\\vec{L}$)</div><div class='formula-highlight'>$$\\vec{\\tau} = \\vec{r} \\times \\vec{F} \\qquad \\bigg| \\qquad \\vec{L} = \\vec{r} \\times \\vec{p} = I\\vec{\\omega}$$</div><div class='formula-highlight'>$$\\sum \\vec{\\tau}_{\\text{ext}} = \\frac{d\\vec{L}}{dt} = I\\vec{\\alpha}$$</div></div><div class='concept-block'><div class='concept-title'>3.2 Conservation of Angular Momentum</div><div class='def-box'><strong>Master Rule:</strong><br/>If the net external torque acting on a system is zero ($\\sum \\vec{\\tau}_{\\text{ext}} = 0$), the total angular momentum of the system remains strictly constant ($I_1 \\omega_1 = I_2 \\omega_2 = \\text{constant}$).</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Ice Skater Spin Derivation</div><p>When an ice skater pulls her arms inward, her moment of inertia decreases ($I \\downarrow$), so her angular speed increases proportionally ($\\omega \\uparrow$) to keep $L = I\\omega$ constant.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='95' r='50' fill='none' stroke='#ffab00' stroke-width='3' stroke-dasharray='6,4'/><path d='M 370 75 L 420 75 L 400 65 M 420 75 L 400 85' stroke='#00f0ff' stroke-width='3'/><text x='340' y='170' fill='#94a3b8' font-size='12' text-anchor='middle'>Torque \\tau = r \\times F | Angular Momentum L = I\\omega</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Axis of Angular Momentum):</strong> Angular momentum conservation can only be applied about a fixed point or about the Center of Mass of the system.</li></ul>"
+    },
+    {
+      "id": "rot_t4_rolling_motion",
+      "title": "Rolling Motion without Slipping: Kinetic Energy & Acceleration on an Inclined Plane",
+      "prerequisites": [
+        {
+          "label": "Work-Energy Theorem",
+          "targetChapter": "ch05_work_energy_power",
+          "targetTopic": "wep_t1_work_work_energy_theorem"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Pure Rolling Motion Conditions</div><div class='def-box'><strong>Definition:</strong><br/>Pure rolling is a combination of <strong>translation</strong> of the center of mass with speed $v_{\\text{cm}}$ and <strong>rotation</strong> about the COM with angular speed $\\omega$.</div><div class='formula-highlight'>$$\\textbf{Condition for Pure Rolling (No Slipping at Point of Contact):} \\quad \\boxed{v_{\\text{cm}} = R\\omega, \\qquad a_{\\text{cm}} = R\\alpha}$$</div><div class='formula-highlight'>$$\\textbf{Total Kinetic Energy of Rolling Body:} \\quad \\boxed{K_{\\text{total}} = K_{\\text{trans}} + K_{\\text{rot}} = \\frac{1}{2}Mv_{\\text{cm}}^2 + \\frac{1}{2}I\\omega^2 = \\frac{1}{2}Mv_{\\text{cm}}^2\\left(1 + \\frac{k^2}{R^2}\\right)}$$</div></div><div class='concept-block'><div class='concept-title'>4.2 Acceleration of Rolling Body Down an Inclined Plane</div><div class='formula-highlight'>$$\\boxed{a = \\frac{g\\sin\\theta}{1 + \\frac{k^2}{R^2}}} \\qquad \\bigg| \\qquad \\boxed{v_{\\text{bottom}} = \\sqrt{\\frac{2gh}{1 + \\frac{k^2}{R^2}}}}$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Derivation of Acceleration Down Incline</div><p>Apply Newton's laws for translation ($mg\\sin\\theta - f = Ma$) and rotation ($\\tau = fR = I\\alpha$). Substituting $I = Mk^2$ and $\\alpha = a/R$ yields $a = \\frac{g\\sin\\theta}{1 + k^2/R^2}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='95' r='45' fill='none' stroke='#00f0ff' stroke-width='3'/><circle cx='340' cy='95' r='5' fill='#ff0055'/><line x1='280' y1='145' x2='400' y2='145' stroke='#94a3b8' stroke-width='2'/><text x='340' y='170' fill='#00e676' font-size='12' font-weight='bold' text-anchor='middle'>Pure Rolling: Point of contact is instantaneously at rest (v_contact = 0)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Which shape reaches bottom first?):</strong> A solid sphere ($k^2/R^2 = 2/5 = 0.4$) always reaches the bottom of an incline <em>faster</em> than a ring ($k^2/R^2 = 1$) because its rotational inertia is smaller, so more energy goes into translation!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 06: System of Particles & Rotational Motion</strong>!</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>COM:</strong> $X_{\\text{cm}} = \\frac{\\sum m_i x_i}{\\sum m_i}$.</li><li><strong>Theorems:</strong> $I_z = I_x + I_y$, $\\; I = I_{\\text{cm}} + Md^2$.</li><li><strong>Rolling:</strong> $v_{\\text{cm}} = R\\omega$, $\\; K = \\frac{1}{2}Mv^2(1 + k^2/R^2)$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Parallel Axis Theorem</td><td>$I = I_{\\text{cm}} + Md^2$</td></tr><tr><td>Conservation of Angular Momentum</td><td>$I_1 \\omega_1 = I_2 \\omega_2$</td></tr><tr><td>Rolling Acceleration on Incline</td><td>$a = \\frac{g\\sin\\theta}{1 + k^2/R^2}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch06_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "Find the moment of inertia of a uniform circular ring of mass $M$ and radius $R$ about a tangent in its own plane.",
+      "options": [
+        "$\\frac{3}{2}MR^2$",
+        "$2MR^2$",
+        "$\\frac{5}{2}MR^2$",
+        "$MR^2$"
+      ],
+      "answer": "$\\frac{3}{2}MR^2$",
+      "explanation": "MI about a diameter is $I_{\\text{diam}} = \\frac{1}{2}MR^2$. Using the parallel axis theorem with distance $d = R$: $I_{\\text{tangent}} = \\frac{1}{2}MR^2 + MR^2 = \\frac{3}{2}MR^2$."
+    },
+    {
+      "id": "ch06_q02",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A solid sphere, a hollow sphere, a solid cylinder, and a ring of the same mass and radius are released from rest at the top of an inclined plane. Which one reaches the bottom first?",
+      "options": [
+        "Solid Sphere",
+        "Ring",
+        "Solid Cylinder",
+        "Hollow Sphere"
+      ],
+      "answer": "Solid Sphere",
+      "explanation": "Acceleration is $a = \\frac{g\\sin\\theta}{1 + k^2/R^2}$. The solid sphere has the smallest $k^2/R^2$ ($2/5 = 0.4$), giving it the highest acceleration and shortest time to reach the bottom."
+    }
+  ]
+}

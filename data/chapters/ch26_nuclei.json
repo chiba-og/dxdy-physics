@@ -1,0 +1,119 @@
+{
+  "id": "ch26_nuclei",
+  "code": "26",
+  "title": "Nuclei & Radioactivity",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Nuclear Radius & Constant Density, Mass Defect & Binding Energy Curve, Nuclear Force, Radioactive Decay Law, Half-Life & Mean Life, Parallel Decay, Alpha/Beta/Gamma Decay & Nuclear Fission/Fusion",
+  "classLevel": "Class 12",
+  "unit": "Modern Physics",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: What Holds Protons Together Inside the Nucleus?</div><p>Every atomic nucleus ${}_Z^A X$ contains $Z$ positively charged <strong>protons</strong> and $N = (A - Z)$ neutral <strong>neutrons</strong> (collectively called $A$ <strong>nucleons</strong>) packed into a tiny sphere of radius $\\sim 10^{-15}\\text{ m}$ ($1\\text{ femtometre / Fermi}$). Inside this tiny volume, protons repel each other with tremendous Coulomb forces!</p><p style='margin-top:8px;'>What stops the nucleus from exploding instantly? Nature provides the <strong>Strong Nuclear Force</strong>&mdash;the strongest fundamental force in the universe ($\\approx 100\\times$ stronger than electrostatic repulsion), which acts equally between $p$-$p$, $n$-$n$, and $p$-$n$ at short range ($\\sim 1\\text{ to } 3\\text{ fm}$)!</p><div class='def-box'><strong>Atomic Mass Unit ($1\\text{ u}$ or $1\\text{ amu}$) &amp; Einstein's Energy Equivalence:</strong><ul class='clean-list'><li><strong>Definition:</strong> $1\\text{ u} = \\frac{1}{12} \\times (\\text{Mass of one } {}_6^{12}\\text{C atom}) = 1.6605 \\times 10^{-27}\\text{ kg}$.</li><li><strong>Einstein Energy Equivalent ($E = \\Delta m \\cdot c^2$):</strong> $$\\boxed{1\\text{ u}\\cdot c^2 = 931.5\\text{ MeV}}$$</li></ul></div></div>",
+  "topics": [
+    {
+      "id": "nuc_t1_size_mass_defect_binding_energy",
+      "title": "Nuclear Radius ($R = R_0 A^{1/3}$), Constant Nuclear Density, Mass Defect ($\\Delta m$), Binding Energy Curve & Nuclear Force",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Nuclear Size ($R$) &amp; Universal Constant Nuclear Density ($\\rho_{\\text{nuc}}$)</div><p>Scattering experiments show that the volume $V = \\frac{4}{3}\\pi R^3$ of any nucleus is directly proportional to its mass number $A$ (total number of nucleons):</p><div class='formula-highlight'>$$\\text{Nuclear Radius:} \\qquad \\boxed{R = R_0 A^{1/3}} \\qquad \\left(\\text{where } R_0 = 1.2 \\times 10^{-15}\\text{ m} = 1.2\\text{ fm}\\right)$$</div><div class='formula-highlight'>$$\\text{Nuclear Matter Density:} \\qquad \\boxed{\\rho_{\\text{nuc}} = \\frac{\\text{Mass}}{\\text{Volume}} = \\frac{A \\cdot m_N}{\\frac{4}{3}\\pi (R_0 A^{1/3})^3} = \\frac{3 m_N}{4\\pi R_0^3} \\approx 2.3 \\times 10^{17}\\text{ kg/m}^3}$$</div><p><strong>Crucial JEE Fact:</strong> Because $A$ cancels out completely in the numerator and denominator, <strong>Nuclear Density $\\rho_{\\text{nuc}}$ is a UNIVERSAL CONSTANT—completely independent of mass number $A$!</strong> (A light Helium nucleus and a heavy Uranium-238 nucleus have the exact same nuclear density!).</p></div><div class='concept-block'><div class='concept-title'>1.2 Mass Defect ($\\Delta m$), Binding Energy ($BE$) &amp; The $BE/A$ Stability Curve</div><div class='def-box'><strong>Why Is a Bound Nucleus Always Lighter Than the Sum of Its Constituent Nucleons?</strong><br/>When $Z$ protons and $(A-Z)$ neutrons bind together to form a nucleus ${}_Z^A X$, energy is released as <strong>Binding Energy ($BE$)</strong>, causing the bound nucleus to have less mass than its separate nucleons by the <strong>Mass Defect ($\\Delta m$)</strong>:</div><div class='formula-highlight'>$$\\boxed{\\Delta m = \\left[Z m_p + (A - Z)m_n\\right] - m_{\\text{nucleus}}} \\qquad \\implies \\qquad \\boxed{BE = \\Delta m \\cdot c^2 = \\Delta m\\text{ (in u)} \\times 931.5\\text{ MeV}}$$</div><ul class='clean-list'><li><strong>Binding Energy per Nucleon ($\\frac{BE}{A}$):</strong> Measures the <strong>stability</strong> of a nucleus.<br/>&bull; For $30 < A < 170$, $BE/A$ is nearly constant at $\\approx 8.0\\text{ to } 8.8\\text{ MeV}$ (proving saturation / short-range nature of nuclear force).<br/>&bull; <strong>Maximum Peak:</strong> Occurs for <strong>Iron-56 (${}_{26}^{56}\\text{Fe}$) and Nickel-62</strong> at $\\boxed{\\frac{BE}{A} \\approx 8.75\\text{ MeV}}$ (most stable nuclei in nature!).<br/>&bull; <strong>Why Fission &amp; Fusion Release Energy:</strong> Very light nuclei ($A < 20$) undergo <strong>Fusion</strong> and very heavy nuclei ($A > 200$) undergo <strong>Fission</strong> so that the daughter products move closer to the middle peak, <strong>increasing $BE/A$</strong> and releasing $\\boxed{Q = \\sum BE_{\\text{products}} - \\sum BE_{\\text{reactants}} > 0}$!</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>How to Calculate Q-Value Using Binding Energies vs. Atomic Masses</div><p><strong>1. From Rest Masses (Masses of Reactants Minus Products):</strong></p>$$\\boxed{Q = \\left(\\sum m_{\\text{reactants}} - \\sum m_{\\text{products}}\\right) \\times 931.5\\text{ MeV}}$$<p><strong>2. From Binding Energies (BE of Products Minus Reactants — Opposite Order!):</strong><br/>Because $m_{\\text{nucleus}} = Z m_p + N m_n - BE/c^2$ (more tightly bound means smaller rest mass!):</p>$$\\boxed{Q = \\sum (BE)_{\\text{products}} - \\sum (BE)_{\\text{reactants}}}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,15)'><line x1='25' y1='150' x2='280' y2='150' stroke='#94a3b8' stroke-width='2'/><line x1='25' y1='15' x2='25' y2='160' stroke='#94a3b8' stroke-width='2'/><path d='M 30 140 Q 55 25 95 25 Q 180 28 270 52' fill='none' stroke='#00e676' stroke-width='3'/><circle cx='95' cy='25' r='5' fill='#ff0055'/><text x='115' y='22' fill='#ff0055' font-size='11' font-weight='bold'>Peak: ⁵⁶Fe (8.75 MeV)</text><text x='62' y='110' fill='#00f0ff' font-size='11' font-weight='bold'>Fusion ↑</text><text x='225' y='72' fill='#ffab00' font-size='11' font-weight='bold'>← Fission</text><text x='155' y='170' fill='#94a3b8' font-size='11' text-anchor='middle'>Binding Energy per Nucleon (BE/A) vs A</text></g><g transform='translate(355,15)'><line x1='25' y1='95' x2='280' y2='95' stroke='#94a3b8' stroke-width='2'/><line x1='25' y1='15' x2='25' y2='160' stroke='#94a3b8' stroke-width='2'/><path d='M 40 20 Q 62 155 85 150 Q 130 98 265 95' fill='none' stroke='#00f0ff' stroke-width='3'/><circle cx='72' cy='150' r='5' fill='#00e676'/><text x='145' y='45' fill='#ff0055' font-size='11' font-weight='bold'>r &lt; 0.8 fm: Strongly Repulsive!</text><text x='145' y='145' fill='#00e676' font-size='11' font-weight='bold'>Min U(r) at r₀ ≈ 0.8 fm (Attractive)</text><text x='155' y='170' fill='#94a3b8' font-size='11' text-anchor='middle'>Nuclear Potential Energy U(r) vs Separation r</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Sign Reversal Between Mass Formula and Binding Energy Formula for $Q$-Value):</strong><br/>&bull; When given <strong>Rest Masses ($m$)</strong>: $Q = (m_{\\text{initial}} - m_{\\text{final}})c^2$ (<strong>Initial minus Final</strong>).<br/>&bull; When given <strong>Binding Energies ($BE$)</strong>: $Q = BE_{\\text{final}} - BE_{\\text{initial}}$ (<strong>Final minus Initial</strong>)! Never mix up the order!</li></ul>"
+    },
+    {
+      "id": "nuc_t2_radioactivity_decay_laws",
+      "title": "Law of Radioactive Decay, Activity, Half-Life ($T_{1/2}$), Mean Life ($\\tau$), Parallel Decay & Simultaneous Production",
+      "prerequisites": [
+        {
+          "label": "First-Order Differential Equations",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t6_integration_diffeq"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 Rutherford-Soddy Law of Radioactive Decay</div><div class='def-box'><strong>Statistical Law:</strong><br/>Radioactive decay is a spontaneous, random nuclear process (completely unaffected by temperature, pressure, or chemical bonding) in which the rate of disintegration $-\\frac{dN}{dt}$ at any instant is directly proportional to the number of undecayed parent nuclei $N(t)$ present at that instant:</div><div class='formula-highlight'>$$\\boxed{-\\frac{dN}{dt} = \\lambda N} \\implies \\boxed{N(t) = N_0 e^{-\\lambda t} = N_0 \\left(\\frac{1}{2}\\right)^{t / T_{1/2}}}$$</div><div class='formula-highlight'>$$\\text{Number of Decayed (Daughter) Nuclei at Time } t: \\qquad \\boxed{N_{\\text{decayed}}(t) = N_0 - N(t) = N_0\\left(1 - e^{-\\lambda t}\\right)}$$</div><div class='formula-highlight'>$$\\text{Activity (Decay Rate):} \\qquad \\boxed{A(t) = \\left|\\frac{dN}{dt}\\right| = \\lambda N(t) = A_0 e^{-\\lambda t}} \\qquad \\left(\\text{where } A_0 = \\lambda N_0\\right)$$</div><p><strong>Units of Activity:</strong><br/>&bull; SI Unit: $1\\text{ Becquerel (Bq)} = 1\\text{ decay/second}$.<br/>&bull; $1\\text{ Curie (Ci)} = \\mathbf{3.7 \\times 10^{10}\\text{ Bq}}$; $\\quad 1\\text{ Rutherford (Rd)} = \\mathbf{10^6\\text{ Bq}}$.</p></div><div class='concept-block'><div class='concept-title'>2.2 Half-Life ($T_{1/2}$), Mean Life ($\\tau$), Parallel Decay &amp; Constant Production</div><div class='formula-highlight'>$$\\text{1. Half-Life:} \\quad \\boxed{T_{1/2} = \\frac{\\ln 2}{\\lambda} = \\frac{0.693}{\\lambda}} \\qquad \\bigg| \\qquad \\text{2. Mean (Average) Life:} \\quad \\boxed{\\tau = \\frac{1}{\\lambda} = \\frac{T_{1/2}}{\\ln 2} \\approx 1.443\\,T_{1/2}}$$</div><p><strong>Parallel (Simultaneous) Decay Channels ($\\lambda_1, T_1$ and $\\lambda_2, T_2$):</strong><br/>If a nucleus can decay simultaneously via two modes (say $\\alpha$-decay with constant $\\lambda_1$ and $\\beta$-decay with constant $\\lambda_2$), then $-\\frac{dN}{dt} = (\\lambda_1 + \\lambda_2)N$:</p><div class='formula-highlight'>$$\\boxed{\\lambda_{\\text{eff}} = \\lambda_1 + \\lambda_2} \\qquad \\implies \\qquad \\boxed{\\frac{1}{T_{\\text{eff}}} = \\frac{1}{T_1} + \\frac{1}{T_2} \\iff T_{\\text{eff}} = \\frac{T_1 T_2}{T_1 + T_2}}$$</div><p><strong>Simultaneous Production (at Constant Rate $R_0\\text{ nuclei/s}$) and Radioactive Decay ($\\lambda$):</strong><br/>Since net rate of change is $\\frac{dN}{dt} = R_0 - \\lambda N$, starting from $N(0) = 0$:</p><div class='formula-highlight'>$$\\boxed{N(t) = \\frac{R_0}{\\lambda}\\left(1 - e^{-\\lambda t}\\right)} \\qquad \\left(\\text{Maximum Secular Equilibrium Number as } t \\to \\infty: \\; \\boxed{N_{\\max} = \\frac{R_0}{\\lambda}}\\right)$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Probability of Survival vs. Probability of Decay &amp; Small-Time Binomial Approximation (t ≪ T_1/2)</div><p><strong>1. Survival &amp; Decay Probabilities in Time $t$:</strong><br/>&bull; Probability that a given nucleus <strong>survives</strong> for time $t$: $\\boxed{P_{\\text{survival}} = \\frac{N(t)}{N_0} = e^{-\\lambda t}}$.<br/>&bull; Probability that a given nucleus <strong>decays</strong> within time $t$: $\\boxed{P_{\\text{decay}} = 1 - e^{-\\lambda t}}$.</p><p><strong>2. Small-Time Approximation ($\\lambda t \\ll 1$):</strong> When $t \\ll T_{1/2}$, never waste time computing exponentials! Use $e^{-\\lambda t} \\approx 1 - \\lambda t$, so the fraction decayed in a tiny time $t$ is simply $\\boxed{\\frac{\\Delta N}{N_0} \\approx \\lambda t}$!</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><g transform='translate(30,15)'><line x1='25' y1='145' x2='280' y2='145' stroke='#94a3b8' stroke-width='2'/><line x1='25' y1='15' x2='25' y2='155' stroke='#94a3b8' stroke-width='2'/><path d='M 25 25 Q 80 135 270 142' fill='none' stroke='#00f0ff' stroke-width='3'/><path d='M 25 145 Q 80 35 270 28' fill='none' stroke='#00e676' stroke-width='2.5' stroke-dasharray='5,4'/><circle cx='78' cy='85' r='5' fill='#ffab00'/><text x='135' y='88' fill='#ffab00' font-size='11' font-weight='bold'>t = T_1/2 (N = N₀/2)</text><text x='185' y='45' fill='#00e676' font-size='11' font-weight='bold'>Daughter N_d(t)</text><text x='185' y='132' fill='#00f0ff' font-size='11' font-weight='bold'>Parent N(t) = N₀ e⁻λᵗ</text><text x='155' y='168' fill='#94a3b8' font-size='11' text-anchor='middle'>Parent vs Daughter Nuclei Over Time</text></g><g transform='translate(355,20)'><rect x='0' y='0' width='300' height='150' rx='6' fill='#121622' stroke='#ff0055'/><text x='150' y='22' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>RADIOACTIVE DATING RATIO SHORTCUT</text><text x='20' y='55' fill='#f0f4f8' font-size='11'>If a rock currently contains Parent : Daughter</text><text x='20' y='75' fill='#f0f4f8' font-size='11'>nuclei in the ratio  N_P : N_D = 1 : x,</text><text x='20' y='100' fill='#00e676' font-size='12' font-weight='bold'>Initial Parent was:  N₀ = N_P + N_D = (1 + x) N_P</text><text x='20' y='128' fill='#ffab00' font-size='12' font-weight='bold'>So N_P / N₀ = 1 / (1 + x) = (1/2)^(t / T_1/2)!</text></g></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Rock Dating Ratio $N_{\\text{parent}} : N_{\\text{daughter}} = 1 : 7$):</strong> If the ratio of undecayed parent $A$ to stable daughter $B$ in a rock sample is $1 : 7$, students mistakenly set $N/N_0 = 1/7$! <strong>WRONG!</strong> Since every daughter nucleus $B$ came from a decayed parent $A$, the original number of parent nuclei was $N_0 = N_A + N_B = 1 + 7 = \\mathbf{8}$ parts! Thus $\\frac{N}{N_0} = \\frac{1}{8} = \\left(\\frac{1}{2}\\right)^3 \\implies \\mathbf{t = 3\\,T_{1/2}}$!</li></ul>"
+    },
+    {
+      "id": "nuc_t3_alpha_beta_gamma_fission_fusion",
+      "title": "Alpha, Beta ($\\beta^-, \\beta^+$) & Gamma Decay, Kinetic Energy Sharing in $\\alpha$-Decay, Nuclear Fission & Fusion",
+      "prerequisites": [],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Alpha ($\\alpha$), Beta ($\\beta^-, \\beta^+$) &amp; Gamma ($\\gamma$) Decay Equations</div><table class='data-table'><thead><tr><th>Decay Mode</th><th>Nuclear Transformation Equation</th><th>Key Energy &amp; Spectrum Features</th></tr></thead><tbody><tr><td><strong>1. Alpha ($\\alpha$) Decay</strong><br/>(Emits ${}_2^4\\text{He}$ nucleus)</td><td>$${}_Z^A X \\longrightarrow {}_{Z-2}^{A-4} Y + {}_2^4\\text{He} + Q$$</td><td><strong>Discrete Monoenergetic Spectrum!</strong><br/>By momentum conservation ($p_Y = p_\\alpha$):<br/>$$\\boxed{K_\\alpha = \\left(\\frac{A - 4}{A}\\right)Q, \\qquad K_Y = \\left(\\frac{4}{A}\\right)Q}$$</td></tr><tr><td><strong>2. Beta-Minus ($\\beta^-$) Decay</strong><br/>(Neutron $\\to$ Proton)</td><td>$$n \\to p + e^- + \\bar{\\nu}$$<br/>$${}_Z^A X \\longrightarrow {}_{Z+1}^A Y + e^- + \\bar{\\nu}$$</td><td><strong>Continuous Energy Spectrum</strong> from $0$ to $Q$ because 3-body decay shares energy with the <strong>antineutrino ($\\bar{\\nu}$)</strong>!</td></tr><tr><td><strong>3. Beta-Plus ($\\beta^+$) Decay</strong><br/>(Proton $\\to$ Neutron)</td><td>$$p \\to n + e^+ + \\nu$$<br/>$${}_Z^A X \\longrightarrow {}_{Z-1}^A Y + e^+ + \\nu$$</td><td>Using neutral <strong>atomic masses</strong>, two electron masses must be subtracted:<br/>$$\\boxed{Q_{\\beta^+} = \\left[M_{\\text{atom}}(X) - M_{\\text{atom}}(Y) - 2m_e\\right]c^2}$$</td></tr><tr><td><strong>4. Gamma ($\\gamma$) Decay</strong><br/>(Excited nucleus de-excites)</td><td>$${}_Z^A X^* \\longrightarrow {}_Z^A X + \\gamma$$</td><td><strong>No change in $Z$ or $A$!</strong> Emits high-energy $\\gamma$ photon ($\\sim\\text{MeV}$).</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>3.2 Nuclear Fission &amp; Nuclear Fusion</div><ul class='clean-list'><li><strong>1. Nuclear Fission:</strong> Splitting of a heavy nucleus by a slow thermal neutron:<div class='formula-highlight'>$$\\boxed{{}_{92}^{235}\\text{U} + {}_0^1 n \\longrightarrow {}_{56}^{141}\\text{Ba} + {}_{36}^{92}\\text{Kr} + 3\\,{}_0^1 n + 200\\text{ MeV}}$$</div>($\\approx 0.85\\text{ MeV}$ released per nucleon). Controlled chain reactions in nuclear reactors use <strong>Moderators</strong> ($\\text{D}_2\\text{O}$ heavy water or graphite to slow down fast neutrons) and <strong>Control Rods</strong> (Cadmium $\\text{Cd}$ or Boron $\\text{B}$ to absorb excess neutrons).</li><li><strong>2. Thermonuclear Fusion (Source of Energy in the Sun &amp; Stars):</strong><br/>Combining four light protons into a Helium-4 nucleus at ultra-high temperature ($T \\sim 10^7\\text{ K}$ to overcome Coulomb barrier): $\\boxed{4\\,{}_1^1\\text{H} \\longrightarrow {}_2^4\\text{He} + 2e^+ + 2\\nu + 26.7\\text{ MeV}}$ ($\\approx 6.7\\text{ MeV}$ per nucleon&mdash;$8\\times$ more energy per unit mass than fission!).</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Proof of Alpha Kinetic Energy Fraction K_α = [(A − 4) / A] Q</div><p>When a stationary parent nucleus of mass number $A$ decays into a daughter of mass $m_Y \\approx (A-4)u$ and an $\\alpha$-particle of mass $m_\\alpha \\approx 4u$, linear momentum conservation requires $p_\\alpha = p_Y$. Since $K = \\frac{p^2}{2m} \\propto \\frac{1}{m}$, kinetic energy divides inversely with mass:</p>$$\\frac{K_\\alpha}{K_Y} = \\frac{m_Y}{m_\\alpha} = \\frac{A - 4}{4} \\quad \\text{and} \\quad K_\\alpha + K_Y = Q \\implies \\boxed{K_\\alpha = \\left(\\frac{A - 4}{A}\\right)Q, \\qquad K_Y = \\left(\\frac{4}{A}\\right)Q}$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 185' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='185' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='75' fill='#00f0ff' font-size='13' font-weight='bold' text-anchor='middle'>Alpha Decay: Z → Z−2, A → A−4,   K_α = [(A − 4)/A] Q   (Discrete Energy)</text><text x='340' y='125' fill='#00e676' font-size='12' text-anchor='middle'>Beta Decay: Z → Z±1, A unchanged   (Continuous Energy Spectrum due to Neutrino!)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Finding Number of $\\alpha$ and $\\beta^-$ Particles Emitted in a Decay Chain ${}_{Z_1}^{A_1} X \\to {}_{Z_2}^{A_2} Y$):</strong><br/>1. Always find the number of $\\alpha$-particles FIRST from the mass number change (since $\\beta$-decay never changes $A$!): $\\boxed{n_\\alpha = \\frac{A_1 - A_2}{4}}$.<br/>2. Then find the number of $\\beta^-$ particles from charge conservation: $Z_1 = Z_2 + 2n_\\alpha - n_{\\beta^-} \\implies \\boxed{n_{\\beta^-} = 2n_\\alpha - (Z_1 - Z_2)}$!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 26: Nuclei &amp; Radioactivity</strong>! Next, in Chapter 27, we enter Semiconductor Electronics and Digital Logic Gates.</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Nucleus Size &amp; BE:</strong> $R = R_0 A^{1/3}$ ($R_0 = 1.2\\text{ fm}$); $\\rho_{\\text{nuc}} = \\text{const}$; $BE = \\Delta m(\\text{in u}) \\times 931.5\\text{ MeV}$.</li><li><strong>Radioactivity:</strong> $N = N_0 e^{-\\lambda t} = N_0(1/2)^{t/T_{1/2}}$; $T_{1/2} = \\frac{0.693}{\\lambda}$; $\\tau = \\frac{1}{\\lambda}$; Parallel $T_{\\text{eff}} = \\frac{T_1 T_2}{T_1 + T_2}$.</li><li><strong>Nuclear Decays:</strong> $\\alpha$-decay $K_\\alpha = \\frac{A-4}{A}Q$; $n_\\alpha = \\frac{\\Delta A}{4}$ and $n_{\\beta^-} = 2n_\\alpha - \\Delta Z$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Nuclear Radius &amp; Density</td><td>$R = R_0 A^{1/3} \\; (R_0 = 1.2\\text{ fm}), \\qquad \\rho_{\\text{nuc}} = \\text{Constant}$</td></tr><tr><td>Binding Energy &amp; $Q$-Value</td><td>$BE = \\Delta m \\times 931.5\\text{ MeV}, \\qquad Q = \\sum BE_{\\text{prod}} - \\sum BE_{\\text{react}}$</td></tr><tr><td>Decay Law &amp; Half-Life</td><td>$N(t) = N_0 e^{-\\lambda t}, \\qquad T_{1/2} = \\dfrac{\\ln 2}{\\lambda} = 0.693\\,\\tau$</td></tr><tr><td>Alpha Kinetic Energy</td><td>$K_\\alpha = \\left(\\dfrac{A - 4}{A}\\right)Q, \\qquad K_{\\text{daughter}} = \\left(\\dfrac{4}{A}\\right)Q$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch26_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "If the nuclear radius of ${}_{13}^{27}\\text{Al}$ is $3.6\\text{ fm}$, what is the nuclear radius of ${}_{52}^{125}\\text{Te}$?",
+      "options": [
+        "6.0 fm",
+        "5.0 fm",
+        "4.8 fm",
+        "7.2 fm"
+      ],
+      "answer": "6.0 fm",
+      "explanation": "Since $R = R_0 A^{1/3} \\propto A^{1/3}$, we have $\\frac{R_{\\text{Te}}}{R_{\\text{Al}}} = \\left(\\frac{125}{27}\\right)^{1/3} = \\frac{5}{3} \\implies R_{\\text{Te}} = \\frac{5}{3}(3.6\\text{ fm}) = 6.0\\text{ fm}$."
+    },
+    {
+      "id": "ch26_q02",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "In the radioactive decay chain ${}_{92}^{238}\\text{U} \\longrightarrow {}_{82}^{206}\\text{Pb}$, how many alpha ($\\alpha$) particles and beta-minus ($\\beta^-$) particles are emitted?",
+      "options": [
+        "8 α and 6 β⁻",
+        "8 α and 10 β⁻",
+        "6 α and 8 β⁻",
+        "4 α and 6 β⁻"
+      ],
+      "answer": "8 α and 6 β⁻",
+      "explanation": "$n_\\alpha = \\frac{238 - 206}{4} = \\frac{32}{4} = 8$. Then $n_{\\beta^-} = 2n_\\alpha - (92 - 82) = 16 - 10 = 6$."
+    },
+    {
+      "id": "ch26_q03",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A radioactive sample has a half-life of $T_{1/2} = 20\\text{ minutes}$. How much time passes between the instant when $\\frac{1}{3}$ of the sample has decayed and the instant when $\\frac{2}{3}$ of the sample has decayed?",
+      "options": [
+        "20 minutes",
+        "40 minutes",
+        "10 minutes",
+        "30 minutes"
+      ],
+      "answer": "20 minutes",
+      "explanation": "Always work with <strong>undecayed</strong> nuclei! When $\\frac{1}{3}$ has decayed, undecayed remaining is $N_1 = \\frac{2}{3}N_0$. When $\\frac{2}{3}$ has decayed, undecayed remaining is $N_2 = \\frac{1}{3}N_0 = \\frac{1}{2}N_1$. Since the undecayed amount halved from $\\frac{2}{3}N_0$ to $\\frac{1}{3}N_0$, the time elapsed is exactly ONE half-life $= 20\\text{ minutes}$!"
+    },
+    {
+      "id": "ch26_q04",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A radioactive nucleus can decay simultaneously by two different processes which have half-lives $T_1 = 3\\text{ hours}$ and $T_2 = 6\\text{ hours}$ respectively. What is the effective half-life $T_{\\text{eff}}$ of the nucleus?",
+      "options": [
+        "2 hours",
+        "4.5 hours",
+        "3 hours",
+        "9 hours"
+      ],
+      "answer": "2 hours",
+      "explanation": "For parallel decay modes, $\\lambda_{\\text{eff}} = \\lambda_1 + \\lambda_2 \\implies T_{\\text{eff}} = \\frac{T_1 T_2}{T_1 + T_2} = \\frac{3 \\times 6}{3 + 6} = \\frac{18}{9} = 2\\text{ hours}$."
+    },
+    {
+      "id": "ch26_q05",
+      "category": "Advanced",
+      "difficulty": "JEE Advanced",
+      "prompt": "A stationary ${}_{88}^{220}\\text{Ra}$ nucleus undergoes alpha decay with a total $Q$-value of $5.5\\text{ MeV}$. What is the kinetic energy $K_\\alpha$ of the emitted alpha particle?",
+      "options": [
+        "5.4 MeV",
+        "5.5 MeV",
+        "5.0 MeV",
+        "0.1 MeV"
+      ],
+      "answer": "5.4 MeV",
+      "explanation": "$K_\\alpha = \\left(\\frac{A - 4}{A}\\right)Q = \\left(\\frac{220 - 4}{220}\\right)(5.5\\text{ MeV}) = \\frac{216}{220} \\times 5.5 = \\frac{216}{40} = 5.4\\text{ MeV}$ (and daughter recoil energy is $0.1\\text{ MeV}$)."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "ch08_mechanical_solids",
+  "code": "08",
+  "title": "Mechanical Properties of Solids",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Stress-Strain Curve, Hooke's Law, Young's, Bulk & Shear Moduli, Poisson's Ratio & Elastic Potential Energy in Rods",
+  "classLevel": "Class 11",
+  "unit": "Properties of Matter",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: Why Do Solids Deform and Spring Back?</div><p>When you pull on a rubber band, push a steel spring, or bend a diving board, they distort in shape or size. The moment you let go, they return to their original form. This property of matter by which objects recover their original shape and size after the deforming force is removed is called <strong>Elasticity</strong>.</p><div class='def-box'><strong>Rigid Bodies vs. Elastic Bodies:</strong><br/>In Chapter 06, we assumed rigid bodies never deform. In reality, no body is 100% rigid; all solids deform slightly under heavy loads, and understanding their elastic limits is vital for building bridges, skyscrapers, and aircraft!</div></div>",
+  "topics": [
+    {
+      "id": "solids_t1_stress_strain_hooke",
+      "title": "Stress, Strain, Hooke's Law & The Complete Stress-Strain Curve",
+      "prerequisites": [
+        {
+          "label": "Forces & FBDs",
+          "targetChapter": "ch04_laws_of_motion",
+          "targetTopic": "nlm_t1_newton_laws_fbd"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Stress and Strain Definitions</div><table class='data-table'><thead><tr><th>Type</th><th>Definition &amp; Formula</th><th>SI Unit &amp; Dimensions</th></tr></thead><tbody><tr><td><strong>Stress ($\\sigma$)</strong></td><td>Restoring internal force per unit area: $\\sigma = \\frac{F}{A}$</td><td>$\\text{N/m}^2$ or $\\text{Pa}$ ($[M^1 L^{-1} T^{-2}]$)</td></tr><tr><td><strong>Strain ($\\epsilon$)</strong></td><td>Fractional change in dimension: $\\epsilon = \\frac{\\Delta l}{l}$</td><td>Dimensionless ($[M^0 L^0 T^0]$)</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>1.2 Hooke's Law &amp; The Stress-Strain Curve Regions</div><div class='formula-highlight'>$$\\text{Hooke's Law:} \\quad \\boxed{\\text{Stress} \\propto \\text{Strain} \\implies \\text{Stress} = E \\times \\text{Strain}}$$</div><p><strong>Anatomy of the Stress-Strain Curve (Mild Steel):</strong></p><ul class='clean-list'><li><strong>1. Proportional Limit (Region $OA$):</strong> Stress is directly proportional to strain (Hooke's law holds true).</li><li><strong>2. Elastic Limit / Yield Point ($B$):</strong> Up to this point, the wire regains its original length completely upon unloading. Beyond $B$, permanent plastic deformation begins.</li><li><strong>3. Ultimate Tensile Strength ($D$):</strong> The maximum stress the material can withstand before necking and fracture occur at point $E$.</li></ul></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Work-Energy Derivation of Elastic Potential Energy in a Stretched Wire</div><p>Force required to stretch wire by $x$ is $F = \\left(\\frac{YA}{L}\\right)x$. Work done to stretch by $\\Delta l$ is:</p>$$W = \\int_0^{\\Delta l} F\\,dx = \\int_0^{\\Delta l} \\left(\\frac{YA}{L}\\right)x\\,dx = \\frac{1}{2}\\left(\\frac{YA}{L}\\right)(\\Delta l)^2 = \\frac{1}{2}(\\text{Stress})(\\text{Strain})(\\text{Volume})$$</div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><path d='M 50 160 Q 150 140 220 90 T 420 50 T 600 140' fill='none' stroke='#00f0ff' stroke-width='3'/><text x='220' y='80' fill='#00e676' font-size='12' font-weight='bold'>Yield Point B</text><text x='420' y='40' fill='#ff0055' font-size='12' font-weight='bold'>Ultimate Strength D</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Hooke's Law Validity):</strong> Hooke's law is not a universal law of nature; it is valid only up to the proportional limit for certain elastic materials.</li></ul>"
+    },
+    {
+      "id": "solids_t2_moduli_poisson",
+      "title": "Young's, Bulk & Shear Moduli, Compressibility and Poisson's Ratio",
+      "prerequisites": [
+        {
+          "label": "Pressure & Forces",
+          "targetChapter": "ch04_laws_of_motion",
+          "targetTopic": "nlm_t1_newton_laws_fbd"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 The Three Elastic Moduli</div><table class='data-table'><thead><tr><th>Modulus Name</th><th>Deformation Type</th><th>Master Formula</th></tr></thead><tbody><tr><td><strong>Young's Modulus ($Y$)</strong></td><td>Longitudinal (Tensile / Compressive)</td><td>$Y = \\frac{F/A}{\\Delta l / l} = \\frac{Fl}{A\\Delta l}$</td></tr><tr><td><strong>Bulk Modulus ($B$)</strong></td><td>Volumetric (Compressive)</td><td>$B = -\\frac{\\Delta P}{\\Delta V / V} = -V\\frac{dP}{dV}$</td></tr><tr><td><strong>Shear Modulus / Rigidity ($\\eta$)</strong></td><td>Shape / Angular Shear</td><td>$\\eta = \\frac{F/A}{\\theta} = \\frac{FL}{A \\Delta x}$</td></tr></tbody></table></div><div class='concept-block'><div class='concept-title'>2.2 Poisson's Ratio ($\\sigma$)</div><div class='formula-highlight'>$$\\sigma = \\frac{\\text{Lateral Strain}}{\\text{Longitudinal Strain}} = \\frac{-\\Delta D / D}{\\Delta l / l} \\qquad (\\text{Theoretical limit: } -1.0 \\le \\sigma \\le 0.5)$$</div></div>",
+      "derivationHtml": "<div class='deriv-step'><div class='deriv-step-label'>Energy Density Stored in Stretched Wire</div><p>Energy density $u = \\frac{U}{Volume} = \\frac{1}{2}(\\text{Stress})(\\text{Strain}) = \\frac{1}{2}Y(\\text{Strain})^2 = \\frac{\\text{Stress}^2}{2Y}$.</p></div>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><text x='340' y='95' fill='#ffab00' font-size='13' font-weight='bold' text-anchor='middle'>Compressibility K = 1 / B</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Bulk Modulus Minus Sign):</strong> The minus sign in $B = -V(\\Delta P/\\Delta V)$ is essential because an increase in pressure ($+\\Delta P$) always causes a decrease in volume ($-\\Delta V$).</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 08: Mechanical Properties of Solids</strong>!</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Young's Modulus:</strong> $Y = \\frac{Fl}{A\\Delta l}$.</li><li><strong>Energy Density:</strong> $u = \\frac{1}{2}(\\text{Stress})(\\text{Strain})$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Young's Modulus</td><td>$Y = \\frac{Fl}{A\\Delta l}$</td></tr><tr><td>Stored Elastic Energy</td><td>$U = \\frac{1}{2}YA\\frac{(\\Delta l)^2}{l}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch08_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A steel wire of length $2\\text{ m}$ and cross-sectional area $1\\text{ mm}^2$ is pulled by a force of $200\\text{ N}$. If Young's modulus of steel is $Y = 2 \\times 10^{11}\\text{ N/m}^2$, find the elongation $\\Delta l$ in the wire.",
+      "options": [
+        "2 mm",
+        "1 mm",
+        "0.5 mm",
+        "4 mm"
+      ],
+      "answer": "2 mm",
+      "explanation": "$\\Delta l = \\frac{Fl}{YA} = \\frac{(200)(2)}{(2 \\times 10^{11})(10^{-6})} = \\frac{400}{2 \\times 10^5} = 2 \\times 10^{-3}\\text{ m} = 2\\text{ mm}$."
+    }
+  ]
+}

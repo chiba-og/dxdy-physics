@@ -1,0 +1,25 @@
+{
+  "name": "phiziks-jee-platform",
+  "version": "1.0.0",
+  "description": "PHIZIKS - High-Performance Class 11/12 & JEE Mains/Advanced Visual Physics, Adaptive Testing, and Regain Study Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node fix.jss"
+  },
+  "keywords": [
+    "Physics",
+    "JEE Advanced",
+    "JEE Mains",
+    "Class 11 Physics",
+    "Class 12 Physics",
+    "Visual Physics",
+    "Interactive Simulations"
+  ],
+  "author": "PHIZIKS Exhibition Project",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

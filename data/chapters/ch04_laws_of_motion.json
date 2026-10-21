@@ -1,0 +1,104 @@
+{
+  "id": "ch04_laws_of_motion",
+  "code": "04",
+  "title": "Newton's Laws of Motion & Friction",
+  "subtitle": "Zero-to-JEE-Advanced Visual Textbook: Inertial & Non-Inertial Frames, Free Body Diagrams (FBD), Constraint Equations, Pseudo Force, Friction & Circular Turning Dynamics",
+  "classLevel": "Class 11",
+  "unit": "Mechanics I",
+  "introduction": "<div class='concept-block'><div class='concept-title'>&#128161; First-Time Reader Intuition: What Causes Motion?</div><p>In Chapters 02 and 03 (Kinematics), we described <em>how</em> things move. In <strong>Chapter 04 (Dynamics)</strong>, we answer the fundamental question: <strong>Why do things move or accelerate?</strong></p><div class='def-box'><strong>Newton's Breakthrough:</strong><br/>Aristotle believed that a constant force was required to keep an object moving at a constant speed. Sir Isaac Newton shattered this misconception with his First Law: <strong>An object continues in its state of rest or uniform motion in a straight line unless compelled by a net external force to change that state!</strong></div></div>",
+  "topics": [
+    {
+      "id": "nlm_t1_newton_laws_fbd",
+      "title": "Newton's Three Laws of Motion, Linear Momentum & Free Body Diagram (FBD) Master Rules",
+      "prerequisites": [
+        {
+          "label": "Vector Resolution & Equilibrium",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>1.1 Newton's Three Laws &amp; Conservation of Linear Momentum</div><table class='data-table'><thead><tr><th>Law</th><th>Statement</th><th>Master Formula</th></tr></thead><tbody><tr><td><strong>First Law</strong></td><td>Law of Inertia: Natural tendency to resist change in state of motion.</td><td>$\\sum \\vec{F} = 0 \\iff \\vec{v} = \\text{constant}$</td></tr><tr><td><strong>Second Law</strong></td><td>Rate of change of linear momentum is directly proportional to net external force.</td><td>$\\vec{F}_{\\text{net}} = \\frac{d\\vec{p}}{dt} = m\\vec{a}$ (if $m$ is constant)</td></tr><tr><td><strong>Third Law</strong></td><td>To every action, there is an equal and opposite reaction (acting on two different bodies!).</td><td>$\\vec{A\\text{on}B} = -\\vec{B\\text{on}A}$</td></tr></tbody></table><div class='formula-highlight'>$$\\textbf{Conservation of Linear Momentum:} \\quad \\text{If } \\vec{F}_{\\text{ext}} = 0 \\implies \\boxed{\\vec{p} = \\text{constant} \\implies m_1 \\vec{u}_1 + m_2 \\vec{u}_2 = m_1 \\vec{v}_1 + m_2 \\vec{v}_2}$$</div></div><div class='concept-block'><div class='concept-title'>1.2 The 4-Step Golden Rule for Drawing Free Body Diagrams (FBD)</div><ol class='clean-list'><li><strong>Step 1:</strong> Isolate the single body of interest and represent it as a point dot.</li><li><strong>Step 2:</strong> Identify and draw all <strong>real physical contact and field forces</strong> acting ON that body (Gravity $mg$ downward, Normal force $N$ perpendicular outward from contact surfaces, Tension $T$ pulling away along strings, Friction).</li><li><strong>Step 3:</strong> Choose a smart coordinate axis (e.g., parallel and perpendicular to an inclined plane or string path).</li><li><strong>Step 4:</strong> Apply $\\sum F_x = m a_x$ and $\\sum F_y = m a_y$.</li></ol></div>",
+      "derivationHtml": "<p><strong>Derivation of Recoil Speed of a Gun When Firing Bullets:</strong></p><p>By Conservation of Linear Momentum in an isolated system ($\\vec{F}_{\\text{ext}} = 0$):</p>$$0 = m_b v_b + M_g v_g \\implies \\boxed{v_g = -\\frac{m_b v_b}{M_g}}$$",
+      "graphSvg": "<svg viewBox='0 0 680 200' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='200' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='100' r='30' fill='#121622' stroke='#00f0ff' stroke-width='2.5'/><text x='340' y='105' fill='#00f0ff' font-size='12' font-weight='bold' text-anchor='middle'>Mass m</text><line x1='340' y1='70' x2='340' y2='15' stroke='#ff0055' stroke-width='3'/><text x='355' y='30' fill='#ff0055' font-size='12' font-weight='bold'>Normal N</text><line x1='340' y1='130' x2='340' y2='185' stroke='#ffab00' stroke-width='3'/><text x='355' y='175' fill='#ffab00' font-size='12' font-weight='bold'>Gravity mg</text><line x1='280' y1='100' x2='200' y2='100' stroke='#00e676' stroke-width='3'/><text x='220' y='90' fill='#00e676' font-size='12' font-weight='bold'>Tension T</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Action-Reaction Pairs):</strong> Action and reaction forces <strong>never cancel each other</strong> because they act on <strong>two different objects</strong>!</li></ul>"
+    },
+    {
+      "id": "nlm_t2_constraints_pseudo",
+      "title": "String & Wedge Constraints, Pulley Systems & Pseudo Force in Non-Inertial Frames",
+      "prerequisites": [
+        {
+          "label": "Derivatives & Chain Rule",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t4_limits_differentiation"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>2.1 String Constraint Equation (Work Method)</div><div class='formula-highlight'>$$\\textbf{For any inextensible string of fixed length:} \\quad \\sum (T \\cdot x) = \\text{constant} \\implies \\sum (T \\cdot a) = 0$$</div></div><div class='concept-block'><div class='concept-title'>2.2 Pseudo Force in Non-Inertial (Accelerating) Frames</div><div class='def-box'><strong>Definition:</strong><br/>When solving equations from the point of view of an observer accelerating at acceleration $\\vec{a}_0$, you must apply a fictitious <strong>Pseudo Force</strong> $\\vec{F}_{\\text{pseudo}} = -m\\vec{a}_0$ on every mass $m$.</div></div>",
+      "derivationHtml": "<p><strong>Atwood Machine Acceleration Derivation:</strong></p>$$a = \\left(\\frac{m_1 - m_2}{m_1 + m_2}\\right)g, \\qquad T = \\frac{2m_1 m_2}{m_1 + m_2}g$$",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='50' r='20' fill='#475569'/><line x1='340' y1='70' x2='240' y2='160' stroke='#00f0ff' stroke-width='2.5'/><line x1='340' y1='70' x2='440' y2='160' stroke='#00f0ff' stroke-width='2.5'/><rect x='220' y='160' width='40' height='40' fill='#ff0055'/><rect x='420' y='120' width='40' height='40' fill='#00e676'/></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Pseudo Force Direction):</strong> Pseudo force always points <strong>strictly opposite</strong> to the acceleration of the frame, regardless of the direction of motion!</li></ul>"
+    },
+    {
+      "id": "nlm_t3_friction",
+      "title": "Friction: Static, Kinetic, Angle of Repose, Cone of Friction & Minimum Pulling/Pushing Force",
+      "prerequisites": [
+        {
+          "label": "Vector Resolution",
+          "targetChapter": "ch00_basic_maths",
+          "targetTopic": "bm_t7_vectors_complete"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>3.1 Laws of Friction &amp; Angle of Repose</div><table class='data-table'><thead><tr><th>Type of Friction</th><th>Maximum / Kinetic Formula</th><th>Key Characteristics</th></tr></thead><tbody><tr><td><strong>Static Friction ($f_s$)</strong></td><td>$f_{s,\\max} = \\mu_s N$</td><td>Self-adjusting force ($0 \\le f_s \\le \\mu_s N$) that prevents slipping.</td></tr><tr><td><strong>Kinetic Friction ($f_k$)</strong></td><td>$f_k = \\mu_k N$</td><td>Constant friction opposing relative sliding ($(\\mu_k < \\mu_s)$).</td></tr></tbody></table><div class='formula-highlight'>$$\\textbf{Angle of Repose } (\\lambda): \\quad \\boxed{\\tan\\lambda = \\mu_s}$$</div></div>",
+      "derivationHtml": "<p><strong>Derivation of Minimum Force $F$ to Move a Block on Rough Floor at Angle θ:</strong></p>$$F = \\frac{\\mu_s mg}{\\cos\\theta + \\mu_s\\sin\\theta} \\implies F_{\\min} = \\frac{\\mu_s mg}{\\sqrt{1 + \\mu_s^2}} = mg\\sin\\lambda$$",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><line x1='100' y1='150' x2='580' y2='150' stroke='#94a3b8' stroke-width='2'/><rect x='280' y='110' width='80' height='40' fill='#00f0ff'/><text x='320' y='135' fill='#05080f' font-size='12' font-weight='bold' text-anchor='middle'>m</text><line x1='360' y1='130' x2='440' y2='130' stroke='#00e676' stroke-width='3'/><text x='400' y='120' fill='#00e676' font-size='12' font-weight='bold'>F</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Static Friction Calculation):</strong> Never write $f_s = \\mu_s N$ blindly! Static friction is self-adjusting; you must first calculate the required force from $\\sum F = 0$ and check if it is less than $\\mu_s N$.</li></ul>"
+    },
+    {
+      "id": "nlm_t4_circular_dynamics",
+      "title": "Circular Dynamics: Centripetal Force, Unbanked vs. Banked Curves & Vertical Loop Mechanics",
+      "prerequisites": [
+        {
+          "label": "Circular Kinematics",
+          "targetChapter": "ch03_motion_plane",
+          "targetTopic": "m2_t4_circular_kinematics_dynamics"
+        }
+      ],
+      "theoryHtml": "<div class='concept-block'><div class='concept-title'>4.1 Minimum Speed at Top of Vertical Loop &amp; String Slack Condition</div><div class='formula-highlight'>$$\\textbf{Critical Speed at Top of Vertical Loop (Tension } T \\ge 0\\text{):} \\quad \\boxed{v_{\\min} = \\sqrt{rg}}$$</div><div class='formula-highlight'>$$\\textbf{Minimum Speed at Bottom to Complete Loop:} \\quad v_{\\text{bottom}} = \\sqrt{5rg}$$</div></div>",
+      "derivationHtml": "<p><strong>Derivation of Critical Top Speed in Vertical Loop:</strong></p>$$T + mg = \\frac{mv^2}{r}$$<p>Setting $T = 0$ (slack condition) gives $mg = \\frac{mv_{\\min}^2}{r} \\implies v_{\\min} = \\sqrt{rg}$.</p>",
+      "graphSvg": "<svg viewBox='0 0 680 190' style='width:100%;max-width:680px;height:auto;'><rect width='680' height='190' rx='8' fill='#080b12' stroke='#1e293b'/><circle cx='340' cy='95' r='60' fill='none' stroke='#00f0ff' stroke-width='2' stroke-dasharray='5,5'/><circle cx='340' cy='35' r='8' fill='#ff0055'/><text x='340' y='20' fill='#ff0055' font-size='12' font-weight='bold' text-anchor='middle'>Top (v ≥ √rg)</text></svg>",
+      "jeeTraps": "<ul class='clean-list'><li><strong>Trap (Rod vs. String in Vertical Loop):</strong> If the bob is tied to a <strong>rigid massless rod</strong> instead of a string, it can pass the top with $v = 0$ without collapsing!</li></ul>"
+    }
+  ],
+  "conclusion": "<div class='concept-block'><p>You have mastered <strong>Chapter 04: Newton's Laws of Motion & Friction</strong>!</p></div>",
+  "summary": "<ul class='clean-list'><li><strong>Second Law:</strong> $\\sum \\vec{F} = m\\vec{a}$.</li><li><strong>Friction:</strong> $f_{s,\\max} = \\mu_s N$, $f_k = \\mu_k N$.</li><li><strong>Vertical Loop:</strong> $v_{\\text{top}} = \\sqrt{rg}$, $v_{\\text{bottom}} = \\sqrt{5rg}$.</li></ul>",
+  "formulaSheetHtml": "<table class='data-table'><thead><tr><th>Concept</th><th>Master Formula</th></tr></thead><tbody><tr><td>Atwood Machine Acceleration</td><td>$a = \\left(\\frac{m_1 - m_2}{m_1 + m_2}\\right)g$</td></tr><tr><td>Min Force on Rough Floor</td><td>$F_{\\min} = \\frac{\\mu_s mg}{\\sqrt{1 + \\mu_s^2}}$</td></tr><tr><td>Banked Road with Friction</td><td>$v_{\\max} = \\sqrt{rg\\left(\\frac{\\mu_s + \\tan\\theta}{1 - \\mu_s\\tan\\theta}\\right)}$</td></tr></tbody></table>",
+  "questions": [
+    {
+      "id": "ch04_q01",
+      "category": "Basic",
+      "difficulty": "Basic Foundation",
+      "prompt": "A block of mass $m = 4\\text{ kg}$ rests on a rough horizontal floor with static friction coefficient $\\mu_s = 0.5$ and kinetic friction coefficient $\\mu_k = 0.4$. A horizontal pulling force $F = 15\\text{ N}$ is applied. What is the friction force acting on the block? ($g = 10\\text{ m/s}^2$)",
+      "options": [
+        "15 N",
+        "20 N",
+        "16 N",
+        "40 N"
+      ],
+      "answer": "15 N",
+      "explanation": "Maximum static friction is $f_{s,\\max} = \\mu_s mg = (0.5)(4)(10) = 20\\text{ N}$. Since the applied pull $F = 15\\text{ N}$ is less than $20\\text{ N}$, the block does not move. By self-adjustment, static friction equals the applied pull: $f_s = 15\\text{ N}$."
+    },
+    {
+      "id": "ch04_q02",
+      "category": "Repeated PYQ",
+      "difficulty": "JEE Main / PYQ",
+      "prompt": "A particle of mass $m$ is moving in a vertical circle of radius $r$ with critical speed at the highest point. What is the tension in the string when the particle is at the lowest point of the circle?",
+      "options": [
+        "6mg",
+        "5mg",
+        "3mg",
+        "4mg"
+      ],
+      "answer": "6mg",
+      "explanation": "By work-energy theorem between top and bottom, $v_{\\text{bottom}}^2 = v_{\\text{top}}^2 + 2g(2r) = rg + 4rg = 5rg$. At the bottom, $T - mg = \\frac{mv_{\\text{bottom}}^2}{r} = m(5g) \\implies T = 6mg$."
+    }
+  ]
+}
