@@ -1,4 +1,4 @@
-﻿const PHIZIKS = {
+const PHIZIKS = {
   state: null,
   installedChapters: {},
   installedByCode: {},
@@ -262,8 +262,13 @@
   ],
 
   async init() {
-    const saved = localStorage.getItem('phiziks_state');
-    this.state = saved ? JSON.parse(saved) : this.getDefaultClientState();
+    try {
+      const res = await fetch('/api/state');
+      this.state = await res.json();
+    } catch (e) {
+      const saved = localStorage.getItem('phiziks_state');
+      this.state = saved ? JSON.parse(saved) : this.getDefaultClientState();
+    }
 
     if (!this.state.revisionQueue) this.state.revisionQueue = {};
     if (!this.state.lastVisited) this.state.lastVisited = { chapterId: "ch00_basic_maths", topicId: null, updatedAt: new Date().toISOString() };
@@ -337,24 +342,24 @@
   },
 
   async saveState() {
-    async saveState() {
     this.state.lastActiveAt = new Date().toISOString();
     localStorage.setItem('phiziks_state', JSON.stringify(this.state));
-    const map = JSON.parse(localStorage.getItem('phiziks_profiles_map') || '{}');
-    const pid = this.state.activeProfileId || this.state.id || 'prof_default';
-    map[pid] = this.state;
-    localStorage.setItem('phiziks_profiles_map', JSON.stringify(map));
-    this.state.profilesSummary = Object.values(map).map(s => ({
-      id: s.activeProfileId || s.id || 'prof_default',
-      studentName: s.profile?.studentName || 'Scholar',
-      currentClass: s.profile?.currentClass || 'Class 11',
-      targetExam: s.profile?.targetExam || 'JEE Main & Advanced'
-    }));
-    this.updateProfileBadgeAndWarning();
+    try {
+      const res = await fetch('/api/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.state)
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.state) {
+          this.state.inactivity = data.state.inactivity;
+          this.state.profilesSummary = data.state.profilesSummary;
+          this.updateProfileBadgeAndWarning();
+        }
+      }
+    } catch (e) {}
   },
-    
-   
-  
 
   isChapterInstalled(ch) {
     return Boolean(
@@ -1776,7 +1781,7 @@
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:12px;">
             <div>
               <label style="font-size:0.76rem;color:var(--text-secondary);">Student Name / Handle</label>
-              <input type="text" id="new-prof-name" class="global-search-input" placeholder="e.g. Scholar" />
+              <input type="text" id="new-prof-name" class="global-search-input" placeholder="e.g. Kalpana" />
             </div>
             <div>
               <label style="font-size:0.76rem;color:var(--text-secondary);">Class / Stage</label>
@@ -1808,69 +1813,85 @@
     const currentClass = document.getElementById('new-prof-class').value;
     const targetExam = document.getElementById('new-prof-exam').value.trim() || 'JEE Main & Advanced';
 
-    const newId = 'prof_' + Date.now();
-    const fresh = this.getDefaultClientState();
-    fresh.id = newId;
-    fresh.activeProfileId = newId;
-    fresh.profile.studentName = studentName;
-    fresh.profile.currentClass = currentClass;
-    fresh.profile.targetExam = targetExam;
-
-    this.state = fresh;
-    this.saveState();
-    this.applyTheme();
-    this.updateProfileBadgeAndWarning();
-    this.openProfileModal();
-    this.renderHome();
-    if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
+    try {
+      const res = await fetch('/api/profiles', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentName, currentClass, targetExam })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        this.state = data.state;
+        this.applyTheme();
+        this.updateProfileBadgeAndWarning();
+        this.openProfileModal();
+        this.renderHome();
+        if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
+      }
+    } catch (e) {}
   },
 
   async switchProfile(profileId) {
-    const map = JSON.parse(localStorage.getItem('phiziks_profiles_map') || '{}');
-    if (map[profileId]) {
-      this.state = map[profileId];
-      this.state.activeProfileId = profileId;
-      this.saveState();
-      this.applyTheme();
-      this.updateProfileBadgeAndWarning();
-      this.openProfileModal();
-      this.renderHome();
-      if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
-    }
+    try {
+      const res = await fetch('/api/profiles/switch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ profileId })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        this.state = data.state;
+        this.applyTheme();
+        this.updateProfileBadgeAndWarning();
+        this.openProfileModal();
+        this.renderHome();
+        if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
+      }
+    } catch (e) {}
   },
 
   async deleteProfile(profileId) {
     if (!confirm('Permanently delete this profile and all its study plans, journal entries, and progress?')) return;
-    const map = JSON.parse(localStorage.getItem('phiziks_profiles_map') || '{}');
-    delete map[profileId];
-    localStorage.setItem('phiziks_profiles_map', JSON.stringify(map));
-
-    const remainingIds = Object.keys(map);
-    this.state = remainingIds.length > 0 ? map[remainingIds[0]] : this.getDefaultClientState();
-    this.saveState();
-    this.applyTheme();
-    this.updateProfileBadgeAndWarning();
-    this.openProfileModal();
-    this.renderHome();
-    if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
+    try {
+      const res = await fetch(`/api/profiles/${profileId}`, { method: 'DELETE' });
+      if (res.ok) {
+        const data = await res.json();
+        this.state = data.state;
+        this.applyTheme();
+        this.updateProfileBadgeAndWarning();
+        this.openProfileModal();
+        this.renderHome();
+        if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
+      }
+    } catch (e) {}
   },
 
   async keepAccountActive() {
-    this.state.inactivity = { inactiveDays: 0, daysUntilDeletion: 90, warningActive: false };
-    this.saveState();
-    this.updateProfileBadgeAndWarning();
+    try {
+      const res = await fetch('/api/profiles/touch', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({}) });
+      if (res.ok) {
+        const data = await res.json();
+        this.state = data.state;
+        this.updateProfileBadgeAndWarning();
+      }
+    } catch (e) {}
   },
 
   async simulateInactivityWarning() {
-    this.state.inactivity = {
-      inactiveDays: 84,
-      daysUntilDeletion: 6,
-      warningActive: true,
-      warningMessage: 'Your profile has been inactive for 83+ days and is scheduled for automatic deletion in 6 days.'
-    };
-    this.saveState();
-    this.updateProfileBadgeAndWarning();
-    this.openProfileModal();
+    const eightyFourDaysAgo = new Date(Date.now() - 84 * 24 * 60 * 60 * 1000).toISOString();
+    try {
+      const res = await fetch('/api/profiles/touch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ simulateLastActiveAt: eightyFourDaysAgo })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        this.state = data.state;
+        this.updateProfileBadgeAndWarning();
+        this.openProfileModal();
+      }
+    } catch (e) {}
   },
 
   exportProfileBackup() {
@@ -1888,20 +1909,26 @@
     reader.onload = async (e) => {
       try {
         const parsed = JSON.parse(e.target.result);
-        this.state = parsed.profileData || parsed;
-        this.saveState();
-        this.applyTheme();
-        this.updateProfileBadgeAndWarning();
-        this.openProfileModal();
-        this.renderHome();
-        if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
+        const res = await fetch('/api/import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(parsed)
+        });
+        if (res.ok) {
+          const data = await res.json();
+          this.state = data.state;
+          this.applyTheme();
+          this.updateProfileBadgeAndWarning();
+          this.openProfileModal();
+          this.renderHome();
+          if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
+        }
       } catch (err) {
         alert('Invalid backup JSON file.');
       }
     };
     reader.readAsText(file);
   },
-
 
   // =========================================================================
   // EXHIBITION WALKTHROUGH CONTROLLER
