@@ -1781,7 +1781,7 @@
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:12px;">
             <div>
               <label style="font-size:0.76rem;color:var(--text-secondary);">Student Name / Handle</label>
-              <input type="text" id="new-prof-name" class="global-search-input" placeholder="e.g. Kalpana" />
+              <input type="text" id="new-prof-name" class="global-search-input" placeholder="e.g. Scholar" />
             </div>
             <div>
               <label style="font-size:0.76rem;color:var(--text-secondary);">Class / Stage</label>
