@@ -262,17 +262,30 @@ const PHIZIKS = {
   ],
 
   async init() {
+    // Load strictly from this device's browser storage (never shared across devices)
     try {
-      const res = await fetch('/api/state');
-      this.state = await res.json();
-    } catch (e) {
       const saved = localStorage.getItem('phiziks_state');
       this.state = saved ? JSON.parse(saved) : this.getDefaultClientState();
+    } catch (e) {
+      this.state = this.getDefaultClientState();
     }
 
+    if (!this.state.profile) this.state.profile = this.getDefaultClientState().profile;
+    if (!this.state.theme) this.state.theme = this.getDefaultClientState().theme;
+    if (!this.state.progress) this.state.progress = {};
     if (!this.state.revisionQueue) this.state.revisionQueue = {};
     if (!this.state.lastVisited) this.state.lastVisited = { chapterId: "ch00_basic_maths", topicId: null, updatedAt: new Date().toISOString() };
+    if (!this.state.seenQuestions) this.state.seenQuestions = [];
+    if (!this.state.notes) this.state.notes = {};
+    if (!this.state.tasks) this.state.tasks = this.getDefaultClientState().tasks;
+    if (!this.state.distractionLogs) this.state.distractionLogs = this.getDefaultClientState().distractionLogs;
+    if (!this.state.journalEntries) this.state.journalEntries = [];
+    if (!this.state.customActivities) this.state.customActivities = ["Drawing", "Hip-Hop Dance", "Guitar Practice", "Martial Arts / Sports"];
     if (!this.state.customMetrics) this.state.customMetrics = ["Concept Clarity (1-10)", "Mock Test Accuracy (%)"];
+    if (!this.state.testHistory) this.state.testHistory = [];
+
+    // Sync local profile registry on this device
+    this.saveState();
 
     try {
       const chRes = await fetch('/api/chapters');
@@ -302,6 +315,7 @@ const PHIZIKS = {
       id: "prof_default",
       activeProfileId: "prof_default",
       lastActiveAt: new Date().toISOString(),
+      inactivity: { inactiveDays: 0, daysUntilDeletion: 90, warningActive: false },
       profile: {
         studentName: "Scholar",
         currentClass: "Class 11",
@@ -343,22 +357,22 @@ const PHIZIKS = {
 
   async saveState() {
     this.state.lastActiveAt = new Date().toISOString();
-    localStorage.setItem('phiziks_state', JSON.stringify(this.state));
     try {
-      const res = await fetch('/api/state', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.state)
-      });
-      if (res.ok) {
-        const data = await res.json();
-        if (data.state) {
-          this.state.inactivity = data.state.inactivity;
-          this.state.profilesSummary = data.state.profilesSummary;
-          this.updateProfileBadgeAndWarning();
-        }
-      }
+      const map = JSON.parse(localStorage.getItem('phiziks_profiles_map') || '{}');
+      const pid = this.state.activeProfileId || this.state.id || 'prof_default';
+      this.state.id = pid;
+      this.state.activeProfileId = pid;
+      map[pid] = this.state;
+      localStorage.setItem('phiziks_profiles_map', JSON.stringify(map));
+      this.state.profilesSummary = Object.values(map).map(s => ({
+        id: s.activeProfileId || s.id || 'prof_default',
+        studentName: s.profile?.studentName || 'Scholar',
+        currentClass: s.profile?.currentClass || 'Class 11',
+        targetExam: s.profile?.targetExam || 'JEE Main & Advanced'
+      }));
+      localStorage.setItem('phiziks_state', JSON.stringify(this.state));
     } catch (e) {}
+    this.updateProfileBadgeAndWarning();
   },
 
   isChapterInstalled(ch) {
@@ -1743,7 +1757,7 @@ const PHIZIKS = {
             </span>
           </div>
           <p style="font-size:0.8rem;color:var(--text-secondary);">
-            <strong>Privacy & Auto-Deletion Policy:</strong> <code>dx/dy</code> requires no email address or phone number. Profiles are automatically deleted after <strong>3 months (90 days) of inactivity</strong>, with an in-website warning displayed <strong>7 days in advance (at day 83)</strong>. Any study action resets the 90-day deadline. Export a JSON Backup below to move your data across devices.
+            <strong>Privacy & Auto-Deletion Policy:</strong> <code>dx/dy</code> requires no email address or phone number. Profiles are stored privately in your browser and automatically cleaned after <strong>3 months (90 days) of inactivity</strong>, with an in-website warning displayed <strong>7 days in advance (at day 83)</strong>. Export a JSON Backup below to move your data across devices.
           </p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
             <button class="tool-btn btn-primary" onclick="PHIZIKS.exportProfileBackup()">⬇️ Export JSON Backup</button>
@@ -1781,7 +1795,7 @@ const PHIZIKS = {
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:12px;">
             <div>
               <label style="font-size:0.76rem;color:var(--text-secondary);">Student Name / Handle</label>
-              <input type="text" id="new-prof-name" class="global-search-input" placeholder="e.g. Kalpana" />
+              <input type="text" id="new-prof-name" class="global-search-input" placeholder="e.g. Scholar" />
             </div>
             <div>
               <label style="font-size:0.76rem;color:var(--text-secondary);">Class / Stage</label>
@@ -1813,34 +1827,30 @@ const PHIZIKS = {
     const currentClass = document.getElementById('new-prof-class').value;
     const targetExam = document.getElementById('new-prof-exam').value.trim() || 'JEE Main & Advanced';
 
-    try {
-      const res = await fetch('/api/profiles', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentName, currentClass, targetExam })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        this.state = data.state;
-        this.applyTheme();
-        this.updateProfileBadgeAndWarning();
-        this.openProfileModal();
-        this.renderHome();
-        if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
-      }
-    } catch (e) {}
+    const newId = 'prof_' + Date.now();
+    const fresh = this.getDefaultClientState();
+    fresh.id = newId;
+    fresh.activeProfileId = newId;
+    fresh.profile.studentName = studentName;
+    fresh.profile.currentClass = currentClass;
+    fresh.profile.targetExam = targetExam;
+
+    this.state = fresh;
+    this.saveState();
+    this.applyTheme();
+    this.updateProfileBadgeAndWarning();
+    this.openProfileModal();
+    this.renderHome();
+    if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
   },
 
   async switchProfile(profileId) {
     try {
-      const res = await fetch('/api/profiles/switch', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ profileId })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        this.state = data.state;
+      const map = JSON.parse(localStorage.getItem('phiziks_profiles_map') || '{}');
+      if (map[profileId]) {
+        this.state = map[profileId];
+        this.state.activeProfileId = profileId;
+        this.saveState();
         this.applyTheme();
         this.updateProfileBadgeAndWarning();
         this.openProfileModal();
@@ -1853,45 +1863,37 @@ const PHIZIKS = {
   async deleteProfile(profileId) {
     if (!confirm('Permanently delete this profile and all its study plans, journal entries, and progress?')) return;
     try {
-      const res = await fetch(`/api/profiles/${profileId}`, { method: 'DELETE' });
-      if (res.ok) {
-        const data = await res.json();
-        this.state = data.state;
-        this.applyTheme();
-        this.updateProfileBadgeAndWarning();
-        this.openProfileModal();
-        this.renderHome();
-        if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
-      }
+      const map = JSON.parse(localStorage.getItem('phiziks_profiles_map') || '{}');
+      delete map[profileId];
+      localStorage.setItem('phiziks_profiles_map', JSON.stringify(map));
+
+      const remainingIds = Object.keys(map);
+      this.state = remainingIds.length > 0 ? map[remainingIds[0]] : this.getDefaultClientState();
+      this.saveState();
+      this.applyTheme();
+      this.updateProfileBadgeAndWarning();
+      this.openProfileModal();
+      this.renderHome();
+      if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
     } catch (e) {}
   },
 
   async keepAccountActive() {
-    try {
-      const res = await fetch('/api/profiles/touch', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({}) });
-      if (res.ok) {
-        const data = await res.json();
-        this.state = data.state;
-        this.updateProfileBadgeAndWarning();
-      }
-    } catch (e) {}
+    this.state.inactivity = { inactiveDays: 0, daysUntilDeletion: 90, warningActive: false };
+    this.saveState();
+    this.updateProfileBadgeAndWarning();
   },
 
   async simulateInactivityWarning() {
-    const eightyFourDaysAgo = new Date(Date.now() - 84 * 24 * 60 * 60 * 1000).toISOString();
-    try {
-      const res = await fetch('/api/profiles/touch', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ simulateLastActiveAt: eightyFourDaysAgo })
-      });
-      if (res.ok) {
-        const data = await res.json();
-        this.state = data.state;
-        this.updateProfileBadgeAndWarning();
-        this.openProfileModal();
-      }
-    } catch (e) {}
+    this.state.inactivity = {
+      inactiveDays: 84,
+      daysUntilDeletion: 6,
+      warningActive: true,
+      warningMessage: 'Your profile has been inactive for 83+ days and is scheduled for automatic deletion in 6 days.'
+    };
+    this.saveState();
+    this.updateProfileBadgeAndWarning();
+    this.openProfileModal();
   },
 
   exportProfileBackup() {
@@ -1909,20 +1911,15 @@ const PHIZIKS = {
     reader.onload = async (e) => {
       try {
         const parsed = JSON.parse(e.target.result);
-        const res = await fetch('/api/import', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(parsed)
-        });
-        if (res.ok) {
-          const data = await res.json();
-          this.state = data.state;
-          this.applyTheme();
-          this.updateProfileBadgeAndWarning();
-          this.openProfileModal();
-          this.renderHome();
-          if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
-        }
+        const importedState = parsed.profileData || parsed;
+        if (!importedState || !importedState.profile) throw new Error('Invalid backup');
+        this.state = importedState;
+        this.saveState();
+        this.applyTheme();
+        this.updateProfileBadgeAndWarning();
+        this.openProfileModal();
+        this.renderHome();
+        if (window.PHIZIKS_SUITES) window.PHIZIKS_SUITES.init();
       } catch (err) {
         alert('Invalid backup JSON file.');
       }
@@ -2212,10 +2209,20 @@ const PHIZIKS = {
       if (t.wallpaperType === 'grid') wp.classList.add('wp-grid');
       if (t.wallpaperType === 'cyber') wp.classList.add('wp-cyber');
       if (t.wallpaperType === 'custom' && t.wallpaperUrl) {
+        wp.classList.add('wp-custom');
         document.documentElement.style.setProperty('--custom-wallpaper', `url('${t.wallpaperUrl}')`);
+        wp.style.backgroundImage = `url('${t.wallpaperUrl}')`;
+        wp.style.backgroundSize = 'cover';
+        wp.style.backgroundPosition = 'center';
       } else {
         document.documentElement.style.setProperty('--custom-wallpaper', 'none');
+        wp.style.backgroundImage = '';
       }
+    }
+
+    const urlInp = document.getElementById('gx-wallpaper-url');
+    if (urlInp && t.wallpaperUrl !== undefined) {
+      urlInp.value = t.wallpaperUrl;
     }
   },
 
@@ -2236,7 +2243,11 @@ const PHIZIKS = {
   setFontFamily(font) { this.state.theme.fontFamily = font; this.applyTheme(); this.saveState(); },
   setWallpaper(type, url) {
     this.state.theme.wallpaperType = type;
-    if (url) this.state.theme.wallpaperUrl = url;
+    if (type === 'custom') {
+      this.state.theme.wallpaperUrl = url || '';
+    } else {
+      this.state.theme.wallpaperUrl = '';
+    }
     this.applyTheme();
     this.saveState();
   }
