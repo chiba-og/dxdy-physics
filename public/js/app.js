@@ -84,219 +84,279 @@ const PHIZIKS = {
     { id: "ch28_experimental_physics", num: "28", classLevel: "Class 11 & 12", unit: "Experimental Skills", title: "Experimental Physics & Lab Instruments", prereqs: ["ch01_units_measurements", "ch17_current_electricity"], summary: "Vernier Callipers (Standard & Sub-Multiple), Screw Gauge, Zero Error, Simple Pendulum Error, Searle's Apparatus, Meter Bridge & Half-Deflection." }
   ],
 
-  // 9-SLIDE INTERACTIVE WALKTHROUGH PRESENTATION WITH SCREENSHOT ANNOTATIONS
+  // 12-SLIDE PLATFORM GUIDE (PURE TEXT OVERVIEW SLIDES + ANNOTATED SCREENSHOT SLIDES)
   pptSlides: [
     {
-      tag: "SLIDE 01 / 09 • OPENING & COMMAND CENTER",
-      title: "1. Welcome to dx/dy — Visual Physics & JEE Lab",
-      subtitle: "All your Physics chapters, live simulations, tests, and study tools in one place.",
+      layout: "text-grid",
+      tag: "OVERVIEW  |  PLATFORM INTRODUCTION",
+      title: "dx/dy — Full-Stack Visual Physics & Study Workspace",
+      subtitle: "An interactive learning laboratory built for Class 11, Class 12, and JEE Physics.",
+      cards: [
+        {
+          title: "What is dx/dy?",
+          desc: "A full-stack web platform combining 29 physics chapters, live math simulations, adaptive tests, and focus tools in one tab.",
+          color: "#00f0ff"
+        },
+        {
+          title: "The Problem It Solves",
+          desc: "Static textbook formulas don't move, students juggle 5 different apps to study, and websites lock content behind password walls.",
+          color: "#ffab00"
+        },
+        {
+          title: "Our Core Solution",
+          desc: "Interactive slider graphs, a side-by-side Whiteboard, Physics Calculator, Non-Repeating Tests, and an Offline Audio Timer.",
+          color: "#00e676"
+        },
+        {
+          title: "Zero-Login & Cloud Hosted",
+          desc: "Hosted 24/7 on Render and indexed on Google Search. Saves progress privately in your browser with 1-click JSON backups.",
+          color: "#c4b5fd"
+        }
+      ]
+    },
+    {
+      layout: "screenshot",
+      tag: "FEATURE 01  |  COMMAND CENTER",
+      title: "Interactive Home & Telemetry",
+      subtitle: "Your daily launchpad with live exam countdowns and progress tracking.",
       img: "/slide1.jpg",
-      points: [
-        "<strong>① Top Navigation Bar:</strong> Switch between Home, 29 Chapters, Visual Lab, Adaptive Tests, Planner, and Journal in 1 click.",
-        "<strong>② Quick Resume & Dependency Map:</strong> Jump right back into your last chapter or view how topics connect.",
-        "<strong>③ Live Exam Countdowns & Telemetry:</strong> Track days left for JEE Main, JEE Advanced, and Boards alongside your solved questions."
+      cards: [
+        { title: "① 1-Click Navigation", desc: "Switch between 29 Chapters, Visual Lab, Tests, Planner, and Journal.", color: "#00f0ff" },
+        { title: "② Quick Resume & Map", desc: "Jump right back into your last chapter or open the Prerequisite Map.", color: "#00e676" },
+        { title: "③ Live Exam Countdowns", desc: "Track days remaining for JEE Main, JEE Advanced, and Board exams.", color: "#ffab00" }
       ],
-      speakerNote: "dx/dy brings Class 11, Class 12, and JEE Physics into one live digital lab so students don't need 5 separate apps.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Top Nav Highlight -->
         <rect x="300" y="6" width="675" height="36" rx="8" fill="none" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6,4"/>
-        <circle cx="288" cy="24" r="14" fill="#00f0ff"/><text x="288" y="29" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Resume CTA Highlight -->
+        <circle cx="282" cy="24" r="15" fill="#00f0ff"/><text x="282" y="29" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
         <rect x="176" y="408" width="318" height="42" rx="8" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="158" cy="429" r="14" fill="#00e676"/><text x="158" y="434" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Countdowns & Telemetry Highlight -->
+        <circle cx="156" cy="429" r="15" fill="#00e676"/><text x="156" y="434" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
         <rect x="176" y="505" width="465" height="65" rx="8" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="158" cy="538" r="14" fill="#ffab00"/><text x="158" y="543" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <circle cx="156" cy="538" r="15" fill="#ffab00"/><text x="156" y="543" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 02 / 09 • 29-CHAPTER ENCYCLOPEDIA",
-      title: "2. Complete Syllabus Explorer (Ch 00 to Ch 28)",
-      subtitle: "Starts with Basic Mathematics (Ch 00) so you never get stuck on calculus in Physics.",
+      layout: "screenshot",
+      tag: "FEATURE 02  |  29 CHAPTERS",
+      title: "Complete Syllabus Explorer (Ch 00–28)",
+      subtitle: "Starts with Basic Mathematics so you never get stuck on calculus in Physics.",
       img: "/slide2.jpg",
-      points: [
-        "<strong>① Class & Unit Filters:</strong> Filter instantly between All 29 Chapters, Ch 00 Basic Maths, Class 11, or Class 12.",
-        "<strong>② Root Foundation (Ch 00):</strong> Teaches Differentiation, Integration, and Vectors before Kinematics starts.",
-        "<strong>③ Prerequisite Pills & Confidence Stars:</strong> Click any purple pill to review required basics, or rate 1–5 ★ to schedule revision."
+      cards: [
+        { title: "① Class Filters", desc: "Filter between All 29 Chapters, Ch 00 Basic Maths, Class 11, or Class 12.", color: "#00f0ff" },
+        { title: "② Starts at Ch 00", desc: "Covers Calculus and Vectors first before starting Kinematics.", color: "#00e676" },
+        { title: "③ Prerequisite Pills", desc: "Click any purple pill to jump to required basics and return in 1 click.", color: "#ffab00" }
       ],
-      speakerNote: "All 29 chapters are stored as structured JSON files. Clicking any chapter loads full derivations, graphs, and step-by-step solvers.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Filter Buttons -->
         <rect x="160" y="122" width="390" height="32" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="142" cy="138" r="14" fill="#00f0ff"/><text x="142" y="143" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Ch 00 Card -->
+        <circle cx="140" cy="138" r="15" fill="#00f0ff"/><text x="140" y="143" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
         <rect x="160" y="160" width="235" height="295" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="142" cy="210" r="14" fill="#00e676"/><text x="142" y="215" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Prereq Pills -->
+        <circle cx="140" cy="210" r="15" fill="#00e676"/><text x="140" y="215" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
         <rect x="405" y="315" width="218" height="45" rx="6" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="638" cy="338" r="14" fill="#ffab00"/><text x="638" y="343" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <circle cx="640" cy="338" r="15" fill="#ffab00"/><text x="640" y="343" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 03 / 09 • VISUAL LAB (ENGINE A)",
-      title: "3. Visual Lab: Parametric Slider Sandbox",
-      subtitle: "Drag sliders to see how changing numbers changes graphs and calculus in real time.",
+      layout: "screenshot",
+      tag: "FEATURE 03  |  VISUAL LAB (ENGINE A)",
+      title: "Parametric Slider Sandbox",
+      subtitle: "Drag sliders to watch graphs, derivatives, and integrals update live.",
       img: "/slide3.jpg",
-      points: [
-        "<strong>① 5 Core Physics Domains:</strong> Switch between Basic Maths, Kinematics, SHM Oscillations, Ray Optics, and Gravitation.",
-        "<strong>② Live Variable Sliders:</strong> Drag sliders for coefficients, tangency points, or limits to recalculate math instantly.",
-        "<strong>③ Real-Time Graph & Coordinate Table:</strong> Watch the tangent slope (dy/dx), secant line, and shaded area update live."
+      cards: [
+        { title: "① 5 Physics Domains", desc: "Switch between Calculus, Kinematics, Oscillations, Optics, and Gravitation.", color: "#00f0ff" },
+        { title: "② Live Variable Sliders", desc: "Drag sliders for coefficients, tangency points, or integral limits.", color: "#00e676" },
+        { title: "③ Live Graph & Table", desc: "See exact derivative slopes (dy/dx) and shaded areas update in real time.", color: "#ffab00" }
       ],
-      speakerNote: "Instead of static textbook pictures, Engine A lets students experiment with variables and see exact coordinate values.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Domain Bar -->
         <rect x="168" y="190" width="625" height="36" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="150" cy="208" r="14" fill="#00f0ff"/><text x="150" y="213" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Variable Sliders -->
+        <circle cx="148" cy="208" r="15" fill="#00f0ff"/><text x="148" y="213" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
         <rect x="160" y="236" width="295" height="365" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="142" cy="310" r="14" fill="#00e676"/><text x="142" y="315" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Graph & Table -->
+        <circle cx="140" cy="310" r="15" fill="#00e676"/><text x="140" y="315" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
         <rect x="468" y="236" width="650" height="290" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="488" cy="260" r="14" fill="#ffab00"/><text x="488" y="265" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <circle cx="488" cy="260" r="15" fill="#ffab00"/><text x="488" y="265" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 04 / 09 • VISUAL LAB (ENGINE B)",
-      title: "4. Visual Lab: Concept Animation Theater",
-      subtitle: "Watch 1D, 2D, and 3D physics motion with slow-motion and frame-by-frame controls.",
+      layout: "screenshot",
+      tag: "FEATURE 04  |  VISUAL LAB (ENGINE B)",
+      title: "Concept Animation Theater",
+      subtitle: "Inspect 1D, 2D, and 3D physics motion with slow-motion and frame stepping.",
       img: "/slide4.jpg",
-      points: [
-        "<strong>① Engine B Toggle:</strong> Switches from graph sliders to the real-time physics animation stage.",
-        "<strong>② Playback & Slow-Mo Controls:</strong> Play/Pause, step forward tiny time intervals (+Δt), or slow down to 0.25× speed.",
-        "<strong>③ Live Vector Decomposition:</strong> See horizontal (v_x) and vertical (v_y) velocity arrows change as the projectile flies."
+      cards: [
+        { title: "① Engine B Mode", desc: "Switches from graph sliders to the real-time motion animation stage.", color: "#c4b5fd" },
+        { title: "② Slow-Mo & Step (+Δt)", desc: "Play, Pause, step forward frame-by-frame, or slow down to 0.25× speed.", color: "#00f0ff" },
+        { title: "③ Live Vector Arrows", desc: "Watch horizontal (v_x) and vertical (v_y) velocity vectors change mid-flight.", color: "#00e676" }
       ],
-      speakerNote: "Engine B lets students freeze motion at the highest point of a projectile or inspect 3D helical magnetic paths.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Engine B Button -->
         <rect x="360" y="120" width="198" height="32" rx="6" fill="none" stroke="#c4b5fd" stroke-width="3"/>
-        <circle cx="342" cy="136" r="14" fill="#c4b5fd"/><text x="342" y="141" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Playback Controls -->
+        <circle cx="340" cy="136" r="15" fill="#c4b5fd"/><text x="340" y="141" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
         <rect x="572" y="242" width="490" height="34" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="554" cy="259" r="14" fill="#00f0ff"/><text x="554" y="264" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ 2D & 3D Stage -->
+        <circle cx="552" cy="259" r="15" fill="#00f0ff"/><text x="552" y="264" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
         <rect x="180" y="365" width="910" height="260" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="162" cy="495" r="14" fill="#00e676"/><text x="162" y="500" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <circle cx="160" cy="495" r="15" fill="#00e676"/><text x="160" y="500" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 05 / 09 • ADAPTIVE TESTING ENGINE",
-      title: "5. Adaptive Test & Non-Repeating DPP Suite",
-      subtitle: "Create custom practice tests that remember which questions you already solved.",
+      layout: "screenshot",
+      tag: "FEATURE 05  |  EVALUATION",
+      title: "Adaptive Non-Repeating Tests",
+      subtitle: "Custom practice tests that remember which questions you already solved.",
       img: "/slide5.jpg",
-      points: [
-        "<strong>① Seen-Question Memory & Tools:</strong> Tracks how many unique questions you've attempted and opens the Whiteboard or Calculator.",
-        "<strong>② Custom Test Builder:</strong> Pick any Chapter, Difficulty (Basic, PYQ, Advanced), Question Count, and Time Limit.",
-        "<strong>③ Score History & Auto-Revision:</strong> Grades with +4 / -1 JEE marking and queues missed chapters for review tomorrow."
+      cards: [
+        { title: "① Seen-Question Memory", desc: "Tracks attempted question IDs so tests never accidentally repeat.", color: "#00e676" },
+        { title: "② Custom Test Builder", desc: "Choose Target Chapter, Difficulty Tier, Question Count, and Timer.", color: "#00f0ff" },
+        { title: "③ Score & Auto-Revision", desc: "Instant +4 / -1 JEE scoring and queues missed chapters for review.", color: "#ffab00" }
       ],
-      speakerNote: "Students never waste time solving the same repeated question twice unless they click 'Reset Seen Pool'.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Top Badges & Tools -->
         <rect x="160" y="135" width="450" height="32" rx="6" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="142" cy="151" r="14" fill="#00e676"/><text x="142" y="156" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Test Config Box -->
+        <circle cx="140" cy="151" r="15" fill="#00e676"/><text x="140" y="156" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
         <rect x="160" y="175" width="960" height="100" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="142" cy="225" r="14" fill="#00f0ff"/><text x="142" y="230" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Performance History -->
+        <circle cx="140" cy="225" r="15" fill="#00f0ff"/><text x="140" y="230" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
         <rect x="160" y="285" width="360" height="115" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="142" cy="340" r="14" fill="#ffab00"/><text x="142" y="345" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <circle cx="140" cy="340" r="15" fill="#ffab00"/><text x="140" y="345" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 06 / 09 • FOCUS & AUDIO WORKSPACE",
-      title: "6. Study Planner, Timer & Offline Audio Synthesizer",
-      subtitle: "Builds realistic study schedules and plays calming focus sounds 100% offline.",
+      layout: "screenshot",
+      tag: "FEATURE 06  |  PRODUCTIVITY",
+      title: "Study Planner & Offline Audio Timer",
+      subtitle: "Generates time-blocked schedules and plays calming focus sounds offline.",
       img: "/slide6.jpg",
-      points: [
-        "<strong>① Time-Blocked Schedule Generator:</strong> Enter study hours and energy level to generate 50-min study blocks with 10-min rest breaks.",
-        "<strong>② Pomodoro Timer & Offline Soundscapes:</strong> Built-in synthesizer generates Steady Rain, Forest Wind, Lo-Fi Pad, or White Noise—plus custom MP3 upload.",
-        "<strong>③ Guilt-Free Task Recovery & Analytics:</strong> Rebalance unfinished tasks without penalty streaks and track focus efficiency."
+      cards: [
+        { title: "① Smart Time-Blocker", desc: "Builds 50-min study blocks with 10-min rest breaks based on energy.", color: "#00f0ff" },
+        { title: "② Offline Soundscapes", desc: "Synthesizes Rain, Forest Wind, Lo-Fi Pad, or plays custom MP3 files.", color: "#00e676" },
+        { title: "③ Task Recovery & Stats", desc: "Rebalance unfinished tasks guilt-free and track daily focus efficiency.", color: "#ffab00" }
       ],
-      speakerNote: "The audio engine uses the Web Audio API to synthesize rain and lo-fi sounds mathematically in the browser without internet lag.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Left Schedule Generator -->
         <rect x="160" y="128" width="470" height="310" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="142" cy="200" r="14" fill="#00f0ff"/><text x="142" y="205" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Right Audio Timer -->
+        <circle cx="140" cy="200" r="15" fill="#00f0ff"/><text x="140" y="205" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
         <rect x="645" y="128" width="475" height="310" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="627" cy="200" r="14" fill="#00e676"/><text x="627" y="205" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Bottom Tasks & Analytics -->
+        <circle cx="625" cy="200" r="15" fill="#00e676"/><text x="625" y="205" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
         <rect x="160" y="455" width="960" height="235" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="142" cy="540" r="14" fill="#ffab00"/><text x="142" y="545" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <circle cx="140" cy="540" r="15" fill="#ffab00"/><text x="140" y="545" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 07 / 09 • STUDENT WELL-BEING JOURNAL",
-      title: "7. Student Life, Well-Being Journal & Trends",
-      subtitle: "Track school hours, self-study, sleep, and hobbies to prevent exam burnout.",
+      layout: "screenshot",
+      tag: "FEATURE 07  |  WELL-BEING",
+      title: "Student Life & Habit Journal",
+      subtitle: "Log school hours, self-study, sleep, and hobbies with visual trend charts.",
       img: "/slide7.jpg",
-      points: [
-        "<strong>① Daily / Weekly / Monthly Rollups:</strong> See total self-study hours, school hours, questions solved, and average sleep at a glance.",
-        "<strong>② Dual-Study & Hobby Logger:</strong> Log study topics, sleep, hydration, custom metrics, and creative hobbies with draft autosave.",
-        "<strong>③ Visual Trend Chart & Calendar:</strong> Compare actual study hours against your daily goal and click any calendar day to filter logs."
+      cards: [
+        { title: "① Weekly Rollups", desc: "See total self-study hours, school hours, questions solved, and sleep.", color: "#00f0ff" },
+        { title: "② Dual-Study Logger", desc: "Log topics, energy, hydration, custom metrics, and creative hobbies.", color: "#00e676" },
+        { title: "③ Trend Chart & Calendar", desc: "Compare actual study hours against your goal across a 14-day calendar.", color: "#ffab00" }
       ],
-      speakerNote: "Competitive exam prep is stressful, so dx/dy tracks sleep, energy, and creative hobbies right alongside physics progress.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Top Summary Bar -->
         <rect x="160" y="74" width="960" height="108" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="142" cy="128" r="14" fill="#00f0ff"/><text x="142" y="133" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Left Logger Form -->
+        <circle cx="140" cy="128" r="15" fill="#00f0ff"/><text x="140" y="133" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
         <rect x="160" y="192" width="470" height="500" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="142" cy="300" r="14" fill="#00e676"/><text x="142" y="305" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Right Charts & Calendar -->
+        <circle cx="140" cy="300" r="15" fill="#00e676"/><text x="140" y="305" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
         <rect x="645" y="192" width="475" height="500" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="627" cy="300" r="14" fill="#ffab00"/><text x="627" y="305" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <circle cx="625" cy="300" r="15" fill="#ffab00"/><text x="625" y="305" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 08 / 09 • PERSONALIZATION & UI ENGINE",
-      title: "8. Logo Variations, Themes & Custom Wallpapers",
-      subtitle: "Customize every part of your study workspace so it feels comfortable for long hours.",
+      layout: "screenshot",
+      tag: "FEATURE 08  |  PERSONALIZATION",
+      title: "UI & Logo Customizer",
+      subtitle: "Customize logos, dark/light mode, neon colors, and custom wallpapers.",
       img: "/slide8.jpg",
-      points: [
-        "<strong>① 3 Mathematical Logo Styles:</strong> Switch between Differential Slash, Inflection Curve, or Vector Bracket logos.",
-        "<strong>② Dark / Daylight Mode & Neon Accents:</strong> Toggle Cyber Glass Dark or Daylight Paper mode with custom neon colors and fonts.",
-        "<strong>③ Custom Wallpaper Engine:</strong> Choose Coordinate Grid, Deep Nebula, or paste any custom wallpaper URL—saved privately to your device."
+      imgFit: "contain",
+      cards: [
+        { title: "① 3 Logo Variations", desc: "Switch between Slash, Inflection Curve, and Vector Bracket logos.", color: "#00f0ff" },
+        { title: "② Theme & Neon Accents", desc: "Toggle Cyber Glass Dark or Daylight Paper with 4 neon color presets.", color: "#00e676" },
+        { title: "③ Custom Wallpaper URL", desc: "Pick Grid, Nebula, or paste any custom image URL privately.", color: "#ffab00" }
       ],
-      speakerNote: "Every visual setting saves directly to the student's own browser profile so each user gets their own personalized study room.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Logo Variations -->
-        <rect x="985" y="112" width="255" height="90" rx="8" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="965" cy="155" r="14" fill="#00f0ff"/><text x="965" y="160" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Theme & Accent -->
-        <rect x="985" y="210" width="255" height="125" rx="8" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="965" cy="270" r="14" fill="#00e676"/><text x="965" y="275" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Wallpaper URL -->
-        <rect x="985" y="395" width="255" height="65" rx="8" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="965" cy="428" r="14" fill="#ffab00"/><text x="965" y="433" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <!-- Centered Portrait Close-Up Callouts -->
+        <rect x="405" y="110" width="470" height="145" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="380" cy="182" r="16" fill="#00f0ff"/><text x="380" y="188" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">1</text>
+        <rect x="405" y="275" width="470" height="205" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="380" cy="375" r="16" fill="#00e676"/><text x="380" y="381" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">2</text>
+        <rect x="405" y="565" width="470" height="135" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="380" cy="632" r="16" fill="#ffab00"/><text x="380" y="638" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      tag: "SLIDE 09 / 09 • PRIVACY & PORTABLE BACKUPS",
-      title: "9. Zero-Password Profiles & Portable JSON Backup",
-      subtitle: "Instant access with zero emails or passwords—plus 1-click JSON file backups.",
+      layout: "screenshot",
+      tag: "FEATURE 09  |  PRIVACY & BACKUP",
+      title: "Zero-Email Profiles & JSON Backup",
+      subtitle: "Private browser profiles with 1-click portable JSON file backups.",
       img: "/slide9.jpg",
-      points: [
-        "<strong>① Portable JSON Export & Import:</strong> Download your entire profile as a tiny .JSON file to carry your progress to any computer.",
-        "<strong>② Multi-Profile Device Switcher:</strong> Create and switch between multiple student profiles on the same computer.",
-        "<strong>③ Zero-Email Creation:</strong> Just type your Name and Class to start—keeps your personal data 100% private and lets Google index the site."
+      imgFit: "contain",
+      cards: [
+        { title: "① 1-Click JSON Backup", desc: "Export your profile as a .JSON file and import it on any computer.", color: "#00f0ff" },
+        { title: "② Multi-Profile Switcher", desc: "Create and switch between multiple student profiles on one device.", color: "#00e676" },
+        { title: "③ No Email or Password", desc: "Type just Name and Class—keeps data private on your own browser.", color: "#ffab00" }
       ],
-      speakerNote: "By avoiding password login walls, visitors can test the lab immediately and students own their data via JSON backups.",
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- ① Export / Import Buttons -->
-        <rect x="410" y="302" width="385" height="36" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <circle cx="390" cy="320" r="14" fill="#00f0ff"/><text x="390" y="325" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
-        <!-- ② Switch Profile List -->
-        <rect x="405" y="385" width="468" height="48" rx="6" fill="none" stroke="#00e676" stroke-width="3"/>
-        <circle cx="387" cy="409" r="14" fill="#00e676"/><text x="387" y="414" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
-        <!-- ③ Create New Profile Box -->
-        <rect x="405" y="445" width="468" height="105" rx="8" fill="none" stroke="#ffab00" stroke-width="3"/>
-        <circle cx="387" cy="495" r="14" fill="#ffab00"/><text x="387" y="500" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+        <!-- Centered Modal Close-Up Callouts -->
+        <rect x="255" y="252" width="710" height="105" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="230" cy="304" r="16" fill="#00f0ff"/><text x="230" y="310" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">1</text>
+        <rect x="255" y="385" width="770" height="90" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="230" cy="430" r="16" fill="#00e676"/><text x="230" y="436" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">2</text>
+        <rect x="255" y="495" width="770" height="190" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="230" cy="590" r="16" fill="#ffab00"/><text x="230" y="596" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">3</text>
       </svg>`
+    },
+    {
+      layout: "text-grid",
+      tag: "ARCHITECTURE  |  HOW IT'S BUILT",
+      title: "Technology Stack & Engineering",
+      subtitle: "Built with lightweight, fast web technologies and deployed on the cloud.",
+      cards: [
+        {
+          title: "Frontend (HTML5, CSS3, JS)",
+          desc: "Pure Vanilla JavaScript and HTML5 Canvas for 60fps physics simulations with zero heavy framework lag.",
+          color: "#00f0ff"
+        },
+        {
+          title: "Backend (Node.js & Express)",
+          desc: "Powered by server.js—serves static assets, chapter REST APIs, and auto-generates /sitemap.xml for Google.",
+          color: "#c4b5fd"
+        },
+        {
+          title: "Data (JSON + localStorage)",
+          desc: "29 structured JSON chapter files on the server + isolated browser localStorage with JSON file export/import.",
+          color: "#00e676"
+        },
+        {
+          title: "MathJax 3 & Web Audio API",
+          desc: "Renders textbook LaTeX equations cleanly and synthesizes offline Rain, Wind, and Lo-Fi audio in the browser.",
+          color: "#ffab00"
+        }
+      ]
+    },
+    {
+      layout: "text-grid",
+      tag: "SUMMARY  |  IMPACT & ROADMAP",
+      title: "Advantages, Limitations & Future Scope",
+      subtitle: "Complete overview of platform strengths, current boundaries, and upcoming features.",
+      cards: [
+        {
+          title: "✅ Key Advantages",
+          desc: "• Visualizes math & physics live\n• Starts from Ch 00 Basic Maths\n• All tools in 1 tab (No app switching)\n• 100% free & no login walls",
+          color: "#00e676"
+        },
+        {
+          title: "⚡ Smart Learning Features",
+          desc: "• Non-repeating adaptive test pool\n• Auto spaced-repetition queue\n• Side-by-side rough whiteboard\n• 100% offline focus soundscapes",
+          color: "#00f0ff"
+        },
+        {
+          title: "⚠️ Current Limitations",
+          desc: "• Profiles save locally inside each device's browser for privacy, so moving to a new computer requires exporting a JSON Backup file.",
+          color: "#ffab00"
+        },
+        {
+          title: "🚀 Future Scope",
+          desc: "• Add Chemistry & 3D Maths labs\n• Teacher classroom test-sharing codes\n• Installable offline mobile app (PWA)",
+          color: "#c4b5fd"
+        }
+      ]
     }
   ],
 
   async init() {
-    // Inject smooth slide transition keyframes & annotation styles
     if (!document.getElementById('dxdy-ppt-anim-styles')) {
       const style = document.createElement('style');
       style.id = 'dxdy-ppt-anim-styles';
@@ -309,24 +369,31 @@ const PHIZIKS = {
           0% { opacity: 0; transform: translateX(-34px) scale(0.98); }
           100% { opacity: 1; transform: translateX(0) scale(1); }
         }
-        .ppt-anim-next { animation: pptSlideNext 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-        .ppt-anim-prev { animation: pptSlidePrev 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .ppt-anim-next { animation: pptSlideNext 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .ppt-anim-prev { animation: pptSlidePrev 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
         .ppt-click-zone {
-          position: absolute; top: 0; bottom: 0; width: 22%; z-index: 8;
+          position: absolute; top: 0; bottom: 0; width: 16%; z-index: 8;
           display: flex; align-items: center; opacity: 0; transition: opacity 0.2s ease;
           cursor: pointer; user-select: none;
         }
         .ppt-click-zone:hover { opacity: 1; }
         .ppt-click-pill {
-          padding: 8px 12px; border-radius: 99px; background: rgba(3, 5, 10, 0.85);
-          border: 1px solid var(--accent); color: var(--accent); font-size: 0.78rem;
+          padding: 7px 12px; border-radius: 99px; background: rgba(3, 5, 10, 0.88);
+          border: 1px solid var(--accent); color: var(--accent); font-size: 0.76rem;
           font-weight: 700; box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+        }
+        .ppt-feature-card {
+          padding: 12px 15px; border-radius: 10px; background: #0e1526;
+          border: 1px solid #243454; transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .ppt-feature-card:hover {
+          transform: translateY(-2px); border-color: var(--accent);
         }
       `;
       document.head.appendChild(style);
     }
 
-    // Load strictly from this device's browser storage (never shared across devices)
+    // Load strictly from this device's browser storage
     try {
       const saved = localStorage.getItem('phiziks_state');
       this.state = saved ? JSON.parse(saved) : this.getDefaultClientState();
@@ -413,7 +480,7 @@ const PHIZIKS = {
       ],
       journalEntries: [],
       customActivities: ["Drawing", "Hip-Hop Dance", "Guitar Practice", "Martial Arts / Sports"],
-      customMetrics: ["Concept Clarity (1-10)", "Mock Test Accuracy (%)"],
+      customMetrics: ["Concept Clarity (1-10)", "Mock Test Accuracy (%)""],
       testHistory: []
     };
   },
@@ -1963,7 +2030,7 @@ const PHIZIKS = {
   },
 
   // =========================================================================
-  // INTERACTIVE WALKTHROUGH CONTROLLER (SCREENSHOTS + CALLOUTS + LEFT/RIGHT CLICK)
+  // INTERACTIVE PLATFORM GUIDE CONTROLLER (CLEAN CARDS + PURE TEXT + SCREENSHOTS)
   // =========================================================================
   openExhibitionPPT() {
     this.pptIndex = 0;
@@ -1992,62 +2059,100 @@ const PHIZIKS = {
     const slide = this.pptSlides[this.pptIndex];
     const animClass = this.pptDirection === 'prev' ? 'ppt-anim-prev' : 'ppt-anim-next';
     document.getElementById('ppt-slide-indicator').textContent =
-      `📊 dx/dy INTERACTIVE GUIDE — SLIDE ${this.pptIndex + 1} / ${this.pptSlides.length}`;
+      `📊 dx/dy PLATFORM GUIDE  •  PAGE ${this.pptIndex + 1} / ${this.pptSlides.length}`;
 
     const container = document.getElementById('ppt-slide-container');
-    container.innerHTML = `
-      <div class="${animClass}" style="position:relative;display:grid;grid-template-columns:1fr 1.35fr;gap:22px;align-items:center;width:100%;grid-column:1 / -1;">
 
-        <!-- LEFT & RIGHT SIDE CLICK ZONES FOR INSTANT SLIDE NAVIGATION -->
-        <div class="ppt-click-zone" style="left:0;justify-content:flex-start;padding-left:8px;"
-             onclick="PHIZIKS.prevPPTSlide()" title="Click Left Side for Previous Slide">
+    const dotsHtml = `
+      <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:12;padding-top:10px;border-top:1px solid rgba(148,163,184,0.14);">
+        <span style="font-size:0.74rem;color:var(--text-secondary);">💡 Click Left / Right edges or press ⬅ / ➡ arrow keys</span>
+        <div style="display:flex;gap:7px;align-items:center;">
+          ${this.pptSlides.map((_, idx) => `
+            <span style="width:${idx===this.pptIndex?'22px':'9px'};height:9px;border-radius:99px;background:${idx===this.pptIndex?'var(--accent)':'#475569'};display:inline-block;cursor:pointer;transition:all 0.25s ease;"
+                  onclick="event.stopPropagation();PHIZIKS.pptDirection=${idx > this.pptIndex ? "'next'" : "'prev'"};PHIZIKS.pptIndex=${idx};PHIZIKS.renderPPTSlide();"
+                  title="Page ${idx + 1}"></span>
+          `).join('')}
+        </div>
+        <span style="font-size:0.76rem;font-weight:700;color:var(--text-secondary);">Page ${this.pptIndex + 1} / ${this.pptSlides.length}</span>
+      </div>
+    `;
+
+    // Pure-Text 4-Card Grid Layout (For Intro, Tech Stack, and Advantages/Limitations)
+    if (slide.layout === 'text-grid') {
+      container.innerHTML = `
+        <div class="${animClass}" style="position:relative;width:100%;grid-column:1 / -1;">
+          <div class="ppt-click-zone" style="left:0;justify-content:flex-start;padding-left:8px;" onclick="PHIZIKS.prevPPTSlide()">
+            <span class="ppt-click-pill">⬅ Prev</span>
+          </div>
+          <div class="ppt-click-zone" style="right:0;justify-content:flex-end;padding-right:8px;" onclick="PHIZIKS.nextPPTSlide()">
+            <span class="ppt-click-pill">Next ➡</span>
+          </div>
+
+          <div style="margin-bottom:16px;">
+            <div style="font-family:var(--font-mono);font-size:0.76rem;font-weight:800;color:var(--accent);letter-spacing:0.06em;margin-bottom:4px;">${slide.tag}</div>
+            <h2 style="font-size:1.75rem;font-weight:900;margin-bottom:4px;">${slide.title}</h2>
+            <p style="color:var(--text-secondary);font-size:0.9rem;">${slide.subtitle}</p>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;position:relative;z-index:9;">
+            ${slide.cards.map(c => `
+              <div class="ppt-feature-card" style="border-top:3px solid ${c.color};">
+                <div style="font-size:1.02rem;font-weight:800;color:${c.color};margin-bottom:6px;">${c.title}</div>
+                <div style="font-size:0.86rem;color:var(--text-primary);line-height:1.5;white-space:pre-line;">${c.desc}</div>
+              </div>
+            `).join('')}
+          </div>
+
+          ${dotsHtml}
+        </div>
+      `;
+      return;
+    }
+
+    // Screenshot + 3 Clean Feature Cards Layout
+    const fitMode = slide.imgFit || 'cover';
+    container.innerHTML = `
+      <div class="${animClass}" style="position:relative;width:100%;grid-column:1 / -1;">
+        <div class="ppt-click-zone" style="left:0;justify-content:flex-start;padding-left:8px;" onclick="PHIZIKS.prevPPTSlide()">
           <span class="ppt-click-pill">⬅ Prev</span>
         </div>
-        <div class="ppt-click-zone" style="right:0;justify-content:flex-end;padding-right:8px;"
-             onclick="PHIZIKS.nextPPTSlide()" title="Click Right Side for Next Slide">
+        <div class="ppt-click-zone" style="right:0;justify-content:flex-end;padding-right:8px;" onclick="PHIZIKS.nextPPTSlide()">
           <span class="ppt-click-pill">Next ➡</span>
         </div>
 
-        <!-- LEFT COLUMN: SHORT, CLEAR EXPLANATION & EXHIBITION SCRIPT -->
-        <div style="position:relative;z-index:9;">
-          <span class="badge" style="color:var(--accent);margin-bottom:8px;">${slide.tag || 'dx/dy FEATURE GUIDE'}</span>
-          <h2 style="font-size:1.5rem;font-weight:900;margin-bottom:6px;line-height:1.2;">${slide.title}</h2>
-          <p style="color:#c4b5fd;font-weight:600;margin-bottom:14px;font-size:0.9rem;">${slide.subtitle}</p>
-          <ul style="padding-left:18px;display:grid;gap:10px;margin-bottom:16px;font-size:0.88rem;line-height:1.45;">
-            ${slide.points.map(pt => `<li>${pt}</li>`).join('')}
-          </ul>
-          <div style="padding:11px 14px;background:var(--bg-primary);border-left:4px solid var(--warning);border-radius:6px;font-size:0.83rem;">
-            <strong style="color:var(--warning);">🎙️ Exhibition Pitch:</strong> ${slide.speakerNote}
-          </div>
-          <div style="margin-top:10px;font-size:0.74rem;color:var(--text-secondary);display:flex;justify-content:space-between;">
-            <span>💡 Click <strong>Left / Right edges</strong> or press <strong>⬅ / ➡ keys</strong></span>
-            <span>Slide ${this.pptIndex + 1} of ${this.pptSlides.length}</span>
-          </div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:var(--font-mono);font-size:0.75rem;font-weight:800;color:var(--accent);letter-spacing:0.06em;margin-bottom:3px;">${slide.tag}</div>
+          <h2 style="font-size:1.6rem;font-weight:900;margin-bottom:2px;">${slide.title}</h2>
+          <p style="color:var(--text-secondary);font-size:0.86rem;">${slide.subtitle}</p>
         </div>
 
-        <!-- RIGHT COLUMN: ANNOTATED WEBSITE SCREENSHOT + NUMBERED CALLOUT MARKS -->
-        <div class="ppt-visual-box" style="position:relative;z-index:6;padding:10px;background:#050811;border:1px solid var(--border-cyan);border-radius:12px;">
-          <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#080d1a;border:1px solid rgba(0,240,255,0.35);">
-            <img src="${slide.img}" alt="${slide.title}"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-            <div style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:radial-gradient(circle at center,#0f172a,#03050a);">
-              <div style="font-family:var(--font-mono);font-size:1.3rem;font-weight:800;color:var(--accent);margin-bottom:6px;">${slide.title}</div>
-              <p style="font-size:0.8rem;color:var(--text-secondary);max-width:360px;">Upload <code>public${slide.img}</code> to GitHub to display this live screenshot behind the callout markers.</p>
-            </div>
-            ${slide.overlaySvg || ''}
-          </div>
-
-          <!-- SLIDE DOTS -->
-          <div style="margin-top:12px;display:flex;justify-content:center;gap:8px;position:relative;z-index:12;">
-            ${this.pptSlides.map((_, idx) => `
-              <span style="width:${idx===this.pptIndex?'24px':'10px'};height:10px;border-radius:99px;background:${idx===this.pptIndex?'var(--accent)':'#475569'};display:inline-block;cursor:pointer;transition:all 0.25s ease;"
-                    onclick="event.stopPropagation();PHIZIKS.pptDirection=${idx > this.pptIndex ? "'next'" : "'prev'"};PHIZIKS.pptIndex=${idx};PHIZIKS.renderPPTSlide();"
-                    title="Go to Slide ${idx + 1}"></span>
+        <div style="display:grid;grid-template-columns:1fr 1.45fr;gap:18px;align-items:center;position:relative;z-index:9;">
+          <!-- Left: 3 Short Feature Cards -->
+          <div style="display:grid;gap:11px;">
+            ${(slide.cards || []).map(c => `
+              <div class="ppt-feature-card" style="border-left:3px solid ${c.color};">
+                <div style="font-size:0.95rem;font-weight:800;color:${c.color};margin-bottom:3px;">${c.title}</div>
+                <div style="font-size:0.83rem;color:var(--text-primary);line-height:1.4;">${c.desc}</div>
+              </div>
             `).join('')}
           </div>
+
+          <!-- Right: Framed Screenshot + Callouts -->
+          <div style="padding:8px;background:#060a16;border:2px solid rgba(0,240,255,0.4);border-radius:12px;">
+            <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#03050a;">
+              <img src="${slide.img}" alt="${slide.title}"
+                   style="width:100%;height:100%;object-fit:${fitMode};display:block;"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:#080d1a;">
+                <div style="font-family:var(--font-mono);font-size:1.15rem;font-weight:800;color:var(--accent);margin-bottom:6px;">${slide.title}</div>
+                <p style="font-size:0.78rem;color:var(--text-secondary);">Screenshot <code>public${slide.img}</code></p>
+              </div>
+              ${slide.overlaySvg || ''}
+            </div>
+          </div>
         </div>
 
+        ${dotsHtml}
       </div>
     `;
   },
