@@ -6,6 +6,7 @@ const PHIZIKS = {
   currentChapterId: null,
   previousChapterId: null,
   pptIndex: 0,
+  pptDirection: 'next',
   pinnedStepIndex: -1,
   calcExpression: '',
   calcAngleMode: 'DEG',
@@ -83,185 +84,248 @@ const PHIZIKS = {
     { id: "ch28_experimental_physics", num: "28", classLevel: "Class 11 & 12", unit: "Experimental Skills", title: "Experimental Physics & Lab Instruments", prereqs: ["ch01_units_measurements", "ch17_current_electricity"], summary: "Vernier Callipers (Standard & Sub-Multiple), Screw Gauge, Zero Error, Simple Pendulum Error, Searle's Apparatus, Meter Bridge & Half-Deflection." }
   ],
 
-  // 8-SLIDE PLATFORM WALKTHROUGH PRESENTATION
+  // 9-SLIDE INTERACTIVE WALKTHROUGH PRESENTATION WITH SCREENSHOT ANNOTATIONS
   pptSlides: [
     {
-      title: "1. Welcome to dx/dy — Interactive Physics & JEE Learning Laboratory",
-      subtitle: "A futuristic scientific learning environment combined with a calm student productivity workspace",
+      tag: "SLIDE 01 / 09 • OPENING & COMMAND CENTER",
+      title: "1. Welcome to dx/dy — Visual Physics & JEE Lab",
+      subtitle: "All your Physics chapters, live simulations, tests, and study tools in one place.",
+      img: "/slide1.jpg",
       points: [
-        "Bridges 10th-grade physical intuition and rigorous JEE Advanced multi-concept problem solving.",
-        "Every chapter progresses from first-principles intuition to calculus derivations, SVG phase/motion graphs, JEE trap alerts, and multi-tier numericals.",
-        "Unifies 5 core engines: 29-Chapter Encyclopedia, Dual Visual Physics Lab, Adaptive Non-Repeating Test Suite, Algorithmic Study Planner + Audio Timer, and Well-Being Journal."
+        "<strong>① Top Navigation Bar:</strong> Switch between Home, 29 Chapters, Visual Lab, Adaptive Tests, Planner, and Journal in 1 click.",
+        "<strong>② Quick Resume & Dependency Map:</strong> Jump right back into your last chapter or view how topics connect.",
+        "<strong>③ Live Exam Countdowns & Telemetry:</strong> Track days left for JEE Main, JEE Advanced, and Boards alongside your solved questions."
       ],
-      speakerNote: "Highlight the signature animated dx/dy wordmark—representing rate of change, calculus foundations, and continuous growth.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="10" y="10" width="400" height="240" rx="12" fill="#080d1a" stroke="#00f0ff" stroke-width="2"/>
-        <circle cx="210" cy="130" r="42" fill="rgba(0,240,255,0.12)" stroke="#00f0ff" stroke-width="2"/>
-        <text x="210" y="136" fill="#00f0ff" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle">dx/dy</text>
-        <g fill="#f0f4f8" font-size="11" font-weight="600" text-anchor="middle">
-          <rect x="28" y="28" width="118" height="42" rx="6" fill="#0f172a" stroke="#7c4dff"/><text x="87" y="53">29 Chapters (00–28)</text>
-          <rect x="274" y="28" width="118" height="42" rx="6" fill="#0f172a" stroke="#00e676"/><text x="333" y="53">Dual Visual Lab</text>
-          <rect x="28" y="190" width="118" height="42" rx="6" fill="#0f172a" stroke="#ffab00"/><text x="87" y="215">Adaptive Tests</text>
-          <rect x="274" y="190" width="118" height="42" rx="6" fill="#0f172a" stroke="#00f0ff"/><text x="333" y="215">Planner & Journal</text>
-        </g>
-        <line x1="146" y1="50" x2="176" y2="102" stroke="#7c4dff" stroke-width="2"/>
-        <line x1="274" y1="50" x2="244" y2="102" stroke="#00e676" stroke-width="2"/>
-        <line x1="146" y1="210" x2="176" y2="158" stroke="#ffab00" stroke-width="2"/>
-        <line x1="274" y1="210" x2="244" y2="158" stroke="#00f0ff" stroke-width="2"/>
+      speakerNote: "dx/dy brings Class 11, Class 12, and JEE Physics into one live digital lab so students don't need 5 separate apps.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Top Nav Highlight -->
+        <rect x="300" y="6" width="675" height="36" rx="8" fill="none" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6,4"/>
+        <circle cx="288" cy="24" r="14" fill="#00f0ff"/><text x="288" y="29" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Resume CTA Highlight -->
+        <rect x="176" y="408" width="318" height="42" rx="8" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="158" cy="429" r="14" fill="#00e676"/><text x="158" y="434" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Countdowns & Telemetry Highlight -->
+        <rect x="176" y="505" width="465" height="65" rx="8" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="158" cy="538" r="14" fill="#ffab00"/><text x="158" y="543" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      title: "2. Chapter 00 (Basic Mathematics) + 28 Complete Physics Chapters",
-      subtitle: "Zero-to-JEE-Advanced progression with Spaced Repetition & Focus Mode",
+      tag: "SLIDE 02 / 09 • 29-CHAPTER ENCYCLOPEDIA",
+      title: "2. Complete Syllabus Explorer (Ch 00 to Ch 28)",
+      subtitle: "Starts with Basic Mathematics (Ch 00) so you never get stuck on calculus in Physics.",
+      img: "/slide2.jpg",
       points: [
-        "Starts with Chapter 00: Basic Mathematics (Trigonometry, Limits, Differentiation, Integration, Differential Equations & Vectors).",
-        "Every topic tracks self-rating stars (1–5) and automatically schedules Spaced-Repetition reviews on your Continue Learning dashboard.",
-        "One-click Distraction-Free Focus Mode hides navigation bars so you can read long derivations without visual clutter."
+        "<strong>① Class & Unit Filters:</strong> Filter instantly between All 29 Chapters, Ch 00 Basic Maths, Class 11, or Class 12.",
+        "<strong>② Root Foundation (Ch 00):</strong> Teaches Differentiation, Integration, and Vectors before Kinematics starts.",
+        "<strong>③ Prerequisite Pills & Confidence Stars:</strong> Click any purple pill to review required basics, or rate 1–5 ★ to schedule revision."
       ],
-      speakerNote: "Demonstrate pressing '🧘 Focus' or opening the Prerequisite Dependency Map inside any chapter.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="15" y="20" width="390" height="50" rx="8" fill="#0f172a" stroke="#00f0ff" stroke-width="2"/>
-        <text x="30" y="50" fill="#00f0ff" font-size="13" font-weight="bold">CH 00: Basic Mathematics for Physics (Calculus, Vectors, Graphs)</text>
-        <rect x="15" y="85" width="185" height="70" rx="8" fill="#080d1a" stroke="#94a3b8"/>
-        <text x="30" y="115" fill="#fff" font-size="12" font-weight="bold">Class 11 (Ch 01 – Ch 14)</text>
-        <text x="30" y="135" fill="#94a3b8" font-size="10">Mechanics, Heat, SHM & Waves</text>
-        <rect x="220" y="85" width="185" height="70" rx="8" fill="#080d1a" stroke="#94a3b8"/>
-        <text x="235" y="115" fill="#fff" font-size="12" font-weight="bold">Class 12 (Ch 15 – Ch 28)</text>
-        <text x="235" y="135" fill="#94a3b8" font-size="10">Electrodynamics, Optics, Modern, Lab</text>
-        <rect x="15" y="170" width="390" height="65" rx="8" fill="rgba(0,240,255,0.08)" stroke="#00f0ff"/>
-        <text x="30" y="195" fill="#00f0ff" font-size="12" font-weight="bold">🔁 Spaced-Repetition Queue + Step-by-Step Numerical Solver</text>
-        <text x="30" y="215" fill="#f0f4f8" font-size="10">Automatically surfaces topics due for review based on your confidence rating.</text>
+      speakerNote: "All 29 chapters are stored as structured JSON files. Clicking any chapter loads full derivations, graphs, and step-by-step solvers.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Filter Buttons -->
+        <rect x="160" y="122" width="390" height="32" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="142" cy="138" r="14" fill="#00f0ff"/><text x="142" y="143" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Ch 00 Card -->
+        <rect x="160" y="160" width="235" height="295" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="142" cy="210" r="14" fill="#00e676"/><text x="142" y="215" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Prereq Pills -->
+        <rect x="405" y="315" width="218" height="45" rx="6" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="638" cy="338" r="14" fill="#ffab00"/><text x="638" y="343" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      title: "3. Prerequisite Dependency Map & Step-by-Step Numerical Solver",
-      subtitle: "Trace every concept to its roots and break down tough numericals stage by stage",
+      tag: "SLIDE 03 / 09 • VISUAL LAB (ENGINE A)",
+      title: "3. Visual Lab: Parametric Slider Sandbox",
+      subtitle: "Drag sliders to see how changing numbers changes graphs and calculus in real time.",
+      img: "/slide3.jpg",
       points: [
-        "Interactive Prerequisite Pills & Dependency Map: Jump directly to foundational math or physics chapters and return with a single click.",
-        "Step-by-Step Physics Solver: Breaks down problems into (1) Given Data & Units, (2) Governing Formula, (3) Substitution & Algebra, and (4) Final Verdict & Trap Check.",
-        "Expandable JEE Trap drawers warn against sign mistakes, frame-of-reference errors, and non-standard limits."
+        "<strong>① 5 Core Physics Domains:</strong> Switch between Basic Maths, Kinematics, SHM Oscillations, Ray Optics, and Gravitation.",
+        "<strong>② Live Variable Sliders:</strong> Drag sliders for coefficients, tangency points, or limits to recalculate math instantly.",
+        "<strong>③ Real-Time Graph & Coordinate Table:</strong> Watch the tangent slope (dy/dx), secant line, and shaded area update live."
       ],
-      speakerNote: "Click any Prerequisite Pill inside a chapter to show the instant breadcrumb return banner.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="20" y="25" width="380" height="90" rx="8" fill="#080d1a" stroke="#7c4dff" stroke-width="2"/>
-        <text x="35" y="55" fill="#fff" font-size="12">Instantaneous Acceleration: a = dv/dt = v (dv/dx)</text>
-        <rect x="35" y="70" width="250" height="28" rx="6" fill="rgba(124,77,255,0.2)" stroke="#7c4dff"/>
-        <text x="48" y="88" fill="#c4b5fd" font-size="11" font-weight="bold">🔗 Prerequisite: Chain Rule & Calculus →</text>
-        <path d="M 160 100 L 160 145" stroke="#00f0ff" stroke-width="2" stroke-dasharray="4"/>
-        <rect x="20" y="145" width="380" height="90" rx="8" fill="#0f172a" stroke="#00f0ff" stroke-width="2"/>
-        <text x="35" y="175" fill="#00f0ff" font-size="12" font-weight="bold">Instant Jump to Ch 00 + One-Click Return Breadcrumb!</text>
-        <text x="35" y="200" fill="#94a3b8" font-size="11">Master the mathematical tool visually, then resume your physics derivation.</text>
+      speakerNote: "Instead of static textbook pictures, Engine A lets students experiment with variables and see exact coordinate values.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Domain Bar -->
+        <rect x="168" y="190" width="625" height="36" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="150" cy="208" r="14" fill="#00f0ff"/><text x="150" y="213" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Variable Sliders -->
+        <rect x="160" y="236" width="295" height="365" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="142" cy="310" r="14" fill="#00e676"/><text x="142" y="315" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Graph & Table -->
+        <rect x="468" y="236" width="650" height="290" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="488" cy="260" r="14" fill="#ffab00"/><text x="488" y="265" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      title: "4. Dual Visual Physics Lab: Parametric Sliders vs. Animation Theater",
-      subtitle: "Strictly separated controls for quantitative graphing and real-time motion",
+      tag: "SLIDE 04 / 09 • VISUAL LAB (ENGINE B)",
+      title: "4. Visual Lab: Concept Animation Theater",
+      subtitle: "Watch 1D, 2D, and 3D physics motion with slow-motion and frame-by-frame controls.",
+      img: "/slide4.jpg",
       points: [
-        "Engine A — Parametric Slider Sandbox: Drag sliders for velocity, angle, damping, focal length, or planet radius to update live graphs and coordinate tables.",
-        "Engine B — Concept Animation Theater: Play, Pause, Step (+Δt), Slow-Mo (0.25×), and toggle live velocity/force vectors across 5 core physics domains.",
-        "100% mathematically accurate equations—never decorative mockups."
+        "<strong>① Engine B Toggle:</strong> Switches from graph sliders to the real-time physics animation stage.",
+        "<strong>② Playback & Slow-Mo Controls:</strong> Play/Pause, step forward tiny time intervals (+Δt), or slow down to 0.25× speed.",
+        "<strong>③ Live Vector Decomposition:</strong> See horizontal (v_x) and vertical (v_y) velocity arrows change as the projectile flies."
       ],
-      speakerNote: "Open '🔬 Visual Lab' to demonstrate both the Slider Sandbox and the frame-by-frame '+Δt Step' button in Animation Theater.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="15" y="20" width="188" height="220" rx="8" fill="#080d1a" stroke="#00f0ff" stroke-width="2"/>
-        <text x="109" y="45" fill="#00f0ff" font-size="12" font-weight="bold" text-anchor="middle">ENGINE A: SLIDER SANDBOX</text>
-        <line x1="35" y1="75" x2="180" y2="75" stroke="#475569" stroke-width="4"/>
-        <circle cx="110" cy="75" r="7" fill="#00f0ff"/>
-        <polyline points="35,150 70,110 110,95 150,120 180,150" fill="none" stroke="#00e676" stroke-width="2"/>
-        <rect x="30" y="170" width="158" height="52" fill="#0f172a" stroke="#00f0ff"/>
-        <text x="109" y="200" fill="#fff" font-size="10" text-anchor="middle">Live Coordinate Table (t, x, y, v)</text>
-        <rect x="217" y="20" width="188" height="220" rx="8" fill="#080d1a" stroke="#7c4dff" stroke-width="2"/>
-        <text x="311" y="45" fill="#c4b5fd" font-size="12" font-weight="bold" text-anchor="middle">ENGINE B: MOTION THEATER</text>
-        <circle cx="311" cy="125" r="45" fill="none" stroke="#94a3b8" stroke-dasharray="4"/>
-        <circle cx="311" cy="125" r="14" fill="#ffab00"/>
-        <circle cx="356" cy="125" r="6" fill="#00f0ff"/>
-        <rect x="232" y="190" width="158" height="30" rx="5" fill="#0f172a"/>
-        <text x="311" y="209" fill="#fff" font-size="10" text-anchor="middle">▶ Play | ⏸ | +Δt Step | 0.25×</text>
+      speakerNote: "Engine B lets students freeze motion at the highest point of a projectile or inspect 3D helical magnetic paths.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Engine B Button -->
+        <rect x="360" y="120" width="198" height="32" rx="6" fill="none" stroke="#c4b5fd" stroke-width="3"/>
+        <circle cx="342" cy="136" r="14" fill="#c4b5fd"/><text x="342" y="141" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Playback Controls -->
+        <rect x="572" y="242" width="490" height="34" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="554" cy="259" r="14" fill="#00f0ff"/><text x="554" y="264" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ 2D & 3D Stage -->
+        <rect x="180" y="365" width="910" height="260" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="162" cy="495" r="14" fill="#00e676"/><text x="162" y="500" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      title: "5. Side-by-Side Whiteboard, Scientific Calculator & Autosave Notes",
-      subtitle: "Zero context-switching while solving problems",
+      tag: "SLIDE 05 / 09 • ADAPTIVE TESTING ENGINE",
+      title: "5. Adaptive Test & Non-Repeating DPP Suite",
+      subtitle: "Create custom practice tests that remember which questions you already solved.",
+      img: "/slide5.jpg",
       points: [
-        "Side-by-Side HTML5 Whiteboard: Docks beside any chapter or test with pen colors, brush sizes, eraser, coordinate grid, and PNG save.",
-        "Scientific & Physics Calculator: Explicit DEG/RAD mode, trig/inverse trig, logs, powers, and one-tap physical constants (g, G, c, h, ε₀, e).",
-        "Chapter Notes with Debounced Autosave: Automatically saves your notes to your active profile as you type and exports to Markdown (.MD)."
+        "<strong>① Seen-Question Memory & Tools:</strong> Tracks how many unique questions you've attempted and opens the Whiteboard or Calculator.",
+        "<strong>② Custom Test Builder:</strong> Pick any Chapter, Difficulty (Basic, PYQ, Advanced), Question Count, and Time Limit.",
+        "<strong>③ Score History & Auto-Revision:</strong> Grades with +4 / -1 JEE marking and queues missed chapters for review tomorrow."
       ],
-      speakerNote: "Click '✏️ Board' and '🧮 Calc' in the header to show how they work simultaneously over any screen.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="15" y="20" width="220" height="220" rx="8" fill="#080d1a" stroke="#94a3b8"/>
-        <text x="30" y="50" fill="#fff" font-size="12" font-weight="bold">Chapter Numerical / Live Test</text>
-        <text x="30" y="80" fill="#94a3b8" font-size="10">Solve side-by-side without leaving the page</text>
-        <rect x="245" y="20" width="160" height="220" rx="8" fill="#060913" stroke="#00f0ff" stroke-width="2"/>
-        <text x="260" y="45" fill="#00f0ff" font-size="11" font-weight="bold">✏️ HTML5 Whiteboard</text>
-        <path d="M 265 160 Q 320 70 385 160" fill="none" stroke="#00f0ff" stroke-width="3"/>
-        <text x="285" y="195" fill="#00e676" font-size="11">R = u²sin(2θ)/g</text>
+      speakerNote: "Students never waste time solving the same repeated question twice unless they click 'Reset Seen Pool'.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Top Badges & Tools -->
+        <rect x="160" y="135" width="450" height="32" rx="6" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="142" cy="151" r="14" fill="#00e676"/><text x="142" y="156" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Test Config Box -->
+        <rect x="160" y="175" width="960" height="100" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="142" cy="225" r="14" fill="#00f0ff"/><text x="142" y="230" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Performance History -->
+        <rect x="160" y="285" width="360" height="115" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="142" cy="340" r="14" fill="#ffab00"/><text x="142" y="345" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      title: "6. Adaptive Testing & Non-Repeating DPP Generator",
-      subtitle: "Smart question selection across Foundation, PYQ-Pattern, and Advanced tiers",
+      tag: "SLIDE 06 / 09 • FOCUS & AUDIO WORKSPACE",
+      title: "6. Study Planner, Timer & Offline Audio Synthesizer",
+      subtitle: "Builds realistic study schedules and plays calming focus sounds 100% offline.",
+      img: "/slide6.jpg",
       points: [
-        "Select any Chapter (or All Chapters), Difficulty Tier, Question Count, and Timer duration.",
-        "Question-History Tracking: Tracks seen question IDs per profile to minimize accidental repetition until you reset the pool.",
-        "Post-Test Analytics: Instant +4 / -1 JEE scoring, accuracy breakdown, and step-by-step worked solutions."
+        "<strong>① Time-Blocked Schedule Generator:</strong> Enter study hours and energy level to generate 50-min study blocks with 10-min rest breaks.",
+        "<strong>② Pomodoro Timer & Offline Soundscapes:</strong> Built-in synthesizer generates Steady Rain, Forest Wind, Lo-Fi Pad, or White Noise—plus custom MP3 upload.",
+        "<strong>③ Guilt-Free Task Recovery & Analytics:</strong> Rebalance unfinished tasks without penalty streaks and track focus efficiency."
       ],
-      speakerNote: "Demonstrate generating a custom test in '🎯 Adaptive Tests'.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="20" y="25" width="380" height="210" rx="10" fill="#080d1a" stroke="#00e676" stroke-width="2"/>
-        <text x="40" y="60" fill="#00e676" font-size="14" font-weight="bold">🎯 Adaptive Non-Repeating Test Engine</text>
-        <rect x="40" y="80" width="105" height="45" rx="6" fill="#0f172a"/><text x="92" y="107" fill="#fff" font-size="11" text-anchor="middle">Basic Foundation</text>
-        <rect x="158" y="80" width="105" height="45" rx="6" fill="#0f172a"/><text x="210" y="107" fill="#ffab00" font-size="11" text-anchor="middle">JEE Main / PYQ</text>
-        <rect x="275" y="80" width="105" height="45" rx="6" fill="#0f172a"/><text x="327" y="107" fill="#7c4dff" font-size="11" text-anchor="middle">JEE Advanced</text>
-        <rect x="40" y="145" width="340" height="65" rx="6" fill="#03050a" stroke="#00f0ff"/>
-        <text x="55" y="175" fill="#00f0ff" font-size="12" font-weight="bold">✓ Profile-Scoped History | Worked LaTeX Solutions</text>
-        <text x="55" y="195" fill="#94a3b8" font-size="10">Automatically queues missed concepts for spaced-repetition review.</text>
+      speakerNote: "The audio engine uses the Web Audio API to synthesize rain and lo-fi sounds mathematically in the browser without internet lag.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Left Schedule Generator -->
+        <rect x="160" y="128" width="470" height="310" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="142" cy="200" r="14" fill="#00f0ff"/><text x="142" y="205" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Right Audio Timer -->
+        <rect x="645" y="128" width="475" height="310" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="627" cy="200" r="14" fill="#00e676"/><text x="627" y="205" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Bottom Tasks & Analytics -->
+        <rect x="160" y="455" width="960" height="235" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="142" cy="540" r="14" fill="#ffab00"/><text x="142" y="545" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      title: "7. Study Planner, Study-Recovery & Debugged Ambient Audio Timer",
-      subtitle: "Calm, guilt-free scheduling with continuous background audio",
+      tag: "SLIDE 07 / 09 • STUDENT WELL-BEING JOURNAL",
+      title: "7. Student Life, Well-Being Journal & Trends",
+      subtitle: "Track school hours, self-study, sleep, and hobbies to prevent exam burnout.",
+      img: "/slide7.jpg",
       points: [
-        "Flexible Planner & Recovery: Rebalance incomplete tasks across upcoming days with zero red penalty streaks.",
-        "Multi-Sound Web Audio Synthesizer: Built-in White Noise, Steady Rain, Forest Wind/Nature, and Warm Lo-Fi Chord Drone work 100% offline with volume control.",
-        "Persistent Custom Audio Uploads: Upload your own MP3/WAV/OGG tracks—playback continues smoothly across tab switches while the timer runs."
+        "<strong>① Daily / Weekly / Monthly Rollups:</strong> See total self-study hours, school hours, questions solved, and average sleep at a glance.",
+        "<strong>② Dual-Study & Hobby Logger:</strong> Log study topics, sleep, hydration, custom metrics, and creative hobbies with draft autosave.",
+        "<strong>③ Visual Trend Chart & Calendar:</strong> Compare actual study hours against your daily goal and click any calendar day to filter logs."
       ],
-      speakerNote: "Show the volume slider, Play/Pause controls, and all 4 built-in ambient sounds + custom audio upload in '⏱️ Planner & Timer'.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="20" y="20" width="380" height="220" rx="10" fill="#080d1a" stroke="#7c4dff" stroke-width="2"/>
-        <text x="40" y="50" fill="#c4b5fd" font-size="13" font-weight="bold">🎧 Focus Timer & Persistent Audio Engine</text>
-        <rect x="40" y="70" width="150" height="140" rx="8" fill="#03050a" stroke="#00f0ff"/>
-        <text x="115" y="125" fill="#00f0ff" font-family="monospace" font-size="26" font-weight="bold" text-anchor="middle">50:00</text>
-        <text x="115" y="155" fill="#00e676" font-size="10" text-anchor="middle">● Audio Active</text>
-        <rect x="210" y="70" width="170" height="140" rx="8" fill="#0f172a"/>
-        <text x="225" y="98" fill="#f0f4f8" font-size="11">🌧️ Rain | 🌲 Nature | 🌊 White</text>
-        <text x="225" y="125" fill="#00f0ff" font-size="11">🎹 Lo-Fi | 📁 Custom Upload</text>
-        <text x="225" y="155" fill="#94a3b8" font-size="10">🔊 Volume & Play/Pause</text>
-        <text x="225" y="185" fill="#ffab00" font-size="10">🔄 Guilt-Free Task Recovery</text>
+      speakerNote: "Competitive exam prep is stressful, so dx/dy tracks sleep, energy, and creative hobbies right alongside physics progress.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Top Summary Bar -->
+        <rect x="160" y="74" width="960" height="108" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="142" cy="128" r="14" fill="#00f0ff"/><text x="142" y="133" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Left Logger Form -->
+        <rect x="160" y="192" width="470" height="500" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="142" cy="300" r="14" fill="#00e676"/><text x="142" y="305" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Right Charts & Calendar -->
+        <rect x="645" y="192" width="475" height="500" rx="10" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="627" cy="300" r="14" fill="#ffab00"/><text x="627" y="305" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     },
     {
-      title: "8. Upgraded Well-Being Journal & No-Email/No-Phone Profiles",
-      subtitle: "Privacy-respecting profiles with 90-day inactivity lifecycle & full JSON backup",
+      tag: "SLIDE 08 / 09 • PERSONALIZATION & UI ENGINE",
+      title: "8. Logo Variations, Themes & Custom Wallpapers",
+      subtitle: "Customize every part of your study workspace so it feels comfortable for long hours.",
+      img: "/slide8.jpg",
       points: [
-        "Upgraded Journal: Separate School vs. Self-Study logs, custom user metrics, autosave, editable entries, calendar history, filters, and cautious correlation charts.",
-        "Zero-PII Profiles: Create profiles with just Name and Class—no email or phone number required.",
-        "Transparent Data Lifecycle: Automatic deletion after 90 days of inactivity with an in-app warning banner 7 days in advance, plus 1-click JSON Export/Import."
+        "<strong>① 3 Mathematical Logo Styles:</strong> Switch between Differential Slash, Inflection Curve, or Vector Bracket logos.",
+        "<strong>② Dark / Daylight Mode & Neon Accents:</strong> Toggle Cyber Glass Dark or Daylight Paper mode with custom neon colors and fonts.",
+        "<strong>③ Custom Wallpaper Engine:</strong> Choose Coordinate Grid, Deep Nebula, or paste any custom wallpaper URL—saved privately to your device."
       ],
-      speakerNote: "Open '👤 Scholar' in the top navbar to demonstrate creating a profile, exporting a JSON backup, and testing the 7-day inactivity warning banner.",
-      svg: `<svg viewBox="0 0 420 260" style="width:100%;height:auto;">
-        <rect x="20" y="20" width="380" height="220" rx="10" fill="#080d1a" stroke="#00f0ff" stroke-width="2"/>
-        <text x="40" y="52" fill="#00f0ff" font-size="13" font-weight="bold">🌱 Holistic Journal + Zero-PII Profile System</text>
-        <rect x="40" y="70" width="160" height="65" rx="6" fill="#0f172a"/><text x="52" y="98" fill="#fff" font-size="11">Calendar & Trend Charts</text><text x="52" y="118" fill="#00e676" font-size="10">Autosave + Editable Logs</text>
-        <rect x="220" y="70" width="160" height="65" rx="6" fill="#0f172a"/><text x="232" y="98" fill="#fff" font-size="11">No-Email Profiles</text><text x="232" y="118" fill="#ffab00" font-size="10">90d Auto-Clean + 7d Alert</text>
-        <rect x="40" y="150" width="340" height="65" rx="6" fill="#0f172a" stroke="#7c4dff"/>
-        <text x="55" y="178" fill="#c4b5fd" font-size="11" font-weight="bold">⬇️ Full User-Controlled JSON Export & Import</text>
-        <text x="55" y="198" fill="#94a3b8" font-size="10">Move your data across devices or delete permanently anytime.</text>
+      speakerNote: "Every visual setting saves directly to the student's own browser profile so each user gets their own personalized study room.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Logo Variations -->
+        <rect x="985" y="112" width="255" height="90" rx="8" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="965" cy="155" r="14" fill="#00f0ff"/><text x="965" y="160" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Theme & Accent -->
+        <rect x="985" y="210" width="255" height="125" rx="8" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="965" cy="270" r="14" fill="#00e676"/><text x="965" y="275" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Wallpaper URL -->
+        <rect x="985" y="395" width="255" height="65" rx="8" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="965" cy="428" r="14" fill="#ffab00"/><text x="965" y="433" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
+      </svg>`
+    },
+    {
+      tag: "SLIDE 09 / 09 • PRIVACY & PORTABLE BACKUPS",
+      title: "9. Zero-Password Profiles & Portable JSON Backup",
+      subtitle: "Instant access with zero emails or passwords—plus 1-click JSON file backups.",
+      img: "/slide9.jpg",
+      points: [
+        "<strong>① Portable JSON Export & Import:</strong> Download your entire profile as a tiny .JSON file to carry your progress to any computer.",
+        "<strong>② Multi-Profile Device Switcher:</strong> Create and switch between multiple student profiles on the same computer.",
+        "<strong>③ Zero-Email Creation:</strong> Just type your Name and Class to start—keeps your personal data 100% private and lets Google index the site."
+      ],
+      speakerNote: "By avoiding password login walls, visitors can test the lab immediately and students own their data via JSON backups.",
+      overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
+        <!-- ① Export / Import Buttons -->
+        <rect x="410" y="302" width="385" height="36" rx="6" fill="none" stroke="#00f0ff" stroke-width="3"/>
+        <circle cx="390" cy="320" r="14" fill="#00f0ff"/><text x="390" y="325" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">1</text>
+        <!-- ② Switch Profile List -->
+        <rect x="405" y="385" width="468" height="48" rx="6" fill="none" stroke="#00e676" stroke-width="3"/>
+        <circle cx="387" cy="409" r="14" fill="#00e676"/><text x="387" y="414" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">2</text>
+        <!-- ③ Create New Profile Box -->
+        <rect x="405" y="445" width="468" height="105" rx="8" fill="none" stroke="#ffab00" stroke-width="3"/>
+        <circle cx="387" cy="495" r="14" fill="#ffab00"/><text x="387" y="500" fill="#03050a" font-size="15" font-weight="900" text-anchor="middle">3</text>
       </svg>`
     }
   ],
 
   async init() {
+    // Inject smooth slide transition keyframes & annotation styles
+    if (!document.getElementById('dxdy-ppt-anim-styles')) {
+      const style = document.createElement('style');
+      style.id = 'dxdy-ppt-anim-styles';
+      style.textContent = `
+        @keyframes pptSlideNext {
+          0% { opacity: 0; transform: translateX(34px) scale(0.98); }
+          100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        @keyframes pptSlidePrev {
+          0% { opacity: 0; transform: translateX(-34px) scale(0.98); }
+          100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        .ppt-anim-next { animation: pptSlideNext 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .ppt-anim-prev { animation: pptSlidePrev 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .ppt-click-zone {
+          position: absolute; top: 0; bottom: 0; width: 22%; z-index: 8;
+          display: flex; align-items: center; opacity: 0; transition: opacity 0.2s ease;
+          cursor: pointer; user-select: none;
+        }
+        .ppt-click-zone:hover { opacity: 1; }
+        .ppt-click-pill {
+          padding: 8px 12px; border-radius: 99px; background: rgba(3, 5, 10, 0.85);
+          border: 1px solid var(--accent); color: var(--accent); font-size: 0.78rem;
+          font-weight: 700; box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     // Load strictly from this device's browser storage (never shared across devices)
     try {
       const saved = localStorage.getItem('phiziks_state');
@@ -284,7 +348,6 @@ const PHIZIKS = {
     if (!this.state.customMetrics) this.state.customMetrics = ["Concept Clarity (1-10)", "Mock Test Accuracy (%)"];
     if (!this.state.testHistory) this.state.testHistory = [];
 
-    // Sync local profile registry on this device
     this.saveState();
 
     try {
@@ -399,7 +462,6 @@ const PHIZIKS = {
       H = canvas.height = window.innerHeight;
     });
 
-    // Soft glowing nebula bokeh orbs + crisp phase-space vector nodes
     const bokehOrbs = [
       { x: W * 0.2, y: H * 0.25, r: 210, vx: 0.35, vy: 0.22, color: 'rgba(0, 240, 255, 0.08)' },
       { x: W * 0.8, y: H * 0.7, r: 250, vx: -0.3, vy: -0.25, color: 'rgba(124, 77, 255, 0.09)' },
@@ -420,7 +482,6 @@ const PHIZIKS = {
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
-      // Feed pointer coordinates to the CSS blurry nebula layer
       document.documentElement.style.setProperty('--pointer-x', `${e.clientX}px`);
       document.documentElement.style.setProperty('--pointer-y', `${e.clientY}px`);
     }, { passive: true });
@@ -428,7 +489,6 @@ const PHIZIKS = {
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
 
-      // Draw drifting atmospheric light bokeh
       bokehOrbs.forEach(orb => {
         orb.x += orb.vx;
         orb.y += orb.vy;
@@ -443,7 +503,6 @@ const PHIZIKS = {
         ctx.fill();
       });
 
-      // Draw interactive phase-space nodes & connecting field lines
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i];
         n.x += n.vx;
@@ -524,6 +583,20 @@ const PHIZIKS = {
 
   initKeyboardAndScrollChoreography() {
     window.addEventListener('keydown', (e) => {
+      const pptModal = document.getElementById('exhibition-ppt-modal');
+      const pptOpen = pptModal && !pptModal.classList.contains('hidden');
+
+      if (pptOpen && e.key === 'ArrowRight') {
+        e.preventDefault();
+        this.nextPPTSlide();
+        return;
+      }
+      if (pptOpen && e.key === 'ArrowLeft') {
+        e.preventDefault();
+        this.prevPPTSlide();
+        return;
+      }
+
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         const inp = document.getElementById('global-search-input');
@@ -560,7 +633,6 @@ const PHIZIKS = {
 
       if (this.currentView !== 'home') return;
 
-      // 1. Multi-Speed Parallax Layers
       document.querySelectorAll('[data-parallax]').forEach(el => {
         const speed = parseFloat(el.dataset.parallax || 0.15);
         const rot = parseFloat(el.dataset.parallaxRot || 0);
@@ -569,7 +641,6 @@ const PHIZIKS = {
         el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0) rotate(${(offset * rot).toFixed(2)}deg)`;
       });
 
-      // 2. Scene B — Live Scroll-Drawing Calculus & Electrodynamics SVG Lab
       const sceneB = document.getElementById('scene-b');
       if (sceneB) {
         const r = sceneB.getBoundingClientRect();
@@ -580,7 +651,6 @@ const PHIZIKS = {
           curvePath.style.strokeDasharray = totalLen;
           curvePath.style.strokeDashoffset = (totalLen * (1 - bProg)).toFixed(1);
         }
-        // Move tangent point along curve y(x) = 165 - 115 sin(x)
         const tanDot = document.getElementById('sb-tangent-dot');
         const tanLine = document.getElementById('sb-tangent-line');
         const readout = document.getElementById('sb-live-readout');
@@ -599,7 +669,6 @@ const PHIZIKS = {
             readout.textContent = `x = ${(bProg * 4.0).toFixed(2)} m  |  dy/dx = ${(-slope).toFixed(2)}  |  ∫y dx = ${(bProg * 18.4).toFixed(1)} J`;
           }
         }
-        // Scale Riemann integral bars progressively with scroll
         document.querySelectorAll('.sb-riemann-bar').forEach((bar, bi) => {
           const threshold = bi / 10;
           const barScale = Math.min(1, Math.max(0.05, (bProg - threshold * 0.6) * 2.2));
@@ -607,7 +676,6 @@ const PHIZIKS = {
         });
       }
 
-      // 3. Scene C — Scroll-Synced Sticky Simulation Pinning (3 Stages + Live Scrubbing)
       const pinTrack = document.getElementById('scene-c-pin-track');
       if (pinTrack && window.innerWidth > 1024) {
         const r = pinTrack.getBoundingClientRect();
@@ -632,7 +700,6 @@ const PHIZIKS = {
         }
       }
 
-      // 4. Scene E — Vertical-Scroll-Driven Horizontal Ribbon Translation
       const hPin = document.getElementById('scene-e-horizontal-pin');
       const hRibbon = document.getElementById('scene-e-horizontal-ribbon');
       if (hPin && hRibbon && window.innerWidth > 1024) {
@@ -645,7 +712,6 @@ const PHIZIKS = {
         if (hBar) hBar.style.width = `${(hProg * 100).toFixed(1)}%`;
       }
 
-      // 5. Update Bottom-Left Scene Telemetry HUD
       const sceneLabel = document.getElementById('scroll-scene-label');
       if (sceneLabel) {
         const scenes = [
@@ -686,7 +752,6 @@ const PHIZIKS = {
       this.scrollObserver.observe(el);
     });
 
-    // Enhance with GSAP + ScrollTrigger when loaded
     const initGSAP = () => {
       if (!window.gsap || !window.ScrollTrigger) return;
       gsap.registerPlugin(ScrollTrigger);
@@ -864,9 +929,7 @@ const PHIZIKS = {
     container.innerHTML = `
       <div class="cinematic-home">
 
-        <!-- =================================================================
-             SCENE A — CINEMATIC OPENING HERO (STAGGERED WORD MASKS + HOLO)
-             ================================================================= -->
+        <!-- SCENE A — CINEMATIC OPENING HERO -->
         <section id="scene-a" class="scene-a-hero border-beam-box">
           <div>
             <div class="scene-header-tag">
@@ -896,7 +959,6 @@ const PHIZIKS = {
               <button class="tool-btn" style="padding:11px 14px;" onclick="PHIZIKS.openPrereqMapModal()">🕸️ Dependency Map</button>
             </div>
 
-            <!-- Live Animated Exam Countdowns Strip -->
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;">
               <div class="cyber-tilt-card" style="padding:12px 14px;">
                 <div style="font-size:0.68rem;color:var(--text-secondary);font-family:var(--font-mono);">JEE MAIN TARGET</div>
@@ -922,7 +984,6 @@ const PHIZIKS = {
             </div>
           </div>
 
-          <!-- Right Animated Scientific Hologram Stage -->
           <div class="hero-holo-stage" data-parallax="-0.08">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
               <span class="badge" style="color:var(--accent);border-color:var(--border-cyan);">LIVE PHASE-SPACE & WAVE HARMONICS</span>
@@ -967,7 +1028,6 @@ const PHIZIKS = {
           </div>
         </section>
 
-        <!-- Glowing Connected Conduit -->
         <div class="scene-conduit" aria-hidden="true"><div class="scene-conduit-line"></div></div>
 
         <!-- PERSONALIZED CONTINUE LEARNING & SPACED REPETITION HUB -->
@@ -1041,12 +1101,9 @@ const PHIZIKS = {
           </div>
         </section>
 
-        <!-- Glowing Connected Conduit -->
         <div class="scene-conduit" aria-hidden="true"><div class="scene-conduit-line"></div></div>
 
-        <!-- =================================================================
-             SCENE B — SCROLL-DRAWING CALCULUS & VECTOR MORPH LABORATORY
-             ================================================================= -->
+        <!-- SCENE B — SCROLL-DRAWING CALCULUS & VECTOR MORPH LABORATORY -->
         <section id="scene-b" class="scene-b-parallax-stage border-beam-box" data-reveal>
           <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;">
             <div style="max-width:640px;">
@@ -1063,7 +1120,6 @@ const PHIZIKS = {
             </div>
           </div>
 
-          <!-- Interactive Scroll-Scrubbed SVG Calculus & Vector Morph Stage -->
           <div class="scroll-draw-lab-grid">
             <div class="scroll-draw-svg-stage">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px;">
@@ -1073,7 +1129,6 @@ const PHIZIKS = {
               <svg id="scene-b-draw-svg" viewBox="0 0 480 210" style="width:100%;height:auto;">
                 <line x1="40" y1="165" x2="450" y2="165" stroke="#475569" stroke-width="2"/>
                 <line x1="50" y1="20" x2="50" y2="185" stroke="#475569" stroke-width="2"/>
-                <!-- Scroll-Rising Riemann Integral Bars -->
                 <g fill="rgba(0, 230, 118, 0.18)" stroke="rgba(0, 230, 118, 0.45)" stroke-width="1">
                   ${Array.from({ length: 10 }, (_, i) => {
                     const bx = 55 + i * 36;
@@ -1081,9 +1136,7 @@ const PHIZIKS = {
                     return `<rect class="sb-riemann-bar" x="${bx}" y="${165 - bh}" width="28" height="${bh}" style="transform-origin: ${bx}px 165px;" />`;
                   }).join('')}
                 </g>
-                <!-- Self-Drawing Curve y(x) -->
                 <path id="sb-calc-curve" d="M 50 155 Q 150 20 260 110 T 435 65" fill="none" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round"/>
-                <!-- Sliding Secant/Tangent Line -->
                 <line id="sb-tangent-line" x1="140" y1="95" x2="250" y2="55" stroke="#ec4899" stroke-width="2.5" stroke-dasharray="5,3"/>
                 <circle id="sb-tangent-dot" cx="195" cy="75" r="7" fill="#00e676" stroke="#ffffff" stroke-width="2"/>
                 <text x="250" y="196" fill="#9cb0c9" font-family="monospace" font-size="10" text-anchor="middle">Cyan: Trajectory y(x)  •  Pink: Instantaneous Slope dy/dx  •  Green Bars: Area ∫y dx</text>
@@ -1108,12 +1161,9 @@ const PHIZIKS = {
           </div>
         </section>
 
-        <!-- Glowing Connected Conduit -->
         <div class="scene-conduit" aria-hidden="true"><div class="scene-conduit-line"></div></div>
 
-        <!-- =================================================================
-             SCENE C — SCROLL-PINNED INTERACTIVE SIMULATIONS (285vh Track)
-             ================================================================= -->
+        <!-- SCENE C — SCROLL-PINNED INTERACTIVE SIMULATIONS -->
         <section id="scene-c-pin-track" class="scene-c-pin-track">
           <div class="scene-c-sticky-viewport">
             <div>
@@ -1148,12 +1198,9 @@ const PHIZIKS = {
           </div>
         </section>
 
-        <!-- Glowing Connected Conduit -->
         <div class="scene-conduit" aria-hidden="true"><div class="scene-conduit-line"></div></div>
 
-        <!-- =================================================================
-             SCENE D — LEARNING, SOLVED EXAMPLES & ADAPTIVE PRACTICE
-             ================================================================= -->
+        <!-- SCENE D — LEARNING, SOLVED EXAMPLES & ADAPTIVE PRACTICE -->
         <section id="scene-d" data-reveal>
           <div style="margin-bottom:20px;">
             <span class="scene-header-tag">SCENE 04 • DEEP LEARNING & ADAPTIVE PRACTICE</span>
@@ -1193,12 +1240,9 @@ const PHIZIKS = {
           </div>
         </section>
 
-        <!-- Glowing Connected Conduit -->
         <div class="scene-conduit" aria-hidden="true"><div class="scene-conduit-line"></div></div>
 
-        <!-- =================================================================
-             SCENE E — VERTICAL-SCROLL-DRIVEN HORIZONTAL WORKSPACE SHOWCASE
-             ================================================================= -->
+        <!-- SCENE E — VERTICAL-SCROLL-DRIVEN HORIZONTAL WORKSPACE SHOWCASE -->
         <section id="scene-e-horizontal-pin" class="scene-e-horizontal-pin">
           <div class="scene-e-sticky-frame">
             <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:18px;">
@@ -1257,12 +1301,9 @@ const PHIZIKS = {
           </div>
         </section>
 
-        <!-- Glowing Connected Conduit -->
         <div class="scene-conduit" aria-hidden="true"><div class="scene-conduit-line"></div></div>
 
-        <!-- =================================================================
-             SCENE F — FINAL CALL TO ACTION LAUNCHPAD
-             ================================================================= -->
+        <!-- SCENE F — FINAL CALL TO ACTION LAUNCHPAD -->
         <section id="scene-f" class="cyber-glass-panel border-beam-box" style="text-align:center;padding:52px 28px;border:1px solid var(--border-cyan);" data-reveal="scale">
           <span class="scene-header-tag">SCENE 06 • LAUNCHPAD</span>
           <h2 style="font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:900;margin-bottom:10px;">
@@ -1547,7 +1588,6 @@ const PHIZIKS = {
         </div>
       </div>
 
-      <!-- Topic Quick-Jump Table of Contents -->
       <div class="stat-card" style="margin-bottom:20px;padding:14px 18px;">
         <div style="font-size:0.78rem;font-weight:800;color:var(--accent);margin-bottom:8px;">📑 QUICK TOPIC NAVIGATION</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -1559,13 +1599,11 @@ const PHIZIKS = {
         </div>
       </div>
 
-      <!-- 1. INTRODUCTION -->
       <div class="stat-card" style="margin-bottom:20px;">
         <h2 style="color:var(--accent);margin-bottom:10px;">1. Intuitive Introduction (First-Time Reader Foundation)</h2>
         <div class="topic-theory">${ch.introduction || ''}</div>
       </div>
 
-      <!-- 2. DETAILED TOPICS & DERIVATIONS -->
       <div style="margin-bottom:20px;">
         <h2 style="color:var(--accent);margin-bottom:12px;">2. Complete Topics, Derivations, Graphs & JEE Trap Drawers</h2>
         ${(ch.topics || []).map((t, idx) => {
@@ -1607,20 +1645,17 @@ const PHIZIKS = {
         }).join('')}
       </div>
 
-      <!-- 3. CONCLUSION & SUMMARY -->
       <div class="stat-card" style="margin-bottom:20px;">
         <h2 style="color:var(--accent);margin-bottom:10px;">3. Chapter Conclusion & Executive Revision Summary</h2>
         <div>${ch.conclusion || ''}</div>
         <div style="margin-top:10px;">${ch.summary || ''}</div>
       </div>
 
-      <!-- 4. MASTER FORMULA SHEET -->
       <div id="ch-formula-sheet" class="stat-card" style="margin-bottom:20px;">
         <h2 style="color:var(--accent);margin-bottom:10px;">4. Master Formula & Revision Sheet</h2>
         <div>${ch.formulaSheetHtml || ''}</div>
       </div>
 
-      <!-- 5. CATEGORIZED QUESTION BANK WITH STEP-BY-STEP NUMERICAL SOLVER -->
       <div id="ch-problem-bank" class="stat-card">
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
           <div>
@@ -1757,7 +1792,7 @@ const PHIZIKS = {
             </span>
           </div>
           <p style="font-size:0.8rem;color:var(--text-secondary);">
-            <strong>Privacy & Auto-Deletion Policy:</strong> <code>dx/dy</code> requires no email address or phone number. Profiles are stored privately in your browser and automatically cleaned after <strong>3 months (90 days) of inactivity</strong>, with an in-website warning displayed <strong>7 days in advance (at day 83)</strong>. Export a JSON Backup below to move your data across devices.
+            <strong>Device-Private Storage & Backup:</strong> Your profile, notes, and wallpaper save privately inside this browser with no email or password needed. Download a JSON Backup below anytime to carry your data to another device.
           </p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
             <button class="tool-btn btn-primary" onclick="PHIZIKS.exportProfileBackup()">⬇️ Export JSON Backup</button>
@@ -1928,10 +1963,11 @@ const PHIZIKS = {
   },
 
   // =========================================================================
-  // EXHIBITION WALKTHROUGH CONTROLLER
+  // INTERACTIVE WALKTHROUGH CONTROLLER (SCREENSHOTS + CALLOUTS + LEFT/RIGHT CLICK)
   // =========================================================================
   openExhibitionPPT() {
     this.pptIndex = 0;
+    this.pptDirection = 'next';
     document.getElementById('exhibition-ppt-modal').classList.remove('hidden');
     this.renderPPTSlide();
   },
@@ -1941,35 +1977,77 @@ const PHIZIKS = {
   },
 
   nextPPTSlide() {
+    this.pptDirection = 'next';
     this.pptIndex = (this.pptIndex + 1) % this.pptSlides.length;
     this.renderPPTSlide();
   },
 
   prevPPTSlide() {
+    this.pptDirection = 'prev';
     this.pptIndex = (this.pptIndex - 1 + this.pptSlides.length) % this.pptSlides.length;
     this.renderPPTSlide();
   },
 
   renderPPTSlide() {
     const slide = this.pptSlides[this.pptIndex];
-    document.getElementById('ppt-slide-indicator').textContent = `📊 dx/dy PLATFORM WALKTHROUGH — SLIDE ${this.pptIndex + 1} / ${this.pptSlides.length}`;
-    document.getElementById('ppt-slide-container').innerHTML = `
-      <div>
-        <span class="badge" style="color:var(--accent);margin-bottom:8px;">dx/dy FEATURE WALKTHROUGH</span>
-        <h2 style="font-size:1.6rem;font-weight:900;margin-bottom:6px;">${slide.title}</h2>
-        <p style="color:#c4b5fd;font-weight:600;margin-bottom:16px;">${slide.subtitle}</p>
-        <ul style="padding-left:20px;display:grid;gap:10px;margin-bottom:18px;">
-          ${slide.points.map(pt => `<li>${pt}</li>`).join('')}
-        </ul>
-        <div style="padding:12px;background:var(--bg-primary);border-left:4px solid var(--warning);border-radius:6px;font-size:0.85rem;">
-          <strong style="color:var(--warning);">🎙️ Presentation Note:</strong> ${slide.speakerNote}
+    const animClass = this.pptDirection === 'prev' ? 'ppt-anim-prev' : 'ppt-anim-next';
+    document.getElementById('ppt-slide-indicator').textContent =
+      `📊 dx/dy INTERACTIVE GUIDE — SLIDE ${this.pptIndex + 1} / ${this.pptSlides.length}`;
+
+    const container = document.getElementById('ppt-slide-container');
+    container.innerHTML = `
+      <div class="${animClass}" style="position:relative;display:grid;grid-template-columns:1fr 1.35fr;gap:22px;align-items:center;width:100%;grid-column:1 / -1;">
+
+        <!-- LEFT & RIGHT SIDE CLICK ZONES FOR INSTANT SLIDE NAVIGATION -->
+        <div class="ppt-click-zone" style="left:0;justify-content:flex-start;padding-left:8px;"
+             onclick="PHIZIKS.prevPPTSlide()" title="Click Left Side for Previous Slide">
+          <span class="ppt-click-pill">⬅ Prev</span>
         </div>
-      </div>
-      <div class="ppt-visual-box">
-        ${slide.svg}
-        <div style="margin-top:10px;display:flex;justify-content:center;gap:6px;">
-          ${this.pptSlides.map((_, idx) => `<span style="width:10px;height:10px;border-radius:50%;background:${idx===this.pptIndex?'var(--accent)':'#475569'};display:inline-block;cursor:pointer;" onclick="PHIZIKS.pptIndex=${idx};PHIZIKS.renderPPTSlide();"></span>`).join('')}
+        <div class="ppt-click-zone" style="right:0;justify-content:flex-end;padding-right:8px;"
+             onclick="PHIZIKS.nextPPTSlide()" title="Click Right Side for Next Slide">
+          <span class="ppt-click-pill">Next ➡</span>
         </div>
+
+        <!-- LEFT COLUMN: SHORT, CLEAR EXPLANATION & EXHIBITION SCRIPT -->
+        <div style="position:relative;z-index:9;">
+          <span class="badge" style="color:var(--accent);margin-bottom:8px;">${slide.tag || 'dx/dy FEATURE GUIDE'}</span>
+          <h2 style="font-size:1.5rem;font-weight:900;margin-bottom:6px;line-height:1.2;">${slide.title}</h2>
+          <p style="color:#c4b5fd;font-weight:600;margin-bottom:14px;font-size:0.9rem;">${slide.subtitle}</p>
+          <ul style="padding-left:18px;display:grid;gap:10px;margin-bottom:16px;font-size:0.88rem;line-height:1.45;">
+            ${slide.points.map(pt => `<li>${pt}</li>`).join('')}
+          </ul>
+          <div style="padding:11px 14px;background:var(--bg-primary);border-left:4px solid var(--warning);border-radius:6px;font-size:0.83rem;">
+            <strong style="color:var(--warning);">🎙️ Exhibition Pitch:</strong> ${slide.speakerNote}
+          </div>
+          <div style="margin-top:10px;font-size:0.74rem;color:var(--text-secondary);display:flex;justify-content:space-between;">
+            <span>💡 Click <strong>Left / Right edges</strong> or press <strong>⬅ / ➡ keys</strong></span>
+            <span>Slide ${this.pptIndex + 1} of ${this.pptSlides.length}</span>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: ANNOTATED WEBSITE SCREENSHOT + NUMBERED CALLOUT MARKS -->
+        <div class="ppt-visual-box" style="position:relative;z-index:6;padding:10px;background:#050811;border:1px solid var(--border-cyan);border-radius:12px;">
+          <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#080d1a;border:1px solid rgba(0,240,255,0.35);">
+            <img src="${slide.img}" alt="${slide.title}"
+                 style="width:100%;height:100%;object-fit:cover;display:block;"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div style="display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:radial-gradient(circle at center,#0f172a,#03050a);">
+              <div style="font-family:var(--font-mono);font-size:1.3rem;font-weight:800;color:var(--accent);margin-bottom:6px;">${slide.title}</div>
+              <p style="font-size:0.8rem;color:var(--text-secondary);max-width:360px;">Upload <code>public${slide.img}</code> to GitHub to display this live screenshot behind the callout markers.</p>
+            </div>
+            ${slide.overlaySvg || ''}
+          </div>
+
+          <!-- SLIDE DOTS -->
+          <div style="margin-top:12px;display:flex;justify-content:center;gap:8px;position:relative;z-index:12;">
+            ${this.pptSlides.map((_, idx) => `
+              <span style="width:${idx===this.pptIndex?'24px':'10px'};height:10px;border-radius:99px;background:${idx===this.pptIndex?'var(--accent)':'#475569'};display:inline-block;cursor:pointer;transition:all 0.25s ease;"
+                    onclick="event.stopPropagation();PHIZIKS.pptDirection=${idx > this.pptIndex ? "'next'" : "'prev'"};PHIZIKS.pptIndex=${idx};PHIZIKS.renderPPTSlide();"
+                    title="Go to Slide ${idx + 1}"></span>
+            `).join('')}
+          </div>
+        </div>
+
       </div>
     `;
   },
