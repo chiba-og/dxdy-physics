@@ -267,7 +267,6 @@ const PHIZIKS = {
         { title: "③ Custom Wallpaper URL", desc: "Pick Grid, Nebula, or paste any custom image URL privately.", color: "#ffab00" }
       ],
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- Centered Portrait Close-Up Callouts -->
         <rect x="405" y="110" width="470" height="145" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
         <circle cx="380" cy="182" r="16" fill="#00f0ff"/><text x="380" y="188" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">1</text>
         <rect x="405" y="275" width="470" height="205" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
@@ -289,7 +288,6 @@ const PHIZIKS = {
         { title: "③ No Email or Password", desc: "Type just Name and Class—keeps data private on your own browser.", color: "#ffab00" }
       ],
       overlaySvg: `<svg viewBox="0 0 1280 720" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;">
-        <!-- Centered Modal Close-Up Callouts -->
         <rect x="255" y="252" width="710" height="105" rx="10" fill="none" stroke="#00f0ff" stroke-width="3"/>
         <circle cx="230" cy="304" r="16" fill="#00f0ff"/><text x="230" y="310" fill="#03050a" font-size="16" font-weight="900" text-anchor="middle">1</text>
         <rect x="255" y="385" width="770" height="90" rx="10" fill="none" stroke="#00e676" stroke-width="3"/>
@@ -480,7 +478,7 @@ const PHIZIKS = {
       ],
       journalEntries: [],
       customActivities: ["Drawing", "Hip-Hop Dance", "Guitar Practice", "Martial Arts / Sports"],
-      customMetrics: ["Concept Clarity (1-10)", "Mock Test Accuracy (%)""],
+      customMetrics: ["Concept Clarity (1-10)", "Mock Test Accuracy (%)"],
       testHistory: []
     };
   },
