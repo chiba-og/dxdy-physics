@@ -38,7 +38,7 @@ window.PHIZIKS_SUITES = {
     autosaveTimer: null
   },
 
-  // Built-in Seed Question Pool (Merges with all 29 chapter JSON question banks)
+  // Expanded 16-Question Built-in Seed Pool (Merges with all 29 chapter JSON question banks)
   seedQuestionBank: [
     {
       id: "q_bm_01", chapterId: "ch00_basic_maths", category: "Basic", difficulty: "Basic Foundation",
@@ -62,6 +62,13 @@ window.PHIZIKS_SUITES = {
       explanation: "Use substitution $u = x^2 \\Rightarrow du = 2x\\,dx$. Then $\\int_0^\\infty 4x e^{-x^2}dx = 2\\int_0^\\infty e^{-u}du = 2[-e^{-u}]_0^\\infty = 2(0 - (-1)) = 2\\text{ J}$."
     },
     {
+      id: "q_unit_01", chapterId: "ch01_units_measurements", category: "Repeated PYQ", difficulty: "JEE Main / PYQ-Pattern",
+      prompt: "If percentage errors in measuring mass $M$, length $L$, and time $T$ are $1\\%$, $2\\%$, and $3\\%$ respectively, the maximum percentage error in measuring kinetic energy $K = \\frac{1}{2}MV^2$ is:",
+      options: ["8%", "11%", "10%", "6%"],
+      answer: "11%",
+      explanation: "Dimensions of kinetic energy are $[M L^2 T^{-2}]$. Maximum percentage error $\\frac{\\Delta K}{K}\\times 100 = 1(\\frac{\\Delta M}{M}) + 2(\\frac{\\Delta L}{L}) + 2(\\frac{\\Delta T}{T}) = 1(1\\%) + 2(2\\%) + 2(3\\%) = 11\\%$."
+    },
+    {
       id: "q_kin_01", chapterId: "ch02_motion_straight_line", category: "Repeated PYQ", difficulty: "JEE Main / PYQ-Pattern",
       prompt: "A ball is thrown vertically upward with speed $40\\text{ m/s}$ ($g = 10\\text{ m/s}^2$). What is the distance (not displacement) traveled during the 5th second of its motion?",
       options: ["0 m", "5 m", "10 m", "45 m"],
@@ -76,11 +83,39 @@ window.PHIZIKS_SUITES = {
       explanation: "Horizontal component of velocity remains invariant: $v \\cos(\\theta/2) = u \\cos\\theta \\Rightarrow v = \\frac{u\\cos\\theta}{\\cos(\\theta/2)}$."
     },
     {
+      id: "q_nlm_01", chapterId: "ch04_laws_of_motion", category: "Basic", difficulty: "Basic Foundation",
+      prompt: "Two blocks of masses $4\\text{ kg}$ and $6\\text{ kg}$ are connected by a massless string over a frictionless pulley (Atwood machine). The magnitude of acceleration of the system ($g = 10\\text{ m/s}^2$) is:",
+      options: ["1 m/s²", "2 m/s²", "4 m/s²", "5 m/s²"],
+      answer: "2 m/s²",
+      explanation: "Net driving force is $(m_2 - m_1)g = (6 - 4)(10) = 20\\text{ N}$. Total mass $M = 6 + 4 = 10\\text{ kg}$. Acceleration $a = \\frac{20}{10} = 2\\text{ m/s}^2$."
+    },
+    {
+      id: "q_wep_01", chapterId: "ch05_work_energy_power", category: "Repeated PYQ", difficulty: "JEE Main / PYQ-Pattern",
+      prompt: "A particle of mass $m$ is tied to a light string of length $L$ and whirled in a vertical circle. What is the minimum speed required at the lowest point to complete the full vertical circle?",
+      options: ["$\\sqrt{2gL}$", "$\\sqrt{3gL}$", "$\\sqrt{5gL}$", "$\\sqrt{gL}$"],
+      answer: "$\\sqrt{5gL}$",
+      explanation: "To just complete the vertical circle, tension at the top becomes zero ($v_{\\text{top}} = \\sqrt{gL}$). By Mechanical Energy Conservation between bottom and top: $\\frac{1}{2}mv_{\\text{bot}}^2 = \\frac{1}{2}m(gL) + mg(2L) \\Rightarrow v_{\\text{bot}} = \\sqrt{5gL}$."
+    },
+    {
+      id: "q_rot_01", chapterId: "ch06_rotational_motion", category: "Repeated PYQ", difficulty: "JEE Main / PYQ-Pattern",
+      prompt: "A solid sphere ($I = \\frac{2}{5}MR^2$) rolls purely without slipping down an incline of angle $\\theta$. Its linear acceleration down the incline is:",
+      options: ["$\\frac{5}{7}g\\sin\\theta$", "$\\frac{2}{3}g\\sin\\theta$", "$\\frac{1}{2}g\\sin\\theta$", "$g\\sin\\theta$"],
+      answer: "$\\frac{5}{7}g\\sin\\theta$",
+      explanation: "For pure rolling on an incline, $a = \\frac{g\\sin\\theta}{1 + \\frac{I}{MR^2}}$. For a solid sphere, $\\frac{I}{MR^2} = \\frac{2}{5}$. Thus $a = \\frac{g\\sin\\theta}{1 + 2/5} = \\frac{5}{7}g\\sin\\theta$."
+    },
+    {
       id: "q_grav_01", chapterId: "ch07_gravitation", category: "Repeated PYQ", difficulty: "JEE Main / PYQ-Pattern",
       prompt: "At what height $h$ above the Earth's surface (radius $R$) is the acceleration due to gravity equal to that at a depth $d = R/2$ below the surface?",
       options: ["$R(\\sqrt{2}-1)$", "$R/2$", "$R/4$", "$R(\\sqrt{3}-1)$"],
       answer: "$R(\\sqrt{2}-1)$",
       explanation: "At depth $d = R/2$, $g' = g(1 - d/R) = g/2$. Outside at height $h$: $g' = \\frac{g}{(1 + h/R)^2} = \\frac{g}{2} \\Rightarrow 1 + h/R = \\sqrt{2} \\Rightarrow h = R(\\sqrt{2}-1)$."
+    },
+    {
+      id: "q_therm_01", chapterId: "ch11_thermodynamics", category: "Basic", difficulty: "Basic Foundation",
+      prompt: "A Carnot heat engine operates between a source at $600\\text{ K}$ and a sink at $300\\text{ K}$. Its thermal efficiency $\\eta$ is:",
+      options: ["25%", "50%", "75%", "66.7%"],
+      answer: "50%",
+      explanation: "Carnot efficiency $\\eta = 1 - \\frac{T_{\\text{sink}}}{T_{\\text{source}}} = 1 - \\frac{300}{600} = 0.5 = 50\\%$."
     },
     {
       id: "q_shm_01", chapterId: "ch13_oscillations", category: "Advanced", difficulty: "JEE Advanced",
@@ -90,11 +125,32 @@ window.PHIZIKS_SUITES = {
       explanation: "Using the Phasor Circle: at $x = A/2$, phase is $\\pi/6$. At $x = A$, phase is $\\pi/2$. Phase difference $\\Delta\\phi = \\frac{\\pi}{2} - \\frac{\\pi}{6} = \\frac{\\pi}{3}$. Time $\\Delta t = \\frac{\\Delta\\phi}{2\\pi}T = \\frac{T}{6}$."
     },
     {
+      id: "q_elec_01", chapterId: "ch15_electric_charges_fields", category: "Repeated PYQ", difficulty: "JEE Main / PYQ-Pattern",
+      prompt: "A charge $Q$ is placed at the center of a cube of side $a$. The electric flux emerging through any one face of the cube is:",
+      options: ["$\\frac{Q}{\\varepsilon_0}$", "$\\frac{Q}{6\\varepsilon_0}$", "$\\frac{Q}{4\\varepsilon_0}$", "$\\frac{Q}{8\\varepsilon_0}$"],
+      answer: "$\\frac{Q}{6\\varepsilon_0}$",
+      explanation: "By Gauss's Law, total flux through all 6 symmetrical faces is $\\Phi_{\\text{total}} = \\frac{Q}{\\varepsilon_0}$. Flux through one face is $\\frac{1}{6}\\Phi_{\\text{total}} = \\frac{Q}{6\\varepsilon_0}$."
+    },
+    {
+      id: "q_cap_01", chapterId: "ch16_electrostatic_potential_capacitance", category: "Basic", difficulty: "Basic Foundation",
+      prompt: "An air-filled parallel plate capacitor has capacitance $10\\text{ }\\mu\\text{F}$. When the space between plates is completely filled with a dielectric of constant $K = 4$, the new capacitance becomes:",
+      options: ["2.5 μF", "14 μF", "40 μF", "160 μF"],
+      answer: "40 μF",
+      explanation: "Inserting a dielectric slab filling the space multiplies capacitance by $K$: $C' = K C_0 = 4 \\times 10\\text{ }\\mu\\text{F} = 40\\text{ }\\mu\\text{F}$."
+    },
+    {
       id: "q_opt_01", chapterId: "ch22_ray_optics", category: "Repeated PYQ", difficulty: "JEE Main / PYQ-Pattern",
       prompt: "An equiconvex lens of glass ($\\mu_g = 1.5$) has focal length $20\\text{ cm}$ in air. When completely immersed in water ($\\mu_w = 4/3$), its new focal length is:",
       options: ["80 cm", "40 cm", "-80 cm", "60 cm"],
       answer: "80 cm",
       explanation: "In air: $\\frac{1}{f_a} = (1.5 - 1)(\\frac{2}{R}) = \\frac{1}{R}$. In water: $\\frac{1}{f_w} = (\\frac{1.5}{4/3} - 1)(\\frac{2}{R}) = \\frac{1}{8}(\\frac{2}{R})$. Dividing gives $f_w = 4 f_a = 80\\text{ cm}$."
+    },
+    {
+      id: "q_mod_01", chapterId: "ch24_dual_nature", category: "Basic", difficulty: "Basic Foundation",
+      prompt: "In a photoelectric experiment, if the incident light frequency is doubled (above threshold frequency $\\nu_0$), the maximum kinetic energy of emitted photoelectrons becomes:",
+      options: ["Exactly doubled", "More than doubled", "Less than doubled", "Remains unchanged"],
+      answer: "More than doubled",
+      explanation: "By Einstein's Photoelectric Equation, $K_{\\max} = h\\nu - \\phi_0$. When $\\nu \\to 2\\nu$, $K'_{\\max} = 2h\\nu - \\phi_0 = 2(h\\nu - \\phi_0) + \\phi_0 = 2K_{\\max} + \\phi_0 > 2K_{\\max}$."
     }
   ],
 
@@ -150,7 +206,7 @@ window.PHIZIKS_SUITES = {
             <label style="font-size:0.8rem;color:var(--text-secondary);">Target Chapter</label>
             <select id="dpp-chapter" class="global-search-input" style="margin-top:4px;">
               <option value="ALL">All Chapters (Mixed Pool)</option>
-              ${PHIZIKS.syllabus.map(c => `<option value="${c.id}">Ch ${c.num}:${c.title}</option>`).join('')}
+              ${PHIZIKS.syllabus.map(c => `<option value="${c.id}">Ch ${c.num}: ${c.title}</option>`).join('')}
             </select>
           </div>
           <div>
@@ -158,7 +214,7 @@ window.PHIZIKS_SUITES = {
             <select id="dpp-difficulty" class="global-search-input" style="margin-top:4px;">
               <option value="ALL">Adaptive Mix (All Tiers)</option>
               <option value="Basic">Basic Foundation</option>
-              <option value="Repeated PYQ">JEE Main / PYQ-Pattern</option>
+              <option value="PYQ">JEE Main / PYQ-Pattern</option>
               <option value="Advanced">JEE Advanced</option>
             </select>
           </div>
@@ -209,11 +265,13 @@ window.PHIZIKS_SUITES = {
 
     let pool = [...this.seedQuestionBank];
 
+    // Load target chapter JSONs in parallel so we have a rich pool
     const chaptersToLoad = chFilter === 'ALL'
-      ? PHIZIKS.syllabus.map(c => c.id)
-      : [chFilter];
+      ? PHIZIKS.syllabus.slice(0, 12).map(c => c.id)
+      : [chFilter, 'ch00_basic_maths', 'ch02_motion_straight_line', 'ch03_motion_plane', 'ch04_laws_of_motion'];
 
-    for (const cid of chaptersToLoad) {
+    const uniqueChs = [...new Set(chaptersToLoad)];
+    await Promise.all(uniqueChs.map(async (cid) => {
       try {
         const res = await fetch(`/api/chapters/${cid}`);
         if (res.ok) {
@@ -237,22 +295,40 @@ window.PHIZIKS_SUITES = {
           }
         }
       } catch (e) {}
-    }
+    }));
 
-    let filtered = pool.filter(q => (chFilter === 'ALL' || q.chapterId === chFilter));
-    if (diffFilter !== 'ALL') {
-      filtered = filtered.filter(q => (q.category && q.category.toLowerCase().includes(diffFilter.toLowerCase())));
-    }
-    if (filtered.length === 0) filtered = [...pool];
+    const matchesDifficulty = (q) => {
+      if (diffFilter === 'ALL') return true;
+      const needle = diffFilter.toLowerCase();
+      const cat = (q.category || '').toLowerCase();
+      const diff = (q.difficulty || '').toLowerCase();
+      if (needle.includes('pyq')) return cat.includes('pyq') || diff.includes('pyq') || diff.includes('main');
+      return cat.includes(needle) || diff.includes(needle);
+    };
 
-    // Prioritize unseen questions first
-    let unseen = filtered.filter(q => !PHIZIKS.state.seenQuestions.includes(q.id));
-    if (unseen.length < qCount) {
-      const seenBackup = filtered.filter(q => PHIZIKS.state.seenQuestions.includes(q.id));
-      unseen = [...unseen, ...seenBackup];
-    }
+    // Tier 1: Exact Chapter + Exact Difficulty
+    let tier1 = pool.filter(q => (chFilter === 'ALL' || q.chapterId === chFilter) && matchesDifficulty(q));
+    // Tier 2: Exact Chapter (Any Difficulty) — if Tier 1 has fewer than qCount
+    let tier2 = pool.filter(q => (chFilter === 'ALL' || q.chapterId === chFilter) && !tier1.includes(q));
+    // Tier 3: Mixed Physics Pool matching Difficulty — if the single chapter has fewer than qCount total questions
+    let tier3 = pool.filter(q => !tier1.includes(q) && !tier2.includes(q) && matchesDifficulty(q));
+    // Tier 4: Remaining Master Pool so we ALWAYS reach the exact qCount requested (5, 8, or 15)
+    let tier4 = pool.filter(q => !tier1.includes(q) && !tier2.includes(q) && !tier3.includes(q));
 
-    this.quiz.questions = unseen.slice(0, qCount);
+    const prioritizeUnseen = (list) => {
+      const unseen = list.filter(q => !PHIZIKS.state.seenQuestions.includes(q.id));
+      const seen = list.filter(q => PHIZIKS.state.seenQuestions.includes(q.id));
+      return [...unseen, ...seen];
+    };
+
+    const combinedOrdered = [
+      ...prioritizeUnseen(tier1),
+      ...prioritizeUnseen(tier2),
+      ...prioritizeUnseen(tier3),
+      ...prioritizeUnseen(tier4)
+    ];
+
+    this.quiz.questions = combinedOrdered.slice(0, qCount);
     this.quiz.answers = {};
     this.quiz.submitted = false;
     this.quiz.timeLeft = timeMins * 60;
@@ -307,7 +383,6 @@ window.PHIZIKS_SUITES = {
         } else {
           score -= 1;
           wrong++;
-          // Automatically schedule missed question's chapter into Spaced-Repetition Queue for tomorrow
           if (q.chapterId) {
             const chMeta = PHIZIKS.syllabus.find(c => c.id === q.chapterId);
             if (!PHIZIKS.state.revisionQueue) PHIZIKS.state.revisionQueue = {};
@@ -370,13 +445,15 @@ window.PHIZIKS_SUITES = {
 
         ${this.quiz.questions.map((q, idx) => {
           const picked = this.quiz.answers[idx];
+          const chMeta = PHIZIKS.syllabus.find(c => c.id === q.chapterId);
+          const chBadge = chMeta ? `Ch ${chMeta.num}` : '';
           const catLabel = (q.category && q.category.toLowerCase().includes('pyq'))
             ? 'PYQ-Pattern / High-Frequency Concept'
             : (q.category || 'Practice Question');
           return `
             <div style="padding:16px;background:var(--bg-primary);border:1px solid var(--border-color);border-radius:8px;margin-bottom:14px;">
               <div style="display:flex;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:6px;">
-                <span class="badge" style="color:var(--accent);">Question ${idx + 1} •${catLabel}</span>
+                <span class="badge" style="color:var(--accent);">Question ${idx + 1} ${chBadge ? `• ${chBadge}` : ''} • ${catLabel}</span>
                 <span class="badge">${q.difficulty || 'JEE'}</span>
               </div>
               <div style="font-size:1rem;font-weight:600;margin-bottom:12px;">${q.prompt}</div>
@@ -620,7 +697,7 @@ window.PHIZIKS_SUITES = {
     out.innerHTML = `
       <div style="max-height:220px;overflow-y:auto;display:grid;gap:6px;">
         ${blocks.map(b => `
-          <div style="padding:8px 12px;border-radius:6px;background:${b.type==='REST'?'rgba(0,230,118,0.1)':'var(--bg-primary)'};border-left:4px solid${b.type==='REST'?'var(--success)':'var(--accent)'};font-size:0.83rem;display:flex;justify-content:space-between;">
+          <div style="padding:8px 12px;border-radius:6px;background:${b.type==='REST'?'rgba(0,230,118,0.1)':'var(--bg-primary)'};border-left:4px solid ${b.type==='REST'?'var(--success)':'var(--accent)'};font-size:0.83rem;display:flex;justify-content:space-between;">
             <span>${b.label}</span>
             <strong style="font-family:var(--font-mono);">${b.duration} min</strong>
           </div>
@@ -657,7 +734,6 @@ window.PHIZIKS_SUITES = {
 
   toggleAudioPlayback() {
     if (this.pomo.ambientType === 'none') {
-      // Default to steady rain if user clicks Play Audio before selecting a track
       this.setAmbientSound('rain');
       return;
     }
@@ -694,7 +770,6 @@ window.PHIZIKS_SUITES = {
       return;
     }
 
-    // Handle Custom Uploaded Audio File
     if (type === 'custom') {
       const audioEl = this.ensurePersistentAudioElement();
       if (!this.pomo.customFileUrl) {
@@ -716,7 +791,6 @@ window.PHIZIKS_SUITES = {
       return;
     }
 
-    // Handle Built-in Web Audio Synthesizer (White Noise, Steady Rain, Forest Wind/Nature, Warm Lo-Fi)
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!AudioContextClass) {
       this.updateAudioUIStatus('⚠️ Web Audio API is not supported in this browser.', true);
@@ -736,7 +810,6 @@ window.PHIZIKS_SUITES = {
     this.pomo.masterGain = master;
 
     if (type === 'lofi') {
-      // Warm Lo-Fi Ambient Chord Pad (A-major 7th warm filtered oscillators + vinyl crackle)
       const freqs = [220.0, 277.18, 329.63, 415.30];
       const padFilter = ctx.createBiquadFilter();
       padFilter.type = 'lowpass';
@@ -758,7 +831,6 @@ window.PHIZIKS_SUITES = {
       this.pomo.audioPlaying = true;
       this.updateAudioUIStatus('🎹 Playing: Warm Lo-Fi Ambient Pad');
     } else {
-      // Generate 3-second Pink/Brown/White Noise Buffer with proper gain compensation
       const bufferSize = 3 * ctx.sampleRate;
       const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const output = noiseBuffer.getChannelData(0);
@@ -768,7 +840,6 @@ window.PHIZIKS_SUITES = {
           output[i] = (Math.random() * 2 - 1) * 0.25;
         }
       } else {
-        // Paul Kellet's Pink/Brown Noise filter so Rain and Nature sound rich and natural
         let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
         for (let i = 0; i < bufferSize; i++) {
           const white = Math.random() * 2 - 1;
@@ -793,24 +864,22 @@ window.PHIZIKS_SUITES = {
       if (type === 'rain') {
         filter.type = 'lowpass';
         filter.frequency.value = 1150;
-        boostGain.gain.value = 0.85; // Compensates for lowpass filter attenuation
+        boostGain.gain.value = 0.85;
       } else if (type === 'nature') {
         filter.type = 'bandpass';
         filter.frequency.value = 520;
         filter.Q.value = 1.4;
         boostGain.gain.value = 1.1;
 
-        // Slow LFO modulating wind filter frequency (280 Hz to 760 Hz)
         const lfo = ctx.createOscillator();
         const lfoGain = ctx.createGain();
-        lfo.frequency.value = 0.16; // 6-second wind gust cycle
+        lfo.frequency.value = 0.16;
         lfoGain.gain.value = 240;
         lfo.connect(lfoGain);
         lfoGain.connect(filter.frequency);
         lfo.start();
         this.pomo.activeNodes.push(lfo, lfoGain);
       } else {
-        // White noise
         filter.type = 'lowpass';
         filter.frequency.value = 3200;
         boostGain.gain.value = 0.45;
@@ -851,7 +920,6 @@ window.PHIZIKS_SUITES = {
   togglePomo() {
     this.pomo.running = !this.pomo.running;
 
-    // Resume audio context or custom track smoothly if selected
     if (this.pomo.running && this.pomo.ambientType !== 'none' && !this.pomo.audioPlaying) {
       this.setAmbientSound(this.pomo.ambientType);
     }
@@ -1014,7 +1082,6 @@ window.PHIZIKS_SUITES = {
     const summaries = this.computeJournalSummaries();
     const curSum = summaries[this.journalState.summaryPeriod] || summaries.weekly;
 
-    // Filter entries for history list
     const filteredEntries = entries.filter(en => {
       const q = this.journalState.searchQuery.trim().toLowerCase();
       const matchSearch = !q ||
@@ -1175,7 +1242,6 @@ window.PHIZIKS_SUITES = {
 
         <!-- RIGHT: INTERACTIVE TREND CHARTS + CALENDAR & EXAM ALERT SETTINGS -->
         <div style="display:flex;flex-direction:column;gap:18px;">
-          <!-- Interactive Study & Well-Being Trend Chart -->
           <div class="stat-card">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px;">
               <h3 style="color:var(--accent);">📈 Study Hours, Question Volume & Sleep/Energy Trends</h3>
@@ -1187,7 +1253,6 @@ window.PHIZIKS_SUITES = {
             </p>
           </div>
 
-          <!-- Calendar History & Exam Countdown Settings -->
           <div class="stat-card">
             <h3 style="color:var(--accent);margin-bottom:8px;">📅 Monthly Activity Calendar & Exam Countdowns</h3>
             <div class="journal-calendar-grid">
@@ -1498,7 +1563,6 @@ window.PHIZIKS_SUITES = {
     ctx.font = '11px Inter';
     ctx.fillText('Cyan Bars: Actual Self-Study Hrs | Dashed Line: Goal Hrs | Violet Curve: Sleep Hrs', 16, 18);
 
-    // Goal horizontal reference line
     const goalY = baseY - (parseFloat(PHIZIKS.state.profile.dailyGoalHours || 6) * scaleY);
     ctx.strokeStyle = 'rgba(255, 171, 0, 0.55)';
     ctx.setLineDash([5, 4]);
@@ -1514,7 +1578,6 @@ window.PHIZIKS_SUITES = {
       ctx.fillText(pt.label, x, H - 10);
     });
 
-    // Sleep trend line
     ctx.strokeStyle = '#7c4dff';
     ctx.lineWidth = 2.5;
     ctx.beginPath();
